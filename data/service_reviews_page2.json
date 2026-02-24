@@ -1,0 +1,1423 @@
+{
+  "review_type": "service",
+  "page_number": 2,
+  "source_file": "service_reviews_page2.html",
+  "extracted_at_utc": "2026-02-24T13:06:14.025168+00:00",
+  "total_reviews": 20,
+  "field_names": [
+    "company_profile_id",
+    "edit_url",
+    "entity_label",
+    "entity_name",
+    "entity_url",
+    "features_used",
+    "is_draft",
+    "labeled_fields",
+    "overall_rating",
+    "posting_preference",
+    "profile_image_alt",
+    "profile_image_url",
+    "profile_title",
+    "profile_url",
+    "question_answers",
+    "rating_breakdown",
+    "review_dom_id",
+    "review_id",
+    "review_text",
+    "reviewer_meta_text",
+    "reviewer_name",
+    "reviewer_role",
+    "show_on_front",
+    "software_id",
+    "status",
+    "submitted_on",
+    "title",
+    "verified"
+  ],
+  "ui_field_labels": [
+    "Brief description of your project",
+    "Communication",
+    "Industry",
+    "Overall Experience",
+    "Project Budget",
+    "Project Status",
+    "Project title",
+    "Quality Work",
+    "Review on Listing Display",
+    "Scheduling and Timing",
+    "Services",
+    "What is it about the company that you appreciate the most?",
+    "What was it about the company that you didn't like which they should do better?",
+    "company"
+  ],
+  "reviews": [
+    {
+      "review_id": "84907",
+      "review_dom_id": "review_84907",
+      "company_profile_id": "183692",
+      "software_id": null,
+      "submitted_on": "2026-02-24 05:48:48",
+      "is_draft": false,
+      "title": "Reliable team and a useful AI system that improved our internal support efficiency.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Jonathan Tamourov",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Jonathan Tamourov",
+      "reviewer_role": "Country Manager at EPIKA",
+      "profile_url": "https://www.goodfirms.co/company/agix-technologies",
+      "profile_title": "Jonathan Tamourov",
+      "profile_image_alt": "Jonathan Tamourov, Country Manager at EPIKA",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1771911748-sophie-amelia.png",
+      "entity_label": "company",
+      "entity_name": "Agix Technologies",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Their team was organized and easy to communicate with, and they clearly explained each step of the implementation. They focused on understanding our operational needs rather than offering a generic solution.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84907/183692",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their responsiveness and practical approach. They concentrated on delivering a solution that our staff could actually use daily instead of something overly complex."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There were no major concerns. The only minor issue was the initial configuration stage took a little longer than expected, but it ensured the system was properly tailored to our processes."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "AI Support Automation and Knowledge Assistant Implementation",
+        "Brief description of your project": "We engaged Agix Technology to help us improve how our team handles internal support requests and technical information sharing. Our staff often needed to search across multiple sources for documentation, procedures, and previous cases, which was time-consuming and inconsistent.\nAgix proposed an AI-based solution that could centralize knowledge and allow team members to quickly retrieve relevant information. The system analyzes internal documents and support materials and provides structured answers, helping our staff respond faster and work more efficiently.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Information Technology",
+        "Services": "Artificial Intelligence"
+      }
+    },
+    {
+      "review_id": "84906",
+      "review_dom_id": "review_84906",
+      "company_profile_id": "183692",
+      "software_id": null,
+      "submitted_on": "2026-02-24 04:54:55",
+      "is_draft": false,
+      "title": "Professional collaboration and a practical AI solution that enhanced our administrative workflows.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Andrzej Godoń",
+      "reviewer_meta_text": "Reviewed 7 hours, 18 minutes ago by Andrzej Godoń",
+      "reviewer_role": "Head of Administration at Uniwersytet Przyrodniczy w Poznaniu",
+      "profile_url": "https://www.goodfirms.co/company/agix-technologies",
+      "profile_title": "Andrzej Godoń",
+      "profile_image_alt": "Andrzej Godoń, Head of Administration at Uniwersytet Przyrodniczy w Poznaniu",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/927ed9a5b397e70a2bbe64892325e339.jpg",
+      "entity_label": "company",
+      "entity_name": "Agix Technologies",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Their team took the time to understand how our university handles large volumes of administrative documents and routine tasks. Communication was clear and timely, and the implementation process fit smoothly into our daily operations.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84906/183692",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ability to tailor a practical AI solution to our specific administrative challenges stood out. They focused on solutions that genuinely improved our workflow and delivered meaningful results."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There were no major issues. The only small challenge was a short period of adjustment for our team to learn the new tools, but Agix provided clear guidance which made it easy."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "AI-Powered Administrative Workflow Automation for University",
+        "Brief description of your project": "We worked with Agix Technology to automate repetitive administrative tasks related to document handling, student record processing, and internal reporting workflows. The goal was to reduce manual effort on routine tasks to allow our team to focus more on strategic educational activities.\nAgix assessed our existing processes and deployed an AI solution that could extract, structure, and organize relevant information from various documents, making it easier for our administrative staff to access needed data quickly.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Education",
+        "Services": "Artificial Intelligence",
+        "Review on Listing Display": "Artificial Intelligence"
+      }
+    },
+    {
+      "review_id": "84905",
+      "review_dom_id": "review_84905",
+      "company_profile_id": "170419",
+      "software_id": null,
+      "submitted_on": "2026-02-24 04:48:53",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Nitesh Kumar",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Nitesh Kumar",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/tech-felix",
+      "profile_title": "Nitesh Kumar",
+      "profile_image_alt": "Nitesh Kumar, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/26df1eaaaa383ff4fb6ae648c86af455.jpg",
+      "entity_label": "company",
+      "entity_name": "Tech Felix",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84905/170419",
+      "rating_breakdown": {
+        "Quality Work": 0.0,
+        "Scheduling and Timing": 0.0,
+        "Communication": 0.0,
+        "Overall Experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Automotive Services",
+        "Brief description of your project": "-",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Automotive"
+      }
+    },
+    {
+      "review_id": "84904",
+      "review_dom_id": "review_84904",
+      "company_profile_id": "167830",
+      "software_id": null,
+      "submitted_on": "2026-02-24 03:15:20",
+      "is_draft": false,
+      "title": "Efficient Low Code Implementation That Delivered Real Results",
+      "overall_rating": 5.0,
+      "reviewer_name": "Nathan Strum",
+      "reviewer_meta_text": "Reviewed 7 hours, 14 minutes ago by Nathan Strum",
+      "reviewer_role": "Owner at Abby Connect",
+      "profile_url": "https://www.goodfirms.co/company/netstager-technologies-pvt-ltd",
+      "profile_title": "Nathan Strum",
+      "profile_image_alt": "Nathan Strum, Owner at Abby Connect",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1771902769-nathan-strum.png",
+      "entity_label": "company",
+      "entity_name": "Netstager Technologies Pvt. Ltd",
+      "entity_url": "",
+      "posting_preference": "Only display the company's name with the review",
+      "review_text": "Working with Netstager Technologies Pvt. Ltd was a very smooth experience. They clearly understood how Abby Connect operates as a virtual receptionist service and translated our needs into practical low code solutions.\nThey automated several manual processes, reduced onboarding time by nearly 40%, and improved reporting accuracy. The team communicated well, met deadlines, and stayed within budget. The solution they built is stable, scalable, and easy for our internal team to manage.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84904/167830",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ability to understand our business quickly and turn complex workflows into simple, efficient low-code solutions."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "At the beginning, there was a short discovery phase that felt detailed and time consuming, but it ultimately helped deliver a better result."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Low-Code Platform Optimization for Abby Connect",
+        "Brief description of your project": "We partnered with Netstager Technologies Pvt. Ltd to enhance our internal workflow and client onboarding systems using a low code platform. The goal was to automate call routing logic, CRM syncing, reporting dashboards, and client customization flows without building everything from scratch.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Telecommunication",
+        "Services": "Low Code/No Code",
+        "Review on Listing Display": "Low Code/No Code"
+      }
+    },
+    {
+      "review_id": "84903",
+      "review_dom_id": "review_84903",
+      "company_profile_id": "17471",
+      "software_id": null,
+      "submitted_on": "2026-02-24 03:02:11",
+      "is_draft": false,
+      "title": "Working with Royex Technologies was smooth, professional, and highly effective.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sara Yaseen",
+      "reviewer_meta_text": "Reviewed 7 hours, 18 minutes ago by Sara Yaseen",
+      "reviewer_role": "Project Manager | Masters of Architecture at Kettle Collective",
+      "profile_url": "https://www.goodfirms.co/company/royex-technologies",
+      "profile_title": "Sara  Yaseen",
+      "profile_image_alt": "Sara  Yaseen, Project Manager | Masters of Architecture at Kettle Collective",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/4f2938daf18bea291006f395dffe11f0.jpg",
+      "entity_label": "company",
+      "entity_name": "Royex Technologies",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "We had a great working relationship with Royex Technologies. Their team took the effort to comprehend our particular needs for the Construction Site Management App right away. They were receptive to criticism, gave frequent updates, and maintained clear communication throughout the project. They provided us with an app that is easy to use, dependable, and precisely suited to our workflow; it helps us effectively handle daily logs, site inspections, tasks, photo documentation, and safety checklists. All things considered, the partnership was seamless, professional, and produced a solution that greatly enhanced our on-site operations.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84903/17471",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 4.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Royex Technologies' professionalism and thorough understanding of our project requirements were what I found most admirable. Throughout the process, they maintained outstanding contact and provided a dependable, user-friendly solution."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "An app for Kettle Collective to manage construction sites",
+        "Brief description of your project": "Kettle Collective's on-site activities are streamlined with the Construction Site Management App. Daily logs, site inspections, task assignments, photo documentation, and safety checklists are all made possible by it, which enhances teamwork and keeps projects on schedule.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Designing",
+        "Services": "Mobile App Development",
+        "Review on Listing Display": "Mobile App Development"
+      }
+    },
+    {
+      "review_id": "84902",
+      "review_dom_id": "review_84902",
+      "company_profile_id": "17471",
+      "software_id": null,
+      "submitted_on": "2026-02-24 03:00:03",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Sara Yaseen",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Sara Yaseen",
+      "reviewer_role": "Project Manager | Masters of Architecture at Kettle Collective",
+      "profile_url": "https://www.goodfirms.co/company/royex-technologies",
+      "profile_title": "Sara  Yaseen",
+      "profile_image_alt": "Sara  Yaseen, Project Manager | Masters of Architecture at Kettle Collective",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/4f2938daf18bea291006f395dffe11f0.jpg",
+      "entity_label": "company",
+      "entity_name": "Royex Technologies",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84902/17471",
+      "rating_breakdown": {
+        "Quality Work": 0.0,
+        "Scheduling and Timing": 0.0,
+        "Communication": 0.0,
+        "Overall Experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "An app for Kettle Collective to manage construction sites",
+        "Brief description of your project": "Kettle Collective's on-site activities are streamlined with the Construction Site Management App. Daily logs, site inspections, task assignments, photo documentation, and safety checklists are all made possible by it, which enhances teamwork and keeps projects on schedule.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Designing"
+      }
+    },
+    {
+      "review_id": "84901",
+      "review_dom_id": "review_84901",
+      "company_profile_id": "10819",
+      "software_id": null,
+      "submitted_on": "2026-02-24 02:44:34",
+      "is_draft": false,
+      "title": "Working with NetSet Software Solutions was smooth, efficient, and highly responsive to our needs.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sara Yaseen",
+      "reviewer_meta_text": "Reviewed 7 hours, 17 minutes ago by Sara Yaseen",
+      "reviewer_role": "Project Manager | Masters of Architecture at Kettle Collective",
+      "profile_url": "https://www.goodfirms.co/company/netset-software-solutions",
+      "profile_title": "Sara  Yaseen",
+      "profile_image_alt": "Sara  Yaseen, Project Manager | Masters of Architecture at Kettle Collective",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/4f2938daf18bea291006f395dffe11f0.jpg",
+      "entity_label": "company",
+      "entity_name": "NetSet Software Solutions",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "We had a great experience working with NetSet Software Solutions. They were quick to grasp our workflow, handled the project with professionalism, met deadlines, and responded to criticism. Beyond our expectations, the app is well-designed, easy to use, and enhances client interaction and project transparency.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84901/10819",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "The best thing about NetSet Software Solutions was how fast they grasped our demands and transformed complicated specifications into an easy-to-use, efficient program."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "None"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Development of Mobile Apps for Client Project Monitoring",
+        "Brief description of your project": "For Kettle Collective, we created a mobile app for client project tracking in order to enhance client communication and project management. The app helps our team work more effectively and transparently by enabling clients to see drawings and 3D renders, approve designs, receive updates, and track schedules and milestones.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Designing",
+        "Services": "Mobile App Development",
+        "Review on Listing Display": "Mobile App Development"
+      }
+    },
+    {
+      "review_id": "84900",
+      "review_dom_id": "review_84900",
+      "company_profile_id": "167830",
+      "software_id": null,
+      "submitted_on": "2026-02-24 02:41:03",
+      "is_draft": false,
+      "title": "Efficient Web3 Development with Clear Results",
+      "overall_rating": 5.0,
+      "reviewer_name": "Mitya Smusin",
+      "reviewer_meta_text": "Reviewed 7 hours, 17 minutes ago by Mitya Smusin",
+      "reviewer_role": "Chief Executive officer at Yellow Systems",
+      "profile_url": "https://www.goodfirms.co/company/netstager-technologies-pvt-ltd",
+      "profile_title": "Mitya Smusin",
+      "profile_image_alt": "Mitya Smusin, Chief Executive officer at Yellow Systems",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1771900708-mitya-smusin.png",
+      "entity_label": "company",
+      "entity_name": "Netstager Technologies Pvt. Ltd",
+      "entity_url": "",
+      "posting_preference": "Only display the company's name with the review",
+      "review_text": "Working with Netstager was smooth and professional. They delivered the project on time, maintained clear communication, and provided practical solutions to complex Web3 challenges. Their team was proactive, and we could see their expertise in blockchain and software development reflected in the quality of work.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84900/167830",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their technical knowledge, clear updates, and commitment to solving problems efficiently. They made complex Web3 concepts easy to implement."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "At times, minor adjustments required a few extra rounds of review, but overall, it was handled well."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Web3 Platform Development for Yellow Systems",
+        "Brief description of your project": "We wanted a scalable Web3 platform integrated with our AI/ML services, allowing secure smart contract management and seamless blockchain interaction for our enterprise clients.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Other Industries",
+        "Services": "Web3",
+        "Review on Listing Display": "Web3"
+      }
+    },
+    {
+      "review_id": "84899",
+      "review_dom_id": "review_84899",
+      "company_profile_id": "14998",
+      "software_id": null,
+      "submitted_on": "2026-02-24 02:24:08",
+      "is_draft": false,
+      "title": "Reliable Development Partner with Strong Technical Understanding",
+      "overall_rating": 5.0,
+      "reviewer_name": "Zoheb Khan",
+      "reviewer_meta_text": "Reviewed 7 hours, 17 minutes ago by Zoheb Khan",
+      "reviewer_role": "Founder at Quantum catalyst",
+      "profile_url": "https://www.goodfirms.co/company/pharos-production-inc",
+      "profile_title": "Zoheb Khan",
+      "profile_image_alt": "Zoheb Khan, Founder at Quantum catalyst",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/09739cd70546a6f436294be74fe03be9.jpg",
+      "entity_label": "company",
+      "entity_name": "Pharos Production Inc.",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Our experience working with Pharos Production Inc. was very positive. From the beginning, their team demonstrated a clear understanding of our requirements and took the time to properly analyze our business processes before starting development.\nCommunication remained smooth throughout the project, and they maintained transparency regarding timelines and deliverables. Whenever we had feedback or requested adjustments, they responded promptly and implemented the necessary improvements.\nThe final software solution has been stable, efficient, and aligned well with our expectations. It has helped streamline some of our operations and improved overall productivity for our team.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84899/14998",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their structured approach to development and their willingness to understand the business side of the project, not just the technical side."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Custom Software Platform Development",
+        "Brief description of your project": "Quantum Catalyst, we continuously work with advanced technology initiatives and innovative digital solutions. We required a reliable development partner to help us build a custom software platform that could support some of our internal tools and client-facing systems.\nPharos Production Inc. assisted us with end-to-end software development, starting from planning the architecture to developing and deploying the solution. Their team worked closely with our stakeholders to understand our workflows and translate them into a stable and scalable system.\nThe engagement covered backend development, system integration, and performance optimization to ensure the platform could handle growing usage.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Financial & Payments",
+        "Services": "Software Development",
+        "Review on Listing Display": "Software Development"
+      }
+    },
+    {
+      "review_id": "84898",
+      "review_dom_id": "review_84898",
+      "company_profile_id": "21066",
+      "software_id": null,
+      "submitted_on": "2026-02-24 01:59:19",
+      "is_draft": false,
+      "title": "EncureIT Systems delivered an efficient platform that directly improved operational visibility.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Michael Sujanani",
+      "reviewer_meta_text": "Reviewed 7 hours, 17 minutes ago by Michael Sujanani",
+      "reviewer_role": "CEO at MILITARY LUGGAGE COMPANY",
+      "profile_url": "https://www.goodfirms.co/company/encureit-systems-pvt-ltd",
+      "profile_title": "Michael Sujanani",
+      "profile_image_alt": "Michael Sujanani, CEO at MILITARY LUGGAGE COMPANY",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1767155299-michael-sujanani.png",
+      "entity_label": "company",
+      "entity_name": "EncureIT Systems Pvt Ltd",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Working with EncureIT Systems was a highly productive and results-driven experience. Their team demonstrated strong technical expertise in both web development and operations-focused solutions. From the start, they took the time to understand the complexity of military logistics, including inventory tracking, bulk order management, and secure handling of sensitive operational data.\nEncureIT developed a platform that allowed us to track over 1,400 SKUs across multiple warehouse locations in real time. They optimized database performance, improved site speed and reliability, and implemented automated reporting to monitor key operational KPIs. The new system has not only streamlined internal processes but also enhanced our ability to respond quickly to urgent military orders.\nTheir structured approach to project management, timely delivery, and responsive support ensured that we met our operational targets without disruption.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84898/21066",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ability to combine deep technical expertise with an operationally focused approach. They delivered a solution that was scalable, reliable, and aligned perfectly with our complex logistics needs."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "The initial documentation for some advanced features could have been more detailed, but their team quickly provided guidance and support to resolve any gaps."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Web Platform Development for Military Logistics",
+        "Brief description of your project": "We engaged EncureIT Systems Pvt. Ltd. to design and develop a custom web platform capable of supporting our military logistics and retail operations. As a supplier of rugged, functional luggage and gear for all branches of the military, we needed a platform that could efficiently manage inventory, track orders, and handle high-volume deployments across multiple locations.\nEncureIT delivered a full-stack solution with optimized backend architecture, secure database management, and a streamlined front-end user interface. They implemented features for inventory tracking, order management, and reporting analytics to help us monitor operational performance in real time. The platform was designed to be scalable, secure, and capable of supporting both e-commerce sales and large institutional military orders.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Transportation & Logistics",
+        "Services": "Web Development, Software Development, E-commerce Development",
+        "Review on Listing Display": "Web Development\nSoftware Development\nE-commerce Development"
+      }
+    },
+    {
+      "review_id": "84897",
+      "review_dom_id": "review_84897",
+      "company_profile_id": "21066",
+      "software_id": null,
+      "submitted_on": "2026-02-24 01:35:43",
+      "is_draft": false,
+      "title": "Efficient platform that optimized production workflows and enhanced project visibility across teams.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Brian Hess",
+      "reviewer_meta_text": "Reviewed 7 hours, 17 minutes ago by Brian Hess",
+      "reviewer_role": "Sales Manager at Astro Machine Works",
+      "profile_url": "https://www.goodfirms.co/company/encureit-systems-pvt-ltd",
+      "profile_title": "Brian Hess",
+      "profile_image_alt": "Brian Hess, Sales Manager at Astro Machine Works",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1767104882-brian-hess.jpg",
+      "entity_label": "company",
+      "entity_name": "EncureIT Systems Pvt Ltd",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Working with EncureIT Systems Pvt. Ltd. was highly productive and professional. Their team approached our project with a strong technical focus and a clear understanding of the operational challenges in precision manufacturing. They translated our requirements into a customized web solution capable of tracking complex workflows, integrating machine repair schedules, and managing project timelines effectively.\nThe platform included dashboards for real-time visibility, automated notifications for maintenance and critical deadlines, and reporting tools that allowed us to measure productivity and efficiency across our manufacturing processes. Throughout the project, EncureIT maintained excellent communication, adhered to milestones, and provided thoughtful recommendations that improved both the design and functionality of the system.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84897/21066",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ability to understand complex manufacturing operations and translate them into an actionable, technically solid platform was impressive. Their approach improved operational efficiency while maintaining flexibility for future scalability."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Initial training documentation could have been more detailed, but their team provided rapid support and guided our staff through onboarding, mitigating any minor issues."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Custom Web and Operations Management Platform for Precision",
+        "Brief description of your project": "Astro Machine Works partnered with EncureIT Systems Pvt. Ltd. to design and implement a custom web-based operations management platform to support our manufacturing processes and precision parts production. The platform needed to streamline workflows, track machine maintenance and repair schedules, manage project timelines, and improve internal communication across teams. EncureIT delivered a solution that integrated data from multiple departments, automated reporting, and provided real-time dashboards for operations managers to monitor production efficiency and resource allocation.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Manufacturing",
+        "Services": "Web Development, Software Development",
+        "Review on Listing Display": "Web Development\nSoftware Development"
+      }
+    },
+    {
+      "review_id": "84896",
+      "review_dom_id": "review_84896",
+      "company_profile_id": "21066",
+      "software_id": null,
+      "submitted_on": "2026-02-24 01:18:46",
+      "is_draft": false,
+      "title": "Operations-focused platform that improved our internal efficiency and enhanced customer engagement.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Joshua Gilliam",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Joshua Gilliam",
+      "reviewer_role": "Founding Owner at Bozeman Trailers LLC",
+      "profile_url": "https://www.goodfirms.co/company/encureit-systems-pvt-ltd",
+      "profile_title": "Joshua Gilliam",
+      "profile_image_alt": "Joshua Gilliam, Founding Owner at Bozeman Trailers LLC",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1771895813-joshua-gilliam.png",
+      "entity_label": "company",
+      "entity_name": "EncureIT Systems Pvt Ltd",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Working with EncureIT Systems Pvt. Ltd. was a highly professional and results-driven experience. Their team quickly understood the operational complexities of our lowbed trailer business and proposed a technical solution that aligned with our operational goals. They developed a secure, scalable web platform with a responsive frontend for customers and an advanced backend for internal operations.\nThe platform allows us to track inventory, manage orders, and monitor logistics in real-time. Automated workflows reduce manual errors, while detailed dashboards provide actionable insights for decision-making. Throughout the project, EncureIT demonstrated strong project management, meeting deadlines and communicating updates clearly. Their solution has directly improved our operational efficiency, reduced turnaround time for customer orders, and enabled us to make data-driven business decisions that enhance profitability.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84896/21066",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their technical proficiency combined with an understanding of operational workflows allowed them to deliver a solution that improved efficiency and ROI across our business."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Custom Web Platform Development for Lowbed Trailer Operation",
+        "Brief description of your project": "We engaged EncureIT Systems Pvt. Ltd. to design and implement a custom web platform for our lowbed trailer business. The goal was to streamline operational workflows, improve inventory tracking, and enhance customer interaction online. EncureIT delivered a fully integrated system featuring backend automation, responsive frontend design, and operational dashboards that allow real-time visibility into orders, inventory, and logistics. The platform also included robust reporting tools to track performance metrics and support data-driven decision-making, ultimately helping us optimize operations and improve ROI.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Automotive",
+        "Services": "Web Development, Software Development, Web Design"
+      }
+    },
+    {
+      "review_id": "84895",
+      "review_dom_id": "review_84895",
+      "company_profile_id": "770",
+      "software_id": null,
+      "submitted_on": "2026-02-24 00:40:17",
+      "is_draft": false,
+      "title": "Professional and speedy!",
+      "overall_rating": 5.0,
+      "reviewer_name": "Derick Lee",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Derick Lee",
+      "reviewer_role": "CEO at PilotCity",
+      "profile_url": "https://www.goodfirms.co/company/addweb-solution",
+      "profile_title": "Derick Lee",
+      "profile_image_alt": "Derick Lee, CEO at PilotCity",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/37630c5188490551cc3f0c39235f35f3.jpg",
+      "entity_label": "company",
+      "entity_name": "AddWeb Solution",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "AddWeb came in clutch during a time when we were needing engineering and software development back in 2021. We worked with them for nearly 4 years with small to large contracts for full stack development. We highly recommend their team. Professional, smart, helpful and great people. We worked with them on smaller agreement all the way to $120K contracts. We highly recommend their vast levels of experiences.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84895/770",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Variety of expertise available and on-hand, and also speed."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Timezone"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "PilotCity",
+        "Brief description of your project": "Many projects from refactoring of our entire platform towards product vision to small bug fixes, and everything in-between including testing, frontend, mobile responsiveness and project management",
+        "Project Budget": "$200000+",
+        "Project Status": "Completed",
+        "Industry": "Education",
+        "Services": "Web Development, Testing Services"
+      }
+    },
+    {
+      "review_id": "84894",
+      "review_dom_id": "review_84894",
+      "company_profile_id": "17205",
+      "software_id": null,
+      "submitted_on": "2026-02-24 00:10:20",
+      "is_draft": false,
+      "title": "Independent QA validation that reduced risk and improved rollout stability.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Saloua Rifi",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Saloua Rifi",
+      "reviewer_role": "CEO & FOUNDER at Phoenix Insurance",
+      "profile_url": "https://www.goodfirms.co/company/quality-professionals",
+      "profile_title": "Saloua Rifi",
+      "profile_image_alt": "Saloua Rifi, CEO & FOUNDER at Phoenix Insurance",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/ed0a5d53f8cd574636daf800ffae51d6.jpg",
+      "entity_label": "company",
+      "entity_name": "Quality professionals",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "We engaged Q-Pros to independently validate our web application before expanding to a wider user base. Their involvement gave us an external quality perspective that was extremely valuable. Rather than relying only on scripted tests, they explored real-world usage paths and stress points across multiple modules.\nThey focused on workflow accuracy, data consistency, and performance stability under varied conditions. Several logic gaps and usability concerns were flagged early, allowing us to address them before production exposure. Their feedback was concise and prioritized, which helped our internal team act quickly without unnecessary delays.\nCommunication was steady but not excessive — updates were meaningful and solution-focused. What we appreciated most was their accountability; they retested fixes and ensured resolution before closing items. The overall impact was noticeable: fewer production incidents and smoother rollout cycles.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84894/17205",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their independent perspective and focus on real-user scenarios."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Some initial alignment meetings took extra time, but it improved testing accuracy."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "QA Validation for Multi-Module Web Application",
+        "Brief description of your project": "Q-Pros conducted independent validation of our multi-module web application, focusing on workflow integrity, data accuracy, and performance stability before broader deployment.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Insurance",
+        "Services": "Testing Services"
+      }
+    },
+    {
+      "review_id": "84893",
+      "review_dom_id": "review_84893",
+      "company_profile_id": "151559",
+      "software_id": null,
+      "submitted_on": "2026-02-24 00:06:17",
+      "is_draft": false,
+      "title": "Their team showed maturity, patience, and attention to detail throughout the collaboration.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Roberto Tascione",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Roberto Tascione",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/ropstam-game-studio",
+      "profile_title": "Roberto Tascione",
+      "profile_image_alt": "Roberto Tascione, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/cab3acaa61183b551c45a67626a0db4e.jpg",
+      "entity_label": "company",
+      "entity_name": "Ropstam Game Studio",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "They did not treat this like a generic blockchain project. They respected that we are a healthcare company with over a century of history and global responsibility.\nAnother strong point was their problem-solving mindset. When we faced integration challenges with one of our legacy systems, they didn’t suggest replacing it. Instead, they built a bridge solution that allowed both systems to work together.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84893/151559",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "What impressed us most was their ability to adapt to a pharmaceutical environment. Blockchain in gaming is one thing, but applying it to medicine manufacturing is very different. They took the time to understand our production chain, compliance needs, and quality standards."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "none"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Creating a batch traceability system",
+        "Brief description of your project": "That is why we hired Ropstam Game Studio. Our goal was not just to experiment with blockchain, but to implement a real solution that could support compliance, protect product integrity, and build trust among regulators, healthcare providers, and patients.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Manufacturing",
+        "Services": "Game Development"
+      }
+    },
+    {
+      "review_id": "84892",
+      "review_dom_id": "review_84892",
+      "company_profile_id": "14998",
+      "software_id": null,
+      "submitted_on": "2026-02-23 22:20:39",
+      "is_draft": false,
+      "title": "Strong Technical Partner Who Understands Real Products",
+      "overall_rating": 5.0,
+      "reviewer_name": "Jay Trivedi",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Jay Trivedi",
+      "reviewer_role": "Head of Operations at Huspy",
+      "profile_url": "https://www.goodfirms.co/company/pharos-production-inc",
+      "profile_title": "Jay Trivedi",
+      "profile_image_alt": "Jay Trivedi, Head of Operations at Huspy",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/6cdc5ca589dfa79b04641ef95d952b48.jpg",
+      "entity_label": "company",
+      "entity_name": "Pharos Production Inc.",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Working with Pharos Production felt less like hiring a vendor and more like adding a temporary extension to our engineering team. They were thoughtful in how they approached the problem instead of rushing straight into development.\nOne thing that stood out was their ability to challenge ideas in a constructive way. If something didn’t make technical sense, they explained why and suggested better alternatives. That saved us time and probably a few headaches later.\nFrom a delivery standpoint, they stayed consistent with updates, shared progress frequently, and were open to feedback throughout the process. The blockchain layer they helped us implement now supports several parts of our system and runs reliably in the background without creating complexity for our users.\nOverall, the collaboration was smooth and productive.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84892/14998",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ability to think like product builders, not just developers."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "At times their attention to detail meant certain discussions went longer than expected, but it ultimately led to a better solution."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Blockchain & Platform Development for Real Estate Transactio",
+        "Brief description of your project": "We’re constantly improving how property transactions and financing workflows operate across our platform. As our product grew, we wanted to explore how blockchain could help us improve data trust, streamline verification, and strengthen parts of our backend infrastructure.\nPharos Production Inc. supported us in designing and implementing both the blockchain components and supporting software modules.\nThe engagement included system architecture planning, smart contract development, and integration with our existing platform.\nTheir team worked closely with our product and engineering teams to ensure the new features fit naturally into the system without disrupting our ongoing operations.",
+        "Project Budget": "$50001 to $200000",
+        "Project Status": "Completed",
+        "Industry": "Financial & Payments",
+        "Services": "Software Development, Blockchain Development"
+      }
+    },
+    {
+      "review_id": "84891",
+      "review_dom_id": "review_84891",
+      "company_profile_id": "14998",
+      "software_id": null,
+      "submitted_on": "2026-02-23 22:04:52",
+      "is_draft": false,
+      "title": "Reliable Blockchain Development Partner for Fintech",
+      "overall_rating": 5.0,
+      "reviewer_name": "Naufal Adeel",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Naufal Adeel",
+      "reviewer_role": "Head of Marketing at Qashio",
+      "profile_url": "https://www.goodfirms.co/company/pharos-production-inc",
+      "profile_title": "Naufal Adeel",
+      "profile_image_alt": "Naufal Adeel, Head of Marketing at Qashio",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/d0541df3c3984781e4b343c53b13a7a0.jpg",
+      "entity_label": "company",
+      "entity_name": "Pharos Production Inc.",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Our experience working with Pharos Production was very positive. From the early discussions, it was clear they understood both the technical side of blockchain and the practical needs of a fintech company.\nThey were organized, easy to communicate with, and realistic about timelines. Whenever we had questions or needed adjustments, their team responded quickly and explained things clearly. The development process felt structured rather than chaotic, which made collaboration easier for our internal engineers.\nThe final solution integrated well with our platform and gave us more confidence in how certain financial data and transaction logs are handled. Overall, the project delivered exactly what we needed.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84891/14998",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their technical understanding and the way they communicate complex ideas in a simple, practical way."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing major. Like most technical projects there were small adjustments along the way, but they handled them quickly."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Blockchain Integration for Secure Fintech Operations",
+        "Brief description of your project": "At Qashio, we focus on helping companies manage spending and payments more efficiently. As our platform expanded, we wanted to introduce a blockchain layer that could improve transparency and strengthen how certain transactions and records were handled internally.\nPharos Production Inc. worked with our team to design and implement the blockchain infrastructure and smart contract logic required for this. The goal was to keep everything secure without slowing down our platform or making the system overly complicated.\nTheir team handled development, testing, and integration with our existing fintech systems.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Financial & Payments",
+        "Services": "Blockchain Development"
+      }
+    },
+    {
+      "review_id": "84890",
+      "review_dom_id": "review_84890",
+      "company_profile_id": "201750",
+      "software_id": null,
+      "submitted_on": "2026-02-23 21:43:46",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Kim Malone",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Kim Malone",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/webnium-solutions-private-limited",
+      "profile_title": "Kim Malone",
+      "profile_image_alt": "Kim Malone, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/c84bc1b825f3a1ee244e01ac16320cf6.jpg",
+      "entity_label": "company",
+      "entity_name": "Webnium Solutions Private Limited",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84890/201750",
+      "rating_breakdown": {
+        "Quality Work": 0.0,
+        "Scheduling and Timing": 0.0,
+        "Communication": 0.0,
+        "Overall Experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Ongoing Webiste Managment",
+        "Brief description of your project": "Webium has been a strong partner in supporting our organization through a critical period of website stabilization and improvement. Their team understands the unique needs of nonprofits, especially when it comes to protecting data, ensuring donation functionality, and maintaining a trustworthy online presence.\nThey brought a thoughtful approach to improving our website’s performance and structure, particularly around key pages like donations and program information. Their recommendations helped create more clarity for both users and search engines, which is essential for long-term growth.\nWhat stood out most was their responsiveness and willingness to collaborate. They were open to feedback, patient in explaining technical details, and committed to helping us make informed decisions.\nLike any project of this nature, clarity around scope and timelines is important, and I would encourage future clients to align closely on expectations from the start.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "In progress",
+        "Industry": "Education"
+      }
+    },
+    {
+      "review_id": "84889",
+      "review_dom_id": "review_84889",
+      "company_profile_id": "59277",
+      "software_id": null,
+      "submitted_on": "2026-02-23 20:56:24",
+      "is_draft": false,
+      "title": "Zen Agency completed our complex website consolidation with expertise and patience.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Jennifer Schweighofer",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Jennifer Schweighofer",
+      "reviewer_role": "Editor at Universal Publishing",
+      "profile_url": "https://www.goodfirms.co/company/zen-agency",
+      "profile_title": "Jennifer Schweighofer",
+      "profile_image_alt": "Jennifer Schweighofer, Editor at Universal Publishing",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/80a7482d40b84af8c244d4091cfc8d19.jpg",
+      "entity_label": "company",
+      "entity_name": "Zen Agency",
+      "entity_url": "",
+      "posting_preference": "Only display the company's name with the review",
+      "review_text": "Zen Agency completed a full website rebuild for our company last year, combining three separate websites into one. The project included several complex and customized requirements to properly support our customers and showcase our products, and the team at Zen handled everything with professionalism and expertise.\nFrom the beginning, Zen took the time to thoroughly review our previous websites to fully understand our goals and functionality needs. Throughout the entire process, the team was responsive, patient, and incredibly helpful, especially when answering my endless questions and concerns.\nIt has now been about a year since launch, and we continue to be pleased with both the performance of the site and our decision to partner with Zen Agency. I would confidently recommend them for any website project, large or small.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84889/59277",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 4.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "I was impressed with Zen Agency's attention to detail, their patience, and their flexibility when we needed to make adjustments along the way."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Post-launch, regarding our retainer / hours on file, we were told that we'd receive a monthly report of time used and any upcoming tasks. This has not been the case. I've had to ask for updates on time used and remind them that I have to get approval before moving ahead with tasks. This hasn't been a big issue since we haven't needed much additional work since we launched. But we would like to see a more transparent system of tracking retainer hours and estimating project time/cost."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Consolidation of WordPress, Magento, and Concrete5 Websites",
+        "Brief description of your project": "We wanted to merge three company websites into one WordPress/WooCommerce site. The three sites were on WordPress, Concrete5, and Magento. These sites needed to be consolidated into a single site where customers/users could shop, take our online courses, and use our online app.",
+        "Project Budget": "$50001 to $200000",
+        "Project Status": "Completed",
+        "Industry": "Other Industries",
+        "Services": "Web Development, Web Design, E-commerce Development"
+      }
+    },
+    {
+      "review_id": "84888",
+      "review_dom_id": "review_84888",
+      "company_profile_id": "579",
+      "software_id": null,
+      "submitted_on": "2026-02-23 20:33:39",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Sholem Singer",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Sholem Singer",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/instinctools",
+      "profile_title": "Sholem Singer",
+      "profile_image_alt": "Sholem Singer, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/17bfb2f701565f6973ef2d55c4c72f02.jpg",
+      "entity_label": "company",
+      "entity_name": "instinctools (Sponsored)",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84888/579",
+      "rating_breakdown": {
+        "Quality Work": 0.0,
+        "Scheduling and Timing": 0.0,
+        "Communication": 0.0,
+        "Overall Experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "f",
+        "Brief description of your project": "-",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Advertising & Marketing"
+      }
+    }
+  ]
+}

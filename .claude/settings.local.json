@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "mcp__brave-search__brave_web_search"
+      "mcp__brave-search__brave_web_search",
+      "mcp__mongodb__list-collections",
+      "mcp__mcp_server_mysql__mysql_query"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "mcp_server_mysql",
+    "mongodb"
+  ]
 }

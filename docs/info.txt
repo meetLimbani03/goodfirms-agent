@@ -1,0 +1,20 @@
+important fields from table reviews are:
+
+publish_status , reason
+conclusion, feedback_summary, strength,  weakness,
+category_id,  project_name, cost, industry_id, project_status, project_summary
+quality, ability, reliability, overall
+client_name, hidden_identity, client_company_name , position(client position in company), location, client_company_website, client_email, client_profile_link(linkedin url)
+
+
+
+publish_status = 0 //pending
+publish_status = 1 //active
+publish_status = 2 //rejected
+
+jo review reject thay to niche mathi koi b ak reason hoi sake
+
+-Unable to verify the reviewer
+-Reviews are accepted only from clients of the company
+-Reviews are not accepted from former employees
+-Review has already been published before

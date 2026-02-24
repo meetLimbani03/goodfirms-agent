@@ -1,0 +1,3202 @@
+{
+  "review_type": "software",
+  "source_file": "software_reviews.html",
+  "extracted_at_utc": "2026-02-24T12:59:40.397798+00:00",
+  "total_reviews": 35,
+  "field_names": [
+    "company_profile_id",
+    "edit_url",
+    "entity_label",
+    "entity_name",
+    "entity_url",
+    "features_used",
+    "is_draft",
+    "labeled_fields",
+    "overall_rating",
+    "posting_preference",
+    "profile_image_alt",
+    "profile_image_url",
+    "profile_title",
+    "profile_url",
+    "question_answers",
+    "rating_breakdown",
+    "review_dom_id",
+    "review_id",
+    "review_text",
+    "reviewer_meta_text",
+    "reviewer_name",
+    "reviewer_role",
+    "show_on_front",
+    "software_id",
+    "status",
+    "submitted_on",
+    "title",
+    "verified"
+  ],
+  "ui_field_labels": [
+    "Customer support",
+    "Did you integrate any other software with BlockP?",
+    "Did you integrate any other software with Boldinbox?",
+    "Did you integrate any other software with D5 Render?",
+    "Did you integrate any other software with Easy Music AI?",
+    "Did you integrate any other software with Munim?",
+    "Did you integrate any other software with Neyox AI?",
+    "Did you integrate any other software with Nosnia.ai?",
+    "Did you integrate any other software with OnPrintShop?",
+    "Did you integrate any other software with SCRM Champion?",
+    "Did you integrate any other software with SalesCaptain?",
+    "Did you integrate any other software with Spyrix Phone Tracker for Android?",
+    "Did you integrate any other software with Trade with Pat?",
+    "Did you integrate any other software with WareGo?",
+    "Did you integrate any other software with groweon crm software?",
+    "Did you integrate any other software with mailwarm?",
+    "Did you switched from any other software?",
+    "Ease of use",
+    "Features & functionality",
+    "How do you find pricing for BlockP?",
+    "How do you find pricing for Boldinbox?",
+    "How do you find pricing for D5 Render?",
+    "How do you find pricing for Easy Music AI?",
+    "How do you find pricing for Munim?",
+    "How do you find pricing for Neyox AI?",
+    "How do you find pricing for Nosnia.ai?",
+    "How do you find pricing for OnPrintShop?",
+    "How do you find pricing for SCRM Champion?",
+    "How do you find pricing for SalesCaptain?",
+    "How do you find pricing for Spyrix Phone Tracker for Android?",
+    "How do you find pricing for Trade with Pat?",
+    "How do you find pricing for WareGo?",
+    "How do you find pricing for groweon crm software?",
+    "How do you find pricing for mailwarm?",
+    "How frequently do you use BlockP?",
+    "How frequently do you use Boldinbox?",
+    "How frequently do you use D5 Render?",
+    "How frequently do you use Easy Music AI?",
+    "How frequently do you use Munim?",
+    "How frequently do you use Neyox AI?",
+    "How frequently do you use Nosnia.ai?",
+    "How frequently do you use OnPrintShop?",
+    "How frequently do you use SCRM Champion?",
+    "How frequently do you use SalesCaptain?",
+    "How frequently do you use Spyrix Phone Tracker for Android?",
+    "How frequently do you use Trade with Pat?",
+    "How frequently do you use WareGo?",
+    "How frequently do you use groweon crm software?",
+    "How frequently do you use mailwarm?",
+    "How long have you used BlockP?",
+    "How long have you used Boldinbox?",
+    "How long have you used D5 Render?",
+    "How long have you used Easy Music AI?",
+    "How long have you used Munim?",
+    "How long have you used Neyox AI?",
+    "How long have you used Nosnia.ai?",
+    "How long have you used OnPrintShop?",
+    "How long have you used SCRM Champion?",
+    "How long have you used SalesCaptain?",
+    "How long have you used Spyrix Phone Tracker for Android?",
+    "How long have you used Trade with Pat?",
+    "How long have you used WareGo?",
+    "How long have you used groweon crm software?",
+    "How long have you used mailwarm?",
+    "Overall experience",
+    "Review for software",
+    "What is it about the company that you appreciate the most?",
+    "What was it about the company that you didn't like which they should do better?"
+  ],
+  "reviews": [
+    {
+      "review_id": "699d7cacb360792601068432",
+      "review_dom_id": "review_699d7cacb360792601068432",
+      "company_profile_id": null,
+      "software_id": "69945069eddd933ad141fa82",
+      "submitted_on": "2026-02-24 10:28",
+      "is_draft": false,
+      "title": "Big fan of the tool",
+      "overall_rating": 5.0,
+      "reviewer_name": "Celia C.",
+      "reviewer_meta_text": "Review submit by Celia C.",
+      "reviewer_role": "COO at Social Fuse",
+      "profile_url": "",
+      "profile_title": "Celia C.",
+      "profile_image_alt": "Celia C., COO at Social Fuse",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/c29b868fa6fd21e2b13882e7e2763d7b.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "mailwarm",
+      "entity_url": "https://www.goodfirms.co/software/mailwarm",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Been using Mailwarm for a bit now for cold emailing.\nIt’s been helpful, especially with keeping emails out of spam. I like that it runs on its own and I don’t have to mess with it much.\nAlso useful if you’re handling more than one inbox and more than one email provider.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699d7cacb360792601068432",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "I like that it's 1 suite to track my spam score and warm up my inboxes so i can stay away from promotional inbox"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "so far the tool hasn't disappointed me"
+        },
+        {
+          "question": "How long have you used mailwarm?",
+          "answer": "8 Months"
+        },
+        {
+          "question": "How frequently do you use mailwarm?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for mailwarm?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "I don't know"
+        },
+        {
+          "question": "Did you integrate any other software with mailwarm?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Email Marketing",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699d614a4eedfb206b083fa2",
+      "review_dom_id": "review_699d614a4eedfb206b083fa2",
+      "company_profile_id": null,
+      "software_id": "689c360ea768837f665ea134",
+      "submitted_on": "2026-02-24 08:34",
+      "is_draft": false,
+      "title": "A Practical and Cost-Effective Way to Scale Outbound Calls",
+      "overall_rating": 4.0,
+      "reviewer_name": "Liyana Brown",
+      "reviewer_meta_text": "Review submit by Liyana Brown",
+      "reviewer_role": "Head of Business Development at JD Brown Digital Ltd",
+      "profile_url": "",
+      "profile_title": "Liyana Brown",
+      "profile_image_alt": "Liyana Brown, Head of Business Development at JD Brown Digital Ltd",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/e114b159a5f9670af38cd376aeaa4cbc.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Neyox AI",
+      "entity_url": "https://www.goodfirms.co/software/neyox-ai",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Our overall experience with Neyox AI has been very positive. We started using it to automate outbound calls and reduce manual workload, and it has genuinely helped us scale without hiring extra staff. The setup process was straightforward, and the dashboard is easy to understand even for non-technical users. Call quality has been consistent, and the AI handles basic lead qualification smoothly. We’ve noticed an improvement in response time and follow-up efficiency. While there’s still some room for more advanced customisation and deeper integrations, the platform delivers solid performance for its price point. Overall, it’s been a reliable and cost-effective solution for our outreach efforts.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699d614a4eedfb206b083fa2",
+      "rating_breakdown": {
+        "Ease of use": 4.0,
+        "Features & functionality": 4.0,
+        "Customer support": 4.0,
+        "Overall experience": 4.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "The transparent pricing model and ease of use stand out the most. We also liked how quickly we could launch campaigns and start seeing results. The AI voice sounds natural, and the reporting dashboard provides clear insights into call performance. It’s simple, practical, and built for scaling."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "At times, the responses can feel slightly scripted in complex conversations. More advanced workflow customisation options and additional integration flexibility would make the platform even stronger. However, these are minor points compared to the overall value it provides."
+        },
+        {
+          "question": "How long have you used Neyox AI?",
+          "answer": "2 Months"
+        },
+        {
+          "question": "How frequently do you use Neyox AI?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Neyox AI?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Neyox AI?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Marketing Automation",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "698d8801a10b69d1210a0ea9",
+      "review_dom_id": "review_698d8801a10b69d1210a0ea9",
+      "company_profile_id": null,
+      "software_id": "691d99266b55360f2131cf54",
+      "submitted_on": "2026-02-24 07:20",
+      "is_draft": false,
+      "title": "Amazing Support After Switching from Brevo",
+      "overall_rating": 5.0,
+      "reviewer_name": "Riasha Taneja",
+      "reviewer_meta_text": "Review submit by Riasha Taneja",
+      "reviewer_role": "Founder at Raj Travels",
+      "profile_url": "",
+      "profile_title": "Riasha Taneja",
+      "profile_image_alt": "Riasha Taneja, Founder at Raj Travels",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/fcdcf19faef94b39a548c9e0a9c9d1e7.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Boldinbox",
+      "entity_url": "https://www.goodfirms.co/software/boldinbox",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "I moved to Boldinbox after using Brevo for some time because I wanted a platform that felt more responsive and supportive. I started with the free plan just to test it, and honestly, I didn’t expect much - but I was surprised in a very positive way. Their support team is extremely fast. Every time I had a question or needed help, I received a quick and clear response. They don’t delay, and they genuinely focus on solving the issue properly. Even as a free user, I never felt ignored. That level of support really builds trust. The platform is also easy to understand, campaigns are simple to set up, and email performance has been stable and reliable. Overall, it feels practical, straightforward, and customer-focused.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/698d8801a10b69d1210a0ea9",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Switching from Brevo to Boldinbox gave me faster support, better attention, and a smoother overall email marketing experience."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Switching from Brevo to Boldinbox gave me faster support, better attention, and a smoother overall email marketing experience."
+        },
+        {
+          "question": "How long have you used Boldinbox?",
+          "answer": "5 Months"
+        },
+        {
+          "question": "How frequently do you use Boldinbox?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Boldinbox?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Boldinbox?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Email Marketing",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699caff7b51e8ff870006602",
+      "review_dom_id": "review_699caff7b51e8ff870006602",
+      "company_profile_id": null,
+      "software_id": "6138504701a61606f4286114",
+      "submitted_on": "2026-02-23 07:58",
+      "is_draft": false,
+      "title": "Top tier software out there",
+      "overall_rating": 5.0,
+      "reviewer_name": "Yiyi",
+      "reviewer_meta_text": "Review submit by Yiyi",
+      "reviewer_role": "N/A at N/A",
+      "profile_url": "",
+      "profile_title": "Yiyi",
+      "profile_image_alt": "Yiyi, N/A at N/A",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/0518d1e069e414da02c8a0f1e24e05ca.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "D5 Render",
+      "entity_url": "https://www.goodfirms.co/software/d5-render",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Best software for 3d renderingg out there. Been using it for almost a month and I gotta say I never had any problems and the design I envisioned comes to life",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699caff7b51e8ff870006602",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Honestly, everything about it. From the library of assets, and its community as well. It deserves so much praise."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Probably the pricing, I really had a hard time purchasing D5 due to the cost of subscription to the Pro version."
+        },
+        {
+          "question": "How long have you used D5 Render?",
+          "answer": "1 Months"
+        },
+        {
+          "question": "How frequently do you use D5 Render?",
+          "answer": "Weekly"
+        },
+        {
+          "question": "How do you find pricing for D5 Render?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "Yes"
+        },
+        {
+          "question": "Did you integrate any other software with D5 Render?",
+          "answer": "I don't know"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Animation",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "3D Rendering",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699c798b1c9fe601f40005f3",
+      "review_dom_id": "review_699c798b1c9fe601f40005f3",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-23 04:02",
+      "is_draft": false,
+      "title": "Consistent Followups",
+      "overall_rating": 5.0,
+      "reviewer_name": "kendrick Henson",
+      "reviewer_meta_text": "Review submit by kendrick Henson",
+      "reviewer_role": "Operations Manager at sterlingbaileyaesthetics.com",
+      "profile_url": "",
+      "profile_title": "kendrick Henson",
+      "profile_image_alt": "kendrick Henson, Operations Manager at sterlingbaileyaesthetics.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/019fa2776a32c7ba61cd9d9882e29104.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "SalesCaptain has improved how we handle inquiries from the moment they come in to the point of booking. Instead of messages being scattered across different channels, we can see the full conversation and respond with context. The automation supports our team by prompting next steps and keeping follow-ups timely, which has helped reduce dropped conversations and keep scheduling on track. Overall, it’s made our front desk more efficient and our lead process more dependable.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699c798b1c9fe601f40005f3",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 4.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Having one place to manage conversations, track lead status, and keep follow-up consistent across the team."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "It takes some time to fine-tune workflows and templates to match your exact process."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Conversational Marketing Platform",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Chatbot",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699c6fbd82c927f15b0324f6",
+      "review_dom_id": "review_699c6fbd82c927f15b0324f6",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-23 03:20",
+      "is_draft": false,
+      "title": "Convert more inquiries into booked consults",
+      "overall_rating": 5.0,
+      "reviewer_name": "calvin Patton",
+      "reviewer_meta_text": "Review submit by calvin Patton",
+      "reviewer_role": "General Associate at mokshamedicalspa.com",
+      "profile_url": "",
+      "profile_title": "calvin Patton",
+      "profile_image_alt": "calvin Patton, General Associate at mokshamedicalspa.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/c2b23fa71d91fb8be9a011b45b971a4b.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Our lead handling has become lot more consistent and systematic thanks to SalesCaptain. We may view the complete conversation history and reply with the appropriate context rather than managing calls, SMS, and online questions in different locations. The amount of cold leads has decreased because to the automated follow-ups and reminders that keep prospects interested, particularly after hours. After our processes were established, it developed into a dependable system that helps the front desk and increases the effectiveness of bookings.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699c6fbd82c927f15b0324f6",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Centralized communication, fast response support, and automation that keeps follow-ups consistent and appointments moving forward."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Initial setup takes time there are lots of options, so you need to test and fine-tune workflows to match your process."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Conversational Marketing Platform",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699b0c9773f9dd238900c483",
+      "review_dom_id": "review_699b0c9773f9dd238900c483",
+      "company_profile_id": null,
+      "software_id": "6138504701a61606f4286114",
+      "submitted_on": "2026-02-22 02:08",
+      "is_draft": false,
+      "title": "Very useful for those who want to create quick and realistic images.",
+      "overall_rating": 5.0,
+      "reviewer_name": "yusuf",
+      "reviewer_meta_text": "Review submit by yusuf",
+      "reviewer_role": "Civil engineer at Yıldırım Mühendislik",
+      "profile_url": "",
+      "profile_title": "yusuf",
+      "profile_image_alt": "yusuf, Civil engineer at Yıldırım Mühendislik",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/0549596370459aca938f35963fa1c55f.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "D5 Render",
+      "entity_url": "https://www.goodfirms.co/software/d5-render",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "What I like best about D5 Render is how it has completely transformed the way I create interior design visualizations. As an interior designer, realism, speed, and visual impact are extremely important to me and D5 Render truly delivers on all three. I use D5 Render alongside 3ds Max, and the workflow between the two feels smooth, modern, and very efficient. Earlier, when I was rendering with V Ray, the process was much more time consuming. Achieving realistic lighting, materials, and ambience required long render times, heavy system usage, and often additional Photoshop work to enhance realism. Even after all that effort, making quick changes or client revisions was stressful and slow. D5 Render has completely changed that experience.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699b0c9773f9dd238900c483",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Material quality, interface and ease of use, AI support, realistic street view."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Maybe it could be a little cheaper."
+        },
+        {
+          "question": "How long have you used D5 Render?",
+          "answer": "3 Months"
+        },
+        {
+          "question": "How frequently do you use D5 Render?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for D5 Render?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with D5 Render?",
+          "answer": "I don't know"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "3D Rendering",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6998582cad4ce35532038a93",
+      "review_dom_id": "review_6998582cad4ce35532038a93",
+      "company_profile_id": null,
+      "software_id": "696f3e923ea8ef72c86e924b",
+      "submitted_on": "2026-02-20 12:54",
+      "is_draft": false,
+      "title": "A Practical Tool for Managing WhatsApp Customer Communication",
+      "overall_rating": 5.0,
+      "reviewer_name": "Salom Williams",
+      "reviewer_meta_text": "Review submit by Salom Williams",
+      "reviewer_role": "Admin at UNIFIED SOLUTIONS",
+      "profile_url": "",
+      "profile_title": "Salom Williams",
+      "profile_image_alt": "Salom Williams, Admin at UNIFIED SOLUTIONS",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/222aee2afeac8f275978b5c2408b9756.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Nosnia.ai",
+      "entity_url": "https://www.goodfirms.co/software/nosnia-ai",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "My overall experience with Nosnia.ai has been very positive. It has helped us manage WhatsApp customer communication in a more organized and efficient way. The platform makes it easier to track conversations, respond faster, and reduce manual follow-ups. The interface is simple to use, the setup was quick, and overall it has improved our daily workflow and customer handling process.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6998582cad4ce35532038a93",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "What I liked most about Nosnia.ai is how smoothly it helps organize WhatsApp customer conversations in one place. It reduces the effort needed to manage daily messages, makes responses quicker, and keeps follow-ups easy to track. The clean interface and simple workflow save time and make everyday communication much more manageable."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There isn’t much to dislike about Nosnia.ai so far. If anything, the reporting and insights could be more detailed, and having a few more customization options would make the experience even better. Overall, the platform works smoothly for our day-to-day needs."
+        },
+        {
+          "question": "How long have you used Nosnia.ai?",
+          "answer": "3 Months"
+        },
+        {
+          "question": "How frequently do you use Nosnia.ai?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Nosnia.ai?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Nosnia.ai?",
+          "answer": "Yes"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Marketing Automation",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6997fb26ed599b75e3064392",
+      "review_dom_id": "review_6997fb26ed599b75e3064392",
+      "company_profile_id": null,
+      "software_id": "697c48effc6cff7964202554",
+      "submitted_on": "2026-02-20 06:15",
+      "is_draft": false,
+      "title": "The best app you can ever install",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sam smith",
+      "reviewer_meta_text": "Review submit by Sam smith",
+      "reviewer_role": "SWE at HP",
+      "profile_url": "",
+      "profile_title": "Sam smith",
+      "profile_image_alt": "Sam smith, SWE at HP",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/a2afbb4695b3d982295bade613e84d14.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "BlockP",
+      "entity_url": "https://www.goodfirms.co/software/blockp",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "BlockP, just has everything i need and everything which i never though i need. It just makes my day productive and i have a 3 year old and i am constantly worried, if my toddlers accidently see any adult stuff, But with this app, that worry is gone.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6997fb26ed599b75e3064392",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Customer support"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing"
+        },
+        {
+          "question": "How long have you used BlockP?",
+          "answer": "5 Months"
+        },
+        {
+          "question": "How frequently do you use BlockP?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for BlockP?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with BlockP?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Productivity",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699776a1e67909a5da0c9162",
+      "review_dom_id": "review_699776a1e67909a5da0c9162",
+      "company_profile_id": null,
+      "software_id": "6138504701a61606f4286114",
+      "submitted_on": "2026-02-19 08:51",
+      "is_draft": false,
+      "title": "D5 Render",
+      "overall_rating": 5.0,
+      "reviewer_name": "Iryna Bulhakova",
+      "reviewer_meta_text": "Review submit by Iryna Bulhakova",
+      "reviewer_role": "Freelance Architectural Visualizer at Self-employed",
+      "profile_url": "",
+      "profile_title": "Iryna Bulhakova",
+      "profile_image_alt": "Iryna Bulhakova, Freelance Architectural Visualizer at Self-employed",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/7c5a3af2f835d87ba06b38180db155bd.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "D5 Render",
+      "entity_url": "https://www.goodfirms.co/software/d5-render",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "I switched from V-Ray to D5 Render to achieve a faster and more interactive workflow. The real-time rendering system allows me to instantly adjust lighting, materials, and camera angles without waiting for multiple test renders.\nThe integration with SketchUp is smooth and efficient, which is essential for my architectural visualization projects. D5 helps me focus more on design decisions rather than technical rendering setup.\nOverall, it increased my productivity and helped me deliver projects to clients more quickly while maintaining high visual quality.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699776a1e67909a5da0c9162",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 4.0,
+        "Customer support": 4.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Real-time rendering, intuitive lighting tools, smooth SketchUp integration, and fast workflow."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Performance in very heavy scenes depends on GPU power, and the asset library can continue expanding."
+        },
+        {
+          "question": "How long have you used D5 Render?",
+          "answer": "1 Years"
+        },
+        {
+          "question": "How frequently do you use D5 Render?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for D5 Render?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "Yes"
+        },
+        {
+          "question": "Did you integrate any other software with D5 Render?",
+          "answer": "Yes"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "3D Rendering",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699717cc4936abb2cd0bfd93",
+      "review_dom_id": "review_699717cc4936abb2cd0bfd93",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-19 02:04",
+      "is_draft": false,
+      "title": "More consistent communication",
+      "overall_rating": 5.0,
+      "reviewer_name": "allyson Costa",
+      "reviewer_meta_text": "Review submit by allyson Costa",
+      "reviewer_role": "Marketing Manager at mokshamedicalspa.com",
+      "profile_url": "",
+      "profile_title": "allyson Costa",
+      "profile_image_alt": "allyson Costa, Marketing Manager at mokshamedicalspa.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/d1804d0b837cab9bd138360aef2f75b8.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Our client communications are now much easier to handle thanks to SalesCaptain, particularly after hours and during peak hours. Having calls and texts consolidated in one location allows the team to respond contextually to the numerous consult requests and service inquiries we receive. Because follow-ups are organized and regular, we no longer lose track of leads who communicate once and become silent. Because anyone can start a chat, see what was said, and carry on without the customer repeating everything, it has also improved staff coordination. It became a dependable solution that enhanced responsiveness, decreased lost leads, and streamlined our front desk workflow once we adjusted the messaging templates to fit our tone.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699717cc4936abb2cd0bfd93",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 4.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "The organization and speed. We can automate missed-call textbacks and after-hours intake, respond promptly with the entire conversation history, and prevent consult follow-ups from failing. Additionally, it keeps the team in sync with distinct ownership and visibility, ensuring that clients receive a consistent experience even when several employees are working together."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "If you want the initial setup to be customized to a medspa workflow, it requires some consideration. Due to its abundance of features, it took some trial and error to onboard the team and optimize automated timing and messages. It functions flawlessly once set up, however it takes some time to get going."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "3 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Conversational Marketing Platform",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699712bd39cb6dbad0038b82",
+      "review_dom_id": "review_699712bd39cb6dbad0038b82",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-19 01:44",
+      "is_draft": false,
+      "title": "Recover missed calls",
+      "overall_rating": 5.0,
+      "reviewer_name": "Ander Ray",
+      "reviewer_meta_text": "Review submit by Ander Ray",
+      "reviewer_role": "Supervisor at mariansappliance.com",
+      "profile_url": "",
+      "profile_title": "Ander Ray",
+      "profile_image_alt": "Ander Ray, Supervisor at mariansappliance.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/13f403abba43440763828704193a8cb8.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "SalesCaptain has been a big improvement for our appliance service operation because it keeps customer communication organized and consistent. We deal with a lot of repeat calls, quick questions, and urgent requests, and it’s easy for leads to slip when the phone is busy. With SalesCaptain, calls and texts stay in one place, so our team can see the full history and reply with context instead of starting over. The missed-call textback and follow-up automations help us recover jobs we would have lost—especially after hours or during peak service windows. It’s also made handoffs easier between dispatch and technicians because notes and conversation history are accessible. After some initial setup and template tuning, it’s been reliable day-to-day and has helped us book faster with less manual chasing.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699712bd39cb6dbad0038b82",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 4.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Capturing and following up on leads is the biggest victory. A shared inbox, automated follow-ups, and missed-call textbacks enable us to reply promptly and keep clients moving toward booking. Because everyone on the team can access the same discussion history, there are fewer repeat responses and \"who handled this?\" situations, which helps to clear up confusion. Additionally, it is adaptable enough to accommodate the status messages, updates, rescheduled appointments, and service schedulin"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "It’s feature-rich, so you need a little time upfront to configure routing, tags, pipelines, and message templates the right way. We also had to fine-tune automation timing and wording so messages felt natural and didn’t sound too system-generated. Once those settings were dialed in, it became much smoother for the team."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "AI Agent Builders",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699708465905670429092b84",
+      "review_dom_id": "review_699708465905670429092b84",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-19 01:02",
+      "is_draft": false,
+      "title": "Keep patient conversations organized",
+      "overall_rating": 5.0,
+      "reviewer_name": "Davian bates",
+      "reviewer_meta_text": "Review submit by Davian bates",
+      "reviewer_role": "Coordinator at serenityesthetic.com",
+      "profile_url": "",
+      "profile_title": "Davian bates",
+      "profile_image_alt": "Davian bates, Coordinator at serenityesthetic.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/723e33a93c4eb287e3b3a325e25e3d42.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Our front desk workflow is significantly more efficient because to SalesCaptain, which serves as our primary call and text communication hub. In the past, leads might arrive from various sources, making it simple to overlook messages or fail to follow up, particularly during busy periods or after hours. Conversations remain centralized now, and the team can view the entire context before responding, making it feel more intimate for clients and cutting down on back-and-forth. In order to prevent leads from going cold and reduce no-shows, the automation has proven particularly useful for missed calls, consult inquiries, confirmations, and follow-ups. All things considered, it has increased patient satisfaction, speed, and consistency without increasing staff workload.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699708465905670429092b84",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 4.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "The biggest benefit is faster response time with less manual work. The shared inbox and call/text history keeps everyone aligned, and automations handle missed-call textbacks, after-hours capture, appointment reminders, and follow-ups. It also helps us stay consistent in how we respond and track where each lead is in the booking journey. Support has been responsive when we needed help setting up workflows."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "If you want everything to match your precise medspa workflow many services, providers, intake questions, and routing, the initial setup will take some time. Because of the platform's abundance of features, it took some iteration to train the team and optimize templates and automated scheduling. It functions flawlessly once set up, but it's not a set it and forget it situation right away."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "Yes"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Chatbot",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6996ff4263b14774ed096ac4",
+      "review_dom_id": "review_6996ff4263b14774ed096ac4",
+      "company_profile_id": null,
+      "software_id": "692988c1de8b8c0f893a7ba2",
+      "submitted_on": "2026-02-19 12:22",
+      "is_draft": false,
+      "title": "its been great and we are at peace after using this CRM for over 2 years now",
+      "overall_rating": 5.0,
+      "reviewer_name": "tony",
+      "reviewer_meta_text": "Review submit by tony",
+      "reviewer_role": "Sales Consultant at Shams Industries",
+      "profile_url": "",
+      "profile_title": "tony",
+      "profile_image_alt": "tony, Sales Consultant at Shams Industries",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/79492fe3fc042ea66884822d5b09df37.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "groweon crm software",
+      "entity_url": "https://www.goodfirms.co/software/groweon-crm-software",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "1. Easy to use\n2. Simple UI\n3. Lead board is so neat and easy to manage.\n4. Affordable\n5. Customer support is very empathetic and on toes.\nGroweon CRM is incredibly easy to use with a clean, simple UI. The lead board is super organized, pricing is affordable, and customer support is empathetic and always responsive!",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6996ff4263b14774ed096ac4",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "ease of use, no fluff no complexity. What I love most about Groweon CRM is how effortlessly it fits into daily workflows. The lead board is clean, intuitive, and makes pipeline management a breeze. No steep learning curve, even our non-tech team members adapted quickly. The AI-driven insights help prioritize leads smartly. And the customer support team? Always empathetic, fast, and genuinely helpful. Truly built for Indian businesses!"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "ease of use, no fluff no complexity. What I love most about Groweon CRM is how effortlessly it fits into daily workflows. The lead board is clean, intuitive, and makes pipeline management a breeze. No steep learning curve, even our non-tech team members adapted quickly. The AI-driven insights help prioritize leads smartly. And the customer support team? Always empathetic, fast, and genuinely helpful. Truly built for Indian businesses!"
+        },
+        {
+          "question": "How long have you used groweon crm software?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use groweon crm software?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for groweon crm software?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with groweon crm software?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "CRM",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6996fb12c2551a5e11045eb3",
+      "review_dom_id": "review_6996fb12c2551a5e11045eb3",
+      "company_profile_id": null,
+      "software_id": "652d1d474c7d777b84503a52",
+      "submitted_on": "2026-02-19 12:19",
+      "is_draft": false,
+      "title": "Improving Proofing Accuracy and Reducing Order Errors with Onprintshop",
+      "overall_rating": 5.0,
+      "reviewer_name": "Marian Lara",
+      "reviewer_meta_text": "Review submit by Marian Lara",
+      "reviewer_role": "Operations Head at 55printing",
+      "profile_url": "",
+      "profile_title": "Marian Lara",
+      "profile_image_alt": "Marian Lara, Operations Head at 55printing",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/3e4641e3ee1678dd5b8122edd91b2808.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "OnPrintShop",
+      "entity_url": "https://www.goodfirms.co/software/onprintshop",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Moving from a manual proofing process to an online system improved accuracy and reduced back-and-forth communication with customers. The ability for customers to preview their artwork before checkout helped cut down ordering errors and support queries. Over time, the platform contributed to faster file preparation, smoother proof approvals, and more structured day-to-day operations for both B2B and B2C print orders.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6996fb12c2551a5e11045eb3",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "We most liked about onprintshop was the online proofing and file preview capability during checkout. It significantly reduced ordering errors and minimized reprints by allowing customers to see accurate representations of their artwork before confirming orders. This directly improved efficiency and reduced support queries, making daily operations more streamlined."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "The least favorable aspect was the initial configuration effort. Setting up templates, aligning workflows, and preparing the system to match our operational requirements took time before we were able to see the full efficiency benefits."
+        },
+        {
+          "question": "How long have you used OnPrintShop?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use OnPrintShop?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for OnPrintShop?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with OnPrintShop?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Web to Print",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6996fb44a89df24bfa0ff8a2",
+      "review_dom_id": "review_6996fb44a89df24bfa0ff8a2",
+      "company_profile_id": null,
+      "software_id": "692988c1de8b8c0f893a7ba2",
+      "submitted_on": "2026-02-19 12:15",
+      "is_draft": false,
+      "title": "Very user friendly and helpful to track team work. And I can work in App also so it save my time",
+      "overall_rating": 4.0,
+      "reviewer_name": "Prachi Sharma",
+      "reviewer_meta_text": "Review submit by Prachi Sharma",
+      "reviewer_role": "Admin at PS",
+      "profile_url": "",
+      "profile_title": "Prachi Sharma",
+      "profile_image_alt": "Prachi Sharma, Admin at PS",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/97467152161367d65f8ce82e7a0cd8b2.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "groweon crm software",
+      "entity_url": "https://www.goodfirms.co/software/groweon-crm-software",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "I have had a nice experience using the CRM it is simple to use and help me keep track of my work without confusion. My experience with the CRM is good it is easy to use and support my work smoothly. I can manage my all leads in one platform I do not go any Excel or any other platform so it is very helpful for me I can manage all my lead in one platform and that is CRM",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6996fb44a89df24bfa0ff8a2",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 4.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "I have had a nice experience using the CRM it is simple to use and help me keep track of my work without confusion. My experience with the CRM is good it is easy to use and support my work smoothly. I can manage my all leads in one platform I do not go any Excel or any other platform so it is very helpful for me I can manage all my lead in one platform and that is CRM"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "I have had a nice experience using the CRM it is simple to use and help me keep track of my work without confusion. My experience with the CRM is good it is easy to use and support my work smoothly. I can manage my all leads in one platform I do not go any Excel or any other platform so it is very helpful for me I can manage all my lead in one platform and that is CRM"
+        },
+        {
+          "question": "How long have you used groweon crm software?",
+          "answer": "12 Months"
+        },
+        {
+          "question": "How frequently do you use groweon crm software?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for groweon crm software?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "I don't know"
+        },
+        {
+          "question": "Did you integrate any other software with groweon crm software?",
+          "answer": "Yes"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "CRM",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6996b40bcc8400f81f0fd9c6",
+      "review_dom_id": "review_6996b40bcc8400f81f0fd9c6",
+      "company_profile_id": null,
+      "software_id": "670cfc49bd0f4816126e3a42",
+      "submitted_on": "2026-02-19 06:58",
+      "is_draft": false,
+      "title": "Scaling E-Commerce Operations",
+      "overall_rating": 5.0,
+      "reviewer_name": "Harry B",
+      "reviewer_meta_text": "Review submit by Harry B",
+      "reviewer_role": "Supply Chain Director at First Growth",
+      "profile_url": "",
+      "profile_title": "Harry B",
+      "profile_image_alt": "Harry B, Supply Chain Director at First Growth",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/f539dd4b9d6477293a40340e399bf028.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "WareGo",
+      "entity_url": "https://www.goodfirms.co/software/warego",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "We were struggling with 'inventory chaos'; selling items on Shopify that were actually out of stock in the warehouse. WareGo’s integration with our Shopify store and shipping carriers was seamless.\nWe’ve seen a 55% increase in order processing speed and our fulfillment accuracy is now near 100%. It’s the first time I feel like our software is actually keeping up with our growth.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6996b40bcc8400f81f0fd9c6",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Easy integration with Shopify"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing as of yet."
+        },
+        {
+          "question": "How long have you used WareGo?",
+          "answer": "9 Months"
+        },
+        {
+          "question": "How frequently do you use WareGo?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for WareGo?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with WareGo?",
+          "answer": "Yes"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Inventory Management",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Warehouse Management",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Supply Chain Management",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6995f50aba2bb304220afcd2",
+      "review_dom_id": "review_6995f50aba2bb304220afcd2",
+      "company_profile_id": null,
+      "software_id": "68b68fbc68791e28f947da23",
+      "submitted_on": "2026-02-18 05:30",
+      "is_draft": false,
+      "title": "Outstanding",
+      "overall_rating": 5.0,
+      "reviewer_name": "SpiralFirst",
+      "reviewer_meta_text": "Review submit by SpiralFirst",
+      "reviewer_role": "",
+      "profile_url": "",
+      "profile_title": "SpiralFirst",
+      "profile_image_alt": "SpiralFirst, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/7932026581294ad0bdc42d1e645af03e.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Easy Music AI",
+      "entity_url": "https://www.goodfirms.co/software/easy-music-ai",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "As a musician, the idea of using AI software in any capacity initially appalled me, but I don't sing and needed to sort some ideas with vocals and tried a few free trials with other AI music sites but Easy Music AI was by far the best. Since paying for subscription I've had mixed results, but now and then something absolutely amazing pops up and I hate to admit it's often far better than I could achieve alone. Sometimes I'll add other instruments to songs but generally they're perfect as they are. Some of the results are absolutely epic and I wish I'd written them myself!",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6995f50aba2bb304220afcd2",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Very easy to use and swift top quality results."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "I'd like the ability to repeat songs with perhaps subtle changes or rewritten lyrics, rather than a whole new creation appearing."
+        },
+        {
+          "question": "How long have you used Easy Music AI?",
+          "answer": "5 Months"
+        },
+        {
+          "question": "How frequently do you use Easy Music AI?",
+          "answer": "Monthly"
+        },
+        {
+          "question": "How do you find pricing for Easy Music AI?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Easy Music AI?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "AI Music Generators",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6995b6cd6bf99d230d05fe32",
+      "review_dom_id": "review_6995b6cd6bf99d230d05fe32",
+      "company_profile_id": null,
+      "software_id": "692988c1de8b8c0f893a7ba2",
+      "submitted_on": "2026-02-18 12:55",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Prachi Pinkuzwinky",
+      "reviewer_meta_text": "Review submit by Prachi Pinkuzwinky",
+      "reviewer_role": "",
+      "profile_url": "",
+      "profile_title": "Prachi Pinkuzwinky",
+      "profile_image_alt": "Prachi Pinkuzwinky, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/5efacc1a1fcaf47878f17906c35baaae.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "groweon crm software",
+      "entity_url": "https://www.goodfirms.co/software/groweon-crm-software",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6995b6cd6bf99d230d05fe32",
+      "rating_breakdown": {
+        "Overall experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69959e7ad9552d73890c2044",
+      "review_dom_id": "review_69959e7ad9552d73890c2044",
+      "company_profile_id": null,
+      "software_id": "689c360ea768837f665ea134",
+      "submitted_on": "2026-02-18 11:18",
+      "is_draft": false,
+      "title": "Reliable AI Voice Automation That Actually Improves Lead Management",
+      "overall_rating": 5.0,
+      "reviewer_name": "A. Mariam",
+      "reviewer_meta_text": "Review submit by A. Mariam",
+      "reviewer_role": "Account Manager at Kryntalix Solutions",
+      "profile_url": "",
+      "profile_title": "A. Mariam",
+      "profile_image_alt": "A. Mariam, Account Manager at Kryntalix Solutions",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/4156db5cd7742de66592a81a37f9ba3a.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Neyox AI",
+      "entity_url": "https://www.goodfirms.co/software/neyox-ai",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "I started using Neyox AI mainly to handle incoming inquiries and automate follow-up calls for leads, and the results have been very positive. The setup process was smoother than I expected, and their team provided clear guidance during onboarding. What impressed me most was how natural the AI voice interactions sounded — customers didn’t feel like they were talking to a machine. Within a few weeks, we noticed fewer missed calls, faster response times, and better lead qualification before our sales team got involved. It also helped streamline our workflow since repetitive communication tasks were handled automatically. Overall, it’s been a practical solution that delivers measurable improvements in efficiency and customer engagement.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69959e7ad9552d73890c2044",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "The human-like voice quality, automation accuracy, and the ability to handle leads 24/7 without manual intervention. Their support team was also responsive and helpful during implementation."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There was a small learning curve at the beginning while customizing workflows to match our business needs, but once everything was configured properly, it worked well."
+        },
+        {
+          "question": "How long have you used Neyox AI?",
+          "answer": "3 Months"
+        },
+        {
+          "question": "How frequently do you use Neyox AI?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Neyox AI?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Neyox AI?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Marketing Automation",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699599077f79fc5d7c0a0212",
+      "review_dom_id": "review_699599077f79fc5d7c0a0212",
+      "company_profile_id": null,
+      "software_id": "670cfc49bd0f4816126e3a42",
+      "submitted_on": "2026-02-18 10:55",
+      "is_draft": false,
+      "title": "Improved our e-commerce logistics.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Brian H",
+      "reviewer_meta_text": "Review submit by Brian H",
+      "reviewer_role": "N/A at N/A",
+      "profile_url": "",
+      "profile_title": "Brian H",
+      "profile_image_alt": "Brian H, N/A at N/A",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/f2aaa19aea98c2e799603f2fe8e7f9cf.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "WareGo",
+      "entity_url": "https://www.goodfirms.co/software/warego",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "We've been using WareGo for a while now and it has really helped with our complete logistics for our ecommerce business. We’ve seen a 50% increase in order processing speed, and the automated 'pick and pack' workflows mean we rarely miss a same-day shipping deadline now. Their omnichannel integration was a lifesaver; it synced our Shopify, Amazon, and TikTok Shop inventory in real-time.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699599077f79fc5d7c0a0212",
+      "rating_breakdown": {
+        "Ease of use": 4.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Multiple integrations that you can do with their WMS."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Only has online dashboard and no mobile app as of yet."
+        },
+        {
+          "question": "How long have you used WareGo?",
+          "answer": "8 Months"
+        },
+        {
+          "question": "How frequently do you use WareGo?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for WareGo?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with WareGo?",
+          "answer": "I don't know"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Warehouse Management",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69956532e9959d1daa0f40b2",
+      "review_dom_id": "review_69956532e9959d1daa0f40b2",
+      "company_profile_id": null,
+      "software_id": "67aa3801e0f053019d2bb5b3",
+      "submitted_on": "2026-02-18 07:09",
+      "is_draft": false,
+      "title": "Deeper than GPS tracker",
+      "overall_rating": 4.0,
+      "reviewer_name": "AR Guest Post Services",
+      "reviewer_meta_text": "Review submit by AR Guest Post Services",
+      "reviewer_role": "CEO at Acme links",
+      "profile_url": "",
+      "profile_title": "AR Guest Post Services",
+      "profile_image_alt": "AR Guest Post Services, CEO at Acme links",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/32e8028f45d179c1157d31c88632693e.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Spyrix Phone Tracker for Android",
+      "entity_url": "https://www.goodfirms.co/software/spyrix-phone-tracker-for-android",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Spyrix Phone Tracker does far more than just show me my son's dot on a map - it gives me insight into his world. While the GPS tracking is precise and reliable, the real peace of mind comes from seeing his digital environment: the apps he uses, the messages he sends, and the websites he visits. It’s not about mistrust; it’s about guiding him safely through both the streets and the complexities of online life. This tool helps me be a more present and proactive parent, protecting him in ways a simple location tracker never could.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69956532e9959d1daa0f40b2",
+      "rating_breakdown": {
+        "Ease of use": 4.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 4.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "This parental control softare is my best choice."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Good software"
+        },
+        {
+          "question": "How long have you used Spyrix Phone Tracker for Android?",
+          "answer": "1 Years"
+        },
+        {
+          "question": "How frequently do you use Spyrix Phone Tracker for Android?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Spyrix Phone Tracker for Android?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Spyrix Phone Tracker for Android?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Workforce Management",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69956482f054d120800f89b5",
+      "review_dom_id": "review_69956482f054d120800f89b5",
+      "company_profile_id": null,
+      "software_id": "67aa3801e0f053019d2bb5b3",
+      "submitted_on": "2026-02-18 07:06",
+      "is_draft": false,
+      "title": "Software accuracy",
+      "overall_rating": 4.0,
+      "reviewer_name": "Abdul Rehman",
+      "reviewer_meta_text": "Review submit by Abdul Rehman",
+      "reviewer_role": "Creator at saggu industry",
+      "profile_url": "",
+      "profile_title": "Abdul Rehman",
+      "profile_image_alt": "Abdul Rehman, Creator at saggu industry",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/d717cfd75cac2661ef58b36618c9a89f.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Spyrix Phone Tracker for Android",
+      "entity_url": "https://www.goodfirms.co/software/spyrix-phone-tracker-for-android",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Spyrix Parental Control has made my parenting duties significantly smoother and more informed. The GPS location tracking gives me peace of mind by letting me know exactly where my child is, while the comprehensive online monitoring tools show me what he is doing on his devices. Its suite of features effectively safeguards my child's safety both online and in the physical world.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69956482f054d120800f89b5",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 4.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "I like this software accuracy due to its clear features and operation."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "I'd glad to expand the list of monitored social media platforms."
+        },
+        {
+          "question": "How long have you used Spyrix Phone Tracker for Android?",
+          "answer": "6 Months"
+        },
+        {
+          "question": "How frequently do you use Spyrix Phone Tracker for Android?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Spyrix Phone Tracker for Android?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Spyrix Phone Tracker for Android?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Screen Recording",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699563bf88217f7f3200c292",
+      "review_dom_id": "review_699563bf88217f7f3200c292",
+      "company_profile_id": null,
+      "software_id": "67aa3801e0f053019d2bb5b3",
+      "submitted_on": "2026-02-18 07:02",
+      "is_draft": false,
+      "title": "What is Snapchat?",
+      "overall_rating": 5.0,
+      "reviewer_name": "Lucy Mila",
+      "reviewer_meta_text": "Review submit by Lucy Mila",
+      "reviewer_role": "SEO Manager at Tech links",
+      "profile_url": "",
+      "profile_title": "Lucy Mila",
+      "profile_image_alt": "Lucy Mila, SEO Manager at Tech links",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/657f91ff3a09c7dca7b55ca25b1a7d64.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Spyrix Phone Tracker for Android",
+      "entity_url": "https://www.goodfirms.co/software/spyrix-phone-tracker-for-android",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Spyrix's Snapchat Tracker gives clear, reliable access to sent and received messages. On a platform where content disappears, this feature offers necessary insight and genuine peace of mind for any concerned parent.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699563bf88217f7f3200c292",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "I like fast operation and detailed reports."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "I like the software."
+        },
+        {
+          "question": "How long have you used Spyrix Phone Tracker for Android?",
+          "answer": "6 Months"
+        },
+        {
+          "question": "How frequently do you use Spyrix Phone Tracker for Android?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Spyrix Phone Tracker for Android?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Spyrix Phone Tracker for Android?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Screen Recording",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69951b5eb1921b0a35076522",
+      "review_dom_id": "review_69951b5eb1921b0a35076522",
+      "company_profile_id": null,
+      "software_id": "6733123844a86346cc2eb682",
+      "submitted_on": "2026-02-18 01:57",
+      "is_draft": false,
+      "title": "Very godd",
+      "overall_rating": 5.0,
+      "reviewer_name": "Xiao Long",
+      "reviewer_meta_text": "Review submit by Xiao Long",
+      "reviewer_role": "Own at Bodia spa",
+      "profile_url": "",
+      "profile_title": "Xiao Long",
+      "profile_image_alt": "Xiao Long, Own at Bodia spa",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/77dea9187558e321ad4e0aa68f780321.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SCRM Champion",
+      "entity_url": "https://www.goodfirms.co/software/scrm-champion",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "iT'S VERY VERY GOOD FOR HELP ME TO REPLY CHAT MY CLIENT IT'S SO FAST I RICH SALARY FROM IT'S SO NOW I WANT TO USE IT AGAIN THANKS YOU",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69951b5eb1921b0a35076522",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "HISFHSDsajsdjfs fiosafvfjoisfg isjdfs jisalf AIJ"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "AF SETSFGERSAEFQW GW"
+        },
+        {
+          "question": "How long have you used SCRM Champion?",
+          "answer": "6 Weeks"
+        },
+        {
+          "question": "How frequently do you use SCRM Champion?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SCRM Champion?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SCRM Champion?",
+          "answer": "Yes"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Marketing Automation",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6994de890452fe24bf05cc02",
+      "review_dom_id": "review_6994de890452fe24bf05cc02",
+      "company_profile_id": null,
+      "software_id": "6903c7bf21808d239536d852",
+      "submitted_on": "2026-02-17 09:34",
+      "is_draft": false,
+      "title": "The time filter is everything",
+      "overall_rating": 3.0,
+      "reviewer_name": "Joannie Kassell",
+      "reviewer_meta_text": "Review submit by Joannie Kassell",
+      "reviewer_role": "Trader at N/A",
+      "profile_url": "",
+      "profile_title": "Joannie Kassell",
+      "profile_image_alt": "Joannie Kassell, Trader at N/A",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/446ddb50ee3986782176f9618021e78f.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Trade with Pat",
+      "entity_url": "https://www.goodfirms.co/software/trade-with-pat",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Once I optimized the trading window around my broker’s late US session behavior, performance improved noticeably. The EA depends heavily on market timing rather than pure indicators. With correct timing, trades occur in controlled movement instead of chaotic volatility.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6994de890452fe24bf05cc02",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 2.0,
+        "Overall experience": 3.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Treating it as a configurable strategy instead of a finished product makes a huge difference. The effort spent tuning pays back in stability."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Default settings may not suit every broker. You need to forward test and adjust, which requires involvement and understanding rather than blind installation"
+        },
+        {
+          "question": "How long have you used Trade with Pat?",
+          "answer": "2 Months"
+        },
+        {
+          "question": "How frequently do you use Trade with Pat?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Trade with Pat?",
+          "answer": "Expensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Trade with Pat?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6994a71724fb9b6df104ff22",
+      "review_dom_id": "review_6994a71724fb9b6df104ff22",
+      "company_profile_id": null,
+      "software_id": "62b4110e4c5bce352244a43b",
+      "submitted_on": "2026-02-17 05:43",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Amit Baghele",
+      "reviewer_meta_text": "Review submit by Amit Baghele",
+      "reviewer_role": "",
+      "profile_url": "",
+      "profile_title": "Amit Baghele",
+      "profile_image_alt": "Amit Baghele, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/91dc33c7b20ba1ba3e3bafc27b5b0fcd.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Munim",
+      "entity_url": "https://www.goodfirms.co/software/munim",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6994a71724fb9b6df104ff22",
+      "rating_breakdown": {
+        "Overall experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6994a5993ed759c210051d42",
+      "review_dom_id": "review_6994a5993ed759c210051d42",
+      "company_profile_id": null,
+      "software_id": "6138504701a61606f4286114",
+      "submitted_on": "2026-02-17 05:33",
+      "is_draft": false,
+      "title": "Powerful and efficient real-time rendering tool.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Hector ramirez fernandez",
+      "reviewer_meta_text": "Review submit by Hector ramirez fernandez",
+      "reviewer_role": "SUMAC at SUMAC",
+      "profile_url": "",
+      "profile_title": "Hector ramirez fernandez",
+      "profile_image_alt": "Hector ramirez fernandez, SUMAC at SUMAC",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/88e3ca9ed80b56fdb5f0223c3dce0326.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "D5 Render",
+      "entity_url": "https://www.goodfirms.co/software/d5-render",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "My experience with D5 Render has been excellent. It delivers high-quality visuals with a smooth and fast workflow, making it ideal for daily architectural projects. The interface is intuitive, and the real-time feedback helps speed up design decisions and client presentations.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6994a5993ed759c210051d42",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "What I like the most is the real-time rendering quality and the smooth workflow. It allows me to visualize projects instantly, make quick adjustments, and present ideas clearly to clients. The interface is intuitive, and the asset library is constantly improving, which saves a lot of time in daily practice."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "One limitation is that it requires a relatively powerful GPU to run smoothly. Also, some advanced customization options are still developing compared to other long-established rendering software. However, updates are frequent and continuously improving the platform."
+        },
+        {
+          "question": "How long have you used D5 Render?",
+          "answer": "2 Weeks"
+        },
+        {
+          "question": "How frequently do you use D5 Render?",
+          "answer": "Weekly"
+        },
+        {
+          "question": "How do you find pricing for D5 Render?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with D5 Render?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Animation",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "3D Rendering",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "6994a19b5482a1a7160baf13",
+      "review_dom_id": "review_6994a19b5482a1a7160baf13",
+      "company_profile_id": null,
+      "software_id": "62b4110e4c5bce352244a43b",
+      "submitted_on": "2026-02-17 05:14",
+      "is_draft": false,
+      "title": "Excellent Accounting and GST Return Filling Software",
+      "overall_rating": 5.0,
+      "reviewer_name": "Feni Kalathiya",
+      "reviewer_meta_text": "Review submit by Feni Kalathiya",
+      "reviewer_role": "Owner at SAT ENTERPRISES",
+      "profile_url": "",
+      "profile_title": "Feni Kalathiya",
+      "profile_image_alt": "Feni Kalathiya, Owner at SAT ENTERPRISES",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/44ce790c118de9094e749c92b703f281.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Munim",
+      "entity_url": "https://www.goodfirms.co/software/munim",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Munim is a highly-rated, user-friendly, cloud-based accounting and billing software in India, frequently praised for its efficient GST compliance, one-click E-way bill/invoice generation, and accessible interface. It is ideal for small to medium businesses, particularly in retail and jewellery, offering robust inventory management and mobile compatibility.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/6994a19b5482a1a7160baf13",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": ".."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": ".."
+        },
+        {
+          "question": "How long have you used Munim?",
+          "answer": "3 Years"
+        },
+        {
+          "question": "How frequently do you use Munim?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Munim?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Munim?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Accounting",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69949a584eea0865b502b552",
+      "review_dom_id": "review_69949a584eea0865b502b552",
+      "company_profile_id": null,
+      "software_id": "62b4110e4c5bce352244a43b",
+      "submitted_on": "2026-02-17 04:55",
+      "is_draft": false,
+      "title": "Fabulous experience of using the application as accounting software",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sinchini Dhar",
+      "reviewer_meta_text": "Review submit by Sinchini Dhar",
+      "reviewer_role": "Accountant at Not disclosed",
+      "profile_url": "",
+      "profile_title": "Sinchini Dhar",
+      "profile_image_alt": "Sinchini Dhar, Accountant at Not disclosed",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/8b6280d21b2759c46910ca804540aff7.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Munim",
+      "entity_url": "https://www.goodfirms.co/software/munim",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Application is too good to use with the proper accounting features with the help of direct E way bill making which is very rare to get in the market.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69949a584eea0865b502b552",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Using HSN or SAC Code directly from website and making the E Way directly from the application"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing is there to dislike in the application"
+        },
+        {
+          "question": "How long have you used Munim?",
+          "answer": "11 Months"
+        },
+        {
+          "question": "How frequently do you use Munim?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Munim?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "Yes"
+        },
+        {
+          "question": "Did you integrate any other software with Munim?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Accounting",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69948dd50951d3bf8b076314",
+      "review_dom_id": "review_69948dd50951d3bf8b076314",
+      "company_profile_id": null,
+      "software_id": "62b4110e4c5bce352244a43b",
+      "submitted_on": "2026-02-17 03:52",
+      "is_draft": false,
+      "title": "very easy to use software",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sandeep Pal",
+      "reviewer_meta_text": "Review submit by Sandeep Pal",
+      "reviewer_role": "accountant at rsp enterprise",
+      "profile_url": "",
+      "profile_title": "Sandeep Pal",
+      "profile_image_alt": "Sandeep Pal, accountant at rsp enterprise",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/fe04919057d11a6bc85ef3ed27bc1003.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Munim",
+      "entity_url": "https://www.goodfirms.co/software/munim",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "very easy to use software for anykind of business like retail or wholesale and service based business like grocery ,fmcg , pharmacy , hardware , pharmacy",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69948dd50951d3bf8b076314",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "easy to use for anykind of business like retail or wholesale and service based business"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "easy to use for anykind of business like retail or wholesale and service based business"
+        },
+        {
+          "question": "How long have you used Munim?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use Munim?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Munim?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "Yes"
+        },
+        {
+          "question": "Did you integrate any other software with Munim?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Accounting",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699478fd0667e11cf00c0cf4",
+      "review_dom_id": "review_699478fd0667e11cf00c0cf4",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-17 02:22",
+      "is_draft": false,
+      "title": "Book More Consultations",
+      "overall_rating": 5.0,
+      "reviewer_name": "Ellis Lester",
+      "reviewer_meta_text": "Review submit by Ellis Lester",
+      "reviewer_role": "Operations Manager at serenityesthetic.com",
+      "profile_url": "",
+      "profile_title": "Ellis Lester",
+      "profile_image_alt": "Ellis Lester, Operations Manager at serenityesthetic.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/c6e6346fed7a26bf8741448e4af7951f.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Since the majority of leads arrive at our med spa while the front desk is occupied with check-ins, treatments, and checkout, SalesCaptain has significantly improved our business. Those questions would go unanswered because we used to reply slowly. Our booking rate for consultations and appointments has increased because to SalesCaptain's ability to respond instantly with missed-call texts and carry on the conversation via SMS. We also appreciate that voicemails, messages, and calls are all in one location with a transparent conversation history, allowing any team member to continue where someone left off without having to ask the same questions twice. Workflows for follow-up and templates maintain consistency in message while saving time during busy times. ding more quickly, and turning more inquiries into planned appointments.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699478fd0667e11cf00c0cf4",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 4.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Fast follow-up automation combined with missed-call text back helps us get more leads. Calls, messages, and voicemails are all kept in one single inbox, which facilitates consistent responses using templates, enhances handoffs, and keeps everything organized especially during peak front desk hours."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There is a slight learning curve for employees switching to a shared inbox, and initial setup takes some time to customize routing, templates, and processes to our services. For tracking lead sources and inquiry-to-booking conversion, we would also like more detailed reporting."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Conversational Marketing Platform",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699464c7226cbcdf1c0bf113",
+      "review_dom_id": "review_699464c7226cbcdf1c0bf113",
+      "company_profile_id": null,
+      "software_id": "692988c1de8b8c0f893a7ba2",
+      "submitted_on": "2026-02-17 12:58",
+      "is_draft": false,
+      "title": "Best software",
+      "overall_rating": 5.0,
+      "reviewer_name": "monika rai",
+      "reviewer_meta_text": "Review submit by monika rai",
+      "reviewer_role": "Sales head at Ravi international",
+      "profile_url": "",
+      "profile_title": "monika rai",
+      "profile_image_alt": "monika rai, Sales head at Ravi international",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/783354d00aeb850f1690e3cecf1c8502.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "groweon crm software",
+      "entity_url": "https://www.goodfirms.co/software/groweon-crm-software",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "I am using this software from past 2 year and this is the one of my best decision I took for my business very easy to use my team is very comfortable with this software the support is very good,support is always there to help the team no need to wait for an hour for support best best best software",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699464c7226cbcdf1c0bf113",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Little expensive but still worth it"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Easy to use\nSupport is best\nTracking part is best"
+        },
+        {
+          "question": "How long have you used groweon crm software?",
+          "answer": "2 Years"
+        },
+        {
+          "question": "How frequently do you use groweon crm software?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for groweon crm software?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with groweon crm software?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "CRM",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "69937e8bfc9436cf71056212",
+      "review_dom_id": "review_69937e8bfc9436cf71056212",
+      "company_profile_id": null,
+      "software_id": "6903c7bf21808d239536d852",
+      "submitted_on": "2026-02-16 08:35",
+      "is_draft": false,
+      "title": "Trade with Pat robot feels like a tool built for real traders",
+      "overall_rating": 4.0,
+      "reviewer_name": "Zachary Fredson",
+      "reviewer_meta_text": "Review submit by Zachary Fredson",
+      "reviewer_role": "Technician at N/A",
+      "profile_url": "",
+      "profile_title": "Zachary Fredson",
+      "profile_image_alt": "Zachary Fredson, Technician at N/A",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/20704205a5f9383468229e202cb534c0.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "Trade with Pat",
+      "entity_url": "https://www.goodfirms.co/software/trade-with-pat",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Everything from trade pacing to risk behavior suggests this EA was designed with practical trading experience in mind. This bot actually respects and follows your settings instead of moving aggressively and damaging your account.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/69937e8bfc9436cf71056212",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 5.0,
+        "Customer support": 4.0,
+        "Overall experience": 4.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Trade With Pat Robot is best suited for traders who want a professional-style automated system focused on discipline, risk control, and long-term stability."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "It still requires responsible use, realistic expectations, and proper setup — it’s a tool, not a magic solution."
+        },
+        {
+          "question": "How long have you used Trade with Pat?",
+          "answer": "5 Months"
+        },
+        {
+          "question": "How frequently do you use Trade with Pat?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for Trade with Pat?",
+          "answer": "Mid Tier"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with Trade with Pat?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    },
+    {
+      "review_id": "699329172b373e41bf096af2",
+      "review_dom_id": "review_699329172b373e41bf096af2",
+      "company_profile_id": null,
+      "software_id": "68cd6dfc767c4f563b56b602",
+      "submitted_on": "2026-02-16 02:29",
+      "is_draft": false,
+      "title": "Helped Us Book More Appointments by Responding Faster and Staying Organized",
+      "overall_rating": 5.0,
+      "reviewer_name": "leo tucker",
+      "reviewer_meta_text": "Review submit by leo tucker",
+      "reviewer_role": "Operations Analyst at serenityesthetic.com",
+      "profile_url": "",
+      "profile_title": "leo tucker",
+      "profile_image_alt": "leo tucker, Operations Analyst at serenityesthetic.com",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/84ed0abc9652cc7e94e8ed5a2969609a.jpg",
+      "entity_label": "Review for software",
+      "entity_name": "SalesCaptain",
+      "entity_url": "https://www.goodfirms.co/software/salescaptain",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Since the majority of queries arrive at our med spa while the front desk is occupied with visitors, treatments, and checkout, SalesCaptain has been a huge help. We used to lose reservations as a result of missing calls or responding slowly. In order to prevent leads from going cold, we may respond to missed-call messages promptly with SalesCaptain and carry on conversations via SMS. Our team can easily continue where someone left off without having to ask the same questions because all of the calls, texts, and voicemails are in one location along with the complete client history. Additionally, we follow up more frequently, which has increased the number of inquiries that result in scheduled consultations and meetings. All in all, it has improved the speed, ease, and professionalism of our communication.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/softwareReviews/edit/699329172b373e41bf096af2",
+      "rating_breakdown": {
+        "Ease of use": 5.0,
+        "Features & functionality": 4.0,
+        "Customer support": 5.0,
+        "Overall experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Clear interaction history per customer, a shared inbox for calls, texts, and voicemails, and quick response capabilities missed-call text back and templates. It helps us schedule more appointments, keeps leads organized, and speeds up follow-up."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Initial setup takes some time to tailor workflows and templates to our services, and there’s a small learning curve for the team. Once configured, it runs smoothly."
+        },
+        {
+          "question": "How long have you used SalesCaptain?",
+          "answer": "1 Years"
+        },
+        {
+          "question": "How frequently do you use SalesCaptain?",
+          "answer": "Daily"
+        },
+        {
+          "question": "How do you find pricing for SalesCaptain?",
+          "answer": "Inexpensive"
+        },
+        {
+          "question": "Did you switched from any other software?",
+          "answer": "No"
+        },
+        {
+          "question": "Did you integrate any other software with SalesCaptain?",
+          "answer": "No"
+        }
+      ],
+      "features_used": [
+        {
+          "name": "Artificial Intelligence",
+          "rating": null,
+          "importance": ""
+        },
+        {
+          "name": "Conversational Marketing Platform",
+          "rating": null,
+          "importance": ""
+        }
+      ],
+      "labeled_fields": {}
+    }
+  ]
+}

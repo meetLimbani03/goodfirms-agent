@@ -1,0 +1,1435 @@
+{
+  "review_type": "service",
+  "source_file": "service_reviews.html",
+  "extracted_at_utc": "2026-02-24T12:59:39.953925+00:00",
+  "total_reviews": 20,
+  "field_names": [
+    "company_profile_id",
+    "edit_url",
+    "entity_label",
+    "entity_name",
+    "entity_url",
+    "features_used",
+    "is_draft",
+    "labeled_fields",
+    "overall_rating",
+    "posting_preference",
+    "profile_image_alt",
+    "profile_image_url",
+    "profile_title",
+    "profile_url",
+    "question_answers",
+    "rating_breakdown",
+    "review_dom_id",
+    "review_id",
+    "review_text",
+    "reviewer_meta_text",
+    "reviewer_name",
+    "reviewer_role",
+    "show_on_front",
+    "software_id",
+    "status",
+    "submitted_on",
+    "title",
+    "verified"
+  ],
+  "ui_field_labels": [
+    "Brief description of your project",
+    "Communication",
+    "Industry",
+    "Overall Experience",
+    "Project Budget",
+    "Project Status",
+    "Project title",
+    "Quality Work",
+    "Review on Listing Display",
+    "Scheduling and Timing",
+    "Services",
+    "What is it about the company that you appreciate the most?",
+    "What was it about the company that you didn't like which they should do better?",
+    "company"
+  ],
+  "reviews": [
+    {
+      "review_id": "84925",
+      "review_dom_id": "review_84925",
+      "company_profile_id": "17205",
+      "software_id": null,
+      "submitted_on": "2026-02-24 12:39:52",
+      "is_draft": false,
+      "title": "QA support that reduced risk and improved release stability.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Elaine Correia",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Elaine Correia",
+      "reviewer_role": "International Business Development at NTGS",
+      "profile_url": "https://www.goodfirms.co/company/quality-professionals",
+      "profile_title": "Elaine Correia",
+      "profile_image_alt": "Elaine Correia, International Business Development at NTGS",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/85c9123b25d9dbd4e03303498fc14141.jpg",
+      "entity_label": "company",
+      "entity_name": "Quality professionals",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "We engaged Q-Pros to strengthen quality control during a significant enhancement phase of our SaaS platform. Their involvement provided an objective review of our application at a time when internal teams were focused heavily on feature delivery.\nRather than limiting testing to predefined cases, they explored system behavior across real-world scenarios and stressed key components to evaluate performance consistency. They identified logic inconsistencies and integration gaps that could have impacted user trust if released unnoticed. Their feedback was prioritized clearly, allowing our team to resolve issues efficiently without disrupting sprint cycles.\nOne of the most valuable aspects of working with Q-Pros was their ownership mindset. They tracked progress closely, validated fixes, and ensured nothing critical remained open before release. As a result, post-launch incidents were significantly reduced, and overall system performance was more predictable.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84925/17205",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ownership mindset and focus on preventing real production risks."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Some early documentation reviews required extra clarification, but it improved final accuracy."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Quality Assurance for SaaS Platform Enhancement",
+        "Brief description of your project": "Q-Pros supported QA during a SaaS platform enhancement, focusing on integration validation, performance stability, and risk reduction prior to release.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Defense & Aerospace",
+        "Services": "Testing Services"
+      }
+    },
+    {
+      "review_id": "84924",
+      "review_dom_id": "review_84924",
+      "company_profile_id": "10369",
+      "software_id": null,
+      "submitted_on": "2026-02-24 12:22:27",
+      "is_draft": false,
+      "title": "Q",
+      "overall_rating": 5.0,
+      "reviewer_name": "Eva Nadzeikaitė",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Eva Nadzeikaitė",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/aciety",
+      "profile_title": "Eva Nadzeikaitė",
+      "profile_image_alt": "Eva Nadzeikaitė, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/a3c2f40acea2415a5a70e50418e74819.jpg",
+      "entity_label": "company",
+      "entity_name": "Aciety",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "QQDWEFWFERFREF CCECC CWCEC CEWCE CWECC Baltic Amadeus is all about making digitalisation easy. With 250+ IT professionals, we transform our clients' needs into top-notch IT solutions. We provide a wide range of digitalisation services, including custom software development,",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84924/10369",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "S"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "SQ"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "GA",
+        "Brief description of your project": "AAS",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Business Services",
+        "Services": "Software Development"
+      }
+    },
+    {
+      "review_id": "84923",
+      "review_dom_id": "review_84923",
+      "company_profile_id": "184205",
+      "software_id": null,
+      "submitted_on": "2026-02-24 12:20:51",
+      "is_draft": false,
+      "title": "They were Professional. They delivered on time. They are also Trusted.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sheila mark",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Sheila mark",
+      "reviewer_role": "Organizater at Deliverance Church",
+      "profile_url": "https://www.goodfirms.co/company/premet-translators",
+      "profile_title": "Sheila mark",
+      "profile_image_alt": "Sheila mark, Organizater at Deliverance Church",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/686c6d04df33e5d8c13f0c7d46f89736.jpg",
+      "entity_label": "company",
+      "entity_name": "Premet Translators",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "I liked their Services overally. They made the process of Translation Smooth. The structure of Translation from Translation to Reviewers was something was fantastic. Sometimes we had Rush documents for Translation. This did not hinder their professionalism.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84923/184205",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "They delivered on time. They were affordable."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "They could reach out even on late hours to ensure they delivered on time."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Document Translation for Church",
+        "Brief description of your project": "The project was about Translation of Books from English to Swahili for Our Church. They translated them accurately.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Other Industries",
+        "Services": "Translation Services"
+      }
+    },
+    {
+      "review_id": "84922",
+      "review_dom_id": "review_84922",
+      "company_profile_id": "17205",
+      "software_id": null,
+      "submitted_on": "2026-02-24 12:09:15",
+      "is_draft": false,
+      "title": "Pre-launch QA support that improved stability and launch confidence.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Lauren Wekwert",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Lauren Wekwert",
+      "reviewer_role": "Marketing Director at P.A. Commercial",
+      "profile_url": "https://www.goodfirms.co/company/quality-professionals",
+      "profile_title": "Lauren Wekwert",
+      "profile_image_alt": "Lauren Wekwert, Marketing Director at P.A. Commercial",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/3e43f12832f61ddbc6a83d54a2092cfe.jpg",
+      "entity_label": "company",
+      "entity_name": "Quality professionals",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "The team reviewed key user journeys, validated integrations, and performed regression and load testing to ensure the platform could handle expected traffic. They identified edge-case issues and workflow gaps that might have affected user experience if left unresolved. Their reports were structured, practical, and easy for our developers to act on.\nWhat stood out most was their follow-through. They didn’t just submit findings; they revalidated fixes and confirmed improvements before closing tasks. This approach helped us move into launch with greater stability and confidence. Their involvement reduced production risks and strengthened the overall reliability of our release.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84922/17205",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their thorough validation process and consistent follow-up on issue resolution."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Early planning required additional clarification sessions, but it improved final accuracy."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Pre-Launch QA Review for Customer Portal",
+        "Brief description of your project": "Q-Pros performed pre-launch QA testing for a customer portal, covering user journeys, regression testing, and performance validation before public rollout.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Real Estate",
+        "Services": "Testing Services"
+      }
+    },
+    {
+      "review_id": "84921",
+      "review_dom_id": "review_84921",
+      "company_profile_id": "154111",
+      "software_id": null,
+      "submitted_on": "2026-02-24 11:42:38",
+      "is_draft": false,
+      "title": "Outstanding Local SEO & Google Business Profile Growth",
+      "overall_rating": 5.0,
+      "reviewer_name": "Jeetendra Sharma",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Jeetendra Sharma",
+      "reviewer_role": "Owner at Muzaffarpur Honda",
+      "profile_url": "https://www.goodfirms.co/company/growthwale",
+      "profile_title": "Jeetendra Sharma",
+      "profile_image_alt": "Jeetendra Sharma, Owner at Muzaffarpur Honda",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/084024c93965b0956244151acba1aa31.jpg",
+      "entity_label": "company",
+      "entity_name": "Growthwale",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "We partnered with Growthwale for our digital marketing and local SEO requirements, and the experience has been excellent from the beginning.\nTheir team understands the local market very well and helped us improve our Google Business Profile visibility, customer engagement, and overall online presence. Within a short period, we started noticing better profile interactions, more calls, and improved rankings in our area.\nWhat we appreciated most was their clear communication, transparent strategy, and commitment to delivering measurable results rather than making unrealistic promises. They are proactive, responsive, and focused on long-term growth.\nIf you are looking for a reliable digital marketing partner who genuinely works for your business growth, we highly recommend Growthwale.\n— Team Muzaffarpur Honda",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84921/154111",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "What we liked most about Growthwale was their clarity and results-focused approach. They did not make unrealistic promises but instead explained a clear strategy and executed it step by step. Their understanding of local SEO, especially Google Business Profile optimization, made a noticeable difference in our visibility and customer inquiries. We also appreciated their transparency, regular communication, and commitment to long-term growth rather than short-term tactics."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "At the beginning, we would have appreciated slightly more frequent reporting updates to better track weekly progress. However, once the reporting structure was streamlined and expectations were aligned, the communication became clear and consistent. Overall, the experience has been positive and results-driven."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Muzaffarpur Honda GMB Management",
+        "Brief description of your project": "Muzaffarpur Honda partnered with Growthwale to strengthen our digital presence and improve our visibility in local search results. The primary objective was to optimize our Google Business Profile, increase customer inquiries, and enhance our online reputation in the Muzaffarpur market.\nGrowthwale conducted a complete audit of our profile, optimized business information, improved keyword targeting, enhanced service descriptions, and implemented a structured posting strategy. They also guided us on review management, customer engagement, and profile consistency across platforms.\nAs a result of their strategic approach, we experienced improved search visibility, increased profile interactions, and a noticeable growth in customer calls and inquiries.\nThe project focused on sustainable local growth, brand credibility, and measurable business impact rather than short-term results.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "In progress",
+        "Industry": "Automotive",
+        "Services": "Digital Marketing"
+      }
+    },
+    {
+      "review_id": "84920",
+      "review_dom_id": "review_84920",
+      "company_profile_id": "202603",
+      "software_id": null,
+      "submitted_on": "2026-02-24 11:29:51",
+      "is_draft": false,
+      "title": "Efficient and professional ERP development",
+      "overall_rating": 5.0,
+      "reviewer_name": "Pierre",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Pierre",
+      "reviewer_role": "CEO at -",
+      "profile_url": "https://www.goodfirms.co/company/omega-solution",
+      "profile_title": "Pierre",
+      "profile_image_alt": "Pierre, CEO at -",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/6b46ccaf9aa5fa942c531cf287c0836a.jpg",
+      "entity_label": "company",
+      "entity_name": "OMEGA SOLUTION",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Very good experience with this ERP project. The programmer was professional, attentive, and very efficient. The project went very well and the result is exactly what I expected. I would definitely recommend them.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84920/202603",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "We particularly appreciated his professionalism, availability, and responsiveness throughout the project. He listened to our needs, offered suggestions, and was always solution-oriented, which greatly contributed to the success of the project."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "ERP",
+        "Brief description of your project": "ERP project dedicated to business management, including file, customer, and operation tracking. The programmer fully understood the business needs and was able to propose a clear, effective, and tailored solution. Collaboration was smooth from start to finish, and the project ran under excellent conditions.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "In progress",
+        "Industry": "Manufacturing",
+        "Services": "Software Development"
+      }
+    },
+    {
+      "review_id": "84919",
+      "review_dom_id": "review_84919",
+      "company_profile_id": "81747",
+      "software_id": null,
+      "submitted_on": "2026-02-24 11:03:37",
+      "is_draft": false,
+      "title": "Extremely satisfied",
+      "overall_rating": 5.0,
+      "reviewer_name": "Majed Al Qahim",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Majed Al Qahim",
+      "reviewer_role": "CEO at Pinnacle Business Group",
+      "profile_url": "https://www.goodfirms.co/company/udjat-agency",
+      "profile_title": "Majed Al Qahim",
+      "profile_image_alt": "Majed Al Qahim, CEO at Pinnacle Business Group",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/7cd012d186df5ef53f911eefb6adaaf4.jpg",
+      "entity_label": "company",
+      "entity_name": "Udjat Agency",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "We’re extremely satisfied with Udjat’s full marketing strategy and structured approach. Their in-depth market research and detailed competitor analysis gave us clear insights we had never seen before. They helped us identify our marketing weaknesses and turn them into real strengths that improved our overall positioning and business performance.\nThe team was strategic, data-driven, and highly supportive throughout the process. Thanks to their guidance, we now operate with a clearer vision, stronger brand positioning, and a more competitive presence in the market.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84919/81747",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Hours system, Meeting the deadline and the following up."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Our Experience Recommending Udjat",
+        "Brief description of your project": "We’re extremely satisfied with Udjat’s full marketing strategy and structured approach. Their in-depth market research and detailed competitor analysis gave us clear insights we had never seen before. They helped us identify our marketing weaknesses and turn them into real strengths that improved our overall positioning and business performance.\nThe team was strategic, data-driven, and highly supportive throughout the process. Thanks to their guidance, we now operate with a clearer vision, stronger brand positioning, and a more competitive presence in the market.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Other Industries",
+        "Services": "Web Design"
+      }
+    },
+    {
+      "review_id": "84918",
+      "review_dom_id": "review_84918",
+      "company_profile_id": "104846",
+      "software_id": null,
+      "submitted_on": "2026-02-24 10:58:39",
+      "is_draft": false,
+      "title": "A reliable business partner who considers himself or herself a member of our team.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Sophia Zadachina",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Sophia Zadachina",
+      "reviewer_role": "Customer Success Manager at EvaCodes",
+      "profile_url": "https://www.goodfirms.co/company/komanda",
+      "profile_title": "Sophia Zadachina",
+      "profile_image_alt": "Sophia Zadachina, Customer Success Manager at EvaCodes",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/f8c3ea9165498b7f83ff5e6efb16b4e4.jpg",
+      "entity_label": "company",
+      "entity_name": "Komanda",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "We invited Komenda on board to assist us in a number of blockchain projects that we required assistance with the front-end-facing part, such as marketing websites, investor landing pages, and front-end. Our group was working on smart contracts and blockchain logic, and Komanda was working on the web layer.\nThey fitted in our work routine fast and operated under our brand without resistance. It was easy to communicate, the deadlines were met and the quality remained the same in all projects.\nTheir independence was the best thing about them to us. We did not have to micromanage anything, the tasks were presented on time, and problems were addressed in advance. It scaled several Web3 launches on our behalf considerably easier.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84918/104846",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their consistency and the fact that they can be performed quietly at the background. They know the limitations of marketing and technical, uncommon with the project related to Web3."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Nothing significant. There has been a seamless flow of the collaboration and we are pleased with the alliance."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Web3 White-Label Web Support",
+        "Brief description of your project": "Our collaboration with Komanda was in the role of white-label web team, to offer marketing sites and front-end development to our blockchain and Web3 client projects.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "E-commerce",
+        "Services": "Web Development"
+      }
+    },
+    {
+      "review_id": "84917",
+      "review_dom_id": "review_84917",
+      "company_profile_id": "201462",
+      "software_id": null,
+      "submitted_on": "2026-02-24 10:39:49",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "olajumoke Mercy",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by olajumoke Mercy",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/techdella",
+      "profile_title": "olajumoke Mercy",
+      "profile_image_alt": "olajumoke Mercy, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1db38cdde19187b8eed374b9d1344682.jpg",
+      "entity_label": "company",
+      "entity_name": "Techdella",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84917/201462",
+      "rating_breakdown": {
+        "Quality Work": 0.0,
+        "Scheduling and Timing": 0.0,
+        "Communication": 0.0,
+        "Overall Experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Brand Marketing",
+        "Brief description of your project": "-",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "E-commerce"
+      }
+    },
+    {
+      "review_id": "84916",
+      "review_dom_id": "review_84916",
+      "company_profile_id": "17030",
+      "software_id": null,
+      "submitted_on": "2026-02-24 10:21:11",
+      "is_draft": false,
+      "title": "High-Performance Centralized Cryptocurrency Exchange (CEX) Development.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Alexander Ruban",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Alexander Ruban",
+      "reviewer_role": "CEO at Testerly",
+      "profile_url": "https://www.goodfirms.co/company/peiko",
+      "profile_title": "Alexander Ruban",
+      "profile_image_alt": "Alexander Ruban, CEO at Testerly",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1692368084-alexander-ruban.jpg",
+      "entity_label": "company",
+      "entity_name": "Peiko",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Our experience with Peiko was defined by their remarkable engineering excellence and ability to deliver a high-performance system within a predictable timeframe. The project was managed with high professional rigor, using a structured Agile approach that provided regular updates on technical milestones.\nThe technical outcomes were impressive: the system successfully passed all stress tests, maintaining sub-millisecond latency under a target load of 100k TPS. This stability allowed us to secure partnerships with three major liquidity providers during the pre-launch phase. The team of 6-10 experts showed a high level of ownership, ensuring all critical components—including the matching engine and wallet integrations—were delivered exactly on schedule. Their proactive communication and ability to address technical challenges during the integration phase resulted in a production-ready core that is both scalable and highly resilient.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84916/17030",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "What impressed us most was Peiko's remarkable engineering excellence, specifically their ability to deliver a high-performance system that met all technical objectives within a predictable timeframe. The system successfully maintained sub-millisecond latency under a target load of 100k TPS during stress tests, proving the platform's stability and resilience. Their proactive communication and structured Agile approach made the integration phase smooth and efficient."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "It is rare to encounter a development cycle where every technical objective is met so precisely, leaving no suggestions for improvement. The project was managed with high professional rigor from the initial architecture design to the final stress testing. Because the team delivered a production-ready engine that exceeded our performance benchmarks while staying exactly on schedule, we are exceptionally satisfied with the results and found no areas of concern."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "High-Performance Centralized Cryptocurrency Exchange (CEX) D",
+        "Brief description of your project": "The project involved the full-cycle development of a professional-grade centralized cryptocurrency exchange (CEX) designed for extreme throughput. The primary objective was to build a custom matching engine capable of handling over 100,000 transactions per second to compete with top-tier global platforms. The scope of work included low-latency execution systems, a secure order book management system, integration of hot and cold wallet clusters, a comprehensive admin panel for risk management, and a robust API for institutional liquidity providers. Additionally, advanced security layers were implemented to prevent front-running and ensure data integrity.",
+        "Project Budget": "$50001 to $200000",
+        "Project Status": "In progress",
+        "Industry": "Information Technology",
+        "Services": "Web Development"
+      }
+    },
+    {
+      "review_id": "84915",
+      "review_dom_id": "review_84915",
+      "company_profile_id": "90723",
+      "software_id": null,
+      "submitted_on": "2026-02-24 10:03:22",
+      "is_draft": false,
+      "title": "Exceptional experience.",
+      "overall_rating": 5.0,
+      "reviewer_name": "rahul kothekar",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by rahul kothekar",
+      "reviewer_role": "Vice President at General Mills",
+      "profile_url": "https://www.goodfirms.co/company/ytviews-digital-media-llc",
+      "profile_title": "rahul kothekar",
+      "profile_image_alt": "rahul kothekar, Vice President at General Mills",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/d48e6d924ab5188601a913541d0ebe40.jpg",
+      "entity_label": "company",
+      "entity_name": "YTVIEWS ONLINE MEDIA LLC",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Overall experience is very good. While I had a positive experience overall with YTViews, the only aspect I felt could be improved was the delivery time for certain services. Some of the services took a bit longer than expected to show results. However, their customer support team was helpful in providing updates, and the end results were ultimately worth the wait",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84915/90723",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Free services"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Free services"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Project Back To School",
+        "Brief description of your project": "Back to school project was held in Jan'26. Excellent service provided by good firms. thank you for all the support.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Business Services",
+        "Services": "Digital Marketing"
+      }
+    },
+    {
+      "review_id": "84914",
+      "review_dom_id": "review_84914",
+      "company_profile_id": "7426",
+      "software_id": null,
+      "submitted_on": "2026-02-24 09:36:34",
+      "is_draft": false,
+      "title": "afbyjkyumgbnrbnr",
+      "overall_rating": 5.0,
+      "reviewer_name": "Manjul Niranjani",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Manjul Niranjani",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/elluminati-inc",
+      "profile_title": "Manjul Niranjani",
+      "profile_image_alt": "Manjul Niranjani, Attended Pandit Deendayal Energy University",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/default.jpg",
+      "entity_label": "company",
+      "entity_name": "Elluminati inc",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "aebtb svbeiuvb wivcwriebvonc owhfbw wofw werf wrfh we fwe fwnf wfwofo f w fwhfown w wfihwf wfhowbow owhfuo wfhwoufw wfhowhf whfow w fw fo ohw ghwg gw wgwg howgh g gw go g gw og oworh grgr gr rg",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84914/7426",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "sfbveberbefvebn"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "svfdvbefvb"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "svderghevwcv",
+        "Brief description of your project": "arhgtjtuekshetutyjmsrhbrtjhtktujrdthrth",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Art, Entertainment & Music",
+        "Services": "Mobile App Development"
+      }
+    },
+    {
+      "review_id": "84913",
+      "review_dom_id": "review_84913",
+      "company_profile_id": "193031",
+      "software_id": null,
+      "submitted_on": "2026-02-24 09:32:11",
+      "is_draft": false,
+      "title": "Very responsive and professional to understand the project scope and deliver as requested",
+      "overall_rating": 5.0,
+      "reviewer_name": "Michael Seely",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Michael Seely",
+      "reviewer_role": "Founder at AtomicBlender LLC",
+      "profile_url": "https://www.goodfirms.co/company/tensor-labs",
+      "profile_title": "Michael Seely",
+      "profile_image_alt": "Michael Seely, Founder at AtomicBlender LLC",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/f1e96f3d195884f708f0fbf197bf9a2c.jpg",
+      "entity_label": "company",
+      "entity_name": "Tensor Labs",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Tensor labs worked quickly to prepare initial versions and sought regular feedback to ensure we were heading in the right direction. Excellent communication throughout including project documentation and status updates. Provided recommendations to address challenges. Final turnover included all documentation needed.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84913/193031",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Fast response time, clear communication of project status and challenges"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Limited experience in the industry for which the MVP was targeting"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "RegFind Regulatory AI Search",
+        "Brief description of your project": "Developed MVP of RegFind, a regulatory search and analysis tool to help energy industry licensing teams find and interpret information better. Tensor Labs worked to integrate the AI layer, UI/UX, and database together into an MVP used to demo to potential customers.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Oil & Energy",
+        "Services": "Software Development, Artificial Intelligence"
+      }
+    },
+    {
+      "review_id": "84912",
+      "review_dom_id": "review_84912",
+      "company_profile_id": "201465",
+      "software_id": null,
+      "submitted_on": "2026-02-24 09:21:10",
+      "is_draft": true,
+      "title": "",
+      "overall_rating": 0.0,
+      "reviewer_name": "Ritu Bijalwan",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Ritu Bijalwan",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/dream-it-consulting-services",
+      "profile_title": "Ritu Bijalwan",
+      "profile_image_alt": "Ritu Bijalwan, 14+ Years of Experience in SEO | Meta and Google Ads | Social Media Marketing.",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/71864e9cfe3409311c3b855890405d68.jpg",
+      "entity_label": "company",
+      "entity_name": "Dream IT Consulting Services",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84912/201465",
+      "rating_breakdown": {
+        "Quality Work": 0.0,
+        "Scheduling and Timing": 0.0,
+        "Communication": 0.0,
+        "Overall Experience": 0.0
+      },
+      "question_answers": [],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Dream IT CS",
+        "Brief description of your project": "Digital Marketnh",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Advertising & Marketing"
+      }
+    },
+    {
+      "review_id": "84911",
+      "review_dom_id": "review_84911",
+      "company_profile_id": "202603",
+      "software_id": null,
+      "submitted_on": "2026-02-24 07:41:41",
+      "is_draft": false,
+      "title": "dgshgsf",
+      "overall_rating": 5.0,
+      "reviewer_name": "hamim Mahamud",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by hamim Mahamud",
+      "reviewer_role": "",
+      "profile_url": "https://www.goodfirms.co/company/omega-solution",
+      "profile_title": "hamim Mahamud",
+      "profile_image_alt": "hamim Mahamud, ",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/2a873c95cdaa9422cd7f53ef5fb9e2b4.jpg",
+      "entity_label": "company",
+      "entity_name": "OMEGA SOLUTION",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "hsfhfh dgfgd hsfhf hdgfgd hsfhfhd gfgd hsfhf hdgfgd hsfh fh dgfgd hsfh fh dgfgd hsf hfhdgf gd hsfhfhdgfgd hsfhf hdgf gd hsfh fhdgfgd fdsfds dfgd gdf",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84911/202603",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "hfdhdf"
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "hsfhfhdgfgd hsfhfhdgfgd hsfhfhdgfgd hsfhfhdgfgd hsfhfhdgfgd"
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "aaa",
+        "Brief description of your project": "aaa",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "In progress",
+        "Industry": "Art, Entertainment & Music",
+        "Services": "Software Development"
+      }
+    },
+    {
+      "review_id": "84910",
+      "review_dom_id": "review_84910",
+      "company_profile_id": "196038",
+      "software_id": null,
+      "submitted_on": "2026-02-24 07:12:37",
+      "is_draft": false,
+      "title": "AMAP Infotech delivered scalable software that improved our operational efficiency.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Brian Hess",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Brian Hess",
+      "reviewer_role": "Sales Manager at Astro Machine Works",
+      "profile_url": "https://www.goodfirms.co/company/amap-infotech",
+      "profile_title": "Brian Hess",
+      "profile_image_alt": "Brian Hess, Sales Manager at Astro Machine Works",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1767104882-brian-hess.jpg",
+      "entity_label": "company",
+      "entity_name": "Amap Infotech",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Our experience with AMAP Infotech was highly professional and structured. From the discovery phase, their team focused on understanding our workflows, bottlenecks, and long-term business objectives before proposing a technical solution. Their analytical approach ensured that the final system addressed root operational challenges rather than surface-level issues.\nThroughout development, communication was consistent and transparent. Milestones were clearly defined, timelines were respected, and feedback loops were efficiently managed. The team demonstrated strong expertise in backend architecture, database optimization, and secure system design.\nSince implementation, we have seen measurable improvements in workflow automation, reporting accuracy, and cross-department coordination. Manual errors have decreased, processing time has improved, and management now has access to real-time insights for better decision-making.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84910/196038",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their structured development process, strong technical foundation, and ability to translate complex business requirements into a clean, scalable software solution."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Initial documentation during early testing phases could have been more detailed, but they quickly improved clarity once the feedback was provided."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Custom Enterprise Software Development & System Automation",
+        "Brief description of your project": "We partnered with AMAP Infotech to design and develop a custom enterprise software solution to streamline our internal workflows and improve operational efficiency. Our organization required a centralized system capable of managing multiple business processes, automating repetitive tasks, and improving data visibility across departments.\nAMAP Infotech developed a scalable software platform tailored to our operational model. The solution included custom modules for process management, reporting dashboards, role-based access control, and system integrations with our existing tools. The architecture was designed for flexibility and long-term scalability, allowing us to expand functionality as our business grows.\nThe final product delivered improved process automation, better data accuracy, and enhanced collaboration across teams.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Business Services",
+        "Services": "Software Development"
+      }
+    },
+    {
+      "review_id": "84909",
+      "review_dom_id": "review_84909",
+      "company_profile_id": "193970",
+      "software_id": null,
+      "submitted_on": "2026-02-24 06:43:17",
+      "is_draft": false,
+      "title": "My experience with Funkymedia was highly professional and results-driven, with innovative AI-powered",
+      "overall_rating": 5.0,
+      "reviewer_name": "Trevor noon",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Trevor noon",
+      "reviewer_role": "Chief Technology Officer at Exusia",
+      "profile_url": "https://www.goodfirms.co/company/funkymedia",
+      "profile_title": "Trevor noon",
+      "profile_image_alt": "Trevor noon, Chief Technology Officer at Exusia",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/fe27d87b5a580fb2b5ac14b28b6440f8.jpg",
+      "entity_label": "company",
+      "entity_name": "FunkyMEDIA",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "My overall experience with Funkymedia was extremely positive and exceeded expectations. From the very beginning, the team demonstrated a strong understanding of both digital marketing fundamentals and advanced AI-driven solutions. Their strategic approach was clearly data-oriented, focusing on measurable performance improvements rather than just surface-level metrics.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84909/193970",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "What I liked most about Funkymedia was their innovative use of AI combined with a highly professional and strategic approach. They didn’t rely on generic marketing tactics—instead, they used data-driven insights, automation, and predictive analytics to create tailored solutions that delivered measurable results."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "Regarding Funkymedia, there wasn’t anything major to criticize; however, at times the detailed analytics reports and technical explanations (especially around AI tools and data modeling) could feel quite complex for someone without a strong technical background."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "Innovation and AI-Driven Excellence",
+        "Brief description of your project": "The project focused on implementing AI-driven digital marketing solutions to enhance online visibility, optimize customer acquisition, and improve overall campaign performance. Funkymedia developed a comprehensive strategy combining Artificial Intelligence tools with advanced SEO, content marketing, and performance analytics.",
+        "Project Budget": "$10001 to $50000",
+        "Project Status": "Completed",
+        "Industry": "Other Industries",
+        "Services": "Digital Marketing"
+      }
+    },
+    {
+      "review_id": "84908",
+      "review_dom_id": "review_84908",
+      "company_profile_id": "183692",
+      "software_id": null,
+      "submitted_on": "2026-02-24 06:20:20",
+      "is_draft": false,
+      "title": "Professional, efficient, and their AI solution improved our online customer support workflow.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Juan Pablo Garrido Marguery",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Juan Pablo Garrido Marguery",
+      "reviewer_role": "Chief Financial Officer at Felt Bicycles",
+      "profile_url": "https://www.goodfirms.co/company/agix-technologies",
+      "profile_title": "Juan Pablo Garrido Marguery",
+      "profile_image_alt": "Juan Pablo Garrido Marguery, Chief Financial Officer at Felt Bicycles",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1771913703-juan-pablo-garrido-marguery.jpg",
+      "entity_label": "company",
+      "entity_name": "Agix Technologies",
+      "entity_url": "",
+      "posting_preference": "Display both my name and the company's name with the review",
+      "review_text": "Our experience with Agix Technology was very positive. They clearly understood our e‑commerce operations and customer service challenges. The team communicated effectively and implemented the AI system with minimal disruption to our daily operations.\nAfter deployment, routine inquiries and support requests were handled much faster, reducing workload for our staff and improving customer satisfaction. The system was easy to use, and Agix provided prompt support whenever needed. Overall, the project delivered tangible improvements to our customer support efficiency.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84908/183692",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their practical approach and focus on results. The AI system was easy to use and genuinely reduced our team’s workload while improving response times."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There were no significant issues. The only minor point was the initial monitoring period, where some adjustments were needed to optimize responses, but Agix guided us through it efficiently."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "AI-Powered Customer Support Automation for E‑Commerce",
+        "Brief description of your project": "We partnered with Agix Technology to improve how our online store handles customer inquiries, FAQs, and return requests. With high daily volumes of emails and messages, our team was spending too much time on routine support tasks.\nAgix implemented an AI-powered solution that could respond to common questions, guide customers through returns, and provide accurate information quickly. This allowed our support staff to focus on more complex customer needs and improved response times across our e‑commerce channels.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Retail",
+        "Services": "Artificial Intelligence"
+      }
+    },
+    {
+      "review_id": "84907",
+      "review_dom_id": "review_84907",
+      "company_profile_id": "183692",
+      "software_id": null,
+      "submitted_on": "2026-02-24 05:48:48",
+      "is_draft": false,
+      "title": "Reliable team and a useful AI system that improved our internal support efficiency.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Jonathan Tamourov",
+      "reviewer_meta_text": "Reviewed on 1/1/70 by Jonathan Tamourov",
+      "reviewer_role": "Country Manager at EPIKA",
+      "profile_url": "https://www.goodfirms.co/company/agix-technologies",
+      "profile_title": "Jonathan Tamourov",
+      "profile_image_alt": "Jonathan Tamourov, Country Manager at EPIKA",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/1771911748-sophie-amelia.png",
+      "entity_label": "company",
+      "entity_name": "Agix Technologies",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Their team was organized and easy to communicate with, and they clearly explained each step of the implementation. They focused on understanding our operational needs rather than offering a generic solution.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "0",
+          "label": "Unpublish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84907/183692",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their responsiveness and practical approach. They concentrated on delivering a solution that our staff could actually use daily instead of something overly complex."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There were no major concerns. The only minor issue was the initial configuration stage took a little longer than expected, but it ensured the system was properly tailored to our processes."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "AI Support Automation and Knowledge Assistant Implementation",
+        "Brief description of your project": "We engaged Agix Technology to help us improve how our team handles internal support requests and technical information sharing. Our staff often needed to search across multiple sources for documentation, procedures, and previous cases, which was time-consuming and inconsistent.\nAgix proposed an AI-based solution that could centralize knowledge and allow team members to quickly retrieve relevant information. The system analyzes internal documents and support materials and provides structured answers, helping our staff respond faster and work more efficiently.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Information Technology",
+        "Services": "Artificial Intelligence"
+      }
+    },
+    {
+      "review_id": "84906",
+      "review_dom_id": "review_84906",
+      "company_profile_id": "183692",
+      "software_id": null,
+      "submitted_on": "2026-02-24 04:54:55",
+      "is_draft": false,
+      "title": "Professional collaboration and a practical AI solution that enhanced our administrative workflows.",
+      "overall_rating": 5.0,
+      "reviewer_name": "Andrzej Godoń",
+      "reviewer_meta_text": "Reviewed 7 hours, 9 minutes ago by Andrzej Godoń",
+      "reviewer_role": "Head of Administration at Uniwersytet Przyrodniczy w Poznaniu",
+      "profile_url": "https://www.goodfirms.co/company/agix-technologies",
+      "profile_title": "Andrzej Godoń",
+      "profile_image_alt": "Andrzej Godoń, Head of Administration at Uniwersytet Przyrodniczy w Poznaniu",
+      "profile_image_url": "//assets.goodfirms.co/profile/thumb/927ed9a5b397e70a2bbe64892325e339.jpg",
+      "entity_label": "company",
+      "entity_name": "Agix Technologies",
+      "entity_url": "",
+      "posting_preference": "Only display my name with the review",
+      "review_text": "Their team took the time to understand how our university handles large volumes of administrative documents and routine tasks. Communication was clear and timely, and the implementation process fit smoothly into our daily operations.",
+      "status": {
+        "available": [
+          {
+            "code": "0",
+            "label": "Unpublish"
+          },
+          {
+            "code": "1",
+            "label": "Publish"
+          },
+          {
+            "code": "2",
+            "label": "Reject"
+          }
+        ],
+        "current": {
+          "code": "1",
+          "label": "Publish"
+        }
+      },
+      "show_on_front": false,
+      "verified": false,
+      "edit_url": "/administrator/reviews/edit/84906/183692",
+      "rating_breakdown": {
+        "Quality Work": 5.0,
+        "Scheduling and Timing": 5.0,
+        "Communication": 5.0,
+        "Overall Experience": 5.0
+      },
+      "question_answers": [
+        {
+          "question": "What is it about the company that you appreciate the most?",
+          "answer": "Their ability to tailor a practical AI solution to our specific administrative challenges stood out. They focused on solutions that genuinely improved our workflow and delivered meaningful results."
+        },
+        {
+          "question": "What was it about the company that you didn't like which they should do better?",
+          "answer": "There were no major issues. The only small challenge was a short period of adjustment for our team to learn the new tools, but Agix provided clear guidance which made it easy."
+        }
+      ],
+      "features_used": [],
+      "labeled_fields": {
+        "Project title": "AI-Powered Administrative Workflow Automation for University",
+        "Brief description of your project": "We worked with Agix Technology to automate repetitive administrative tasks related to document handling, student record processing, and internal reporting workflows. The goal was to reduce manual effort on routine tasks to allow our team to focus more on strategic educational activities.\nAgix assessed our existing processes and deployed an AI solution that could extract, structure, and organize relevant information from various documents, making it easier for our administrative staff to access needed data quickly.",
+        "Project Budget": "$0 to $10000",
+        "Project Status": "Completed",
+        "Industry": "Education",
+        "Services": "Artificial Intelligence",
+        "Review on Listing Display": "Artificial Intelligence"
+      }
+    }
+  ]
+}
