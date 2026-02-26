@@ -8,6 +8,8 @@
   },
   "enabledMcpjsonServers": [
     "mcp_server_mysql",
-    "mongodb"
+    "mongodb",
+    "Prod-goodfirms-mysql",
+    "prod-goodfirms-mongo"
   ]
 }
