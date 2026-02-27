@@ -9,6 +9,10 @@ Define what the agent should verify for:
 
 This is live-flow only (new reviews), not legacy backfill.
 
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
 ## 1) Common Checks (Both Review Types)
 
 ### 1.1 Content readability and coherence

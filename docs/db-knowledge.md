@@ -6,6 +6,13 @@
 - **MongoDB** → MCP: `prod-goodfirms-mongo` → DB: `goodfirms`
 - **MySQL** → MCP: `Prod-goodfirms-mysql` → DB: `GoodFirms`
 
+## Access Status (as of 2026-02-27)
+- MongoDB MCP is reachable.
+- Production MySQL MCP is currently **not reachable** (`Transport closed` on `Prod-goodfirms-mysql`).
+- Workaround in use: local MySQL DB `GoodFirms` imported from `data/gf.sql`, which is a production export snapshot.
+- Snapshot timestamp from dump footer: `2026-02-17 02:26:06` (`-- Dump completed on 2026-02-17  2:26:06`).
+- Snapshot age: **10 days old** as of `2026-02-27`.
+
 ---
 
 ## Auth / Login
@@ -252,4 +259,4 @@ Admin-initiated email invites for software reviews.
 - `response_date` — String or Number
 - `integrations` — doubles as Yes/No/IDK (step 1) and possibly a rating, verify actual usage
 - `step` — exact values not confirmed (e.g. does step=2 mean step 2 complete?), verify
-- MySQL `reviews` — full column list not yet explored
+- For MySQL analysis, use local snapshot DB `GoodFirms` (from `data/gf.sql`) until prod MySQL MCP access is restored

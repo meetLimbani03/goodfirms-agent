@@ -1,4 +1,6 @@
 db_data/gf.sql
 db_data/goodfirms.archive
+data/gf.sql
+data/gf_fixed.sql
 .mcp.json
 .codex/

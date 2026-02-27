@@ -5,12 +5,17 @@
 - Sample analyzed: 40 fresh records (20 + 20)
 - Purpose: define the **current** schema to use for agent pre-check + review workflow
 
+## Access / Freshness Note (as of 2026-02-27)
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For MySQL-backed validation, use local DB `GoodFirms` imported from `data/gf.sql`.
+- Snapshot timestamp from dump footer: `2026-02-17 02:26:06` (10 days old as of 2026-02-27).
+
 ## Eligibility Gate (for automation)
 A service review is eligible for agent processing when all are true:
 - `is_draft == false`
 - status is pending/unpublish:
   - `status.current.code == "0"` (from extracted JSON), or
-  - equivalent DB state `publish_status = 0`
+  - equivalent DB state `publish_status = 0` (check via local `GoodFirms` snapshot until prod MySQL MCP is restored)
 - required content fields are present (see below)
 
 ## Required Fields

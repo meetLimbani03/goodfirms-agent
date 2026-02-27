@@ -38,6 +38,13 @@ goodfirms-agent/
 
 # Business Context
 
+- As of **2026-02-27**:
+  - MongoDB MCP is reachable (`prod-goodfirms-mongo`).
+  - Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable (`Transport closed`).
+  - MySQL workaround: use local DB `GoodFirms` imported from `data/gf.sql` snapshot.
+  - Snapshot timestamp from dump footer: `2026-02-17 02:26:06` (`-- Dump completed on 2026-02-17  2:26:06`).
+  - Snapshot age: **10 days old** as of `2026-02-27`.
+
 - There are only 2 new login/signup methods:
   - Google
   - LinkedIn
