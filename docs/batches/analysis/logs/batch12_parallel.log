@@ -1,0 +1,147 @@
+2026-02-27T12:04:01.124099Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9efb-ffeb-7d03-af25-d3c352d4dca6
+--------
+user
+Analyze /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json against /home/ubuntu/Desktop/goodfirms-agent/docs/review-verification-steps.md. Return concise markdown with exactly these sections: New patterns not covered, Redundant rules to remove, Exact proposed text edits. Keep token-efficient and avoid repeating existing rules.
+mcp: prod-goodfirms-mongo starting
+mcp: codex_apps starting
+mcp: pencil starting
+mcp: Prod-goodfirms-mysql starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: prod-goodfirms-mongo ready
+mcp: codex_apps ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, prod-goodfirms-mongo, codex_apps
+
+thinking
+**Preparing to read files**
+exec
+/bin/bash -lc ls in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+AGENTS.md
+CLAUDE.md
+data
+docs
+form-ui
+
+thinking
+**Checking for AGENTS documentation**
+exec
+/bin/bash -lc 'ls docs' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+Goodfirms Review Agent.pdf
+Goodfirms Review Agent.txt
+batches
+db-knowledge.md
+live-service-review-schema.md
+live-software-review-schema.md
+research
+review-verification-steps.md
+
+thinking
+**Reviewing JSON file contents**
+exec
+/bin/bash -lc "sed -n '1,200p' docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+[{"_id":{"$oid":"65389a1994c40b6914513bd3"},"software_id":{"$oid":"5f23f5c7d347e11bdf4bfa0f"},"client_name":"Jackson Tyler","client_company_name":"","position":"","client_profile_link":"","hidden_identity":"4","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","title":"EUROPA is a top-notch app design software that simplifies the app creation process without compromising on quality.","summary":"This software is really wonderful; it allows creative freedom which is good for uses to express themselves. it simplifies the app design process, helping us save time and effort while maintaining high-quality results. I like that it often updates its features and tools to stay current with design trends and technology. Also it typically maintains a high standard of security and privacy and that is very essential for us to protect our design work.","strength":"The user-interface of EUROPA I intuitive and easy to navigate, so beginners like me can also use it.\r\nIt offers lots and lots of options of templates, icons, and design elements.\r\nVery cost-effective pricing options, that’s good for me.","weakness":"  It’s a little bit slow but it works perfectly fine for me.\r\n","software_name":"EUROPA","software_slug":"europa","reason":"Unable to verify the reviewer","response":"","is_active":2,"created":1698208281,"updated":1698296295,"features":{"category":["5f22609e55d8bf66a234636d"]},"consider_software":null,"used_software":null,"integrate_software":null,"publish_date":1698208315,"software_details":[],"category_details":[{"_id":{"$oid":"5f22609e55d8bf66a234636d"},"name":"App Design Software","slug":"app-design-software"}]},
+{"_id":{"$oid":"6538d55a339db2f305011154"},"features":{"category":["5c4ed6087d9dd0290332a563"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"software_name":"Zoho Recruit","software_slug":"zoho-recruit","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Brice ROM","client_email":"bricerom@gmail.com","client_company_name":"","position":"Recruteur indépendant","location":"","client_profile_link":"https://www.linkedin.com/in/brice-rom","client_company_website":"","hidden_identity":1,"step":1,"created":1698223450,"updated":1698230101,"software_details":[{"_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"name":"Zoho Recruit","slug":"zoho-recruit"}],"category_details":[{"_id":{"$oid":"5c4ed6087d9dd0290332a563"},"name":"Recruiting Software","slug":"recruiting-software"}]},
+{"_id":{"$oid":"653ffb283fe4dfd19b0ce6e8"},"features":{"category":["5c32e7de7d9dd014291696f2"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"653095f089963e09c62c9bf2"},"software_name":"MeMate","software_slug":"memate","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Benson Johnson","client_email":"bj3969612@gmail.com","client_company_name":"","position":"International engineer at SAIC  at SAIC","location":"","client_profile_link":"https://www.linkedin.com/in/benson-johnson-9b1b46298","client_company_website":"","hidden_identity":1,"step":1,"created":1698691880,"updated":1698721309,"software_details":[{"_id":{"$oid":"653095f089963e09c62c9bf2"},"name":"MeMate","slug":"memate"}],"category_details":[{"_id":{"$oid":"5c32e7de7d9dd014291696f2"},"name":"Business Process Management Software","slug":"business-process-management-software"}]},
+{"_id":{"$oid":"6543afa60af127dd7a0e9b44"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"incomplete review","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Aqsa Sajjad","client_email":"aqsysajjad123@gmail.com","client_company_name":"WorkHub","position":"","location":"","client_profile_link":"https://www.linkedin.com/in/aqsa-sajjad/","client_company_website":"","hidden_identity":1,"step":1,"created":1698934694,"updated":1698983246,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+{"_id":{"$oid":"654a237931338bdfe00c9932"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"Reviews are accepted only from clients of the company","response":"","title":"Best digital marketing tool","summary":"Success.ai boasts an intuitive and user-friendly interface, making it accessible to users of all skill levels. Navigating through the software is a breeze, and the learning curve is minimal. This ease of use is a testament to the thought and care put into user experience.","strength":"features","weakness":"cost","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Divyansh  Arora","client_email":"divyansharora1102@gmail.com","client_company_name":"divi","position":"Stock and trading analyst","location":"in","client_profile_link":"https://www.linkedin.com/in/divyansharora","client_company_website":"https://www.saashub.com/","hidden_identity":1,"step":3,"created":1699357678,"updated":1700113693,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+{"_id":{"$oid":"654a40238241f1585104c936"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Ahmad Riaz","client_email":"gujjarahmad646@gmail.com","client_company_name":"","position":"Content Writing | Email Marketing | Social Media Marketing","location":"","client_profile_link":"https://www.linkedin.com/in/ahmad-riaz-798823293","client_company_website":"","hidden_identity":1,"step":1,"created":1699364899,"updated":1700113522,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+{"_id":{"$oid":"654a79109bb61c739a0f8d83"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Reviews are accepted only from clients of the company","response":"","title":"B2B rocket","summary":"B2B rocket is a powerful booster to your sales team with AI driven agents. B2B rocket platform that covered the lead generation with AI technology that is very helpful to you resolutions your sales approach.","strength":"B2B rocket that is powerful tool for a business that is beneficial for anyone. B2B rocket provides unlimited sales growth with lead generation email automation system and customer nature system.","weakness":"B2B rocket is very helpful to you resolutions your sales approach. I have a good experience about B2B rocket.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Urba Mehboob","client_email":"urbamehboob@gmail.com","client_company_name":"Success.ai","position":"Social Media Marketing| Content Marketing| Freelance Graphic Designer| Digital Marketer|","location":"pk","client_profile_link":"https://www.linkedin.com/in/urba-mehboob-912623250","client_company_website":"https://www.success.ai/","hidden_identity":1,"step":3,"created":1699380000,"updated":1700113464,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+{"_id":{"$oid":"654a867232223aac8a034b24"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"Reviews are accepted only from clients of the company","response":"","title":"Success.ai is a cost-effective, user-friendly email marketing tool.","summary":"Compared to other email marketing tools, Success.ai offers a highly efficient service at a competitive price. The platform is easy to navigate, making it accessible for users of all levels of tech-savviness and making the implementation easy. Success.ai provides a 14-day free trial that allows new users to explore all the features without any upfront payment. The platform can be easily integrated with other systems, enhancing its usability. Success.ai has a dedicated customer support system that is always ready to assist users. The more frequently you use Success.ai, the more you’ll be able to leverage its features to your advantage. Regular use allows you to understand the platform better, optimize your strategies, and ultimately, achieve better results.","strength":"Success.ai offers a highly efficient service at a competitive price. The platform is easy to navigate, making it accessible for users of all levels of tech-savviness and making the implementation easy.","weakness":"As Success.ai is primarily an email marketing tool, its effectiveness depends on the relevance and effectiveness of email marketing in your specific industry or target market.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Mani Karnika","client_email":"karnikaa.m13@gmail.com","client_company_name":"Success.ai","position":"Partnership Engagement Mananger","location":"in","client_profile_link":"https://www.linkedin.com/in/mani-karnika-206879289","client_company_website":"https://www.b2brocket.ai/","hidden_identity":1,"step":3,"created":1699383140,"updated":1700113457,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+{"_id":{"$oid":"654a98b4f7d3c9c0360a2bf2"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"Reviews are accepted only from clients of the company","response":"","title":"\"it is an excellent platform for emerging businesses\"","summary":"The promise of unlocking the power of AI and unlimited accounts to 10x your leads, meetings, and revenue sounds enticing. The offer to dive into a 700M+ B2B lead goldmine and break free from scale barriers is attractive for businesses looking to expand. However, it's essential to approach such claims with caution and thoroughly evaluate the service before committing. Starting for free is a low-risk way to explore the potential benefits, but remember that true growth may require more than just technology – a solid strategy and execution are equally vital.","strength":"Success.ai streamlines our email marketing efforts. Managing several inboxes is a significant time-saver, and the AI email writer is a game-changer.","weakness":"No, there is nothing I don't like about success.ai","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Arsalan Rajput","client_email":"arsalanrajput335h@gmail.com","client_company_name":"Success.ai","position":"Social Media Marketing Manager","location":"pk","client_profile_link":"https://www.linkedin.com/in/arsalan-rajput-94529424b","client_company_website":"https://www.success.ai/","hidden_identity":1,"step":3,"created":1699388419,"updated":1700113438,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+{"_id":{"$oid":"654af65c4bfda7ea370e0c9b"},"features":{"category":["5c076f7f9108dd0460001f99"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c089bee7d9dd007e9269cf4"},"software_name":"Vidyalaya","software_slug":"vidyalaya","reason":"Unable to verify the reviewer","response":"","title":"An exceptional ERP system, among the most eminent available within the market.","summary":"Through its adept optimization of school data management processes, Vidyalaya ERP has revolutionized operational efficiency, resulting in a noteworthy reduction in the substantial amount of time and effort previously expended.","strength":"This stands as the highest-rated feature, instrumental in effectively managing timetable data.","weakness":"Currently, there are no issues reported within the timetable module.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Anant Patel","client_email":"anantpatelssm@gmail.com","client_company_name":"SSM MAHESHWARI PUBLIC SCHOOL SURAT","position":"Teacher at SSM MAHESHWARI PUBLIC SCHOOL, Surat, Gujarat","location":"in","client_profile_link":"https://www.linkedin.com/in/anant-patel-5ab3a629a","client_company_website":"https://www.maheshwaripublicschool.com/","hidden_identity":1,"step":3,"created":1699411640,"updated":1699413633,"software_details":[{"_id":{"$oid":"5c089bee7d9dd007e9269cf4"},"name":"Vidyalaya","slug":"vidyalaya"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f99"},"name":"School Management Software","slug":"school-management-software"}]}]
+
+thinking
+**Checking verification steps file**
+exec
+/bin/bash -lc "sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+
+thinking
+**Summarizing verification step analysis**
+
+I'm examining the JSON data to identify new review verification patterns missing from the policy, such as detecting self-reviews where reviewer company matches the vendor, and incomplete zero-rated placeholder reviews. I’m also considering redundant rules to remove and drafting precise text edits referencing file paths and line numbers to improve policy clarity and coverage.
+thinking
+**Organizing final markdown output**
+
+I'm preparing the final markdown with exact sections—New patterns not covered, Redundant rules to remove, Exact proposed text edits—each with clearly referenced bullet points and detailed text modifications to insert or remove in the verification steps document, including example IDs and line references.
+codex
+## New patterns not covered
+- **Vendor self-review signal** – Batch entries `654a79109bb61c739a0f8d83`, `654a867232223aac8a034b24`, `654a98b4f7d3c9c0360a2bf2` all list `client_company_name: Success.ai` while reviewing Success.ai and were rejected with the note “Reviews are accepted only from clients of the company.” The policy currently only says “client-relationship plausibility” without explicitly catching cases where the reviewer’s stated employer is the same company (a classic self-review). We need a concrete rule that downgrades authenticity when `client_company_name` or email/domain matches the reviewed vendor.
+- **Empty/zero placeholder submissions** – Entries `6538d55a339db2f305011154` and `653ffb283fe4dfd19b0ce6e8` show blank titles/summary/strength/weakness and zero scores for every rating, yet they reached the verification layer. The existing “upstream completeness” assumption was violated, so add a hard check for records that contain no narrative and all ratings at 0/empty; those should be rejected as incomplete placeholders before any new analysis.
+
+## Redundant rules to remove
+- Drop the Section 7 toggle “Should LinkedIn mismatch be hard reject or manual review? Recommended: manual review.” Section 4.1 already instructs that strong mismatches should become an authenticity flag/manual review, so the toggle merely rephrases that guidance without adding clarity.
+- Remove the Section 7 toggle “Should personal email with no company-domain match be penalized strongly? Recommended: no hard penalty; treat as weak evidence only.” Section 4.2 already says personal email domains are allowed and should not trigger hard failure, making the toggle redundant.
+
+## Exact proposed text edits
+1. **Insert under “## 1) Common Checks (Both Review Types)” (after 1.5)**:
+   ```
+   ### 1.6 Placeholder/incomplete submissions
+   - If `title`, `summary`, `strength`, and `weakness` are all empty/whitespace and every rating field (`ease_of_use`, `features_functionality`, `customer_support`, `overall`) is 0 or absent, treat the review as an incomplete placeholder.
+   - Reject (`reject_recommended`) and log it immediately; these submissions bring no usable content even if other completeness checks erroneously forwarded them.
+   ```
+2. **Insert under “## 4) Reviewer Verification Logic” (after 4.3)**:
+   ```
+   ### 4.4 Vendor self-review detection
+   - If the reviewer’s claimed company/email domain matches the software/service being reviewed (e.g., the Success.ai batch entries that listed Success.ai as the client company), downgrade the evidence tier and flag authenticity risk.
+   - Reviews that read like promotional marketing while the reviewer identifies as the vendor should land in `needs_manual_review` or `reject_recommended`, because the claim set can’t be trusted without independent client confirmation.
+   ```
+3. **Remove from “## 7) Decision Toggles To Confirm”**:
+   - The bullet “Should LinkedIn mismatch be hard reject or manual review? Recommended: manual review.”
+   - The bullet “Should personal email with no company-domain match be penalized strongly? Recommended: no hard penalty; treat as weak evidence only.”
+tokens used
+13,437
+## New patterns not covered
+- **Vendor self-review signal** – Batch entries `654a79109bb61c739a0f8d83`, `654a867232223aac8a034b24`, `654a98b4f7d3c9c0360a2bf2` all list `client_company_name: Success.ai` while reviewing Success.ai and were rejected with the note “Reviews are accepted only from clients of the company.” The policy currently only says “client-relationship plausibility” without explicitly catching cases where the reviewer’s stated employer is the same company (a classic self-review). We need a concrete rule that downgrades authenticity when `client_company_name` or email/domain matches the reviewed vendor.
+- **Empty/zero placeholder submissions** – Entries `6538d55a339db2f305011154` and `653ffb283fe4dfd19b0ce6e8` show blank titles/summary/strength/weakness and zero scores for every rating, yet they reached the verification layer. The existing “upstream completeness” assumption was violated, so add a hard check for records that contain no narrative and all ratings at 0/empty; those should be rejected as incomplete placeholders before any new analysis.
+
+## Redundant rules to remove
+- Drop the Section 7 toggle “Should LinkedIn mismatch be hard reject or manual review? Recommended: manual review.” Section 4.1 already instructs that strong mismatches should become an authenticity flag/manual review, so the toggle merely rephrases that guidance without adding clarity.
+- Remove the Section 7 toggle “Should personal email with no company-domain match be penalized strongly? Recommended: no hard penalty; treat as weak evidence only.” Section 4.2 already says personal email domains are allowed and should not trigger hard failure, making the toggle redundant.
+
+## Exact proposed text edits
+1. **Insert under “## 1) Common Checks (Both Review Types)” (after 1.5)**:
+   ```
+   ### 1.6 Placeholder/incomplete submissions
+   - If `title`, `summary`, `strength`, and `weakness` are all empty/whitespace and every rating field (`ease_of_use`, `features_functionality`, `customer_support`, `overall`) is 0 or absent, treat the review as an incomplete placeholder.
+   - Reject (`reject_recommended`) and log it immediately; these submissions bring no usable content even if other completeness checks erroneously forwarded them.
+   ```
+2. **Insert under “## 4) Reviewer Verification Logic” (after 4.3)**:
+   ```
+   ### 4.4 Vendor self-review detection
+   - If the reviewer’s claimed company/email domain matches the software/service being reviewed (e.g., the Success.ai batch entries that listed Success.ai as the client company), downgrade the evidence tier and flag authenticity risk.
+   - Reviews that read like promotional marketing while the reviewer identifies as the vendor should land in `needs_manual_review` or `reject_recommended`, because the claim set can’t be trusted without independent client confirmation.
+   ```
+3. **Remove from “## 7) Decision Toggles To Confirm”**:
+   - The bullet “Should LinkedIn mismatch be hard reject or manual review? Recommended: manual review.”
+   - The bullet “Should personal email with no company-domain match be penalized strongly? Recommended: no hard penalty; treat as weak evidence only.”

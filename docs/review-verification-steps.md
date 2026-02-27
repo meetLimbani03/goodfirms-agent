@@ -8,6 +8,7 @@ Define what the agent should verify for:
 - Web fact-check behavior
 
 This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
 
 Operational note (as of 2026-02-27):
 - Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
@@ -21,7 +22,8 @@ Operational note (as of 2026-02-27):
   - company name
   - role/position
 - Review text should be readable, coherent, and non-random.
-- Reject/flag if text is mostly random tokens, repeated junk, or nonsensical strings.
+- Reject/flag if text is mostly random tokens, repeated junk, nonsensical strings, or placeholder-only content.
+- Reviews should be in English; non-English submissions require translation/manual handling before standard review checks.
 
 ### 1.2 Title-summary consistency
 - Title must represent the review body.
@@ -39,6 +41,10 @@ Operational note (as of 2026-02-27):
 - Preserve factual meaning and sentiment.
 - Do not invent claims.
 
+### 1.5 Duplicate-submission check
+- Flag if same reviewer (email/profile) submits multiple reviews for the same software/service with empty or near-identical content in a short window.
+- Reject if review text is already published previously for the same product, even outside the short-window duplicate scenario.
+
 ## 2) Software Review Specific Checks
 
 - Software name relevance:
@@ -47,7 +53,14 @@ Operational note (as of 2026-02-27):
   - duration/frequency/pricing should make contextual sense with text.
 - Strength/weakness quality:
   - should be specific enough to be useful; not pure filler.
+- Strength/weakness separation:
+  - “strength” and “weakness” should not be near-identical copy-paste text.
 - Flag if software description feels generic and could apply to any random product with no concrete detail.
+- Client-relationship plausibility:
+  - content should read like a client/user experience, not vendor self-promotion or non-client commentary.
+  - if reviewer company/email domain appears to match the reviewed vendor, treat as potential vendor self-review and require stronger independent proof before pass.
+  - reject/flag reviews from current or former vendor staff/ambassadors unless independent evidence proves a real client relationship.
+- Reject/flag reviews containing unrelated promotional/affiliate links that are not relevant to the reviewed product experience.
 
 ## 3) Service Review Specific Checks
 
@@ -75,25 +88,12 @@ Operational note (as of 2026-02-27):
 - Personal email domains are allowed (`gmail`, `outlook`, etc.):
   - do not hard-fail solely for personal email.
   - only add small authenticity risk signal if other evidence is weak.
+- If `hidden_identity` limits visible identity context, require stronger corroboration (company-domain/public-profile evidence); otherwise route to `needs_manual_review`.
 
 ## 4.3 Suggested evidence tiers
 - `High`: direct LinkedIn/work profile match or strong company page evidence.
 - `Medium`: partial match (name + company, role uncertain).
 - `Low`: no reliable external confirmation.
-
-## 5) Web Fact-Check Rules (Agent must browse)
-
-- Agent should verify factual reviewer-identity claims when possible:
-  - person name
-  - company
-  - role/title
-  - profile link validity
-- Agent should capture:
-  - what was checked
-  - evidence strength (`high/medium/low`)
-  - mismatch notes
-- If web evidence is inconclusive:
-  - keep review in manual-review bucket, not auto-reject by default.
 
 ## 6) Outcome Labels (recommended)
 
@@ -101,14 +101,3 @@ Operational note (as of 2026-02-27):
 - `verified_with_minor_fixes` (grammar/title rewrite only)
 - `needs_manual_review` (authenticity uncertainty or major inconsistency)
 - `reject_recommended` (clear spam/gibberish/fabrication signals)
-
-## 7) Decision Toggles To Confirm
-
-- Should LinkedIn mismatch be hard reject or manual review?
-  - Recommended: manual review.
-- Should personal email with no company-domain match be penalized strongly?
-  - Recommended: no hard penalty; treat as weak evidence only.
-- Minimum evidence required for auto-approve:
-  - Recommended: medium evidence + no major content/authenticity flags.
-- If title mismatches summary:
-  - Recommended: rewrite title, do not reject.

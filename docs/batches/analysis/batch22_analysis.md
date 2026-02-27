@@ -1,0 +1,1 @@
+- Reject unrelated promotional links; existing checks cover readability/duplicates but not spammy dumps like the gambling/affiliate URLs in the Semrush review (record 6603ef2df3a1c735a00a4a26), so add: patch: `+ - Reject reviews that embed multiple unrelated promotional hyperlinks (e.g., gambling/affiliate URLs) that do not describe the reviewed software.`

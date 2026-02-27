@@ -1,0 +1,236 @@
+2026-02-27T12:02:29.637486Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9efa-9a8c-7ca0-8e59-197390c3b14c
+--------
+user
+Analyze /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch8_from_2023-07-01_humanized.json against /home/ubuntu/Desktop/goodfirms-agent/docs/review-verification-steps.md. Return concise markdown with exactly these sections: New patterns not covered, Redundant rules to remove, Exact proposed text edits. Keep token-efficient and avoid repeating existing rules.
+mcp: codex_apps starting
+mcp: pencil starting
+mcp: Prod-goodfirms-mysql starting
+mcp: prod-goodfirms-mongo starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: prod-goodfirms-mongo ready
+mcp: codex_apps ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, prod-goodfirms-mongo, codex_apps
+
+thinking
+**Preparing to read files**
+exec
+/bin/bash -lc 'cd /home/ubuntu/Desktop/goodfirms-agent && ls' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+AGENTS.md
+CLAUDE.md
+data
+docs
+form-ui
+
+thinking
+**Reading review verification steps**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+thinking
+**Planning JSON analysis**
+exec
+/bin/bash -lc 'cd /home/ubuntu/Desktop/goodfirms-agent && ls docs/batches' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+analysis
+software_rejected_batch10_from_2023-07-01_humanized.json
+software_rejected_batch11_from_2023-07-01_humanized.json
+software_rejected_batch12_from_2023-07-01_humanized.json
+software_rejected_batch13_from_2023-07-01_humanized.json
+software_rejected_batch14_from_2023-07-01_humanized.json
+software_rejected_batch15_from_2023-07-01_humanized.json
+software_rejected_batch16_from_2023-07-01_humanized.json
+software_rejected_batch17_from_2023-07-01_humanized.json
+software_rejected_batch18_from_2023-07-01_humanized.json
+software_rejected_batch19_from_2023-07-01_humanized.json
+software_rejected_batch1_from_2023-07-01_humanized.json
+software_rejected_batch20_from_2023-07-01_humanized.json
+software_rejected_batch21_from_2023-07-01_humanized.json
+software_rejected_batch22_from_2023-07-01_humanized.json
+software_rejected_batch23_from_2023-07-01_humanized.json
+software_rejected_batch24_from_2023-07-01_humanized.json
+software_rejected_batch25_from_2023-07-01_humanized.json
+software_rejected_batch26_from_2023-07-01_humanized.json
+software_rejected_batch27_from_2023-07-01_humanized.json
+
+thinking
+**Reading specific file start**
+exec
+/bin/bash -lc 'cd /home/ubuntu/Desktop/goodfirms-agent && head -n 40 docs/batches/software_rejected_batch8_from_2023-07-01_humanized.json' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+[{"_id":{"$oid":"64e5961058e2e599df0ddf12"},"is_active":2,"software_id":{"$oid":"6034d46d95fe6c2acf306c69"},"software_name":"jiSchoolerp","reason":"Unable to verify the reviewer","title":"It is really excellent,tremendous & mind blowing","summary":"School ERP is a good platform to learn the ERP system & solutions . It covers the latest technology & webembbed solutions. It is really technical driven solutions for the children to grasp the knowledge","strength":"It is latest ERP solutions","weakness":"Better solutions","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Rajshekhar Kolety","client_email":"rajshekhar.kolety@gmail.com","client_company_name":"","position":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":2,"created":1692768072,"software_details":[{"_id":{"$oid":"6034d46d95fe6c2acf306c69"},"name":"jiSchoolerp","slug":"jischoolerp"}],"category_details":[{"_id":{"$oid":"602f6806c23f6f5cc8191959"},"name":"K-12 Software","slug":"k-12-software"}]},
+{"_id":{"$oid":"64e6d3609a9a61e50002137a"},"is_active":2,"software_id":{"$oid":"5c089b427d9dd007e9269c0e"},"software_name":"Trello","reason":"Unable to verify the reviewer","title":"Saved so much time for work","summary":"Started to use it to discipline my study at university. After I went to my first internship, I realised it can be used much more effective during work with managers, developers and etc!!!","strength":"The task management is amazing. You can see what each employee is doing, what is the status of defifnite task, and the workload of each employee also can be seen!","weakness":"The one bad thing is that notifications about changings on my desk are coming late to me. But it's not really big problem, because most of managers changing cards and tasks at night, when time isn't important thing.","ease_of_use":"5","features_functionality":"5","customer_support":"4","overall":"5","client_name":"Rose Lewis","client_email":"alponwhineska@gmx.com","client_company_name":"freelance","position":"Data analyst","client_profile_link":null,"client_company_website":"https://www.upwork.com/hire/us/","hidden_identity":1,"step":3,"created":1692849899,"software_details":[{"_id":{"$oid":"5c089b427d9dd007e9269c0e"},"name":"Trello","slug":"trello"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f7b"},"name":"Workflow Management Software","slug":"workflow-management-software"},{"_id":{"$oid":"5c076f7f9108dd0460001f7d"},"name":"Project Management Software","slug":"project-management-software"},{"_id":{"$oid":"5c4ed5df7d9dd028e1680a14"},"name":"Task Management Software","slug":"task-management-software"},{"_id":{"$oid":"5e93f4dab06dbd7d445d3b50"},"name":"Remote Work Software","slug":"remote-work-software"},{"_id":{"$oid":"5f17d1fb64a6fc058b14a344"},"name":"Product Roadmap Software","slug":"product-roadmap-software"},{"_id":{"$oid":"5fa277101558521dda3b81b3"},"name":"Resource Management Software","slug":"resource-management-software"},{"_id":{"$oid":"5fe4191251143368803dac83"},"name":"Project Planning Software","slug":"project-planning-software"}]},
+{"_id":{"$oid":"64e77b669e6b34d22706e5b3"},"is_active":2,"software_id":{"$oid":"6034d46d95fe6c2acf306c69"},"software_name":"jiSchoolerp","reason":"Unable to verify the reviewer","title":"Excellent","summary":"Excellent customer care service, and their product is on point never think about any other product , generally it's a good firm. Keep up the good work","strength":"Good","weakness":"Good","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"mary nyambura","client_email":"mnyambura93@gmail.com","client_company_name":"","position":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":2,"created":1692892359,"software_details":[{"_id":{"$oid":"6034d46d95fe6c2acf306c69"},"name":"jiSchoolerp","slug":"jischoolerp"}],"category_details":[{"_id":{"$oid":"602f6806c23f6f5cc8191959"},"name":"K-12 Software","slug":"k-12-software"}]},
+{"_id":{"$oid":"64e73b6bd141ad3d9700e178"},"is_active":2,"software_id":{"$oid":"5c089ab77d9dd007e9269aa3"},"software_name":"Shopify","reason":"Unable to verify the reviewer","title":"s","summary":"asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf","strength":"dvdvv","weakness":"dvdvv","ease_of_use":"2","features_functionality":"2","customer_support":"2","overall":"2","client_name":"Alex R","client_email":"alexander.nadar4@gmail.com","client_company_name":"","position":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":2,"created":1692940385,"software_details":[{"_id":{"$oid":"5c089ab77d9dd007e9269aa3"},"name":"Shopify","slug":"shopify"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f65"},"name":"E-Commerce Software","slug":"ecommerce-software"}]},
+{"_id":{"$oid":"64edb9836dedbd2ec8031acb"},"is_active":2,"software_id":{"$oid":"6113c17ff3e97d11ed0f02ad"},"software_name":"factoHR","reason":"Unable to verify the reviewer","title":"factoHR all in one HR solution","summary":"My experience with factoHR has been excellent. Its UI is user friendly and very easy to understand. Their support team is really nice and always resolve our doubts.","strength":"The best thing about factoHR is its support team. They always reply on time if you have any queries hence a good experience.","weakness":"We haven't found anything until now we don't like.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Renish Suva","client_email":"suvaranish@gmail.com","client_company_name":"factoHR","position":"Marketing","client_profile_link":null,"client_company_website":"https://factohr.com/","hidden_identity":1,"step":3,"created":1693301330,"software_details":[{"_id":{"$oid":"6113c17ff3e97d11ed0f02ad"},"name":"factoHR","slug":"factohr"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f79"},"name":"HR Software","slug":"hr-software"}]},
+{"_id":{"$oid":"64edbdf3427de56d9c0dc9f7"},"is_active":2,"software_id":{"$oid":"5da716a9ec038f25ad1fbab3"},"software_name":"CONTUS MirrorFly","reason":"Unable to verify the reviewer","title":"Modern chat experiences are made possible by easy-to-use SDKs","summary":"Our in-app chat implementation process has been streamlined in the android apps. We were able to swiftly go live and are immensely thankful for team’s support","strength":"Creating a 1-1 chat chat with a specific user was turned effortless after having a glimpse through one of the tutorial videos released by MirrorFly team.","weakness":"As of now we haven't face any issues with mirrorfly on of the great product we have come across","ease_of_use":"5","features_functionality":"4","customer_support":"5","overall":"4","client_name":"Kiarz Mustaf","client_email":"kirazmustaf7@gmail.com","client_company_name":"DELL","position":"Sn Specialist","client_profile_link":"","client_company_website":"https://www.dell.com/en-in","hidden_identity":1,"step":3,"created":1693302635,"software_details":[{"_id":{"$oid":"5da716a9ec038f25ad1fbab3"},"name":"MirrorFly","slug":"mirrorfly"}],"category_details":[{"_id":{"$oid":"5c08efc07d9dd0329869e112"},"name":"Collaboration Software","slug":"collaboration-software"}]},
+{"_id":{"$oid":"64f16b5c8487017dac0afd87"},"is_active":2,"software_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"software_name":"Zoho Recruit","reason":"Unable to verify the reviewer","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Nuthan Kumar","client_email":"nuthangowda1994@gmail.com","client_company_name":"","position":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":1,"created":1693543260,"software_details":[{"_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"name":"Zoho Recruit","slug":"zoho-recruit"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f81"},"name":"Applicant Tracking Software","slug":"applicant-tracking-software"},{"_id":{"$oid":"5c4ed6087d9dd0290332a563"},"name":"Recruiting Software","slug":"recruiting-software"},{"_id":{"$oid":"5fcf01f9187b817d923009da"},"name":"Talent Management Software","slug":"talent-management-software"}]},
+{"_id":{"$oid":"64f3b77eea20bea48d04f692"},"is_active":2,"software_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"software_name":"Zoho Recruit","reason":"Unable to verify the reviewer","title":"Zoho Recruit user","summary":"Overall working with Zoho Recruit has been a pleasant surprise. So many features make it a wonder.   Zoho Recruit is even accessible via mobile apps, enabling you to manage tasks and candidates anytime from anywhere.","strength":"Zoho Recruit is user-friendly and offers robust features for efficient recruitment and applicant tracking.","weakness":"Zoho has a slight learning curve, particularly when setting up advanced features or customizing workflows.  But not too bad.  Worth the effort.","ease_of_use":"4","features_functionality":"5","customer_support":"4","overall":"5","client_name":"Jeff Raskin","client_email":"jjraskin@mynicejob.com","client_company_name":"MyNicejob","position":"Owner","client_profile_link":null,"client_company_website":"https://www.mynicejob.com","hidden_identity":1,"step":3,"created":1693695986,"software_details":[{"_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"name":"Zoho Recruit","slug":"zoho-recruit"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f81"},"name":"Applicant Tracking Software","slug":"applicant-tracking-software"},{"_id":{"$oid":"5c4ed6087d9dd0290332a563"},"name":"Recruiting Software","slug":"recruiting-software"}]},
+{"_id":{"$oid":"64f6d20807d6cc28ae044c5b"},"is_active":2,"software_id":{"$oid":"5c089ab77d9dd007e9269aa3"},"software_name":"Shopify","reason":"Unable to verify the reviewer","title":"Designing process becomes simplified with Shopify.","summary":"My overall experience using Shopify has been really positive - it is user-friendly, offers a wide range of features, and has helped me easily manage my online store.","strength":"What I liked the most about Shopify was its intuitive interface and ease of use, which helped me quickly set up my store and start selling products.","weakness":"What I liked the least about Shopify was the limited customization options for certain design elements, which sometimes made it difficult to achieve the exact look and feel I wanted for my online store.","ease_of_use":"5","features_functionality":"4","customer_support":"4","overall":"4","client_name":"Kristen Webb","client_email":"kristen@kellyclosets.com","client_company_name":"Zest Studio","position":"Digital Marketing Director","client_profile_link":null,"client_company_website":"https://zeststudio.co/","hidden_identity":"2","step":3,"created":1693897861,"software_details":[{"_id":{"$oid":"5c089ab77d9dd007e9269aa3"},"name":"Shopify","slug":"shopify"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f65"},"name":"E-Commerce Software","slug":"ecommerce-software"},{"_id":{"$oid":"5c6a5337ec038f464a4bdd32"},"name":"Shopping Cart Software","slug":"shopping-cart-software"}]},
+{"_id":{"$oid":"64f808fbffdfab339002f2e2"},"is_active":2,"software_id":{"$oid":"64ddb15714b9581699578582"},"software_name":"APISCRAPY","reason":null,"title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Daniel Diesel","client_email":"dieseldaniel98@gmail.com","client_company_name":"","position":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":1,"created":1693976827,"software_details":[{"_id":{"$oid":"64ddb15714b9581699578582"},"name":"APISCRAPY","slug":"apiscrapy"}],"category_details":[{"_id":{"$oid":"5c6ba89dec038f20796f2af2"},"name":"Data Extraction Software","slug":"data-extraction-software"}]}]
+
+thinking
+**Examining JSON for new and redundant policy patterns**
+
+I'll analyze the entire JSON dataset to identify recurring patterns not addressed by the current review-verification steps, such as hidden identity flags, incomplete fields, or unusual rating-summary mismatches. My goal is to pinpoint new patterns that merit policy additions, spot redundant rules that may be unnecessary given the data, and propose precise text edits referencing data examples to improve the policy accuracy. I'll likely parse the file with Python to systematically assess these trends and support my recommendations.
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && python - <<'PY'
+import json
+from pathlib import Path
+path = Path('docs/batches/software_rejected_batch8_from_2023-07-01_humanized.json')
+data = json.load(path.open())
+print('entries', len(data))
+# examine pattern summary length, hidden identity values
+from collections import Counter
+print('hidden_identity', Counter(entry.get('hidden_identity') for entry in data))
+print('step', Counter(entry.get('step') for entry in data))
+print('ease_of_use counts', Counter(entry.get('ease_of_use') for entry in data))
+print('overall', Counter(entry.get('overall') for entry in data))
+print('client_profile_link present', sum(1 for entry in data if entry.get('client_profile_link')))
+print('client_company_website present', sum(1 for entry in data if entry.get('client_company_website')))
+print('reason counts', Counter(entry.get('reason') for entry in data))
+print('title length avg', sum(len(entry.get('title','')) for entry in data)/len(data))
+print('summary length avg', sum(len(entry.get('summary','')) for entry in data)/len(data))
+PY" in /home/ubuntu/Desktop/goodfirms-agent exited 127 in 51ms:
+/bin/bash: line 1: python: command not found
+
+thinking
+**Correcting Python version usage**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && python3 - <<'PY'
+import json
+from pathlib import Path
+path = Path('docs/batches/software_rejected_batch8_from_2023-07-01_humanized.json')
+data = json.load(path.open())
+print('entries', len(data))
+from collections import Counter
+print('hidden_identity', Counter(entry.get('hidden_identity') for entry in data))
+print('step', Counter(entry.get('step') for entry in data))
+print('ease_of_use counts', Counter(entry.get('ease_of_use') for entry in data))
+print('overall', Counter(entry.get('overall') for entry in data))
+print('client_profile_link present', sum(1 for entry in data if entry.get('client_profile_link')))
+print('client_company_website present', sum(1 for entry in data if entry.get('client_company_website')))
+print('reason counts', Counter(entry.get('reason') for entry in data))
+print('title length avg', sum(len(entry.get('title','')) for entry in data)/len(data))
+print('summary length avg', sum(len(entry.get('summary','')) for entry in data)/len(data))
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+entries 10
+hidden_identity Counter({1: 9, '2': 1})
+step Counter({3: 5, 2: 3, 1: 2})
+ease_of_use counts Counter({'5': 6, 0: 2, '2': 1, '4': 1})
+overall Counter({'5': 5, '4': 2, 0: 2, '2': 1})
+client_profile_link present 0
+client_company_website present 5
+reason counts Counter({'Unable to verify the reviewer': 9, None: 1})
+title length avg 24.3
+summary length avg 136.6
+
+thinking
+**Analyzing dataset entries for verification patterns**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && python3 - <<'PY'
+import json
+from pathlib import Path
+path = Path('docs/batches/software_rejected_batch8_from_2023-07-01_humanized.json')
+data = json.load(path.open())
+for entry in data:
+    print('---')
+    print('name', entry.get('client_name'))
+    print('email', entry.get('client_email'))
+    print('company', entry.get('client_company_name'))
+    print('title', entry.get('title'))
+    print('summary', entry.get('summary'))
+    print('strength', entry.get('strength'))
+    print('weakness', entry.get('weakness'))
+    print('equal strength weakness', entry.get('strength') == entry.get('weakness'))
+    print('reason', entry.get('reason'))
+    print('hidden_identity', entry.get('hidden_identity'))
+    print('step', entry.get('step'))
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+---
+name Rajshekhar Kolety
+email rajshekhar.kolety@gmail.com
+company 
+title It is really excellent,tremendous & mind blowing
+summary School ERP is a good platform to learn the ERP system & solutions . It covers the latest technology & webembbed solutions. It is really technical driven solutions for the children to grasp the knowledge
+strength It is latest ERP solutions
+weakness Better solutions
+equal strength weakness False
+reason Unable to verify the reviewer
+hidden_identity 1
+step 2
+---
+name Rose Lewis
+email alponwhineska@gmx.com
+company freelance
+title Saved so much time for work
+summary Started to use it to discipline my study at university. After I went to my first internship, I realised it can be used much more effective during work with managers, developers and etc!!!
+strength The task management is amazing. You can see what each employee is doing, what is the status of defifnite task, and the workload of each employee also can be seen!
+weakness The one bad thing is that notifications about changings on my desk are coming late to me. But it's not really big problem, because most of managers changing cards and tasks at night, when time isn't important thing.
+
+
+thinking
+**Summarizing new policy insights and edits**
+
+I've gathered several new patterns to propose: handling hidden identity reviewers without profile links, incomplete submissions slipping past pre-checks, and recognizing aggregator websites like Upwork as low evidence for verification. I also see that the duplicate-submission check rule seems redundant given no duplicates appear in the dataset. Now I'm crafting concise markdown sections outlining these new patterns, redundant rules to remove, and precise text edits to incorporate these findings into the policy.
+thinking
+**Preparing structured final message outline**
+
+I'm organizing the final message with three exact sections named as requested: New patterns not covered, Redundant rules to remove, and Exact proposed text edits. Each bullet will reference dataset entries (by file and example IDs) supporting the points. I'll specify precise text insertions and removals for the policy, carefully naming sections to edit and including example sentences to add or delete. This will give a clear, concise, and actionable policy update plan.
+codex
+**New patterns not covered**
+- Hidden-identity submissions dominate this batch (all 10 entries have `hidden_identity` set to `1` or `2`, and none provide a `client_profile_link`), so the agent often cannot triangulate a reviewer even when the written content looks plausible; the current policy never mentions how to treat “hide my details” requests beyond the generic verification flow.  
+- Two records (`_id` `64f16b5c8487017dac0afd87` and `_id` `64f808fbffdfab339002f2e2`) were stuck at step 1 with blank ratings/body yet still hit the verifier, which proves the upstream completeness guard is leaky—verifying these partial submissions wastes effort and either needs a forced “return for completion” path or a clear “manual review” outcome.  
+- At least one reviewer (`_id` `64e6d3609a9a61e50002137a`, Trello reviewer) listed only a marketplace/aggregator URL (`https://www.upwork.com/hire/us/`), which offers no direct company context and should not qualify as medium/high evidence; the policy currently treats any provided website as positive evidence without discriminating aggregator domains.
+
+**Redundant rules to remove**
+- Drop the placeholder bullet “1.5 Duplicate-submission check (this is hard…)”: none of the ten rejects in this batch are near-duplicates, and the current wording signals an unfinished idea rather than an actionable check, so it unnecessarily bloats the policy.
+
+**Exact proposed text edits**
+- Under **1) Common Checks** (after “1.4 Minimal rewrite scope”), insert: “*Step-completion guard* – confirm that the reviewer reached the final submission step with non-zero ratings/title/body before running verification. Blank/missing fields (step 1/2 records like `_id` `64f16b5c8487017dac0afd87`) should immediately route back to the form or land in `needs_manual_review`, because no amount of web checking can rescue an incomplete payload.”  
+- In **4.2 If no LinkedIn profile…**, add: “When `hidden_identity` is flagged (e.g., this batch’s entries all lack profile links), require an alternate verifiable signal such as a company-provided email, published employee page, or a secondary contact; otherwise treat the review as `needs_manual_review` with a logged ‘identity withheld’ note instead of guessing.”  
+- In **5) Web Fact-Check Rules**, append: “If the supplied company website resolves to a marketplace/aggregator (Upwork, general freelance platforms, etc., as in `_id` `64e6d3609a9a61e50002137a`), downgrade the evidence tier to `low` and document why it cannot anchor the reviewer; only direct company/brand pages should count as medium or high evidence.”  
+- Remove the entire “1.5 Duplicate-submission check…” paragraph from Section 1.
+tokens used
+37,595
+**New patterns not covered**
+- Hidden-identity submissions dominate this batch (all 10 entries have `hidden_identity` set to `1` or `2`, and none provide a `client_profile_link`), so the agent often cannot triangulate a reviewer even when the written content looks plausible; the current policy never mentions how to treat “hide my details” requests beyond the generic verification flow.  
+- Two records (`_id` `64f16b5c8487017dac0afd87` and `_id` `64f808fbffdfab339002f2e2`) were stuck at step 1 with blank ratings/body yet still hit the verifier, which proves the upstream completeness guard is leaky—verifying these partial submissions wastes effort and either needs a forced “return for completion” path or a clear “manual review” outcome.  
+- At least one reviewer (`_id` `64e6d3609a9a61e50002137a`, Trello reviewer) listed only a marketplace/aggregator URL (`https://www.upwork.com/hire/us/`), which offers no direct company context and should not qualify as medium/high evidence; the policy currently treats any provided website as positive evidence without discriminating aggregator domains.
+
+**Redundant rules to remove**
+- Drop the placeholder bullet “1.5 Duplicate-submission check (this is hard…)”: none of the ten rejects in this batch are near-duplicates, and the current wording signals an unfinished idea rather than an actionable check, so it unnecessarily bloats the policy.
+
+**Exact proposed text edits**
+- Under **1) Common Checks** (after “1.4 Minimal rewrite scope”), insert: “*Step-completion guard* – confirm that the reviewer reached the final submission step with non-zero ratings/title/body before running verification. Blank/missing fields (step 1/2 records like `_id` `64f16b5c8487017dac0afd87`) should immediately route back to the form or land in `needs_manual_review`, because no amount of web checking can rescue an incomplete payload.”  
+- In **4.2 If no LinkedIn profile…**, add: “When `hidden_identity` is flagged (e.g., this batch’s entries all lack profile links), require an alternate verifiable signal such as a company-provided email, published employee page, or a secondary contact; otherwise treat the review as `needs_manual_review` with a logged ‘identity withheld’ note instead of guessing.”  
+- In **5) Web Fact-Check Rules**, append: “If the supplied company website resolves to a marketplace/aggregator (Upwork, general freelance platforms, etc., as in `_id` `64e6d3609a9a61e50002137a`), downgrade the evidence tier to `low` and document why it cannot anchor the reviewer; only direct company/brand pages should count as medium or high evidence.”  
+- Remove the entire “1.5 Duplicate-submission check…” paragraph from Section 1.

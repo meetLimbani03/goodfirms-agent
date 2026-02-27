@@ -1,0 +1,318 @@
+2026-02-27T11:52:59.301422Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9ef1-e6ac-7200-b1aa-1d2d96c90ee0
+--------
+user
+Analyze /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json against /home/ubuntu/Desktop/goodfirms-agent/docs/review-verification-steps.md. Return concise markdown with exactly these sections: New patterns not covered, Redundant rules to remove, Exact proposed text edits. Keep token-efficient and avoid repeating existing rules.
+mcp: prod-goodfirms-mongo starting
+mcp: Prod-goodfirms-mysql starting
+mcp: codex_apps starting
+mcp: pencil starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: prod-goodfirms-mongo ready
+mcp: codex_apps ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, prod-goodfirms-mongo, codex_apps
+
+thinking
+**Analyzing files versus instructions**
+exec
+/bin/bash -lc 'cd /home/ubuntu/Desktop/goodfirms-agent && ls' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+AGENTS.md
+CLAUDE.md
+data
+docs
+form-ui
+
+thinking
+**Reviewing documentation for verification steps**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+thinking
+**Planning analysis of rejected batch file**
+exec
+/bin/bash -lc 'cd /home/ubuntu/Desktop/goodfirms-agent && ls docs/batches' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+analysis
+software_rejected_batch10_from_2023-07-01_humanized.json
+software_rejected_batch11_from_2023-07-01_humanized.json
+software_rejected_batch12_from_2023-07-01_humanized.json
+software_rejected_batch13_from_2023-07-01_humanized.json
+software_rejected_batch14_from_2023-07-01_humanized.json
+software_rejected_batch15_from_2023-07-01_humanized.json
+software_rejected_batch16_from_2023-07-01_humanized.json
+software_rejected_batch17_from_2023-07-01_humanized.json
+software_rejected_batch18_from_2023-07-01_humanized.json
+software_rejected_batch19_from_2023-07-01_humanized.json
+software_rejected_batch1_from_2023-07-01_humanized.json
+software_rejected_batch20_from_2023-07-01_humanized.json
+software_rejected_batch21_from_2023-07-01_humanized.json
+software_rejected_batch22_from_2023-07-01_humanized.json
+software_rejected_batch23_from_2023-07-01_humanized.json
+software_rejected_batch24_from_2023-07-01_humanized.json
+software_rejected_batch25_from_2023-07-01_humanized.json
+software_rejected_batch26_from_2023-07-01_humanized.json
+software_rejected_batch27_from_2023-07-01_humanized.json
+
+thinking
+**Inspecting JSON file for analysis**
+exec
+/bin/bash -lc 'cd /home/ubuntu/Desktop/goodfirms-agent && head -n 40 docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+[{"_id":{"$oid":"64a818d320a48ecc5004f402"},"features":{"category":["5c076f7f9108dd0460001f85"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"63a57afd7362ea1fe72fc391"},"software_name":"aasaan app","software_slug":"aasaan-app","reason":"Unable to verify the reviewer","response":"","title":"Aasaan app on tablets","summary":"Make it easier for potential customers to find you through Google’s search results. You can perform search engine optimization on your website by writing keyword-rich titles and meta descriptions to rank better on Google .","strength":"E-Commers , marketing","weakness":"aasaan app makes it easy to manage your business completely using the mobile app","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Daniel  Mattingly","client_email":"4jkhpjqdxj@privaterelay.appleid.com","client_company_name":"Soap Mart","position":"Manager","location":"pk","client_profile_link":null,"client_company_website":"https://soapmart.aasaan.app/","hidden_identity":"3","step":3,"created":1688739595,"updated":1689236197,"software_details":[{"_id":{"$oid":"63a57afd7362ea1fe72fc391"},"name":"aasaan app","slug":"aasaan-app"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f85"},"name":"Website Builder Software","slug":"website-builder-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64a937fb43a3b0e1bf029f32"},"features":{"category":["5c076f7f9108dd0460001f99"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c893e7cec038f59b01284c3"},"software_name":"Ireava School ERP","software_slug":"ireava-school-erp","reason":"Unable to verify the reviewer","response":"","title":"Ireava School ERP System Review","summary":"Ireava school ERP system has been a great help for our school! It's made managing student records and administrative tasks much easier. We can easily keep track of attendance, grades, and other important information in one place.","strength":"Centralizes important information like attendance and grades, making it convenient to access and track.","weakness":"Not a series concern","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Akash Vats","client_email":"kidaroy860@iturchia.com","client_company_name":"Bodhi Vidya Niketan","position":"","location":"in","client_profile_link":"","client_company_website":"https://nowebsite.com","hidden_identity":1,"step":3,"created":1688811619,"updated":1688985017,"software_details":[{"_id":{"$oid":"5c893e7cec038f59b01284c3"},"name":"Ireava School ERP","slug":"ireava-school-erp"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f99"},"name":"School Management Software","slug":"school-management-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64abc1888ec468f7f3069dc6"},"features":{"category":["5c076f7f9108dd0460001f99"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c893e7cec038f59b01284c3"},"software_name":"Ireava School ERP","software_slug":"ireava-school-erp","reason":"Unable to verify the reviewer","response":"","title":"Ireava School ERP Mobile Application","summary":"I can conveniently access student grades, attendance records, and upcoming events through the ERP system, keeping me informed and engaged in education system. With Ireava ERP,  I can connect with teachers, parents, and students for understanding their concerns if any.","strength":"Application feature","weakness":"While the ERP system offers incredible benefits, it may take some time to become fully familiar with its features and navigation.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Dev Jain","client_email":"daxile6328@iturchia.com","client_company_name":"Pragati Public School","position":"Principal","location":"in","client_profile_link":"","client_company_website":"https://nowebsite.com","hidden_identity":1,"step":3,"created":1688977966,"updated":1688984969,"software_details":[{"_id":{"$oid":"5c893e7cec038f59b01284c3"},"name":"Ireava School ERP","slug":"ireava-school-erp"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f99"},"name":"School Management Software","slug":"school-management-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64abda6f65b95fd3750d20a6"},"features":{"category":["5c6e4695ec038f15b31ffb92"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ea02dc592e11736b21bd6f0"},"software_name":"Fresa Gold","software_slug":"fresa-gold","reason":"Unable to verify the reviewer","response":"","title":"Good support","summary":"Working with good support has been a great experience for me. The customer service is top-notch and the response time is very fast. Whenever I have any queries or issues, they are always willing to help me out and provide a solution quickly. I'm extremely satisfied with the level of service they provide and highly recommend them.","strength":"They are always prompt in responding to our questions and queries, and take the time to explain things in detail. Their expertise on how quotes/estimates impact the product has been invaluable for our company - it's helped us make more informed decisions that have had a positive impact on our bottom line. I highly recommend good support for any business looking for reliable and knowledgeable customer support!","weakness":"nothing... I have never encountered any problems when using it. The customer service team is always so helpful and attentive, they are always there to answer my questions or solve any issues I might have. Plus, the response time is fast and the user experience is smooth. Good support is a fantastic piece of software!","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Rahul Rahul","client_email":"accounts@mslpl.com","client_company_name":"MAGNITUDE SHIPPING & LOGISTICS PVT LTD","position":"Accountant","location":"in","client_profile_link":"","client_company_website":"https://mslpl.com/","hidden_identity":1,"step":3,"created":1688984461,"updated":1688984828,"software_details":[{"_id":{"$oid":"5ea02dc592e11736b21bd6f0"},"name":"Fresa Gold","slug":"fresa-gold"}],"category_details":[{"_id":{"$oid":"5c6e4695ec038f15b31ffb92"},"name":"Freight Software","slug":"freight-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64ad54c90673904fd80d1353"},"features":{"category":["5c08f2a47d9dd0336d5548a2"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c10b0387d9dd02bfb151eb3"},"software_name":"Allway Sync","software_slug":"allway-sync","reason":"Unable to verify the reviewer","response":"","title":"No Longer \"Allway Sync\" - it's only \"Goodsync\" now","summary":"Allway Sync is now a for pay only product called \"Good Sync\"  \r\nNot much to say since I'm not in the market for a product that is limited in this way.  Might still be a good product but not for me.","strength":"Allway Sync was reliable and had a nice UI.  All sync programs are about the same.  For me, the ability to do 1. an \"exclude\" function down to the individual file level as well as a 2. \"log on errors only\" function are important features.  (Allway Sync\" didn't do the log only errors as I recall but not certain)","weakness":"It no longer seems to exist - has become \"Good Sync\" and is pay only.  No longer open source free.  \r\nBTW - I for one, pretty much always chip in donations to open source developers.  Quite often donate more than once when I'm feeling good about the software. But being forced into paying in advance makes me change how I evaluate the deal and usually don't go along with the business model.  When possible - that's my choice.","ease_of_use":"5","features_functionality":"5","customer_support":"1","overall":"1","client_name":"Joe Ausfahl","client_email":"rjsfhl@riverpearl.net","client_company_name":"","position":"","location":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":2,"created":1689081657,"updated":1689235826,"publish_date":1689235821,"software_details":[{"_id":{"$oid":"5c10b0387d9dd02bfb151eb3"},"name":"Allway Sync","slug":"allway-sync"}],"category_details":[{"_id":{"$oid":"5c08f2a47d9dd0336d5548a2"},"name":"File Sync Software","slug":"file-sync-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64ad54c916d8172e01023529"},"features":{"category":["5c08f2a47d9dd0336d5548a2"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c10b0387d9dd02bfb151eb3"},"software_name":"Allway Sync","software_slug":"allway-sync","reason":"Review incomplete","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Joe Ausfahl","client_email":"rjsfhl@riverpearl.net","client_company_name":"","position":"","location":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":2,"created":1689081897,"updated":1695723760,"software_details":[{"_id":{"$oid":"5c10b0387d9dd02bfb151eb3"},"name":"Allway Sync","slug":"allway-sync"}],"category_details":[{"_id":{"$oid":"5c08f2a47d9dd0336d5548a2"},"name":"File Sync Software","slug":"file-sync-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64ad831e2f1ade24b50d7a38"},"features":{"category":["5c5b9f257d9dd04e2842cd32"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c5c0bc07d9dd0734d060222"},"software_name":"Innago","software_slug":"innago","reason":"Review incomplete","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Kumar S","client_email":"hkumar4404@gmail.com","client_company_name":"","position":"","location":"","client_profile_link":"","client_company_website":"","hidden_identity":1,"step":1,"created":1689092894,"updated":1695723746,"software_details":[{"_id":{"$oid":"5c5c0bc07d9dd0734d060222"},"name":"Innago","slug":"innago"}],"category_details":[{"_id":{"$oid":"5c5b9f257d9dd04e2842cd32"},"name":"Property Management Software","slug":"property-management-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64ae79920c86ee3ffc014123"},"features":{"category":["5c89ec13ec038f0ae270c8e2","5d75eb2bec038f16167cfb43"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5d774309ec038f648246c662"},"software_name":"Socioboard","software_slug":"socioboard","reason":"Unable to verify the reviewer","response":"","title":"Socioboard is the best social media platform with easily accessible feature","summary":"Overall I can say that Socioborad has done commendable work for my brand. I had no clue about social media marketing. It improves great traffic on my new website.","strength":"Its yearly plan is so beneficial, which I recently bought. I would like to recommend it to every new marketer.","weakness":"Developers need to add some more platforms to the site. And after all, this is amazing.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Pauline  Grout","client_email":"paulinegrout55@gmail.com","client_company_name":"Sortlist France","position":"Financial Advisor","location":"fr","client_profile_link":null,"client_company_website":"https://www.goodfirms.co/software/socioboard","hidden_identity":1,"step":3,"created":1689156213,"updated":1689235772,"software_details":[{"_id":{"$oid":"5d774309ec038f648246c662"},"name":"Socioboard","slug":"socioboard"}],"category_details":[{"_id":{"$oid":"5c89ec13ec038f0ae270c8e2"},"name":"Social Media Marketing Software","slug":"social-media-marketing-software"},{"_id":{"$oid":"5d75eb2bec038f16167cfb43"},"name":"Social Media Management Software","slug":"social-media-management-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64af80c71428cf68f20ec763"},"features":{"category":["5c6e4695ec038f15b31ffb92"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ea02dc592e11736b21bd6f0"},"software_name":"Fresa Gold","software_slug":"fresa-gold","reason":"Unable to verify the reviewer","response":"","title":"Good support","summary":"Working with good support has been a great experience for me. Customer service is excellent and response time is very fast. If I have any questions or problems, they are always ready to help me and provide a quick solution. I am very satisfied with the level of service they provide and would highly recommend them.","strength":"they are always there to answer my questions or solve any issues I might have. Plus, the response time is fast and the user experience is smooth. Good support is a fantastic piece of software","weakness":"Whenever I have any queries or issues, they are always willing to help me out and provide a solution quickly. I'm extremely satisfied with the level of service they provide and highly recommend","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Finance Basileia","client_email":"finance@basileiashipping.net","client_company_name":"BASILEIA SHIPPING AND LOGISTICS PVT LTD","position":"Accountant","location":"in","client_profile_link":"","client_company_website":"https://basileiashipping.net/","hidden_identity":1,"step":3,"created":1689223596,"updated":1689225260,"software_details":[{"_id":{"$oid":"5ea02dc592e11736b21bd6f0"},"name":"Fresa Gold","slug":"fresa-gold"}],"category_details":[{"_id":{"$oid":"5c6e4695ec038f15b31ffb92"},"name":"Freight Software","slug":"freight-software"}],"integrate_software_details":[],"used_software_details":[],"consider_software_details":[]},
+{"_id":{"$oid":"64b117de2da6c376b004a57e"},"features":{"category":["5c4ed53f7d9dd0289c11d054","5cd2c7c1ec038f72f1215ae2"]},"integrate_software":["5d22dd7dec038f103e43de64"],"used_software":["5c089bf77d9dd007e9269d0b","5cd4f95fec038f17102d4bc2"],"is_active":2,"software_id":{"$oid":"61a485bd654cda23d66b836b"},"software_name":"INHUBBER","software_slug":"inhubber","reason":"Unable to verify the reviewer","response":"","title":"Contract management for the entire organisation that is easy for everyone to use.","summary":"Very positive experience. I use it on a daily basis, but it does not feel like I am spending time on contract management. The platform guides you and lets you know what needs to be done proactively before events.","strength":"Timely reminders to me as the main party, but also to the other parties and the auditor.","weakness":"There are few advanced features that I do not use.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Leah  Ball","client_email":"Leah.Ball@wolke7.net","client_company_name":"WOLKE7","position":"Research Economist","location":"de","client_profile_link":null,"client_company_website":"https://wolke7.wtf/","hidden_identity":"2","step":3,"created":1689328686,"updated":1689596514,"software_details":[{"_id":{"$oid":"61a485bd654cda23d66b836b"},"name":"INHUBBER","slug":"inhubber"}],"category_details":[{"_id":{"$oid":"5c4ed53f7d9dd0289c11d054"},"name":"Contract Management Software","slug":"contract-management-software"},{"_id":{"$oid":"5cd2c7c1ec038f72f1215ae2"},"name":"Digital Signature Software","slug":"digital-signature-software"}],"integrate_software_details":[{"_id":{"$oid":"5d22dd7dec038f103e43de64"},"name":"Microsoft 365","slug":"microsoft-365"}],"used_software_details":[{"_id":{"$oid":"5c089bf77d9dd007e9269d0b"},"name":"PandaDoc","slug":"pandadoc"},{"_id":{"$oid":"5cd4f95fec038f17102d4bc2"},"name":"DocuSign","slug":"docusign"}],"consider_software_details":[]}]
+
+thinking
+**Identifying review verification patterns**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && python - <<'PY'
+import json
+from collections import Counter
+import re
+path='docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json'
+with open(path) as f:
+    data=json.load(f)
+print('entries', len(data))
+# sample some data
+print('fields sample', list(data[0].keys()))
+# general stats
+ct=Counter()
+missing_summary=0
+personal_email=0
+personal_domains=set(['gmail.com','outlook.com','yahoo.com','privaterelay.appleid.com'])
+personal_count=0
+empty_body=0
+for entry in data:
+    if not entry.get('summary') or entry['summary'].strip()==\"\":
+        empty_body+=1
+    email=entry.get('client_email') or ''
+    dom=email.lower().split('@')[-1] if '@' in email else ''
+    if dom in personal_domains:
+        personal_email+=1
+print(empty_body,'empty summaries')
+print(personal_email,'personal-email bodies')
+# check blank fields
+fields=['title','summary','strength','weakness','client_profile_link','client_company_website']
+for field in fields:
+    ctr=Counter()
+    count=0
+    for e in data:
+        val=e.get(field)
+        if not val or str(val).strip()=='':
+            count+=1
+    print(field,'blank_count',count)
+# duplicates by email name
+from collections import defaultdict
+pairs=defaultdict(list)
+for e in data:
+    pairs[(e.get('client_email','').lower(), e.get('client_name','').lower())].append(e)
+dup=[k for k,v in pairs.items() if len(v)>1]
+print('dup entries count',len(dup))
+for k in dup[:10]:
+    print('dup',k,len(pairs[k]))
+# check hidden identity distribution
+hid=Counter(e.get('hidden_identity') for e in data)
+print('hidden', hid)
+# reasons count
+reasons=Counter(e.get('reason','') for e in data)
+print('top reasons', reasons.most_common(10))
+PY" in /home/ubuntu/Desktop/goodfirms-agent exited 127 in 51ms:
+/bin/bash: line 1: python: command not found
+
+thinking
+**Specifying Python version**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && python3 - <<'PY'
+import json
+from collections import Counter, defaultdict
+path='docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json'
+with open(path) as f:
+    data=json.load(f)
+print('entries',len(data))
+fields=list(data[0].keys())
+print('fields',fields)
+empty_body=sum(1 for e in data if not e.get('summary') or not e['summary'].strip())
+print('empty summary',empty_body)
+personal_domains={'gmail.com','outlook.com','yahoo.com','privaterelay.appleid.com','hotmail.com'}
+personal_email=sum(1 for e in data if (email:=e.get('client_email','').lower()) and email.split('@')[-1] in personal_domains)
+print('personal emails',personal_email)
+blanks={field:sum(1 for e in data if not e.get(field) or str(e.get(field)).strip()=='') for field in ['title','summary','strength','weakness','client_profile_link','client_company_website','position','location']}
+print('blanks',blanks)
+combo=defaultdict(int)
+for e in data:
+    combo[(e.get('client_email','').lower(),e.get('client_name','').lower())]+=1
+print('duplicate combos',sum(1 for v in combo.values() if v>1))
+hid=Counter(e.get('hidden_identity') for e in data)
+print('hidden identity',hid)
+reasons=Counter(e.get('reason','') for e in data)
+print('top reasons', reasons.most_common(10))
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+entries 10
+fields ['_id', 'features', 'integrate_software', 'used_software', 'is_active', 'software_id', 'software_name', 'software_slug', 'reason', 'response', 'title', 'summary', 'strength', 'weakness', 'ease_of_use', 'features_functionality', 'customer_support', 'overall', 'client_name', 'client_email', 'client_company_name', 'position', 'location', 'client_profile_link', 'client_company_website', 'hidden_identity', 'step', 'created', 'updated', 'software_details', 'category_details', 'integrate_software_details', 'used_software_details', 'consider_software_details']
+empty summary 2
+personal emails 3
+blanks {'title': 2, 'summary': 2, 'strength': 2, 'weakness': 2, 'client_profile_link': 10, 'client_company_website': 3, 'position': 4, 'location': 3}
+duplicate combos 1
+hidden identity Counter({1: 8, '3': 1, '2': 1})
+top reasons [('Unable to verify the reviewer', 8), ('Review incomplete', 2)]
+
+thinking
+**Analyzing limited entries**
+exec
+/bin/bash -lc "cd /home/ubuntu/Desktop/goodfirms-agent && python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+for e in data:
+    print('---')
+    print(e['software_name'], e['reason'])
+    print('title:',repr(e.get('title','')))
+    print('summary len',len((e.get('summary') or '').strip()))
+    print('strength',repr(e.get('strength','')))
+    print('weakness',repr(e.get('weakness','')))
+    print('email',e.get('client_email'))
+    print('company',e.get('client_company_name'))
+    print('hidden',e.get('hidden_identity'))
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 53ms:
+---
+aasaan app Unable to verify the reviewer
+title: 'Aasaan app on tablets'
+summary len 222
+strength 'E-Commers , marketing'
+weakness 'aasaan app makes it easy to manage your business completely using the mobile app'
+email 4jkhpjqdxj@privaterelay.appleid.com
+company Soap Mart
+hidden 3
+---
+Ireava School ERP Unable to verify the reviewer
+title: 'Ireava School ERP System Review'
+summary len 229
+strength 'Centralizes important information like attendance and grades, making it convenient to access and track.'
+weakness 'Not a series concern'
+email kidaroy860@iturchia.com
+company Bodhi Vidya Niketan
+hidden 1
+---
+Ireava School ERP Unable to verify the reviewer
+
+
+
+thinking
+**Identifying new review verification patterns**
+thinking
+**Proposing removals and document refinements**
+
+I'll suggest removing the inaccurate “Only reviews that already pass upstream completeness pre-checks…” bullet since dataset entries show incomplete reviews still arrive, and recommend dropping or consolidating ambiguous or redundant rules like the duplicate-submission check note. I’m also outlining precise text edits to add new rules addressing placeholder websites, incomplete reviews via `step` checks, and detection of near-duplicate review content across different reviewers.
+thinking
+### New patterns not covered
+- Placeholder and generic domains like `nowebsite.com` or Apple private relay emails appear in multiple entries (e.g., Ireava School ERP in dataset entries #2 and #3). These should be treated as insufficient evidence and trigger escalation to manual review unless supported by alternate verifiable links.
+- Incomplete or in-progress reviews with metadata `step` less than 3 and zero or missing rating fields (as seen in Allway Sync #6 and Innago #7) still reach the agent despite upstream completeness expectations; a new gating rule should classify these as incomplete and halt further verification.
+- Near-duplicate textual content across reviews for the same software (e.g., Fresa Gold entries #4 and #9) indicates probable template or spam submissions; detecting and flagging such near-identical summaries, strengths, and weaknesses even from distinct reviewers is necessary.
+
+### Redundant rules to remove
+- Remove the sentence under the document’s introduction section stating:  
+  *“Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.”*  
+  This is contradicted by dataset evidence (Allway Sync and Innago entries with incomplete steps and zero ratings), showing that this assumption is inaccurate.  
+  _(Reference: dataset entries such as `docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json` for Allway Sync #6 and Innago #7)_
+
+### Exact proposed text edits
+- `docs/review-verification-steps.md` (Introduction/Goal section):  
+  Remove the sentence:  
+  *“Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.”*
+
+- Under section **1) Common Checks**, add a new bullet:  
+  > - Immediately classify reviews as `Review incomplete` and escalate if metadata shows `step` less than 3, or if all rating fields are zero or missing title/summary; skip further verification steps for these.
+
+- Under section **1.5 Duplicate-submission check**, add:  
+  > - Flag reviews for the same software that share more than 80% overlap in summary, strength, and weakness text, even if submitted by different reviewer identities; treat as suspected templated/spam content requiring manual review.
+
+- Under section **4.2 If no LinkedIn profile is available**, add:  
+  > - Treat placeholder or generic company website domains (e.g., `nowebsite.com`) and anonymized email domains such as Apple private relay addresses as insufficient evidence; escalate these cases to manual review unless corroborated by alternative, verifiable contact information.
+
+These edits reference dataset patterns from entries such as Ireava School ERP (#2, #3), Allway Sync (#6), Innago (#7), and Fresa Gold (#4, #9) demonstrating the need for these clarifications and new rules.
+codex
+### New patterns not covered
+- Placeholder/anonymous identity signals are everywhere. The two Ireava School ERP records and several others only carry `client_company_website` = `https://nowebsite.com`, no profile link, and a private relay/personal email (e.g., `privaterelay.appleid.com`, `gmail.com`). The agent still marked them “Unable to verify the reviewer,” yet the current policy doesn’t treat these placeholders as missing evidence. We need a rule that treats non‑resolving/generic URLs and proxy email domains as “no verification possible” (manual review) unless we can anchor the reviewer to a real company page or LinkedIn profile.
+- Incomplete reviews leak through. Entries for Allway Sync (two consecutive submissions with the same email, one entirely blank) and Innago (step 1, zero ratings, empty summary) prove the upstream completeness claim is false. We need a metadata guard that inspects `step`, the presence of summary/title/ratings, and outright zeros and short‑circuits the flow into a `Review incomplete` outcome before touching the rest of the policy.
+- Template spam across reviewers: the two Fresa Gold entries reuse the same summary/strength/weakness wording under different names/emails but still get flagged for verification. The policy has no cross-review duplicate detector, so this batch shows we also need a near‑duplicate rule for identical prose to catch coordinated positive campaigns.
+
+### Redundant rules to remove
+- The intro sentence “Only reviews that already pass upstream completeness pre-checks are sent to this agent policy” is demonstrably false in this batch; multiple records (`Allway Sync`, `Innago`) have `step` < 3, zero ratings, and empty texts yet landed here with reason `Review incomplete`. Remove that sentence so the policy stops assuming completeness is handled elsewhere and instead owns the gatekeeping.
+
+### Exact proposed text edits
+- **docs/review-verification-steps.md → Goal paragraph (line 6)**  
+  Remove: “Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.”  
+  (Batch `docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json` entries for Allway Sync/Innago prove this assertion wrong.)
+
+- **docs/review-verification-steps.md → Section 1 “Common Checks”**  
+  Add a new bullet after 1.1 or before 1.2:  
+  `- Validate review metadata before any textual checks: if `step` < 3, `overall` (and the other ratings) are still 0, and/or title/summary/strength/weakness are blank, immediately classify the record as "Review incomplete" and skip the rest of the flow so we don’t verify partially submitted drafts.`
+
+- **docs/review-verification-steps.md → Section 1.5 “Duplicate-submission check”**  
+  Extend the bullet list with:  
+  `- Extend the duplicate check beyond single reviewers: if multiple submissions for the same software reuse the same summary/strength/weakness phrasing (e.g., the two Fresa Gold reviews in this batch), treat them as templated/auto-generated content and send them to manual review even if reviewer metadata differs.`
+
+- **docs/review-verification-steps.md → Section 4.2 “If no LinkedIn profile”**  
+  Add:  
+  `- Treat placeholder/generic URLs (e.g., `https://nowebsite.com`, other resolvers that return a parking page) or proxy/personal domains (such as `privaterelay.appleid.com`) as insufficient evidence. If the reviewer provides only these values, escalate the review unless alternate company/role confirmation is obtained via a genuine homepage or secondary profile.`
+tokens used
+48,417
+### New patterns not covered
+- Placeholder/anonymous identity signals are everywhere. The two Ireava School ERP records and several others only carry `client_company_website` = `https://nowebsite.com`, no profile link, and a private relay/personal email (e.g., `privaterelay.appleid.com`, `gmail.com`). The agent still marked them “Unable to verify the reviewer,” yet the current policy doesn’t treat these placeholders as missing evidence. We need a rule that treats non‑resolving/generic URLs and proxy email domains as “no verification possible” (manual review) unless we can anchor the reviewer to a real company page or LinkedIn profile.
+- Incomplete reviews leak through. Entries for Allway Sync (two consecutive submissions with the same email, one entirely blank) and Innago (step 1, zero ratings, empty summary) prove the upstream completeness claim is false. We need a metadata guard that inspects `step`, the presence of summary/title/ratings, and outright zeros and short‑circuits the flow into a `Review incomplete` outcome before touching the rest of the policy.
+- Template spam across reviewers: the two Fresa Gold entries reuse the same summary/strength/weakness wording under different names/emails but still get flagged for verification. The policy has no cross-review duplicate detector, so this batch shows we also need a near‑duplicate rule for identical prose to catch coordinated positive campaigns.
+
+### Redundant rules to remove
+- The intro sentence “Only reviews that already pass upstream completeness pre-checks are sent to this agent policy” is demonstrably false in this batch; multiple records (`Allway Sync`, `Innago`) have `step` < 3, zero ratings, and empty texts yet landed here with reason `Review incomplete`. Remove that sentence so the policy stops assuming completeness is handled elsewhere and instead owns the gatekeeping.
+
+### Exact proposed text edits
+- **docs/review-verification-steps.md → Goal paragraph (line 6)**  
+  Remove: “Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.”  
+  (Batch `docs/batches/software_rejected_batch2_from_2023-07-01_humanized.json` entries for Allway Sync/Innago prove this assertion wrong.)
+
+- **docs/review-verification-steps.md → Section 1 “Common Checks”**  
+  Add a new bullet after 1.1 or before 1.2:  
+  `- Validate review metadata before any textual checks: if `step` < 3, `overall` (and the other ratings) are still 0, and/or title/summary/strength/weakness are blank, immediately classify the record as "Review incomplete" and skip the rest of the flow so we don’t verify partially submitted drafts.`
+
+- **docs/review-verification-steps.md → Section 1.5 “Duplicate-submission check”**  
+  Extend the bullet list with:  
+  `- Extend the duplicate check beyond single reviewers: if multiple submissions for the same software reuse the same summary/strength/weakness phrasing (e.g., the two Fresa Gold reviews in this batch), treat them as templated/auto-generated content and send them to manual review even if reviewer metadata differs.`
+
+- **docs/review-verification-steps.md → Section 4.2 “If no LinkedIn profile”**  
+  Add:  
+  `- Treat placeholder/generic URLs (e.g., `https://nowebsite.com`, other resolvers that return a parking page) or proxy/personal domains (such as `privaterelay.appleid.com`) as insufficient evidence. If the reviewer provides only these values, escalate the review unless alternate company/role confirmation is obtained via a genuine homepage or secondary profile.`

@@ -1,0 +1,2 @@
+- Delta: Current duplicate check only calls out near-simultaneous repeats from the same reviewer, but record 655754be7f24305ebc08d693 was rejected because the review had already been published previously; we need an explicit rule rejecting reposted copies even when no quick retry occurs. Evidence record id 655754be7f24305ebc08d693.  
+  + - Reject reviews whose text matches a previously published GoodFirms entry even outside the short-window duplicate scenario to prevent reposted duplicates.

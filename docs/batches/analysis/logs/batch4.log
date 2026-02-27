@@ -1,0 +1,331 @@
+2026-02-27T11:56:39.671497Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9ef5-437f-7531-be6f-b29835c15a23
+--------
+user
+Analyze /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json against /home/ubuntu/Desktop/goodfirms-agent/docs/review-verification-steps.md. Return concise markdown with exactly these sections: New patterns not covered, Redundant rules to remove, Exact proposed text edits. Keep token-efficient and avoid repeating existing rules.
+mcp: prod-goodfirms-mongo starting
+mcp: pencil starting
+mcp: codex_apps starting
+mcp: Prod-goodfirms-mysql starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: prod-goodfirms-mongo ready
+mcp: codex_apps ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, prod-goodfirms-mongo, codex_apps
+
+thinking
+**Preparing to analyze JSON and MD files**
+exec
+/bin/bash -lc pwd in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+/home/ubuntu/Desktop/goodfirms-agent
+
+thinking
+**Reviewing verification steps document**
+exec
+/bin/bash -lc "sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+thinking
+**Preparing to analyze JSON batch file**
+exec
+/bin/bash -lc 'ls -l docs/batches' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+total 520
+drwxrwxr-x 3 ubuntu ubuntu  4096 Feb 27 17:26 analysis
+-rw-rw-r-- 1 ubuntu ubuntu 14080 Feb 27 17:16 software_rejected_batch10_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 14495 Feb 27 17:16 software_rejected_batch11_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 14418 Feb 27 17:16 software_rejected_batch12_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 15096 Feb 27 17:16 software_rejected_batch13_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 13299 Feb 27 17:16 software_rejected_batch14_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 14257 Feb 27 17:16 software_rejected_batch15_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 16392 Feb 27 17:16 software_rejected_batch16_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 10709 Feb 27 17:16 software_rejected_batch17_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 13755 Feb 27 17:16 software_rejected_batch18_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 15939 Feb 27 17:16 software_rejected_batch19_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 21472 Feb 27 13:48 software_rejected_batch1_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 14875 Feb 27 17:16 software_rejected_batch20_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 17853 Feb 27 17:16 software_rejected_batch21_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 16611 Feb 27 17:16 software_rejected_batch22_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 15641 Feb 27 17:16 software_rejected_batch23_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 14382 Feb 27 17:16 software_rejected_batch24_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 19281 Feb 27 17:16 software_rejected_batch25_from_2023-07-01_humanized.json
+-rw-rw-r-- 1 ubuntu ubuntu 16649 Feb 27 17:16 software_rejected_batch26_from_2023-07-01_humanized.json
+
+thinking
+**Inspecting JSON structure and content**
+exec
+/bin/bash -lc "python - <<'PY'
+import json
+from itertools import islice
+with open('docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+print(type(data))
+print(len(data))
+print(data[0].keys())
+print(data[0]['input'].keys())
+print(data[0]['humanized'])
+PY" in /home/ubuntu/Desktop/goodfirms-agent exited 127 in 51ms:
+/bin/bash: line 1: python: command not found
+
+thinking
+**Considering python3 command usage**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+from itertools import islice
+with open('docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+print(type(data))
+print(len(data))
+print(list(data[0].keys()))
+print(list(data[0]['input'].keys()))
+print(data[0]['humanized'][:2])
+PY" in /home/ubuntu/Desktop/goodfirms-agent exited 1 in 51ms:
+<class 'list'>
+10
+['_id', 'features', 'integrate_software', 'used_software', 'is_active', 'software_id', 'software_name', 'software_slug', 'reason', 'response', 'title', 'summary', 'strength', 'weakness', 'ease_of_use', 'features_functionality', 'customer_support', 'overall', 'client_name', 'client_email', 'client_company_name', 'position', 'location', 'client_profile_link', 'client_company_website', 'hidden_identity', 'step', 'created', 'updated', 'software_details', 'category_details', 'integrate_software_details', 'used_software_details', 'consider_software_details']
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+KeyError: 'input'
+
+thinking
+**Inspecting data structure**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+from pprint import pprint
+with open('docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+print('count', len(data))
+pprint(data[0])
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+count 10
+{'_id': {'$oid': '64ba2653144d84a47401ae16'},
+ 'category_details': [{'_id': {'$oid': '60582ba13c722125633a7569'},
+                       'name': 'Integration Software',
+                       'slug': 'integration-software'}],
+ 'client_company_name': 'SOLV.',
+ 'client_company_website': 'https://www.solv.team',
+ 'client_email': 'valeria@solv.team',
+ 'client_name': 'Valeria Raznatovska',
+ 'client_profile_link': None,
+ 'consider_software_details': [],
+ 'created': 1689921166,
+ 'customer_support': '5',
+ 'ease_of_use': '5',
+ 'features': {'category': ['60582ba13c722125633a7569']},
+ 'features_functionality': '5',
+ 'hidden_identity': '2',
+ 'integrate_software': ['5c089aa97d9dd007e9269a85', '5c089b497d9dd007e9269c14'],
+ 'integrate_software_details': [{'_id': {'$oid': '5c089aa97d9dd007e9269a85'},
+                                 'name': 'Zoho CRM',
+
+thinking
+**Analyzing dataset for new and redundant patterns**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+for i, entry in enumerate(data,1):
+    print(i, entry['title'])
+    print('  reason:', entry.get('reason'))
+    print('  summary:', entry.get('summary')[:160], '...')
+    print('  strength:', entry.get('strength'))
+    print('  weakness:', entry.get('weakness'))
+    print('  client:', entry.get('client_name'))
+    print('  email:', entry.get('client_email'))
+    print('  profile_link:', entry.get('client_profile_link'))
+    print('---')
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+1 Thanks to ApiX-Drive, my task management has become a breeze
+  reason: Unable to verify the reviewer
+  summary: This powerful automation tool takes care of automating the creation process from Zoho CRM to Todoist, eliminating the need for manual intervention. I no longer  ...
+  strength: This seamless integration has relieved me from the burden of manual data entry, ensuring that no tasks are omitted or overlooked in my layout.
+  weakness: Thus far, I haven't encountered any issues while using it
+  client: Valeria Raznatovska
+  email: valeria@solv.team
+  profile_link: None
+---
+2 ZOHO is easy
+  reason: Unable to verify the reviewer
+  summary: Customer care by Arumai Naveen is very good, we are getting all our questions answered so far by this product so we are happy till more roadblocks come our way ...
+  strength: Customer care
+  weakness: Lengthy process but easy
+  client: Jerrish John
+  email: aqwjerry17@gmail.com
+  profile_link: 
+---
+3 For a total newbie in editing videos, this platform is great.
+  reason: Unable to verify the reviewer
+
+thinking
+**Examining reviewer verification issues**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+for entry in data:
+    print(entry['client_name'], entry['hidden_identity'], entry['client_profile_link'], entry['client_email'])
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+Valeria Raznatovska 2 None valeria@solv.team
+Jerrish John 1  aqwjerry17@gmail.com
+bing f 1  fybrules@gmail.com
+adrian morillo 2  aj.morillo20@gmail.com
+Md Rizwan 1 None rizwanansari003@gmail.com
+Patrick Giebner 1  patrickgiebner@gmail.com
+sanjeev kumar 1 None sanjeev12243648@gmail.com
+rahul ʀᴊᴘᴜᴛ. 1  jamwalrahul9086@gmail.com
+godfrey ukpong 1  gukpong89@gmail.com
+Veronica Carvajal 1  vero.carvajal71@gmail.com
+
+thinking
+**Investigating hidden_identity meaning**
+exec
+/bin/bash -lc 'rg -n "hidden_identity" -n' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 53ms:
+Total output lines: 345
+
+docs/live-software-review-schema.md:79:- `hidden_identity` (enum mapped from number/string: `1|2|3|4`; normalize before compare)
+docs/live-software-review-schema.md:88:  - `hidden_identity`: number or string
+docs/live-software-review-schema.md:91:## `hidden_identity` Display Mapping
+docs/live-software-review-schema.md:147:- Convert coded fields to readable labels before sending (for example `hidden_identity` -> posting preference text).
+docs/db-knowledge.md:97:`client_name`, `hidden_identity`, `client_company_name`, `position`, `location`, `client_company_website`, `client_email`, `client_profile_link`
+docs/db-knowledge.md:119:`client_name`, `hidden_identity`, `client_company_name`, `position`, `location`, `client_company_website`, `client_email`, `client_profile_link`
+docs/db-knowledge.md:184:| `hidden_identity` | Number \| String | 3 | Display preference |
+docs/db-knowledge.md:193:### `hidden_identity` Mapping (review posting preference)
+docs/db-knowledge.md:197:| `hidden_identity` | UI text |
+docs/db-knowledge.md:245:| `hidden_identity` | 3 | |
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:1:[{"_id":{"$oid":"65389a1994c40b6914513bd3"},"software_id":{"$oid":"5f23f5c7d347e11bdf4bfa0f"},"client_name":"Jackson Tyler","client_company_name":"","position":"","client_profile_link":"","hidden_identity":"4","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","title":"EUROPA is a top-notch app design software that simplifies the app creation process without compromising on quality.","summary":"This software is really wonderful; it allows creative freedom which is good for uses to express themselves. it simplifies the app design process, helping us save time and effort while maintaining high-quality results. I like that it often updates its features and tools to stay current with design trends and technology. Also it typically maintains a high standard of security and privacy and that is very essential for us to protect our design work.","strength":"The user-interface of EUROPA I intuitive and easy to navigate, so beginners like me can also use it.\r\nIt offers lots and lots of options of templates, icons, and design elements.\r\nVery cost-effective pricing options, that’s good for me.","weakness":"  It’s a little bit slow but it works perfectly fine for me.\r\n","software_name":"EUROPA","software_slug":"europa","reason":"Unable to verify the reviewer","response":"","is_active":2,"created":1698208281,"updated":1698296295,"features":{"category":["5f22609e55d8bf66a234636d"]},"consider_software":null,"used_software":null,"integrate_software":null,"publish_date":1698208315,"software_details":[],"category_details":[{"_id":{"$oid":"5f22609e55d8bf66a234636d"},"name":"App Design Software","slug":"app-design-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:2:{"_id":{"$oid":"6538d55a339db2f305011154"},"features":{"category":["5c4ed6087d9dd0290332a563"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"software_name":"Zoho Recruit","software_slug":"zoho-recruit","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Brice ROM","client_email":"bricerom@gmail.com","client_company_name":"","position":"Recruteur indépendant","location":"","client_profile_link":"https://www.linkedin.com/in/brice-rom","client_company_website":"","hidden_identity":1,"step":1,"created":1698223450,"updated":1698230101,"software_details":[{"_id":{"$oid":"5c089b3a7d9dd007e9269bf7"},"name":"Zoho Recruit","slug":"zoho-recruit"}],"category_details":[{"_id":{"$oid":"5c4ed6087d9dd0290332a563"},"name":"Recruiting Software","slug":"recruiting-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:3:{"_id":{"$oid":"653ffb283fe4dfd19b0ce6e8"},"features":{"category":["5c32e7de7d9dd014291696f2"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"653095f089963e09c62c9bf2"},"software_name":"MeMate","software_slug":"memate","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Benson Johnson","client_email":"bj3969612@gmail.com","client_company_name":"","position":"International engineer at SAIC  at SAIC","location":"","client_profile_link":"https://www.linkedin.com/in/benson-johnson-9b1b46298","client_company_website":"","hidden_identity":1,"step":1,"created":1698691880,"updated":1698721309,"software_details":[{"_id":{"$oid":"653095f089963e09c62c9bf2"},"name":"MeMate","slug":"memate"}],"category_details":[{"_id":{"$oid":"5c32e7de7d9dd014291696f2"},"name":"Business Process Management Software","slug":"business-process-management-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:4:{"_id":{"$oid":"6543afa60af127dd7a0e9b44"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"incomplete review","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Aqsa Sajjad","client_email":"aqsysajjad123@gmail.com","client_company_name":"WorkHub","position":"","location":"","client_profile_link":"https://www.linkedin.com/in/aqsa-sajjad/","client_company_website":"","hidden_identity":1,"step":1,"created":1698934694,"updated":1698983246,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:5:{"_id":{"$oid":"654a237931338bdfe00c9932"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"Reviews are accepted only from clients of the company","response":"","title":"Best digital marketing tool","summary":"Success.ai boasts an intuitive and user-friendly interface, making it accessible to users of all skill levels. Navigating through the software is a breeze, and the learning curve is minimal. This ease of use is a testament to the thought and care put into user experience.","strength":"features","weakness":"cost","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Divyansh  Arora","client_email":"divyansharora1102@gmail.com","client_company_name":"divi","position":"Stock and trading analyst","location":"in","client_profile_link":"https://www.linkedin.com/in/divyansharora","client_company_website":"https://www.saashub.com/","hidden_identity":1,"step":3,"created":1699357678,"updated":1700113693,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:6:{"_id":{"$oid":"654a40238241f1585104c936"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Ahmad Riaz","client_email":"gujjarahmad646@gmail.com","client_company_name":"","position":"Content Writing | Email Marketing | Social Media Marketing","location":"","client_profile_link":"https://www.linkedin.com/in/ahmad-riaz-798823293","client_company_website":"","hidden_identity":1,"step":1,"created":1699364899,"updated":1700113522,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:7:{"_id":{"$oid":"654a79109bb61c739a0f8d83"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Reviews are accepted only from clients of the company","response":"","title":"B2B rocket","summary":"B2B rocket is a powerful booster to your sales team with AI driven agents. B2B rocket platform that covered the lead generation with AI technology that is very helpful to you resolutions your sales approach.","strength":"B2B rocket that is powerful tool for a business that is beneficial for anyone. B2B rocket provides unlimited sales growth with lead generation email automation system and customer nature system.","weakness":"B2B rocket is very helpful to you resolutions your sales approach. I have a good experience about B2B rocket.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Urba Mehboob","client_email":"urbamehboob@gmail.com","client_company_name":"Success.ai","position":"Social Media Marketing| Content Marketing| Freelance Graphic Designer| Digital Marketer|","location":"pk","client_profile_link":"https://www.linkedin.com/in/urba-mehboob-912623250","client_company_website":"https://www.success.ai/","hidden_identity":1,"step":3,"created":1699380000,"updated":1700113464,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+docs/batches/software_rejected_batch12_from_2023-07-01_humanized.json:8:{"_id":{"$oid":"654a867232223aac8a034b24"},"features":{"category":["5c18b7687d9dd00965703782"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64fa35e2fe5f47052835ff82"},"software_name":"Success.ai","software_slug":"success-ai","reason":"Reviews are accepted only from clients of the company","response":"","title":"Success.ai is a cost-effective, user-friendly email marketing tool.","summary":"Compared to other email marketing tools, Success.ai offers a highly efficient service at a competitive price. The platform is easy to navigate, making it accessible for users of all levels of tech-savviness and making the implementation easy. Success.ai provides a 14-day free trial that allows new users to explore all the features without any upfront payment. The platform can be easily integrated with other systems, enhancing its usability. Success.ai has a dedicated customer support system that is always ready to assist users. The more frequently you use Success.ai, the more you’ll be able to leverage its features to your advantage. Regular use allows you to understand the platform better, optimize your strategies, and ultimately, achieve better results.","strength":"Success.ai offers a highly efficient service at a competitive price. The platform is easy to navigate, making it accessible for users of all levels of tech-savviness and making the implementation easy.","weakness":"As Success.ai is primarily an email marketing tool, its effectiveness depends on the relevance and effectiveness of email marketing in your specific industry or target market.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Mani Karnika","client_email":"karnikaa.m13@gmail.com","client_company_name":"Success.ai","position":"Partnership Engagement Mananger","location":"in","client_profile_link":"https://www.linkedin.com/in/mani-karnika-206879289","client_company_website":"https://www.b2brocket.ai/","hidden_identity":1,"step":3,"created":1699383140,"updated":1700113457,"software_details":[{"_id":{"$oid":"64fa35e2fe5f47052835ff82"},"name":"Success.ai","slug":"success-ai"}],"category_details":[{"_id":{"$oid":"5c18b7687d9dd00965703782"},"name":"Email Marketing Software","slug":"email-marketing-software"}]},
+
+thinking
+**Analyzing reviewer verification patterns**
+
+I'm focusing on the specified file to spot new verification gaps in the policy, especially around reviewers lacking LinkedIn or company domain proof. The data shows many manual reviews happen because reviewers log in with personal emails like Gmail without adding verifiable links or domains. I’m considering proposing explicit rules to require at least one verifiable identifier or escalate to manual review, and examining if missing company names or LinkedIn links also correlate with reviewability issues. I'll validate how many entries actually have `client_profile_link` data to better understand these patterns.
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+print(sum(1 for e in data if e.get('client_profile_link')))
+for e in data:
+    if e.get('client_profile_link'):
+        print('has link', e['client_name'], e['client_profile_link'])
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+0
+
+thinking
+**Drafting verification rule improvements**
+
+I'm outlining new verification patterns based on missing external identity proof from data, proposing a stricter check for LinkedIn or company domain emails before auto-approval, and thinking through which existing verification rules might be redundant or contradictory given the dataset showing many manual rejections due to unverifiable profiles. I'll also prepare exact text edits referencing document sections with line numbers.
+exec
+/bin/bash -lc "nl -ba docs/review-verification-steps.md | sed -n '1,200p'" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+     1	# Review Verification Steps (Draft Policy)
+     2	
+     3	## Goal
+     4	Define what the agent should verify for:
+     5	- Software reviews
+     6	- Service reviews
+     7	- Reviewer authenticity (LinkedIn vs Google login context)
+     8	- Web fact-check behavior
+     9	
+    10	This is live-flow only (new reviews), not legacy backfill.
+    11	Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+    12	
+    13	Operational note (as of 2026-02-27):
+    14	- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+    15	- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+    16	
+    17	## 1) Common Checks (Both Review Types)
+    18	
+    19	### 1.1 Content readability and coherence
+    20	- Reviewer identity text should not be gibberish:
+
+thinking
+**Outlining new verification patterns and rule edits**
+
+I'll map out new patterns focused on missing LinkedIn/profile links and personal email issues seen in the dataset that call for manual review escalation. I'll also identify potentially redundant or conflicting rules in the docs, referencing specific lines and batch file paths with detailed proposed text edits to align policy with actual verification gaps.
+exec
+/bin/bash -lc "sed -n '60,140p' docs/live-software-review-schema.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+
+### Step 2 (review content)
+- `title` (non-empty string)
+- `summary` (non-empty string)
+- `strength` (non-empty string)
+- `weakness` (non-empty string)
+- `ease_of_use` (rating 1-5)
+- `features_functionality` (rating 1-5)
+- `customer_support` (rating 1-5)
+- `overall` (rating 1-5)
+
+### Step 3 / reviewer verification
+- `client_name` (non-empty string)
+- `client_email` (non-empty string; email-format check)
+- `client_company_name` (non-empty string)
+- `position` (non-empty string)
+- `location` (non-empty string / country code)
+
+## Optional Fields
+- `hidden_identity` (enum mapped from number/string: `1|2|3|4`; normalize before compare)
+
+thinking
+**Summarizing dataset-driven edit proposal**
+
+I’m organizing a precise update suggesting new identity verification rules based on dataset patterns, noting redundant existing rules to remove, and drafting exact text additions and removals referencing specific document lines and dataset file paths. This ensures a clear, minimal final output aligned with the instructions.
+codex
+### New patterns not covered
+- `docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json` shows ten software reviews that all reached step 3 with solid content/ratings but were rejected as “Unable to verify the reviewer” because every record lacks a `client_profile_link` and nine of ten submit personal Gmail addresses. The current text never says how to handle submissions that pass completeness checks yet offer only a personal email and no verifiable profile, so we keep flipping between “no hard fail on Gmail” and “manual review” with no rule to codify the manual-review gate.
+- The same batch reveals most reviewers set `hidden_identity` to `1` or `2` (name-only display), so they are already opting to hide company context while still missing LinkedIn/company-domain proof; the policy does not treat hidden-posting preferences as an additional signal when identity evidence is absent, yet humans are flagging these submissions purely for that lack of proof.
+
+### Redundant rules to remove
+- `docs/review-verification-steps.md:83-85` (the “Personal email domains are allowed… do not hard-fail solely for personal email” bullet) is redundant and conflicting with the new identity-evidence gate: the batch proves that Gmail-only reviewers are being stopped when no other proof exists, so keeping this tolerance statement encourages agents to ignore the very signal that has led to repeated “Unable to verify” rejections. Drop that bullet to align instructions with what actually triggers manual-review escalations.
+
+### Exact proposed text edits
+- Insert under **4.2 If no LinkedIn profile (Google login or unavailable)** (docs/review-verification-steps.md:79-86) between the softer-checks bullets and the (removed) personal-email tolerance: “If the reviewer submits no profile link and the only email/domain evidence is a personal mailbox (gmail/outlook/yahoo) or they have opted into hidden-identity modes (`hidden_identity` 1/2) without supplying a company domain or website, escalate to `needs_manual_review`, log the missing proof, and request a verifiable profile before granting `verified_pass`.” This explicitly codifies the pattern observed in the batch.
+- After the new bullet, optionally add to **4.3 Suggested evidence tiers** (docs/review-verification-steps.md:87-90) a clarifying clause: “Low evidence (no profile + only a personal email/hidden identity preference) should automatically map to `needs_manual_review` instead of allowing any auto-approve outcome.”
+tokens used
+104,796
+### New patterns not covered
+- `docs/batches/software_rejected_batch4_from_2023-07-01_humanized.json` shows ten software reviews that all reached step 3 with solid content/ratings but were rejected as “Unable to verify the reviewer” because every record lacks a `client_profile_link` and nine of ten submit personal Gmail addresses. The current text never says how to handle submissions that pass completeness checks yet offer only a personal email and no verifiable profile, so we keep flipping between “no hard fail on Gmail” and “manual review” with no rule to codify the manual-review gate.
+- The same batch reveals most reviewers set `hidden_identity` to `1` or `2` (name-only display), so they are already opting to hide company context while still missing LinkedIn/company-domain proof; the policy does not treat hidden-posting preferences as an additional signal when identity evidence is absent, yet humans are flagging these submissions purely for that lack of proof.
+
+### Redundant rules to remove
+- `docs/review-verification-steps.md:83-85` (the “Personal email domains are allowed… do not hard-fail solely for personal email” bullet) is redundant and conflicting with the new identity-evidence gate: the batch proves that Gmail-only reviewers are being stopped when no other proof exists, so keeping this tolerance statement encourages agents to ignore the very signal that has led to repeated “Unable to verify” rejections. Drop that bullet to align instructions with what actually triggers manual-review escalations.
+
+### Exact proposed text edits
+- Insert under **4.2 If no LinkedIn profile (Google login or unavailable)** (docs/review-verification-steps.md:79-86) between the softer-checks bullets and the (removed) personal-email tolerance: “If the reviewer submits no profile link and the only email/domain evidence is a personal mailbox (gmail/outlook/yahoo) or they have opted into hidden-identity modes (`hidden_identity` 1/2) without supplying a company domain or website, escalate to `needs_manual_review`, log the missing proof, and request a verifiable profile before granting `verified_pass`.” This explicitly codifies the pattern observed in the batch.
+- After the new bullet, optionally add to **4.3 Suggested evidence tiers** (docs/review-verification-steps.md:87-90) a clarifying clause: “Low evidence (no profile + only a personal email/hidden identity preference) should automatically map to `needs_manual_review` instead of allowing any auto-approve outcome.”

@@ -1,0 +1,11 @@
+**New patterns not covered**
+- The batch is dominated by `hidden_identity=1` submissions whose `title`, `summary`, `strength`, `weakness`, and all rating fields are empty or zero (see `docs/batches/software_rejected_batch6_from_2023-07-01_humanized.json:1`, `:2`, `:5`, `:6`, `:7`, `:9`). The policy’s readability checklist never calls out entirely vacant reviews as a separate failure mode, yet those records cannot be verified or improved and eat reviewer bandwidth.
+- Step‑2 records still lack any identity proof yet contain verbose marketing copy that does not mention the named software but instead describes another product (see `docs/batches/...json:3`, `:8`, `:10`). Current rules only focus on generic content and rating/narrative alignment, so we still let in suspicious “self‑promo” bodies that mimic vendor marketing while providing no verifiable reviewer signal.
+
+**Redundant rules to remove**
+- Section 1.5’s “duplicate-submission” check (`docs/review-verification-steps.md:43`) is not exercised in this batch—the problems are missing content/identity rather than repeat submissions—so it can be removed to keep the checklist focused on the high‑volume blank/marketing cases we actually see.
+
+**Exact proposed text edits**
+- At `docs/review-verification-steps.md:19` add a third bullet under “Content readability and coherence”: `- Auto-flag reviews where title, summary, strength, weakness, and all rating fields are empty (especially when hidden_identity=1) because there is nothing to verify or improve and they are almost always spam/placeholders.`  
+- In the Reviewer Verification section (e.g., after `docs/review-verification-steps.md:86`), add: `- Treat the platform’s hidden_identity flag as a strong authenticity risk: if it is set and no LinkedIn/company proof exists, escalate to manual review even for positive copy because we can’t cross-check the claimant.`  
+- Remove the entire “1.5 Duplicate-submission check” block at `docs/review-verification-steps.md:43` so the checklist stays tightly aligned with the most common rejection drivers evidenced by this batch.

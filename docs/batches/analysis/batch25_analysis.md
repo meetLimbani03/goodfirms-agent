@@ -1,0 +1,1 @@
+Delta: Introduce an English-only mandate; no current rule covers language requirements yet batch record 6678fcb59a197fd0740ca90d (D5 Render) shows a Spanish review rejected for that reason. Evidence record: 6678fcb59a197fd0740ca90d. Patch: Add to 1.1 bullet list: “- Reviews must be submitted in English; reject otherwise.”

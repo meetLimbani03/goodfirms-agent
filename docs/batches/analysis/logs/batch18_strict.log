@@ -1,0 +1,101 @@
+2026-02-27T12:14:38.411622Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9f05-b952-7cd1-874e-1a8675ebd1f6
+--------
+user
+Task: Analyze exactly one batch file against docs/review-verification-steps.md.
+
+Output constraints (strict):
+1) Return ONLY truly new rule deltas not already covered semantically by existing rules.
+2) Do NOT restate, reword, or expand existing rules.
+3) If no new delta exists, output exactly: NO_CHANGES.
+4) Each proposed delta must include:
+   - why existing rules do not already cover it
+   - one concrete evidence record id from the batch
+   - minimal patch text (add/remove/edit) in 1-3 lines
+5) Prefer deletions when two sections overlap.
+6) Keep total output under 180 tokens.
+
+Decision standard:
+- "New" means a distinct failure mode or decision branch not currently represented.
+- If a rule is implied by current wording, treat it as covered and do not propose it.
+
+Batch file: /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch18_from_2023-07-01_humanized.json
+mcp: prod-goodfirms-mongo starting
+mcp: pencil starting
+mcp: Prod-goodfirms-mysql starting
+mcp: codex_apps starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: prod-goodfirms-mongo ready
+mcp: codex_apps ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, prod-goodfirms-mongo, codex_apps
+
+thinking
+**Reviewing documentation for verification steps**
+exec
+/bin/bash -lc ls in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+AGENTS.md
+CLAUDE.md
+data
+docs
+form-ui
+exec
+/bin/bash -lc "sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+thinking
+**Opening batch file for inspection**
+exec
+/bin/bash -lc 'cat docs/batches/software_rejected_batch18_from_2023-07-01_humanized.json' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+[{"_id":{"$oid":"65ba4e7e2ec4c38b410d21df"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Unable to verify the reviewer","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Shivam Kewlani","client_email":"shivamkewlani01@gmail.com","client_company_name":"","position":"Digital marketing intern","location":"","client_profile_link":"https://www.linkedin.com/in/shivam-kewlani-734896277","client_company_website":"","hidden_identity":1,"step":1,"created":1706708606,"updated":1706760378,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+{"_id":{"$oid":"65bb6c5dc70e3d89a80c7e9f"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Unable to verify the reviewer","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"sobia khan","client_email":"sobia.shaukat.ali@gmail.com","client_company_name":"","position":"Account Executive at Brand Engagement Advertising","location":"pk","client_profile_link":"https://www.linkedin.com/in/sobia-khan-4b1686bb","client_company_website":"","hidden_identity":1,"step":1,"created":1706781789,"updated":1707124897,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+{"_id":{"$oid":"65bca6ce3c4f5693190d6f54"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Unable to verify the reviewer","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Subhrojyoti Roy","client_email":"rsubhrojit@gmail.com","client_company_name":"MyCaptain","position":"Passionate and Strategic Social Media Marketing Expert Driving Online Success for Businesses","location":"in","client_profile_link":"https://www.linkedin.com/in/subhrojyoti-roy-9774a4212","client_company_website":"","hidden_identity":1,"step":2,"created":1706866044,"updated":1707124110,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+{"_id":{"$oid":"65bd3861c2c70dd2ab03bb92"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Unable to verify the reviewer","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Umer Sajid","client_email":"umeer567788@gmail.com","client_company_name":"Success.ai","position":"Social Media Marketing","location":"pk","client_profile_link":"https://www.linkedin.com/in/umer-sajid-7b9806210","client_company_website":"","hidden_identity":1,"step":1,"created":1706899553,"updated":1707124097,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+{"_id":{"$oid":"65c00bb266e7c9aa6d0c9450"},"features":{"category":["5c08efc07d9dd0329869e112","5c7cacc0ec038f60dc06f292"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are not accepted from former employees","response":"","title":"Meeds DAO","summary":"Meeds DAO is a builder's hub, a digital and decentralized engagement platform that connects skilled workers to the right job opportunity. The platform creates a thriving working environment where individuals are rewarded for their contributions.","strength":"I like the fact that contributors are rewarded with MEEDS on a weekly basis.","weakness":"Absolutely nothing","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Godwin Edet","client_email":"godwinedet22@yahoo.com","client_company_name":"solcial","position":"Creator","location":"ng","client_profile_link":"https://www.linkedin.com/in/godwin-edet-1484a1161","client_company_website":"https://solcial.io","hidden_identity":1,"step":3,"created":1707085425,"updated":1707123906,"publish_date":1707123896,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c08efc07d9dd0329869e112"},"name":"Collaboration Software","slug":"collaboration-software"},{"_id":{"$oid":"5c7cacc0ec038f60dc06f292"},"name":"Employee Engagement Software","slug":"employee-engagement-software"}]},
+{"_id":{"$oid":"65c29a8e2274459fbf0555f2"},"features":{"category":["5c08efc07d9dd0329869e112","5c3585847d9dd0515f382d73","5c7cacc0ec038f60dc06f292"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are accepted only from clients of the company","response":"","title":"It has been a wonderful experience in meeds, meeds is were great men and women are been groomed","summary":"Meeds is a decentralized autonomous organization that provides a community-led and decentralized platform. The DAO allows members to take part in governance decisions, asset management, and further development of the platform.","strength":"Meeds is a global blockchain project that aims to introduce a decentralized economic ecosystem. Its main feature is providing users with Meed tokens, which are rewards for participating in various transactions and activities.","weakness":"Nothing much just rooms for more rewards and tasks","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Cyrus Bassey","client_email":"cyrusbassey243@gmail.com","client_company_name":"Propose job system","position":"active contributor in @Meeds DAO","location":"ng","client_profile_link":"https://www.linkedin.com/in/cyrus-bassey-4036b6250","client_company_website":"https://Proposejobsystem.online","hidden_identity":1,"step":3,"created":1707253304,"updated":1707968778,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c08efc07d9dd0329869e112"},"name":"Collaboration Software","slug":"collaboration-software"},{"_id":{"$oid":"5c3585847d9dd0515f382d73"},"name":"Productivity Software","slug":"productivity-software"},{"_id":{"$oid":"5c7cacc0ec038f60dc06f292"},"name":"Employee Engagement Software","slug":"employee-engagement-software"}]},
+{"_id":{"$oid":"65c36021ff7ffde6430f7b33"},"features":{"category":["5c74aaf3ec038f698c24738e"]},"integrate_software":["5fd70cd38f3229682823f270"],"used_software":[],"is_active":2,"software_id":{"$oid":"6589aaf1e7b9416fdd1c8ff2"},"software_name":"10xWinners","software_slug":"10xwinners","reason":"Unable to verify the reviewer","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Rajeev Kumar Singh","client_email":"rajeev8724@gmail.com","client_company_name":"","position":"Digital Marketing Professional | Marketing Professional | SEO | SMM | ORM | Branding | Business Development | Marketing Strategy","location":"","client_profile_link":"https://www.linkedin.com/in/rajeevkumarsingh97","client_company_website":"","hidden_identity":1,"step":1,"created":1707302945,"updated":1707716933,"software_details":[{"_id":{"$oid":"6589aaf1e7b9416fdd1c8ff2"},"name":"10xWinners","slug":"10xwinners"}],"category_details":[{"_id":{"$oid":"5c74aaf3ec038f698c24738e"},"name":"Performance Management Software","slug":"performance-management-software"}]},
+{"_id":{"$oid":"65c5950bd069b9b7c2080396"},"features":{"category":["5c076f7f9108dd0460001f75"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c9a0a26ec038f563a271202"},"software_name":"BotPenguin","software_slug":"botpenguin","reason":"Unable to verify the reviewer","response":"","title":"They have excellent subject matter specialists.","summary":"Good monitoring of project development and attention to delivery schedules. Botpenguin was searching for solutions to meet our deadlines and budgets while implementing our requirements.","strength":"Their proficiency in analyzing ECG signals and their quick delivery of KPI detection.","weakness":"None, they are extremely good","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"suzanne coulton","client_email":"info@cardiacmonitoringservice.com","client_company_name":"Cardiac Monitoring Service","position":"--General Manager","location":"us","client_profile_link":"https://www.linkedin.com/in/suzanne-coulton-a851072b4","client_company_website":"http://www.cardiacmonitoringservice.com/","hidden_identity":1,"step":3,"created":1707450733,"updated":1707716822,"software_details":[{"_id":{"$oid":"5c9a0a26ec038f563a271202"},"name":"BotPenguin","slug":"botpenguin"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f75"},"name":"Artificial Intelligence Software","slug":"artificial-intelligence-software"}]},
+{"_id":{"$oid":"65c743e7bf64413be001208d"},"features":{"category":["5e93f4dab06dbd7d445d3b50","5e9d414fb4ef874f4d5a42e5","5f4614ebb2828d0f0a6b8629"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5e8c1c1a4de9b668fe49a333"},"software_name":"Microsoft Teams","software_slug":"microsoft-teams","reason":"Unable to verify the reviewer","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Lucy Njoki","client_email":"lucyfrancen@gmail.com","client_company_name":"Jaydee Collections","position":"Salesperson at Tropikal Brands Afrika Limited","location":"ke","client_profile_link":"https://www.linkedin.com/in/lucy-njoki-6044a6251","client_company_website":"","hidden_identity":1,"step":1,"created":1707557863,"updated":1707716601,"software_details":[{"_id":{"$oid":"5e8c1c1a4de9b668fe49a333"},"name":"Microsoft Teams","slug":"microsoft-teams"}],"category_details":[{"_id":{"$oid":"5e93f4dab06dbd7d445d3b50"},"name":"Remote Work Software","slug":"remote-work-software"},{"_id":{"$oid":"5e9d414fb4ef874f4d5a42e5"},"name":"Team Communication Software","slug":"team-communication-software"},{"_id":{"$oid":"5f4614ebb2828d0f0a6b8629"},"name":"Screen Sharing Software","slug":"screen-sharing-software"}]},
+{"_id":{"$oid":"65ccaae7f73b474fe3026eb3"},"features":{"category":["5c08efc07d9dd0329869e112"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are accepted only from clients of the company","response":"","title":"Embracing Diversity: A Review of User-Inclusivity on Meeds DAO","summary":"Meeds DAO exemplifies a commitment to user-inclusivity within the decentralized ecosystem. Through its accessible platform design, diverse governance structure, multilingual support, and community engagement initiatives, Meeds ensures that individuals from all backgrounds can actively participate in shaping the DAO's decisions. While there is always room for improvement, particularly in ensuring adequate representation of marginalized voices, Meeds' dedication to inclusivity sets a commendable standard for decentralized organizations. As the DAO continues to evolve, its commitment to fostering diversity and belonging will undoubtedly remain a cornerstone of its success.","strength":"Meeds DAO stands out for its user-friendly interface, ensuring that participants from all backgrounds can easily navigate and engage with the platform. From intuitive menus to comprehensive tutorials, Meeds prioritizes accessibility for all users, regardless of their technical proficiency.","weakness":"I love everything about Meeds","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Bryan Aleksy","client_email":"aleksybryan62@gmail.com","client_company_name":"Star Hub","position":"Contributor @ Meeds | Helping teams work better together 🤝","location":"ng","client_profile_link":"https://www.linkedin.com/in/bryan-aleksy-3654152aa","client_company_website":"https://starhub360.com.ng","hidden_identity":1,"step":3,"created":1707912225,"updated":1707968434,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c08efc07d9dd0329869e112"},"name":"Collaboration Software","slug":"collaboration-software"}]}]
+
+thinking
+**Identifying new policy deltas**
+codex
+- Delta: Ex-employee reviews must be rejected; current sections focus on identity verification and client-plausibility but never forbid former employees even though the batch (65c00bb266e7c9aa6d0c9450) is rejected as “Reviews are not accepted from former employees.” Patch:
+  ```
+  + Reject any submission identified as coming from a former employee when policy disallows ex-staff reviews.
+  ```
+tokens used
+15,558
+- Delta: Ex-employee reviews must be rejected; current sections focus on identity verification and client-plausibility but never forbid former employees even though the batch (65c00bb266e7c9aa6d0c9450) is rejected as “Reviews are not accepted from former employees.” Patch:
+  ```
+  + Reject any submission identified as coming from a former employee when policy disallows ex-staff reviews.
+  ```

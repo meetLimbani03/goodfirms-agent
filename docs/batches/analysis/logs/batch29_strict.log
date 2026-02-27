@@ -1,0 +1,214 @@
+2026-02-27T12:23:27.457587Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9f0d-cbe7-7c02-a421-b76dfc14a108
+--------
+user
+Task: Analyze exactly one batch file against docs/review-verification-steps.md.
+
+Output constraints (strict):
+1) Return ONLY truly new rule deltas not already covered semantically by existing rules.
+2) Do NOT restate, reword, or expand existing rules.
+3) If no new delta exists, output exactly: NO_CHANGES.
+4) Each proposed delta must include:
+   - why existing rules do not already cover it
+   - one concrete evidence record id from the batch
+   - minimal patch text (add/remove/edit) in 1-3 lines
+5) Prefer deletions when two sections overlap.
+6) Keep total output under 180 tokens.
+
+Decision standard:
+- "New" means a distinct failure mode or decision branch not currently represented.
+- If a rule is implied by current wording, treat it as covered and do not propose it.
+
+Batch file: /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch29_from_2023-07-01_humanized.json
+mcp: codex_apps starting
+mcp: pencil starting
+mcp: Prod-goodfirms-mysql starting
+mcp: prod-goodfirms-mongo starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: codex_apps ready
+mcp: prod-goodfirms-mongo ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, codex_apps, prod-goodfirms-mongo
+
+thinking
+**Preparing to analyze batch file and document**
+exec
+/bin/bash -lc pwd in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+/home/ubuntu/Desktop/goodfirms-agent
+
+thinking
+**Checking review-verification document**
+exec
+/bin/bash -lc "sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+thinking
+**Inspecting review batch file structure**
+exec
+/bin/bash -lc "python - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch29_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+print('records', len(data))
+print(data[0].keys())
+print(data[0]['rule_violations'])
+print('------ sample text -----')
+print(data[0]['review_text'][:400])
+PY" in /home/ubuntu/Desktop/goodfirms-agent exited 127 in 51ms:
+/bin/bash: line 1: python: command not found
+
+thinking
+**Adjusting Python command**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch29_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+print('records', len(data))
+print(list(data[0].keys()))
+print(data[0].get('rule_violations'))
+print('------ sample text -----')
+print(data[0]['review_text'][:400])
+PY" in /home/ubuntu/Desktop/goodfirms-agent exited 1 in 51ms:
+records 10
+['_id', 'features', 'integrate_software', 'used_software', 'is_active', 'software_id', 'software_name', 'software_slug', 'reason', 'response', 'title', 'summary', 'strength', 'weakness', 'ease_of_use', 'features_functionality', 'customer_support', 'overall', 'client_name', 'client_email', 'client_company_name', 'position', 'location', 'client_profile_link', 'client_company_website', 'hidden_identity', 'step', 'created', 'updated', 'software_details', 'category_details']
+None
+------ sample text -----
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+KeyError: 'review_text'
+
+thinking
+**Checking record structure**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch29_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+for i, rec in enumerate(data[:1]):
+    print('record id', rec['_id'])
+    for k,v in rec.items():
+        if isinstance(v,str) and len(v)>200:
+            print(k, v[:200].replace('\\n',' '),'...')
+        else:
+            print(k, v)
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+record id {'$oid': '66b7e606d318cf969c0f2477'}
+_id {'$oid': '66b7e606d318cf969c0f2477'}
+features {'category': ['63f8b15f0760b0604d2dc86e']}
+integrate_software []
+used_software []
+is_active 2
+software_id {'$oid': '6401e5ebef9ac678d41164f9'}
+software_name Anymp4
+software_slug anymp4
+reason 
+response 
+title 
+summary 
+strength 
+weakness 
+ease_of_use 0
+features_functionality 0
+customer_support 0
+overall 0
+client_name ray raymond
+
+thinking
+**Investigating review record fields**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch29_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+for rec in data:
+    print('id', rec['_id']['"'$oid'"'])
+    for field in ['reason','response','title','summary','strength','weakness']:
+        print(field, 'len', len(rec.get(field,'') or ''), '->', repr(rec.get(field))[:100])
+    print('client company', rec.get('client_company_name'))
+    print('hidden_identity', rec.get('hidden_identity'))
+    print('---')
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+id 66b7e606d318cf969c0f2477
+reason len 0 -> ''
+response len 0 -> ''
+title len 0 -> ''
+summary len 0 -> ''
+strength len 0 -> ''
+weakness len 0 -> ''
+client company 
+hidden_identity 1
+---
+id 66bb16ecace85cf265099049
+reason len 0 -> ''
+response len 0 -> ''
+title len 4 -> 'hihi'
+summary len 335 -> "- Open with the reviewer's role, industry, and duration of Rework.com usage.\r\n- 3-4 sentences ela
+strength len 335 -> "- Open with the reviewer's role, industry, and duration of Rework.com usage.\r\n- 3-4 sentences ela
+weakness len 335 -> "- Open with the reviewer's role, industry, and duration of Rework.com usage.\r\n- 3-4 sentences ela
+client company 
+hidden_identity 1
+---
+
+thinking
+**Identifying new review failure modes**
+exec
+/bin/bash -lc "python3 - <<'PY'
+import json
+with open('docs/batches/software_rejected_batch29_from_2023-07-01_humanized.json') as f:
+    data=json.load(f)
+for rec in data:
+    print(rec['_id']['"'$oid'"'], 'rule violations', rec.get('rule_violations'))
+PY" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+66b7e606d318cf969c0f2477 rule violations None
+66bb16ecace85cf265099049 rule violations None
+66bc4987d5fae702120bd1ed rule violations None
+66bcbe8c402cafa9e707a684 rule violations None
+66bdaa250df18365f5009632 rule violations None
+66bfbb5fac4a04b0d308268f rule violations None
+66c5a7ab6a1429c9c10aafdb rule violations None
+66c83dc523dd1269ec01ea2a rule violations None
+66c83dc59cc09b65fd04a982 rule violations None
+66c9b88cce89a91d25001f8a rule violations None
+
+
+thinking
+**Proposing new review content rules**
+thinking
+- Add explicit emptiness guard: existing 1.1 assumes readable text and relies on upstream completeness checks, so no policy handles reviews arriving with zero words (record 66c5a7ab6a1429c9c10aafdb has all title/body/strength/weakness empty). Patch:  
++ - Reject reviews whose title/body/strength/weakness are all empty or whitespace before any rewrite attempt.
+codex
+- Add explicit emptiness guard: existing 1.1 outlines readability and leans on upstream completeness, so no policy currently handles reviews that reach us with zero words (record 66c5a7ab6a1429c9c10aafdb has blank title/body/strength/weakness). Patch:
++ - Reject reviews whose title/body/strength/weakness are all empty/whitespace before any rewrite attempt.
+tokens used
+63,399
+- Add explicit emptiness guard: existing 1.1 outlines readability and leans on upstream completeness, so no policy currently handles reviews that reach us with zero words (record 66c5a7ab6a1429c9c10aafdb has blank title/body/strength/weakness). Patch:
++ - Reject reviews whose title/body/strength/weakness are all empty/whitespace before any rewrite attempt.

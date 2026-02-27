@@ -1,0 +1,3 @@
+Delta: Add hidden_identity handling because the verification steps never mention that UI flag even though hidden_identity=2 entries (e.g., 666ff22231491b18d374d8c2) were rejected for “Unable to verify the reviewer”, so that trace-loss signal is not covered; Evidence: 666ff22231491b18d374d8c2; Patch:
++# 4.4 Hidden-identity signals
++- When `hidden_identity` >1, require LinkedIn/company proof before `verified_pass`, otherwise escalate to `needs_manual_review`.

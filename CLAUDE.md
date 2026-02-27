@@ -3,24 +3,39 @@
 ```
 goodfirms-agent/
 ├── docs/
-│   ├── info.txt                            // key DB fields and publish_status codes
 │   ├── Goodfirms Review Agent.pdf          // pdf file with full project scope
 │   ├── Goodfirms Review Agent.txt          // txt file with full project scope
+│   ├── db-knowledge.md
+│   ├── live-service-review-schema.md
+│   ├── live-software-review-schema.md
+│   ├── review-verification-steps.md
+│   ├── batches/                            // batches for analysis
 │   └── research/
 │       ├── initial-plan-and-research.md    // LangGraph architecture plan + latency analysis
 │       └── market-analysis.md
-├── data/                                   // raw HTML exports + structured JSON extracts from GoodFirms admin
-│   ├── service_reviews.html                // raw HTML: service reviews page 1 (~376KB)
-│   ├── service_reviews.json                // 20 structured service review records (page 1)
-│   ├── service_reviews_page2.html          // raw HTML: service reviews page 2 (~379KB)
-│   ├── service_reviews_page2.json          // structured service review records (page 2)
-│   ├── software_reviews.html               // raw HTML: software reviews page 1 (~564KB)
-│   ├── software_reviews.json               // 35 structured software review records (page 1)
-│   ├── software_reviews_page2.html         // raw HTML: software reviews page 2 (~588KB)
-│   └── software_reviews_page2.json         // structured software review records (page 2)
-├── db_data/                                // database files, same data accessible via MCP tools
+├── data/                                   // exports + local MySQL dump/snapshot files
 │   ├── gf.sql
-│   └── goodfirms.archive
+│   ├── gf_fixed.sql
+│   ├── html/
+│   │   ├── service_reviews.html
+│   │   ├── service_reviews_page2.html
+│   │   ├── software_reviews.html
+│   │   └── software_reviews_page2.html
+│   └── jsons/
+│       ├── service_reviews.json
+│       ├── service_reviews_page2.json
+│       ├── software_reviews.json
+│       └── software_reviews_page2.json
+├── form-ui/
+│   ├── product/
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   └── 3.png
+│   └── service-project/
+│       ├── 1.png
+│       ├── 2.png
+│       └── 3.png
+├── AGENTS.md -> CLAUDE.md                  // symlink
 ├── .mcp.json                               // MCP server config (MongoDB)
 └── .gitignore
 ```

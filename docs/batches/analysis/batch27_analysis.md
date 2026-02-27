@@ -1,0 +1,2 @@
+- Empty-title/body reviews bypass the current policy because “readability” assumes text exists but nothing enforces non-empty submissions; record `668e5ec34fdfb668f20e1011` shows both title and summary blank yet still reached this stage. Patch:  
+  `+Require title/summary to contain non-whitespace text; flag records where both fields are blank before running other checks.`

@@ -1,0 +1,4 @@
+- Delta: Add explicit software rule rejecting former-employee/ambassador submissions lacking an active client relationship.
+  - Why: Client-relationship plausibility only talks about tone, so it doesn’t cover reviews where the submitter self-identifies as a former/ambassador affiliate yet still fails the “client” requirement (record 65e787b9b029db20f0074e04 was rejected for that exact reason).
+  - Evidence: 65e787b9b029db20f0074e04
+  - Patch: + - Reject software reviews from former/employer ambassadors unless they prove an ongoing client relationship; treat them like non-client submissions needing stronger proof.

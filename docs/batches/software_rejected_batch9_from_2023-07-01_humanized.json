@@ -1,0 +1,583 @@
+[
+    {
+        "_id": {
+            "$oid": "64fb7ed603f6ded5300e4481"
+        },
+        "features": {
+            "category": [
+                "5cd8f129ec038f054f3860c2"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "5e9699ba1bcde740d42d1cc3"
+        },
+        "software_name": "QElectroTech",
+        "software_slug": "qelectrotech",
+        "reason": null,
+        "response": "",
+        "title": "",
+        "summary": "",
+        "strength": "",
+        "weakness": "",
+        "ease_of_use": 0,
+        "features_functionality": 0,
+        "customer_support": 0,
+        "overall": 0,
+        "client_name": "Jacopo Belligoli",
+        "client_email": "jacopobvr@gmail.com",
+        "client_company_name": "",
+        "position": "",
+        "location": "",
+        "client_profile_link": "",
+        "client_company_website": "",
+        "hidden_identity": 1,
+        "step": 1,
+        "created": 1694203606,
+        "updated": 1694427266,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "5e9699ba1bcde740d42d1cc3"
+                },
+                "name": "QElectroTech",
+                "slug": "qelectrotech"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5cd8f129ec038f054f3860c2"
+                },
+                "name": "Electrical Design Software",
+                "slug": "electrical-design-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "64ff6e9179b54e9d510df727"
+        },
+        "features": {
+            "category": [
+                "5ec36803a4d90506fc0adf74"
+            ]
+        },
+        "integrate_software": [
+            "5d9dbc5fec038f620948ab12",
+            "5f981a15a080aa3c8971005b"
+        ],
+        "used_software": [
+            "5ec627ff2333f6168f446ef1"
+        ],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "64e6367652485f0f43479e22"
+        },
+        "software_name": "Vodlix",
+        "software_slug": "vodlix",
+        "reason": "Reviews are accepted only from clients of the company",
+        "response": "",
+        "title": "Vodlix is a great platform",
+        "summary": "Vodlix is an amazing platform, it is very simple to use, reliable, cost-effective, the TV apps have beautiful interfaces, the mobile apps are fast and beautiful. It's great for live streaming or VOD platforms.",
+        "strength": "Cost effective. \r\nBeautiful design. \r\nReliable, \r\nFast,\r\nEasy to operate",
+        "weakness": "The free version doesn't have all the features. \r\nIt can cost a couple of bucks more if you use extra storage or extra bandwidth.",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Akash Saleem",
+        "client_email": "akashsaleem95@outlook.com",
+        "client_company_name": "Catalyst International corp",
+        "position": "Sales Manager",
+        "location": "gb",
+        "client_profile_link": null,
+        "client_company_website": "http://catalystintcorp.com/",
+        "hidden_identity": 1,
+        "step": 3,
+        "created": 1694462382,
+        "updated": 1694500226,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "64e6367652485f0f43479e22"
+                },
+                "name": "Vodlix",
+                "slug": "vodlix"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5ec36803a4d90506fc0adf74"
+                },
+                "name": "Live Streaming Software",
+                "slug": "live-streaming-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65024781e1221cb5660f3753"
+        },
+        "features": {
+            "category": [
+                "5fec393f25792103494af878"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "64f0184770fda804bb68e0f2"
+        },
+        "software_name": "Koneksi",
+        "software_slug": "koneksi",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "vfrwegfwe",
+        "summary": "vewwe howeh ouevw hoewvh oewvh owevo fwe hoiewfh ioefw iohwefih ofew hoiefw hioefw hefwo gefw guocq guqe gueq giew oufew hiofew hefw u ouvw ouew hoefw",
+        "strength": "vewv. hiowev hioevw hoevwh oewviho weih owevi",
+        "weakness": "vewvewhio vehiow vvew huiovew hioewv hiwvehi ewvo huevw uo",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Ruby Hoenderdos",
+        "client_email": "rb.hoenderdos@gmail.com",
+        "client_company_name": "",
+        "position": "",
+        "location": "",
+        "client_profile_link": "",
+        "client_company_website": "",
+        "hidden_identity": 1,
+        "step": 2,
+        "created": 1694648404,
+        "updated": 1694667464,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "64f0184770fda804bb68e0f2"
+                },
+                "name": "Koneksi",
+                "slug": "koneksi"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5fec393f25792103494af878"
+                },
+                "name": "Lead Generation Software",
+                "slug": "lead-generation-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6502f0d8ef6175088c021ca1"
+        },
+        "features": {
+            "category": [
+                "5ec36803a4d90506fc0adf74"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "64e6367652485f0f43479e22"
+        },
+        "software_name": "Vodlix",
+        "software_slug": "vodlix",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Vodlix: Boost Your content With Live TV & More!",
+        "summary": "Vodlix offers Video on Demand (VOD) services, and furthermore, they provide all three monetization models: Subscription Video on Demand (SVOD), Transactional Video on Demand (TVOD), and Ad-supported Video on Demand (AVOD). Additionally, they offer Internet Protocol Television (IPTV) services, allowing you to stream live channels on your platform",
+        "strength": "Overall, Vodlix is a great platform. However, it could benefit from more detailed tutorials for beginners. While setting up, I found it a bit challenging, but once I got the hang of it, the results were fantastic. So, some extra guidance during the initial stages would be helpful.",
+        "weakness": "[Friday 6:08 PM] Usama Nisar\r\n\r\nVodlix has truly transformed our streaming service. The level of customization and control it offers is unmatched. Plus, their support team is fantastic – always ready to help and quick to respond. Highly recommended for anyone in the OTT business!",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "allah ditta",
+        "client_email": "allahditta.iu@gmail.com",
+        "client_company_name": "IU",
+        "position": "Support Executive",
+        "location": "pk",
+        "client_profile_link": null,
+        "client_company_website": "https://foodbucket.io/",
+        "hidden_identity": "2",
+        "step": 3,
+        "created": 1694692266,
+        "updated": 1694768446,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "64e6367652485f0f43479e22"
+                },
+                "name": "Vodlix",
+                "slug": "vodlix"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5ec36803a4d90506fc0adf74"
+                },
+                "name": "Live Streaming Software",
+                "slug": "live-streaming-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6504208ebdb90986ed03f348"
+        },
+        "features": {
+            "category": [
+                "5c08f0c77d9dd032c65ab214"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [
+            "5c089bd57d9dd007e9269cc3"
+        ],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "5dd6b860ec038f17e94f69f4"
+        },
+        "software_name": "CodeLobster IDE",
+        "software_slug": "codelobster-ide",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Great free IDE",
+        "summary": "It is very powerful and light-weight IDE. \r\nI like CSS/JS/PHP/HTML autocmplete and dynamic help.\r\nAlso it includes advanced PHP and JS debuggers, SQL manager, Git support, FTP/SFTP client and much more.",
+        "strength": "Great autocomplete for many popular JS and PHP frameworks",
+        "weakness": "Poor Python support",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Stanislav Ustimenko",
+        "client_email": "stas@teamich.com",
+        "client_company_name": "Teamich Inc.",
+        "position": "PM",
+        "location": "us",
+        "client_profile_link": "",
+        "client_company_website": "http://www.teamich.com/",
+        "hidden_identity": "2",
+        "step": 3,
+        "created": 1694769977,
+        "updated": 1695274398,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "5dd6b860ec038f17e94f69f4"
+                },
+                "name": "CodeLobster IDE",
+                "slug": "codelobster-ide"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5c08f0c77d9dd032c65ab214"
+                },
+                "name": "Integrated Development Environment (IDE) Software",
+                "slug": "integrated-development-environment-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65042442dbe454c79202bf73"
+        },
+        "features": {
+            "category": [
+                "5ec36803a4d90506fc0adf74"
+            ]
+        },
+        "integrate_software": [
+            "5c089aa77d9dd007e9269a72"
+        ],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "60883bfe9758c448a62b450c"
+        },
+        "software_name": "VPlayed",
+        "software_slug": "vplayed",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Shout out to their Analytics feature",
+        "summary": "Not playing to the gallery again, but the metrics report is playing a huge role and helping us make informed decisions rather than relying on assumptions. VPlayed's features empowered us to analyze specific aspects of our business that matter most. Now, personalized analytics and actionable insights for targeted decision-making can be easily assessed.",
+        "strength": "Understanding their customers is the key to opening many more paths for any business. We have been facing that issue for a long time. But with the integration of the Analytics and Reports feature that VPlayed offered while building our platform, our backend team can monitor key metrics, track viewer engagement, and gain valuable insights into your content's performance, all in a single glance.",
+        "weakness": "Although the platform seems easy to play around with, a video glossary about the various features and how to use the full platform will make it even more convenient for customers to make the fullest use of the platform.",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "4",
+        "overall": "5",
+        "client_name": "Richard Alexander",
+        "client_email": "r.alexanderrichard97@gmail.com",
+        "client_company_name": "Broadcast United Solutions",
+        "position": "Java Developer",
+        "location": "us",
+        "client_profile_link": "",
+        "client_company_website": "https://unitedbroadcast.com/",
+        "hidden_identity": 1,
+        "step": 3,
+        "created": 1694770895,
+        "updated": 1695274538,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "60883bfe9758c448a62b450c"
+                },
+                "name": "VPlayed",
+                "slug": "vplayed"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5ec36803a4d90506fc0adf74"
+                },
+                "name": "Live Streaming Software",
+                "slug": "live-streaming-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65045f45027f5fa17c06f8c8"
+        },
+        "features": {
+            "category": [
+                "5ec36803a4d90506fc0adf74"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "60883bfe9758c448a62b450c"
+        },
+        "software_name": "VPlayed",
+        "software_slug": "vplayed",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Lovely team to work with. Best choice made.",
+        "summary": "The discussions that happened before the final sign was so vibrant with the VPlayed team. Rather than building a VOD platform based on templates and offering every customer a set of predefined templates and customizations, they catered to my lines of business. Their team has integrated 15+ app customizations to meet our specific requirements and delivered an unparalleled streaming experience for our audience. And these customizations are helping us every day deliver personalized experiences to enjoy TV shows and movies based on their interests.",
+        "strength": "Every viewer who subscribes to our entertainment platform just wants unlimited and uninterrupted streaming of videos they wish to watch. While we worked on the un; limited entertainment part by bringing the best shows from the nation into the platform, VPlayed worked on building the best-uninterrupted streaming for our viewers. And these combined are still giving a kickass feel to our viewers.",
+        "weakness": "Love using the app so far. All on the sunny side. Just one suggestion: It would be great if the backend management is made more convenient. Like, we understand how to use it as we have been using it for a long time. But for newbies to hold a grip, it might take time. Consider reworking that.",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Vikram Rathore",
+        "client_email": "r.vikaramrathore87@gmail.com",
+        "client_company_name": "",
+        "position": "",
+        "location": "",
+        "client_profile_link": "",
+        "client_company_website": "",
+        "hidden_identity": 1,
+        "step": 2,
+        "created": 1694785460,
+        "updated": 1695274972,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "60883bfe9758c448a62b450c"
+                },
+                "name": "VPlayed",
+                "slug": "vplayed"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5ec36803a4d90506fc0adf74"
+                },
+                "name": "Live Streaming Software",
+                "slug": "live-streaming-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65049fdd1b1c93c11b016155"
+        },
+        "features": {
+            "category": [
+                "5c3585847d9dd0515f382d73"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [
+            "5ec66e8d5791b7610136866d"
+        ],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "64f993bc58d5092071158ed2"
+        },
+        "software_name": "Truly Office",
+        "software_slug": "truly-office",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Affordable and lightning-fast productivity suite",
+        "summary": "Truly Office is by far the most balanced suite I've ever used. The performance is incredible, there's no bloat and the interface is easy to use. The apps support a wide range of file formats and I had no problem importing documents from MS Office. I opted for the one-time purchase option and don't regret it one bit. Extremely affordable, full-feature suite with a bright future.",
+        "strength": "Incredible performance, great support for file formats, has all the features I need without any bloat. The pricing is reasonable and affordable even for students. I look forward to the integrated AI features.",
+        "weakness": "After nearly a month use, I have no complaints.",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Sara Al",
+        "client_email": "solutio39@gmail.com",
+        "client_company_name": "GIU",
+        "position": "Freelancer",
+        "location": "tr",
+        "client_profile_link": "",
+        "client_company_website": "https://www.giu-uni.de/",
+        "hidden_identity": "2",
+        "step": 3,
+        "created": 1694802276,
+        "updated": 1695275101,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "64f993bc58d5092071158ed2"
+                },
+                "name": "Truly Office",
+                "slug": "truly-office"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5c3585847d9dd0515f382d73"
+                },
+                "name": "Productivity Software",
+                "slug": "productivity-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "650532bdbdea2980b90be792"
+        },
+        "features": {
+            "category": [
+                "5c3585847d9dd0515f382d73"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "64f993bc58d5092071158ed2"
+        },
+        "software_name": "Truly Office",
+        "software_slug": "truly-office",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Productivity Boost",
+        "summary": "Truly Office has truly transformed the way I work. With its seamless integration into my daily life, I've become more productive than ever before. The customizable packages cater perfectly to my business needs, ensuring I have the tools required to excel. What sets Truly Office apart is its accessibility – I can effortlessly access my documents from any device or location, be it a coffee shop, office, or while on the move.",
+        "strength": "Whether it's on my PC, Mac, tablet, or mobile, Truly Office delivers a consistent and efficient experience. The ability to work across multiple formats and the convenience of direct web access are game-changers. Plus, the added features like advanced editing tools, built-in formulas, and customizable templates only enhance productivity. Truly Office has become an essential part of my workflow, allowing me to edit with ease and tackle tasks with efficiency. It's a must-have for any professionals.",
+        "weakness": "As someone who has been using Truly Office for a while now, I must say that it's been a game-changer for my productivity. However, if I had to nitpick, one thing I liked the least is the learning curve for some of the advanced features. While the basics are easy to grasp, some of the more advanced editing tools and functions took a bit of time to get used to. Nonetheless, with a little patience and practice, I was able to harness the full power of Truly Office, and the benefits far outweigh this",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Julie SoftwareKeep",
+        "client_email": "julie@softwarekeep.com",
+        "client_company_name": "SoftwareKeep",
+        "position": "Blog Writer",
+        "location": "ph",
+        "client_profile_link": "",
+        "client_company_website": "https://trulyoffice.com/",
+        "hidden_identity": 1,
+        "step": 3,
+        "created": 1694839854,
+        "updated": 1695284967,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "64f993bc58d5092071158ed2"
+                },
+                "name": "Truly Office",
+                "slug": "truly-office"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5c3585847d9dd0515f382d73"
+                },
+                "name": "Productivity Software",
+                "slug": "productivity-software"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "650565da82951ebad50d24f8"
+        },
+        "features": {
+            "category": [
+                "5ca1a14bec038f46e91d61e3"
+            ]
+        },
+        "integrate_software": [],
+        "used_software": [],
+        "is_active": 2,
+        "software_id": {
+            "$oid": "5e67a10dde7d5b7d8e7f047b"
+        },
+        "software_name": "Global MLM",
+        "software_slug": "global-mlm",
+        "reason": "Unable to verify the reviewer",
+        "response": "",
+        "title": "Global MLM Software = Empowering Agents and Driving Efficiency",
+        "summary": "We are a prominent real estate agency based in the USA, specializing in assisting clients in buying and selling commercial and personal properties. With a large team of dedicated agents, our daily operations revolve around addressing customer inquiries, identifying the right properties, and facilitating transactions to ensure seamless property transactions.\r\nOur experience with Global MLM Software has been fantastic thus far. The Global MLM team has been incredibly friendly, and they have proven to be efficient and effective in their work. We appreciate the comprehensive features encompassed by the software, as well as its compatibility across multiple platforms. The support options and training resources have also been invaluable to us. We particularly appreciate the strong focus on security, which gives us peace of mind. Overall, we are more than satisfied with the features and capabilities of Global MLM Software, and we look forward to its continued use in our business processes.",
+        "strength": "Our experience with Global MLM Software has been fantastic thus far. The Global MLM team has been incredibly friendly, and they have proven to be efficient and effective in their work. We appreciate the comprehensive features encompassed by the software, as well as its compatibility across multiple platforms. The support options and training resources have also been invaluable to us. We particularly appreciate the strong focus on security, which gives us peace of mind.",
+        "weakness": "Our experience with Global MLM Software has been fantastic thus far. The Global MLM team has been incredibly friendly, and they have proven to be efficient and effective in their work. We appreciate the comprehensive features encompassed by the software, as well as its compatibility across multiple platforms. The support options and training resources have also been invaluable to us. We particularly appreciate the strong focus on security, which gives us peace of mind.",
+        "ease_of_use": "5",
+        "features_functionality": "5",
+        "customer_support": "5",
+        "overall": "5",
+        "client_name": "Spark S",
+        "client_email": "iamthechoosenspark@gmail.com",
+        "client_company_name": "",
+        "position": "",
+        "location": "",
+        "client_profile_link": "",
+        "client_company_website": "",
+        "hidden_identity": 1,
+        "step": 2,
+        "created": 1694852851,
+        "updated": 1695199511,
+        "software_details": [
+            {
+                "_id": {
+                    "$oid": "5e67a10dde7d5b7d8e7f047b"
+                },
+                "name": "Global MLM",
+                "slug": "global-mlm"
+            }
+        ],
+        "category_details": [
+            {
+                "_id": {
+                    "$oid": "5ca1a14bec038f46e91d61e3"
+                },
+                "name": "MLM Software",
+                "slug": "mlm-software"
+            }
+        ]
+    }
+]

@@ -1,0 +1,2 @@
+- The policy now assumes only complete reviews reach the agent, but record `654afdf0e1b99d3176004472` arrives with title/summary/strength/weakness empty and every score zero, so we need an explicit guard rejecting “incomplete” submissions when that upstream filter fails; no existing rule covers this failure mode. Evidence record id: `654afdf0e1b99d3176004472`. Patch:
++ Under 1.1 add “Reject reviews arriving with all copy fields blank and all score fields zero as incomplete submissions that upstream completeness checks missed.”

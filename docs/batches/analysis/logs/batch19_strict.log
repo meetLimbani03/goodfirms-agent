@@ -1,0 +1,128 @@
+2026-02-27T12:15:02.190177Z ERROR codex_core::skills::loader: failed to stat skills entry /home/ubuntu/.codex-p/skills/find-skills (symlink): No such file or directory (os error 2)
+OpenAI Codex v0.106.0 (research preview)
+--------
+workdir: /home/ubuntu/Desktop/goodfirms-agent
+model: gpt-5.1-codex-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019c9f06-1633-7303-8040-47028e7386a4
+--------
+user
+Task: Analyze exactly one batch file against docs/review-verification-steps.md.
+
+Output constraints (strict):
+1) Return ONLY truly new rule deltas not already covered semantically by existing rules.
+2) Do NOT restate, reword, or expand existing rules.
+3) If no new delta exists, output exactly: NO_CHANGES.
+4) Each proposed delta must include:
+   - why existing rules do not already cover it
+   - one concrete evidence record id from the batch
+   - minimal patch text (add/remove/edit) in 1-3 lines
+5) Prefer deletions when two sections overlap.
+6) Keep total output under 180 tokens.
+
+Decision standard:
+- "New" means a distinct failure mode or decision branch not currently represented.
+- If a rule is implied by current wording, treat it as covered and do not propose it.
+
+Batch file: /home/ubuntu/Desktop/goodfirms-agent/docs/batches/software_rejected_batch19_from_2023-07-01_humanized.json
+mcp: pencil starting
+mcp: prod-goodfirms-mongo starting
+mcp: Prod-goodfirms-mysql starting
+mcp: codex_apps starting
+mcp: pencil ready
+mcp: Prod-goodfirms-mysql ready
+mcp: prod-goodfirms-mongo ready
+mcp: codex_apps ready
+mcp startup: ready: pencil, Prod-goodfirms-mysql, prod-goodfirms-mongo, codex_apps
+
+thinking
+**Reviewing batch file verification instructions**
+exec
+/bin/bash -lc ls in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+AGENTS.md
+CLAUDE.md
+data
+docs
+form-ui
+
+thinking
+**Reading documentation file**
+exec
+/bin/bash -lc "sed -n '1,200p' docs/review-verification-steps.md" in /home/ubuntu/Desktop/goodfirms-agent succeeded in 50ms:
+# Review Verification Steps (Draft Policy)
+
+## Goal
+Define what the agent should verify for:
+- Software reviews
+- Service reviews
+- Reviewer authenticity (LinkedIn vs Google login context)
+- Web fact-check behavior
+
+This is live-flow only (new reviews), not legacy backfill.
+Only reviews that already pass upstream completeness pre-checks are sent to this agent policy.
+
+Operational note (as of 2026-02-27):
+- Production MySQL MCP (`Prod-goodfirms-mysql`) is currently not reachable.
+- For service-review DB checks, use local `GoodFirms` imported from `data/gf.sql` (dump completed `2026-02-17 02:26:06`, 10 days old as of 2026-02-27).
+
+## 1) Common Checks (Both Review Types)
+
+### 1.1 Content readability and coherence
+- Reviewer identity text should not be gibberish:
+
+thinking
+**Examining JSON file for rules**
+exec
+/bin/bash -lc 'ls docs/batches' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+analysis
+software_rejected_batch10_from_2023-07-01_humanized.json
+software_rejected_batch11_from_2023-07-01_humanized.json
+software_rejected_batch12_from_2023-07-01_humanized.json
+software_rejected_batch13_from_2023-07-01_humanized.json
+software_rejected_batch14_from_2023-07-01_humanized.json
+software_rejected_batch15_from_2023-07-01_humanized.json
+software_rejected_batch16_from_2023-07-01_humanized.json
+software_rejected_batch17_from_2023-07-01_humanized.json
+software_rejected_batch18_from_2023-07-01_humanized.json
+software_rejected_batch19_from_2023-07-01_humanized.json
+software_rejected_batch1_from_2023-07-01_humanized.json
+software_rejected_batch20_from_2023-07-01_humanized.json
+software_rejected_batch21_from_2023-07-01_humanized.json
+software_rejected_batch22_from_2023-07-01_humanized.json
+software_rejected_batch23_from_2023-07-01_humanized.json
+software_rejected_batch24_from_2023-07-01_humanized.json
+software_rejected_batch25_from_2023-07-01_humanized.json
+software_rejected_batch26_from_2023-07-01_humanized.json
+software_rejected_batch27_from_2023-07-01_humanized.json
+
+thinking
+**Opening file**
+exec
+/bin/bash -lc 'cat docs/batches/software_rejected_batch19_from_2023-07-01_humanized.json' in /home/ubuntu/Desktop/goodfirms-agent succeeded in 51ms:
+[{"_id":{"$oid":"65cd3a6ec1a7141e9a051fab"},"features":{"category":["5fec30eba6dc3846ab23c7de"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5fef07a64a0d7879b92500b0"},"software_name":"Pearls","software_slug":"pearls","reason":"Unable to verify the reviewer","response":"","title":"pearls inc","summary":"Pearls is a requirements management tool which offers several powerful features to handle any complex business analysis related problem in any project. Additionally, it has been developed to be extremely easy to use and very affordable, so the small size companies and startups can easily make use of an effective requirements management solution.","strength":"The right requirements management tool can help business analysts solve all the business analysis related complex problems in the most time effective and affordable way. Keeping this in mind, Pearls has been developed so that it can cater to all the complex needs of business analysts. No matter how large or small the project or business is, Pearls is perfect for all of them.","weakness":"We built pearls to be a one stop shop for business analysts regarding any need of requirements management. This tool is built with state of the art technology and our developers have integrated some very powerful features which makes it one of the most effective requirements management software in the industry.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"pearls inc","client_email":"saifmir196@gmail.com","client_company_name":"pearls-inc","position":"pearls-inc","location":"us","client_profile_link":"","client_company_website":"https://pearls-inc.com/","hidden_identity":1,"step":3,"created":1707948731,"updated":1707968383,"software_details":[{"_id":{"$oid":"5fef07a64a0d7879b92500b0"},"name":"Pearls","slug":"pearls"}],"category_details":[{"_id":{"$oid":"5fec30eba6dc3846ab23c7de"},"name":"Requirements Management Software","slug":"requirements-management-software"}]},
+{"_id":{"$oid":"65cd8196cdd43f909d007da2"},"features":{"category":["5c076f7f9108dd0460001f75"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5c9a0a26ec038f563a271202"},"software_name":"BotPenguin","software_slug":"botpenguin","reason":"Unable to verify the reviewer","response":"","title":"Airport Transportation Company's Software Developer","summary":"We retrieve flight information from the API and streamline the process of assigning passengers to flights. In the past, a single individual could manage the planning and communication of pickup times for 80 people daily. With our improved efficiency, we can now efficiently serve 450 or more passengers each day.","strength":"Their communication was highly proficient, ensuring a smooth flow of information. Even in instances of delays, they proactively provided updates, maintaining transparency throughout. This consistent and effective communication kept me well-informed about the ongoing developments.","weakness":"I am extremely pleased with the experience, and I can confidently say that I don't have any criticisms or negative feedback to provide.","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Joe Tirone","client_email":"joetirone12@outlook.com","client_company_name":"","position":"Vice President at Forward Air Corporation","location":"","client_profile_link":"https://www.linkedin.com/in/joe-tirone-bb76a52b4","client_company_website":"","hidden_identity":1,"step":2,"created":1707967253,"updated":1707968350,"software_details":[{"_id":{"$oid":"5c9a0a26ec038f563a271202"},"name":"BotPenguin","slug":"botpenguin"}],"category_details":[{"_id":{"$oid":"5c076f7f9108dd0460001f75"},"name":"Artificial Intelligence Software","slug":"artificial-intelligence-software"}]},
+{"_id":{"$oid":"65cdf057adb2d8292c039d72"},"features":{"category":["5c7cacc0ec038f60dc06f292"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are accepted only from clients of the company","response":"","title":"Awesome Platform","summary":"I was first introduced to Meeds by a friend. I felt reluctant to use it until I stumbled on an article about Meeds and I decided to give it a shot. Ever since it has been a great experience using the platform. Meeds is simple and easy to use. It connects people to job opportunities","strength":"What I like most is the fact that rewards are distributed weekly for contributions made. This is always a big boost of morale","weakness":"Absolutely nothing for now. Still exploring other features from the platform","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Emmanuel Edet","client_email":"edet4454@gmail.com","client_company_name":"exoplatform","position":"Attended Akwa Ibom State University","location":"ng","client_profile_link":"https://www.linkedin.com/in/emmanuel-edet-454595291","client_company_website":"https://community.exoplatform.com/","hidden_identity":1,"step":3,"created":1707996196,"updated":1708055697,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c7cacc0ec038f60dc06f292"},"name":"Employee Engagement Software","slug":"employee-engagement-software"}]},
+{"_id":{"$oid":"65d4a0c38e1662d88e0d7e17"},"features":{"category":["5c7cacc0ec038f60dc06f292"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are accepted only from clients of the company","response":"","title":"World of Meeds: A Place Where Community Succeeds and Contribution Is Rewarded","summary":"I've been a general contributor with Meeds DAO for a few months now. In that time, I've tried various platforms, but so far, none has outperformed Meeds in terms of performance. Where other cheat and scam contributors, Meeds rewards accordingly.","strength":"Meeds ecosystem is rooted in Transparency with equity/fairness in the shearing of points and proper reviewing of contents with proof of work. That's one of the reasons I like Meeds.","weakness":"So far, I am still evaluating the system and will outline issues once noticed","ease_of_use":"5","features_functionality":"4","customer_support":"4","overall":"4","client_name":"Abasienyene Udo","client_email":"ubongfrifay@gmail.com","client_company_name":"AE TECH","position":"Community Manager/Moderator|| Blockchain Content Writer|| Crypto Project Marketer (Shiller)","location":"ng","client_profile_link":"https://www.linkedin.com/in/abasienyene-udo-6aa8b3b9","client_company_website":"https://www.meeds.io/","hidden_identity":1,"step":3,"created":1708434234,"updated":1708490480,"publish_date":1708490460,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c7cacc0ec038f60dc06f292"},"name":"Employee Engagement Software","slug":"employee-engagement-software"}]},
+{"_id":{"$oid":"65db29ad4ba8011b720865c8"},"features":{"category":["5fb4b96539f6274de524aaa5"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5fb64d6f1ac464330d676d3e"},"software_name":"Carica Pets ","software_slug":"carica-pets","reason":"incomplete review","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Md Abu Sahid","client_email":"logodesigner520@gmail.com","client_company_name":"","position":"Digital Marketer & Graphic Designer.","location":"","client_profile_link":"https://www.linkedin.com/in/md-abu-sahid-b4317a205","client_company_website":"","hidden_identity":1,"step":1,"created":1708861869,"updated":1709012652,"software_details":[{"_id":{"$oid":"5fb64d6f1ac464330d676d3e"},"name":"Carica Pets ","slug":"carica-pets"}],"category_details":[{"_id":{"$oid":"5fb4b96539f6274de524aaa5"},"name":"Kennel Software","slug":"kennel-software"}]},
+{"_id":{"$oid":"65dc4df13bd170e8fb04df55"},"features":{"category":["5e9fe8125bae601e4b27271a"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"64c74fab3096bb72c471d103"},"software_name":"B2B Rocket","software_slug":"b2b-rocket","reason":"Review has already been published before","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Syeda Falak Naz Zaidi","client_email":"falakzaidi110@gmail.com","client_company_name":"DigitalPulse Marketing Solutions","position":"Pharmacist | Data Entry | Academic writing | Listing | Debater | Google Sheets | Virtual assistant | Digital Marketing | Social Media Marketing |","location":"pk","client_profile_link":"https://www.linkedin.com/in/syeda-falak-naz-zaidi-b7ab49217","client_company_website":"","hidden_identity":1,"step":1,"created":1708936689,"updated":1709012631,"software_details":[{"_id":{"$oid":"64c74fab3096bb72c471d103"},"name":"B2B Rocket","slug":"b2b-rocket"}],"category_details":[{"_id":{"$oid":"5e9fe8125bae601e4b27271a"},"name":"Sales Force Automation Software","slug":"sales-force-automation-software"}]},
+{"_id":{"$oid":"65dde0e3a3af1ec3890a1dfe"},"features":{"category":["5c3585847d9dd0515f382d73"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are not accepted from former employees","response":"","title":"MEEDS Token Exchange","summary":"MEEDS tokens can be exchanged on various cryptocurrency exchanges, allowing participants to trade them for other digital assets of fiat currencies. This liduidity enhance the accessibility and utility of MEEDS tokens, fostering a vibrant ecosystem of sustaiable energy enthusiasts and investors.","strength":"meeds dao has a huge form of transparency when dealing with its investors and contributors","weakness":"none for now","ease_of_use":"5","features_functionality":"5","customer_support":"5","overall":"5","client_name":"Godwin Etim","client_email":"godwinkelvin91@gmail.com","client_company_name":"meeds dao","position":"Attended Heritage polytechic","location":"ng","client_profile_link":"https://www.linkedin.com/in/godwin-etim-7873a4291","client_company_website":"https://builders.meeds.io/portal/contribute/contributions/actions/137","hidden_identity":1,"step":3,"created":1709041709,"updated":1709099788,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c3585847d9dd0515f382d73"},"name":"Productivity Software","slug":"productivity-software"}]},
+{"_id":{"$oid":"65de0607c6a97df5590c4917"},"features":{"category":["5f51d74d26b6b627ef37d53d"]},"integrate_software":[],"used_software":[],"is_active":2,"software_id":{"$oid":"5f8e9fd4f172f175e8351bb1"},"software_name":"GPS-Trace","software_slug":"gps-trace","reason":"","response":"","title":"","summary":"","strength":"","weakness":"","ease_of_use":0,"features_functionality":0,"customer_support":0,"overall":0,"client_name":"Johann Serra","client_email":"info@cabestan.net","client_company_name":"","position":"Audit & Solution informatique | Sas Sainka - Responsable technique logistique | KAYAK VERT Pont du Gard","location":"","client_profile_link":"https://www.linkedin.com/in/johannserra","client_company_website":"","hidden_identity":1,"step":1,"created":1709049351,"updated":1709099773,"software_details":[{"_id":{"$oid":"5f8e9fd4f172f175e8351bb1"},"name":"GPS-Trace","slug":"gps-trace"}],"category_details":[{"_id":{"$oid":"5f51d74d26b6b627ef37d53d"},"name":"GPS Tracking Software","slug":"gps-tracking-software"}]},
+{"_id":{"$oid":"65df0e16fa60f866ad03335a"},"features":{"category":["615d88b17732e51d7655d9f2"]},"integrate_software":[],"used_software":["5d9dbc5fec038f620948ab12"],"is_active":2,"software_id":{"$oid":"61652dbadcd94425cd699dea"},"software_name":"Corefy","software_slug":"corefy","reason":"","response":"","title":"Great experience overall","summary":"Card Networks: The infrastructure that facilitates communication between issuing banks and businesses for processing credit card transactions. These networks authorize and process transactions, establish transaction terms, and facilitate the movement of payments between customers, businesses, and banks","strength":"Loved all about it!","weakness":"Pricing and timing","ease_of_use":"4","features_functionality":"4","customer_support":"4","overall":"5","client_name":"Artem Morozov","client_email":"ilostmynick@gmail.com","client_company_name":"","position":"Interaction Designer • Art Director","location":"","client_profile_link":"https://www.linkedin.com/in/artemje","client_company_website":"","hidden_identity":1,"step":2,"created":1709117019,"updated":1709268549,"publish_date":1709182090,"software_details":[{"_id":{"$oid":"61652dbadcd94425cd699dea"},"name":"Corefy","slug":"corefy"}],"category_details":[{"_id":{"$oid":"615d88b17732e51d7655d9f2"},"name":"Payment Processing Software","slug":"payment-processing-software"}]},
+{"_id":{"$oid":"65e58b18669436441906b440"},"features":{"category":["5c08efc07d9dd0329869e112","5c3585847d9dd0515f382d73","5c7cacc0ec038f60dc06f292"]},"integrate_software":["5cd15ac9ec038f6f1e2a2316"],"used_software":[],"is_active":2,"software_id":{"$oid":"5ec2b63f02daf932c5764e70"},"software_name":"Meeds","software_slug":"meeds","reason":"Reviews are accepted only from clients of the company","response":"","title":"Boosting Employee Engagement with Meeds DAO","summary":"My experience with Meeds DAO has been exceptionally positive, marked by its innovative approach to work engagement and collaboration. The platform's fusion of a purpose-driven mission and gamified elements creates an environment where recognition holds significant value.\r\n\r\nMeeds DAO has significantly impacted my work experience by providing a user-friendly interface that makes navigating the digital work space easy and engaging. \r\n\r\nThe platform's emphasis on community success and rewarding contributions has fostered a strong sense of belonging and motivation among users. \r\n\r\nAdditionally, acknowledging and incentivizing contributions  within the platform by the integration of Meeds tokens has further enhanced my work engagement, knowing full well I’ll be fairly compensated for the value I offer.","strength":"The employee engagement features really stand out for me. \r\nFor employees, it serves as a platform of exposure to opportunities and ensures that you’re fairly compensated for the value you offer.\r\nFor employers, it simplifies finding the right talent, lessens the staff turnover, and builds loyalty and engagement.","weakness":"I’m looking forward to seeing a Meeds App. Urge platform is currently a site but I think an app will easier to navigate.","ease_of_use":"4","features_functionality":"4","customer_support":"4","overall":"5","client_name":"IdiongomfonAbasi Udo","client_email":"idiongomfonabasiudo@gmail.com","client_company_name":"Meeds DAO","position":"Contributor","location":"ng","client_profile_link":"https://www.linkedin.com/in/idiongomfonabasi-udo-906b04237","client_company_website":"https://www.meeds.io/","hidden_identity":1,"step":3,"created":1709543451,"updated":1709789429,"software_details":[{"_id":{"$oid":"5ec2b63f02daf932c5764e70"},"name":"Meeds","slug":"meeds"}],"category_details":[{"_id":{"$oid":"5c08efc07d9dd0329869e112"},"name":"Collaboration Software","slug":"collaboration-software"},{"_id":{"$oid":"5c3585847d9dd0515f382d73"},"name":"Productivity Software","slug":"productivity-software"},{"_id":{"$oid":"5c7cacc0ec038f60dc06f292"},"name":"Employee Engagement Software","slug":"employee-engagement-software"}]}]
+
+
+thinking
+**Evaluating batch file for unique rule gaps**
+thinking
+**Identifying new duplicate submission rule**
+
+I'm spotting a potential new rule to reject reviews whose text exactly matches previously published reviews, even outside the short time window or from different reviewers. The current doc only covers duplicates from the same reviewer within a short period. Record `65dc4df13bd170e8fb04df55` shows this gap. The delta patch would add a line rejecting these re-published submissions to prevent reposts.
+codex
+- Add a rule catching reviews that simply repost previously published content; the existing “duplicate” check only targets quick repeats by the same reviewer, so replays from older batches slip through. Evidence: record `65dc4df13bd170e8fb04df55` is flagged “Review has already been published before.” Patch: `+ - reject submissions whose text exactly matches a previously published review for the same software, even if it arrives outside the short duplicate window or from another reviewer.`
+tokens used
+28,650
+- Add a rule catching reviews that simply repost previously published content; the existing “duplicate” check only targets quick repeats by the same reviewer, so replays from older batches slip through. Evidence: record `65dc4df13bd170e8fb04df55` is flagged “Review has already been published before.” Patch: `+ - reject submissions whose text exactly matches a previously published review for the same software, even if it arrives outside the short duplicate window or from another reviewer.`
