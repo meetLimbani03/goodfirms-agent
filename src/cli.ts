@@ -4,6 +4,7 @@ import { getConfig } from "./config.js";
 import { createPipelineGraph } from "./graph.js";
 import { flushRunLog, logCheck, logStep, pushEvent } from "./logger.js";
 import { closeMongoClient } from "./mongo.js";
+import { closeMySqlPool } from "./mysql.js";
 import { createRunId } from "./utils.js";
 import type { PipelineState } from "./types.js";
 
@@ -25,10 +26,11 @@ async function main(): Promise<void> {
     isTestMode,
     rawReview: null,
     normalizedReview: null,
-    prompt: null,
+    reviewContext: null,
     precheck: null,
     decision: null,
     responseMeta: null,
+    agentSummary: null,
     events: [],
     startTimeMs: Date.now(),
   };
@@ -94,6 +96,29 @@ async function main(): Promise<void> {
     console.log(
       `  Tokens: ${JSON.stringify(finalState.responseMeta?.usage ?? {}, null, 0) || "n/a"}`,
     );
+    if (finalState.agentSummary) {
+      console.log(`  Agent Turns: ${finalState.agentSummary.turnCount}`);
+      console.log(
+        `  Tool Call Counts: ${JSON.stringify(finalState.agentSummary.toolCallCounts, null, 0)}`,
+      );
+      if (finalState.agentSummary.toolCalls.length > 0) {
+        console.log("  Tool Calls:");
+        for (const toolCall of finalState.agentSummary.toolCalls) {
+          console.log(
+            `    - turn ${toolCall.turn}: ${toolCall.call.name} ${JSON.stringify(toolCall.call.arguments)}`,
+          );
+          console.log(
+            `      result: ${toolCall.result.ok ? "ok" : "error"} ${JSON.stringify(toolCall.result.payload)}`,
+          );
+        }
+      }
+      if (finalState.agentSummary.loopWarnings.length > 0) {
+        console.log("  Loop Warnings:");
+        for (const warning of finalState.agentSummary.loopWarnings) {
+          console.log(`    - ${warning}`);
+        }
+      }
+    }
 
     const reasoningTokens =
       finalState.responseMeta?.usage?.output_tokens_details?.reasoning_tokens ?? null;
@@ -157,6 +182,7 @@ async function main(): Promise<void> {
     process.exitCode = 1;
   } finally {
     await closeMongoClient();
+    await closeMySqlPool();
   }
 }
 

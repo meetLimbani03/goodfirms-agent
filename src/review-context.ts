@@ -181,11 +181,18 @@ export async function buildReviewContext(
     throw new Error(`Software review not found: ${reviewId}`);
   }
 
+  return buildReviewContextFromDocument(config, rawReview);
+}
+
+export async function buildReviewContextFromDocument(
+  config: AppConfig,
+  rawReview: SoftwareReviewDocument,
+): Promise<ReviewContext> {
   const normalizedReview = normalizeReview(rawReview);
   const requestToken = readNullableRawText(rawReview.requesttoken);
 
   const [requestRecord, reviewerAccountContext, categoryNames, softwareNamesById] = await Promise.all([
-    loadSoftwareReviewRequestContext(config.mongoUri, reviewId, requestToken),
+    loadSoftwareReviewRequestContext(config.mongoUri, normalizedReview.id, requestToken),
     loadReviewerAccountContext(config.mySql, normalizedReview.userId),
     loadSoftwareCategoryNames(config.mongoUri, normalizedReview.categories),
     loadSoftwareNamesByIds(config.mongoUri, [

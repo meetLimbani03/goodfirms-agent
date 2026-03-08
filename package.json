@@ -14,7 +14,7 @@
     "context": "pnpm build && node dist/context-cli.js",
     "context:batch": "pnpm build && node dist/context-batch-cli.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "pnpm build && node --test dist/**/*.test.js"
+    "test": "pnpm build && node --test dist/*.test.js dist/**/*.test.js"
   },
   "engines": {
     "node": ">=20"

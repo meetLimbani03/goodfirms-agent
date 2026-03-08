@@ -1,5 +1,8 @@
+import type { ReviewContext } from "./review-context.js";
+
 export type ReviewDecision = "safe" | "borderline" | "high_risk" | "reject";
 export type ReviewCheckStatus = "pass" | "flag" | "fail";
+export type AgentToolName = "fetch_user_reviews" | "fetch_url_content" | "web_search";
 
 export interface ReviewCheckResult {
   status: ReviewCheckStatus;
@@ -11,8 +14,12 @@ export type RunEventType =
   | "review_loaded"
   | "review_normalized"
   | "precheck_result"
+  | "review_context_built"
   | "model_request"
   | "model_response"
+  | "tool_call"
+  | "tool_result"
+  | "loop_guard_triggered"
   | "run_completed"
   | "run_failed";
 
@@ -155,6 +162,40 @@ export interface OpenRouterResponseMeta {
   rawOutputText: string | null;
 }
 
+export interface AgentToolCall {
+  name: AgentToolName;
+  arguments: Record<string, unknown>;
+}
+
+export interface AgentToolResult {
+  ok: boolean;
+  toolName: AgentToolName;
+  payload: Record<string, unknown>;
+}
+
+export interface AgentToolCallRecord {
+  turn: number;
+  call: AgentToolCall;
+  signature: string;
+  repeatedCall: boolean;
+  result: AgentToolResult;
+}
+
+export interface AgentTurnResponse {
+  action: "call_tool" | "final_decision";
+  actionSummary: string;
+  toolCall: AgentToolCall | null;
+  finalDecision: AgentDecision | null;
+}
+
+export interface AgentLoopSummary {
+  turnCount: number;
+  toolCallCounts: Record<AgentToolName, number>;
+  toolCalls: AgentToolCallRecord[];
+  loopWarnings: string[];
+  finalAction: "final_decision" | "forced_final_decision" | "max_turns_exhausted";
+}
+
 export interface RunLogEvent {
   timestamp: string;
   event: RunEventType;
@@ -179,6 +220,11 @@ export interface RunLogEvent {
     message: string;
     stack?: string;
   };
+  toolName?: AgentToolName;
+  toolArguments?: Record<string, unknown>;
+  toolResult?: Record<string, unknown>;
+  action?: "call_tool" | "final_decision";
+  loopWarnings?: string[];
   data?: Record<string, unknown>;
 }
 
@@ -188,10 +234,11 @@ export interface PipelineState {
   isTestMode: boolean;
   rawReview: SoftwareReviewDocument | null;
   normalizedReview: NormalizedSoftwareReview | null;
-  prompt: string | null;
+  reviewContext: ReviewContext | null;
   precheck: PrecheckResult | null;
   decision: AgentDecision | null;
   responseMeta: OpenRouterResponseMeta | null;
+  agentSummary: AgentLoopSummary | null;
   events: RunLogEvent[];
   startTimeMs: number;
 }

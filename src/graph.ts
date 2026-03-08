@@ -1,12 +1,12 @@
 import { Annotation, END, START, StateGraph } from "@langchain/langgraph";
 
+import { runDecisionAgent } from "./agent/loop.js";
 import type { AppConfig } from "./config.js";
 import { pushEvent } from "./logger.js";
 import { loadSoftwareReviewById } from "./mongo.js";
 import { normalizeReview } from "./normalize.js";
-import { requestDecision } from "./openrouter.js";
 import { runPrechecks } from "./precheck.js";
-import { buildAnalysisPrompt } from "./prompt.js";
+import { buildReviewContextFromDocument } from "./review-context.js";
 import type { PipelineState } from "./types.js";
 
 const State = Annotation.Root({
@@ -15,10 +15,11 @@ const State = Annotation.Root({
   isTestMode: Annotation<boolean>(),
   rawReview: Annotation<PipelineState["rawReview"]>(),
   normalizedReview: Annotation<PipelineState["normalizedReview"]>(),
-  prompt: Annotation<PipelineState["prompt"]>(),
+  reviewContext: Annotation<PipelineState["reviewContext"]>(),
   precheck: Annotation<PipelineState["precheck"]>(),
   decision: Annotation<PipelineState["decision"]>(),
   responseMeta: Annotation<PipelineState["responseMeta"]>(),
+  agentSummary: Annotation<PipelineState["agentSummary"]>(),
   events: Annotation<PipelineState["events"]>(),
   startTimeMs: Annotation<number>(),
 });
@@ -90,61 +91,81 @@ export function createPipelineGraph(config: AppConfig) {
 
       return { precheck };
     })
-    .addNode("buildAnalysisPrompt", async (state: PipelineState) => {
+    .addNode("buildReviewContext", async (state: PipelineState) => {
       if (!state.precheck?.eligible) {
-        return { prompt: null };
+        return { reviewContext: null };
       }
 
-      if (!state.normalizedReview) {
-        throw new Error("Cannot build prompt before normalization");
+      if (!state.rawReview) {
+        throw new Error("Cannot build review context before the review is loaded");
       }
+
+      const startedAt = Date.now();
+      const reviewContext = await buildReviewContextFromDocument(config, state.rawReview);
+      pushEvent(state, {
+        event: "review_context_built",
+        graphNode: "buildReviewContext",
+        durationMs: Date.now() - startedAt,
+        data: {
+          userId: reviewContext.accountContext.userId,
+          requestFound: reviewContext.requestContext.found,
+          inferredLoginMethod: reviewContext.derivedSignals.inferredLoginMethod,
+        },
+      });
 
       return {
-        prompt: buildAnalysisPrompt(state.normalizedReview),
+        reviewContext,
       };
     })
-    .addNode("callDecisionModel", async (state: PipelineState) => {
+    .addNode("runDecisionAgent", async (state: PipelineState) => {
       const startedAt = Date.now();
       if (!state.precheck?.eligible) {
         return {
           decision: null,
           responseMeta: null,
+          agentSummary: null,
         };
       }
 
-      if (!state.prompt) {
-        throw new Error("Cannot call model without a prompt");
+      if (!state.reviewContext) {
+        throw new Error("Cannot call agent without review context");
       }
 
-      const result = await requestDecision(config, state.prompt, state.reviewId, state.runId);
+      const result = await runDecisionAgent(config, state);
       pushEvent(state, {
         event: "model_response",
-        graphNode: "callDecisionModel",
+        graphNode: "runDecisionAgent",
         durationMs: Date.now() - startedAt,
-        model: result.meta.model,
-        responseId: result.meta.responseId,
+        model: result.responseMeta.model,
+        responseId: result.responseMeta.responseId,
         decision: result.decision.overallDecision,
         canEnhance: result.decision.canEnhance,
         confidence: result.decision.confidence,
         summary: result.decision.summary,
         riskFlags: result.decision.riskFlags,
         checks: result.decision.checks,
-        usage: result.meta.usage,
-        reasoningSummary: result.meta.reasoningSummary,
+        usage: result.responseMeta.usage,
+        reasoningSummary: result.responseMeta.reasoningSummary,
+        data: {
+          finalAction: result.agentSummary.finalAction,
+          turnCount: result.agentSummary.turnCount,
+          toolCallCounts: result.agentSummary.toolCallCounts,
+        },
       });
 
       return {
         decision: result.decision,
-        responseMeta: result.meta,
+        responseMeta: result.responseMeta,
+        agentSummary: result.agentSummary,
       };
     })
     .addEdge(START, "loadReview")
     .addEdge("loadReview", "normalizeReview")
     .addEdge("normalizeReview", "runPrechecks")
     .addConditionalEdges("runPrechecks", (state: PipelineState) =>
-      state.precheck?.eligible ? "buildAnalysisPrompt" : END,
+      state.precheck?.eligible ? "buildReviewContext" : END,
     )
-    .addEdge("buildAnalysisPrompt", "callDecisionModel")
-    .addEdge("callDecisionModel", END)
+    .addEdge("buildReviewContext", "runDecisionAgent")
+    .addEdge("runDecisionAgent", END)
     .compile();
 }

@@ -2,7 +2,7 @@ import type { AppConfig } from "./config.js";
 import { ANALYSIS_SYSTEM_PROMPT } from "./prompt.js";
 import type { AgentDecision, OpenRouterResponseMeta } from "./types.js";
 
-const DECISION_SCHEMA = {
+export const DECISION_SCHEMA = {
   name: "goodfirms_review_analysis",
   strict: true,
   schema: {
@@ -79,12 +79,21 @@ interface OpenRouterRawResponse {
   output?: unknown;
 }
 
-export async function requestDecision(
+interface StructuredJsonRequest {
+  systemPrompt: string;
+  userPrompt: string;
+  schemaName: string;
+  schema: unknown;
+  strict?: boolean;
+  reviewId: string;
+  runId: string;
+  metadata?: Record<string, string | number | boolean | null>;
+}
+
+export async function requestStructuredJson(
   config: AppConfig,
-  prompt: string,
-  reviewId: string,
-  runId: string,
-): Promise<{ decision: AgentDecision; meta: OpenRouterResponseMeta }> {
+  request: StructuredJsonRequest,
+): Promise<{ payload: Record<string, unknown>; meta: OpenRouterResponseMeta }> {
   const headers: Record<string, string> = {
     Authorization: `Bearer ${config.openRouterApiKey}`,
     "Content-Type": "application/json",
@@ -109,26 +118,27 @@ export async function requestDecision(
           content: [
             {
               type: "input_text",
-              text: ANALYSIS_SYSTEM_PROMPT,
+              text: request.systemPrompt,
             },
           ],
         },
         {
           role: "user",
-          content: [{ type: "input_text", text: prompt }],
+          content: [{ type: "input_text", text: request.userPrompt }],
         },
       ],
       text: {
         format: {
           type: "json_schema",
-          name: DECISION_SCHEMA.name,
-          schema: DECISION_SCHEMA.schema,
-          strict: DECISION_SCHEMA.strict,
+          name: request.schemaName,
+          schema: request.schema,
+          strict: request.strict ?? true,
         },
       },
       metadata: {
-        run_id: runId,
-        review_id: reviewId,
+        run_id: request.runId,
+        review_id: request.reviewId,
+        ...normalizeMetadata(request.metadata),
       },
     }),
   });
@@ -140,23 +150,6 @@ export async function requestDecision(
 
   const rawResponse = (await response.json()) as OpenRouterRawResponse;
   const rawOutputText = collectOutputText(rawResponse.output);
-  const parsedDecision = parseDecisionPayload(rawOutputText);
-
-  const meta: OpenRouterResponseMeta = {
-    responseId: typeof rawResponse.id === "string" ? rawResponse.id : "",
-    model: typeof rawResponse.model === "string" ? rawResponse.model : config.openRouterModel,
-    usage: normalizeUsage(rawResponse.usage),
-    reasoningSummary: collectReasoningSummary(rawResponse.output),
-    rawOutputText,
-  };
-
-  return {
-    decision: parsedDecision,
-    meta,
-  };
-}
-
-function parseDecisionPayload(rawOutputText: string | null): AgentDecision {
   if (!rawOutputText) {
     throw new Error("OpenRouter response did not include parseable output text");
   }
@@ -171,16 +164,69 @@ function parseDecisionPayload(rawOutputText: string | null): AgentDecision {
   }
 
   if (!parsed || typeof parsed !== "object") {
+    throw new Error("OpenRouter structured payload was not an object");
+  }
+
+  const meta: OpenRouterResponseMeta = {
+    responseId: typeof rawResponse.id === "string" ? rawResponse.id : "",
+    model: typeof rawResponse.model === "string" ? rawResponse.model : config.openRouterModel,
+    usage: normalizeUsage(rawResponse.usage),
+    reasoningSummary: collectReasoningSummary(rawResponse.output),
+    rawOutputText,
+  };
+
+  return {
+    payload: parsed as Record<string, unknown>,
+    meta,
+  };
+}
+
+function normalizeMetadata(
+  metadata: StructuredJsonRequest["metadata"],
+): Record<string, string | null> {
+  if (!metadata) {
+    return {};
+  }
+
+  return Object.fromEntries(
+    Object.entries(metadata).map(([key, value]) => [key, value === null ? null : String(value)]),
+  );
+}
+
+export async function requestDecision(
+  config: AppConfig,
+  prompt: string,
+  reviewId: string,
+  runId: string,
+): Promise<{ decision: AgentDecision; meta: OpenRouterResponseMeta }> {
+  const result = await requestStructuredJson(config, {
+    systemPrompt: ANALYSIS_SYSTEM_PROMPT,
+    userPrompt: prompt,
+    schemaName: DECISION_SCHEMA.name,
+    schema: DECISION_SCHEMA.schema,
+    strict: DECISION_SCHEMA.strict,
+    reviewId,
+    runId,
+  });
+
+  return {
+    decision: parseDecisionPayload(result.payload),
+    meta: result.meta,
+  };
+}
+
+export function parseDecisionPayload(payload: unknown): AgentDecision {
+  if (!payload || typeof payload !== "object") {
     throw new Error("OpenRouter decision payload was not an object");
   }
 
-  const payload = parsed as Record<string, unknown>;
-  const decision = payload.overall_decision;
-  const canEnhance = payload.can_enhance;
-  const confidence = payload.confidence;
-  const riskFlags = payload.risk_flags;
-  const reasonSummary = payload.reason_summary;
-  const checks = payload.checks;
+  const typedPayload = payload as Record<string, unknown>;
+  const decision = typedPayload.overall_decision;
+  const canEnhance = typedPayload.can_enhance;
+  const confidence = typedPayload.confidence;
+  const riskFlags = typedPayload.risk_flags;
+  const reasonSummary = typedPayload.reason_summary;
+  const checks = typedPayload.checks;
 
   if (
     decision !== "safe" &&

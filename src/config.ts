@@ -27,6 +27,15 @@ export interface MySqlConfig {
   database: string;
 }
 
+export interface AgentToolLimits {
+  maxTurns: number;
+  perTool: {
+    fetch_user_reviews: number;
+    fetch_url_content: number;
+    web_search: number;
+  };
+}
+
 export interface AppConfig {
   mongoUri: string;
   openRouterApiKey: string;
@@ -35,7 +44,17 @@ export interface AppConfig {
   openRouterTitle?: string;
   logDir: string;
   mySql: MySqlConfig;
+  agentToolLimits: AgentToolLimits;
 }
+
+export const DEFAULT_AGENT_TOOL_LIMITS: AgentToolLimits = {
+  maxTurns: 6,
+  perTool: {
+    fetch_user_reviews: 2,
+    fetch_url_content: 3,
+    web_search: 2,
+  },
+};
 
 export function getConfig(): AppConfig {
   const logDir = process.env.LOG_DIR?.trim() || "logs/review-runs";
@@ -45,6 +64,7 @@ export function getConfig(): AppConfig {
     openRouterModel: readRequiredEnv("OPENROUTER_MODEL"),
     logDir,
     mySql: resolveMySqlConfig(),
+    agentToolLimits: DEFAULT_AGENT_TOOL_LIMITS,
   };
 
   const openRouterHttpReferer = readOptionalEnv("OPENROUTER_HTTP_REFERER");

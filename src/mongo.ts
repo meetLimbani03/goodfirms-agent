@@ -27,6 +27,63 @@ export async function loadSoftwareReviewById(
   return collection.findOne({ _id: new ObjectId(reviewId) } as never);
 }
 
+export async function listOtherSoftwareReviewsByUser(
+  mongoUri: string,
+  userId: string,
+  currentReviewId: string,
+  limit: number,
+): Promise<SoftwareReviewDocument[]> {
+  const normalizedUserId = userId.trim();
+  if (!normalizedUserId) {
+    return [];
+  }
+
+  const client = await getMongoClient(mongoUri);
+  const collection = client.db("goodfirms").collection<SoftwareReviewDocument>("software-reviews");
+  const query: Record<string, unknown> = {
+    $or: buildUserIdFilters(normalizedUserId),
+  };
+
+  if (ObjectId.isValid(currentReviewId)) {
+    query._id = {
+      $ne: new ObjectId(currentReviewId),
+    };
+  }
+
+  return collection
+    .find(query as never, {
+      sort: {
+        created: -1,
+        _id: -1,
+      },
+      limit: clampToolLimit(limit),
+    })
+    .toArray();
+}
+
+export async function loadOtherSoftwareReviewByUserAndId(
+  mongoUri: string,
+  userId: string,
+  currentReviewId: string,
+  reviewId: string,
+): Promise<SoftwareReviewDocument | null> {
+  const normalizedUserId = userId.trim();
+  if (!normalizedUserId) {
+    return null;
+  }
+  if (!ObjectId.isValid(reviewId) || reviewId === currentReviewId) {
+    return null;
+  }
+
+  const client = await getMongoClient(mongoUri);
+  const collection = client.db("goodfirms").collection<SoftwareReviewDocument>("software-reviews");
+
+  return collection.findOne({
+    _id: new ObjectId(reviewId),
+    $or: buildUserIdFilters(normalizedUserId),
+  } as never);
+}
+
 export async function listSoftwareReviewIdsByCreatedRange(
   mongoUri: string,
   createdFromInclusive: number,
@@ -151,4 +208,22 @@ export async function closeMongoClient(): Promise<void> {
     await cachedClient.close();
     cachedClient = null;
   }
+}
+
+function buildUserIdFilters(userId: string): Record<string, unknown>[] {
+  const filters: Record<string, unknown>[] = [{ user_id: userId }];
+  const numericUserId = Number.parseInt(userId, 10);
+  if (Number.isInteger(numericUserId)) {
+    filters.push({ user_id: numericUserId });
+  }
+
+  return filters;
+}
+
+function clampToolLimit(limit: number): number {
+  if (!Number.isFinite(limit)) {
+    return 10;
+  }
+
+  return Math.max(1, Math.min(20, Math.trunc(limit)));
 }
