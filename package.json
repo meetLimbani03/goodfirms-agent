@@ -1,0 +1,35 @@
+{
+  "name": "goodfirms-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "goodfirms-review": "./dist/cli.js",
+    "goodfirms-review-context": "./dist/context-cli.js",
+    "goodfirms-review-context-batch": "./dist/context-batch-cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "pnpm build && node dist/cli.js",
+    "context": "pnpm build && node dist/context-cli.js",
+    "context:batch": "pnpm build && node dist/context-batch-cli.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm build && node --test dist/**/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "dependencies": {
+    "@langchain/core": "^1.1.31",
+    "@langchain/langgraph": "^1.2.1",
+    "dotenv": "^17.3.1",
+    "mongodb": "6.16.0",
+    "mysql2": "^3.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

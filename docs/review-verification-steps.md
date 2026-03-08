@@ -183,6 +183,79 @@ Pass score: `+4`
 Fail score: `-10`
 Notes: fix grammar/clarity only; never invent facts.
 
+1.2.7
+Check: Agent invocation contract.
+Purpose: keep the model call simple, stateless, and auditable.
+Format:
+- One model call per eligible review.
+- The call must include:
+  - `system prompt`: stable role + hard constraints.
+  - `instructions`: exact checks, decision rules, and JSON output contract.
+  - `review data`: normalized readable payload only.
+- Do not rely on conversation history between reviews.
+- Do not let the model choose its own workflow/tools in v1.
+Fail action: implementation issue; treat as pipeline error, not review failure.
+Score: not scored.
+Notes: this project is a review-analysis workflow, not an open-ended agent.
+
+1.2.8
+Check: Agent JSON output contract.
+Purpose: enforce a deterministic response shape for downstream logic.
+Required top-level fields:
+- `overall_decision`: one of `safe | borderline | high_risk | reject`
+- `can_enhance`: boolean
+- `confidence`: number in `0..1`
+- `risk_flags`: string array
+- `reason_summary`: non-empty string
+- `checks`: object
+Required `checks` keys:
+- `gibberish`
+- `authenticity`
+- `spam`
+- `pii`
+- `safety`
+- `consistency`
+- `specificity`
+Required per-check shape:
+- `status`: one of `pass | flag | fail`
+- `reason`: non-empty string
+Fail action: treat as model-output error and retry or route to manual review.
+Score: not scored.
+Notes: do not accept free-text responses outside this JSON contract.
+
+1.2.9
+Check: Agent evaluation rules.
+Purpose: define the minimum LLM review policy for v1.
+Rules:
+- `gibberish`: fail only if the text is mostly meaningless, random, or not interpretable as a real review.
+- `authenticity`: flag when claims feel suspicious/generic; fail only on strong internal evidence from supplied fields.
+- `spam`: flag/fail when the text reads like solicitation, promotion, keyword stuffing, or template spam.
+- `pii`: flag/fail when the review body exposes contact details or sensitive identifying text.
+- `safety`: fail for hateful, abusive, harassing, threatening, or otherwise unsafe content.
+- `consistency`: flag/fail when title/body/strength/weakness/ratings strongly conflict.
+- `specificity`: flag/fail when the review is too vague or low-information to be useful.
+- Do not claim confirmed duplication unless explicit comparison evidence is provided by the backend.
+- Prefer `flag` over `fail` when evidence is partial.
+Fail action: use returned status in `checks`.
+Score: scored/used in model phase.
+Notes: the model must be conservative and evidence-based, not accusatory.
+
+1.2.10
+Check: Prompt shape for v1.
+Purpose: standardize prompt authoring.
+Recommended structure:
+- `System`:
+  - role = GoodFirms review analysis model
+  - constraints = no invention, no rewriting, use only supplied data, return only JSON
+- `Instructions`:
+  - list of checks
+  - pass/flag/fail definitions
+  - decision label definitions
+  - duplicate-check limitation note
+- `Review data`:
+  - normalized review payload with readable labels
+Notes: keep IDs/status codes/internal storage fields out of the agent prompt when they are not needed for judgment.
+
 
 2. Software Review Checks
 

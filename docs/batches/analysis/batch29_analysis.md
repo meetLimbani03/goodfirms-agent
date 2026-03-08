@@ -1,2 +1,0 @@
-- Add explicit emptiness guard: existing 1.1 outlines readability and leans on upstream completeness, so no policy currently handles reviews that reach us with zero words (record 66c5a7ab6a1429c9c10aafdb has blank title/body/strength/weakness). Patch:
-+ - Reject reviews whose title/body/strength/weakness are all empty/whitespace before any rewrite attempt.

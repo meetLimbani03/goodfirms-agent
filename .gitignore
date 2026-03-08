@@ -4,3 +4,7 @@ data/gf.sql
 data/gf_fixed.sql
 .mcp.json
 .codex/
+node_modules/
+dist/
+.env
+logs/
