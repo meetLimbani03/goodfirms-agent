@@ -21,6 +21,29 @@
 
 ---
 
+## Deprecated / Legacy Fields Register
+
+Maintenance rule:
+- Whenever a field/collection is identified as deprecated or legacy, update this section in `docs/db-knowledge.md` first.
+- Do not use deprecated fields as mandatory gates in current verification criteria unless explicitly approved.
+
+Known deprecated/legacy items:
+- Mongo collections:
+  - `draft-review` (deprecated, do not use)
+  - `contacts` (deprecated, do not use)
+- MySQL `users` email-verification-era fields (legacy for current OAuth-first signup flow):
+  - `email_verified_at`
+  - `email_result`
+  - `email_reason`
+  - `email_checked_at`
+- MySQL legacy email verification table:
+  - `reviewer_emails_unverified` (token-based email verification history)
+- Mongo `software-reviews` fields not part of current visible form flow:
+  - `value_money` (legacy/derived)
+  - `on-boarding` (legacy/derived)
+
+---
+
 ## Review Types
 - **Software** → MongoDB `software-reviews`
 - **Service** → MySQL `reviews`
