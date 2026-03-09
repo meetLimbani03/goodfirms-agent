@@ -1,0 +1,32 @@
+/* Import fonts first (before Tailwind) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+/* Custom theme colors */
+:root {
+  --bg-main: #0A0A0A;
+  --bg-content: #141414;
+  --bg-card: #1E1E1E;
+  --text-primary: #FFFFFF;
+  --text-body: #CCCCCC;
+  --text-muted: #888888;
+  --border-default: #2A2A2A;
+  --border-icon: #666666;
+  --success: #4CAF50;
+  --warning: #FFC107;
+  --error: #F44336;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--text-primary);
+}
