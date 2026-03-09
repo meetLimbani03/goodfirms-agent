@@ -1,18 +1,20 @@
 import React from 'react';
 import { ReviewData } from '../types';
+import { getReviewTypeLabel } from '../data/mockData';
 
 interface ReviewContextSectionProps {
   review: ReviewData;
 }
 
 export const ReviewContextSection: React.FC<ReviewContextSectionProps> = ({ review }) => {
-  const { software, usage, review: reviewContent } = review;
+  const { subject, usage, review: reviewContent } = review;
+  const typeLabel = getReviewTypeLabel(review.reviewType).toUpperCase();
 
   const formatText = () => {
-    return `SOFTWARE:
-• Name: ${software.name}
-• Slug: ${software.slug}
-• Categories: ${software.categories.join(', ')}
+    return `${typeLabel}:
+• Name: ${subject.name}
+• Slug: ${subject.slug}
+• Categories: ${subject.categories.join(', ')}
 
 USAGE:
 • Duration: ${usage.durationValue} ${usage.durationUnit}
@@ -47,7 +49,7 @@ Display both my name and the company's name with the review`;
 
   return (
     <div className="w-full">
-      <pre className="text-sm text-[#CCCCCC] font-sans whitespace-pre-wrap leading-relaxed" style={{ lineHeight: 1.6 }}>
+      <pre className="text-sm font-sans whitespace-pre-wrap leading-relaxed" style={{ lineHeight: 1.6, color: 'var(--text-body)' }}>
         {formatText()}
       </pre>
     </div>

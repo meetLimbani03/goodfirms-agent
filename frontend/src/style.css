@@ -9,20 +9,101 @@
   --bg-main: #0A0A0A;
   --bg-content: #141414;
   --bg-card: #1E1E1E;
+  --bg-elevated: #181818;
+  --bg-sidebar: #0f0f0f;
+  --bg-subtle: #1a1a1a;
+  --bg-hover: #252525;
   --text-primary: #FFFFFF;
   --text-body: #CCCCCC;
   --text-muted: #888888;
+  --text-subtle: #666666;
   --border-default: #2A2A2A;
   --border-icon: #666666;
+  --border-strong: #E0E0E0;
+  --accent-soft: #F3EBDD;
+  --accent-soft-text: #111111;
+  --accent-muted: #BCA88A;
+  --scrollbar-track: rgba(255, 255, 255, 0.03);
+  --scrollbar-thumb: rgba(243, 235, 221, 0.18);
+  --scrollbar-thumb-hover: rgba(243, 235, 221, 0.32);
   --success: #4CAF50;
   --warning: #FFC107;
   --error: #F44336;
+  --info: #8FB3E8;
+}
+
+body[data-theme='light'] {
+  --bg-main: #f4efe6;
+  --bg-content: #fbf7f0;
+  --bg-card: #ffffff;
+  --bg-elevated: #f3ede4;
+  --bg-sidebar: #efe7db;
+  --bg-subtle: #f7f1e8;
+  --bg-hover: #ece4d7;
+  --text-primary: #171411;
+  --text-body: #3d342c;
+  --text-muted: #756a5e;
+  --text-subtle: #948878;
+  --border-default: #d9cec0;
+  --border-icon: #8e8375;
+  --border-strong: #d4c6b5;
+  --accent-soft: #171411;
+  --accent-soft-text: #f8f3ec;
+  --accent-muted: #8d6f52;
+  --scrollbar-track: rgba(23, 20, 17, 0.06);
+  --scrollbar-thumb: rgba(141, 111, 82, 0.24);
+  --scrollbar-thumb-hover: rgba(141, 111, 82, 0.4);
+  --success: #2f7d44;
+  --warning: #a36c00;
+  --error: #c23b32;
+  --info: #3568a6;
+}
+
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--bg-main);
+  scrollbar-width: thin;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-main);
   color: var(--text-body);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--scrollbar-thumb), rgba(188, 168, 138, 0.14));
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-thumb-hover),
+    rgba(188, 168, 138, 0.24)
+  );
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 h1, h2, h3, h4, h5, h6 {

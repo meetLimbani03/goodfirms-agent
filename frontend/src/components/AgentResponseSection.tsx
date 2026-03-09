@@ -1,16 +1,18 @@
 import React from 'react';
 import { ReviewData } from '../types';
+import { getReviewTypeLabel } from '../data/mockData';
 
 interface AgentResponseSectionProps {
   review: ReviewData;
 }
 
 export const AgentResponseSection: React.FC<AgentResponseSectionProps> = ({ review }) => {
-  const responseText = `Thank you for your detailed feedback on ${review.software.name}, ${review.reviewer.name}! We're thrilled to hear that our real-time rendering capabilities and cinematic quality have transformed your workflow and help you create impressive client presentations. Your feedback about stability with heavy scenes is valuable - we're continuously working on performance improvements. We appreciate you taking the time to share your experience!`;
+  const subjectType = getReviewTypeLabel(review.reviewType).toLowerCase();
+  const responseText = `Thank you for your detailed feedback on ${review.subject.name}, ${review.reviewer.name}. We appreciate you sharing your experience with this ${subjectType} and giving specific context around what worked well and what needs improvement. Your review helps us keep moderation decisions grounded in real buyer feedback.`;
 
   return (
-    <div className="w-full bg-[#000000] p-5" style={{ border: '1px solid #2A2A2A' }}>
-      <p className="text-sm text-[#E0E0E0] leading-relaxed" style={{ lineHeight: 1.6 }}>
+    <div className="w-full p-5" style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-default)' }}>
+      <p className="text-sm leading-relaxed" style={{ lineHeight: 1.6, color: 'var(--text-body)' }}>
         {responseText}
       </p>
     </div>

@@ -26,16 +26,20 @@ export const DailyRunCard: React.FC<DailyRunCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-[#1E1E1E] border border-[#2A2A2A] rounded ${
-        isSelected ? 'ring-1 ring-[#4CAF50]' : ''
-      }`}
+      className="border rounded"
+      style={{
+        backgroundColor: 'var(--bg-card)',
+        borderColor: isSelected ? 'var(--accent-muted)' : 'var(--border-default)',
+        boxShadow: 'none',
+      }}
     >
       {/* Card Header */}
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-4 hover:bg-[#252525] transition-colors"
+        className="w-full flex items-center justify-between p-4 transition-colors"
+        style={{ backgroundColor: 'transparent' }}
       >
-        <span className="text-sm font-semibold text-white">
+        <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
           {new Date(run.date).toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',
@@ -44,36 +48,32 @@ export const DailyRunCard: React.FC<DailyRunCardProps> = ({
         </span>
         <div className="w-4 h-4 flex items-center justify-center">
           {isExpanded ? (
-            <ChevronDown className="w-4 h-4 text-[#888888]" />
+            <ChevronDown className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
           ) : (
-            <ChevronRight className="w-4 h-4 text-[#888888]" />
+            <ChevronRight className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
           )}
         </div>
       </button>
 
       {/* Stats Row */}
-      <div className="flex gap-4 px-4 pb-4">
+      <div className="flex gap-6 px-4 pb-4">
         <div className="flex flex-col">
-          <span className="text-sm font-medium text-[#CCCCCC]">{run.newCount}</span>
-          <span className="text-xs text-[#888888]">New</span>
+          <span className="text-sm font-medium" style={{ color: 'var(--text-body)' }}>{run.eligibleCount}</span>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>Eligible</span>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm font-medium text-[#CCCCCC]">{run.eligibleCount}</span>
-          <span className="text-xs text-[#888888]">Eligible</span>
+          <span className="text-sm font-medium" style={{ color: 'var(--success)' }}>{run.approvedCount}</span>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>Approved</span>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm font-medium text-[#4CAF50]">{run.approvedCount}</span>
-          <span className="text-xs text-[#888888]">Approved</span>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-sm font-medium text-[#F44336]">{run.rejectedCount}</span>
-          <span className="text-xs text-[#888888]">Rejected</span>
+          <span className="text-sm font-medium" style={{ color: 'var(--error)' }}>{run.rejectedCount}</span>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>Rejected</span>
         </div>
       </div>
 
       {/* Expanded Reviews List */}
       {isExpanded && reviews.length > 0 && (
-        <div className="bg-[#1A1A1A] px-2 pb-2 pt-2 space-y-2">
+        <div className="px-2 pb-2 pt-2 space-y-2" style={{ backgroundColor: 'var(--bg-subtle)' }}>
           {reviews.map((review) => (
             <ReviewItem
               key={review.internalMetadata.reviewId}

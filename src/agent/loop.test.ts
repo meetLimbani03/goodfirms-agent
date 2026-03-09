@@ -186,11 +186,11 @@ function makeMeta(): OpenRouterResponseMeta {
 
 function makeFinalDecision() {
   return {
-    overallDecision: "borderline" as const,
+    overallDecision: "FLAGGED" as const,
     canEnhance: false,
     confidence: 0.6,
     riskFlags: ["needs_more_verification"],
-    summary: "The review remains borderline after tool checks.",
+    summary: "The review remains flagged after tool checks.",
     checks: {
       gibberish: { status: "pass" as const, reason: "Readable." },
       authenticity: { status: "flag" as const, reason: "Signals remain mixed." },

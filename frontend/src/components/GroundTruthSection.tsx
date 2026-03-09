@@ -9,7 +9,7 @@ export const GroundTruthSection: React.FC<GroundTruthSectionProps> = ({ review }
   const { groundTruth } = review;
 
   const formatText = () => {
-    return `Status: ${groundTruth.statusLabel} | Rejection Reason: ${groundTruth.rejectionReason || 'none'} | isPending: ${groundTruth.isPending} | isPublished: ${groundTruth.isPublished} | isRejected: ${groundTruth.isRejected}`;
+    return `Status: ${groundTruth.statusLabel} | Agent Tag: ${groundTruth.agentStatus} | Rejection Reason: ${groundTruth.rejectionReason || 'none'}`;
   };
 
   return (

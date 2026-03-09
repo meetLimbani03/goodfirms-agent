@@ -1,6 +1,12 @@
 import type { ReviewContext } from "./review-context.js";
 
-export type ReviewDecision = "safe" | "borderline" | "high_risk" | "reject";
+export type ReviewDecision =
+  | "PENDING"
+  | "PROCESSING"
+  | "APPROVED"
+  | "PUBLISHED"
+  | "REJECTED"
+  | "FLAGGED";
 export type ReviewCheckStatus = "pass" | "flag" | "fail";
 export type AgentToolName = "fetch_user_reviews" | "fetch_url_content" | "web_search";
 

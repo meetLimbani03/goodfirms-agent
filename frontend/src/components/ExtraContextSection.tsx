@@ -12,20 +12,20 @@ export const ExtraContextSection: React.FC<ExtraContextSectionProps> = ({ review
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-x-8 gap-y-3">
         <div>
-          <span className="text-xs text-[#888888] uppercase tracking-wide block mb-1">Review ID</span>
-          <p className="text-sm text-[#CCCCCC]">{internalMetadata.reviewId}</p>
+          <span className="text-xs uppercase tracking-wide block mb-1" style={{ color: 'var(--text-muted)' }}>Created At</span>
+          <p className="text-sm" style={{ color: 'var(--text-body)' }}>{internalMetadata.createdAt}</p>
         </div>
         <div>
-          <span className="text-xs text-[#888888] uppercase tracking-wide block mb-1">Status</span>
-          <p className="text-sm text-[#CCCCCC]">{internalMetadata.status}</p>
+          <span className="text-xs uppercase tracking-wide block mb-1" style={{ color: 'var(--text-muted)' }}>Updated At</span>
+          <p className="text-sm" style={{ color: 'var(--text-body)' }}>{internalMetadata.updatedAt}</p>
         </div>
         <div>
-          <span className="text-xs text-[#888888] uppercase tracking-wide block mb-1">Projection</span>
-          <p className="text-sm text-[#CCCCCC]">{internalMetadata.projection}</p>
+          <span className="text-xs uppercase tracking-wide block mb-1" style={{ color: 'var(--text-muted)' }}>Reject Reason</span>
+          <p className="text-sm" style={{ color: 'var(--text-body)' }}>{internalMetadata.rejectionReason || 'None'}</p>
         </div>
         <div>
-          <span className="text-xs text-[#888888] uppercase tracking-wide block mb-1">Status Code</span>
-          <p className="text-sm text-[#CCCCCC]">{internalMetadata.statusCode}</p>
+          <span className="text-xs uppercase tracking-wide block mb-1" style={{ color: 'var(--text-muted)' }}>Request Token</span>
+          <p className="text-sm" style={{ color: 'var(--text-body)' }}>{internalMetadata.requestToken || 'None'}</p>
         </div>
       </div>
     </div>

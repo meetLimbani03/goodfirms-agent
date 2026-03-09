@@ -27,7 +27,7 @@ Account Created: ${new Date(account.createdAt).toLocaleDateString('en-US', { mon
 
   return (
     <div className="w-full">
-      <pre className="text-sm text-[#CCCCCC] font-sans whitespace-pre-wrap leading-relaxed" style={{ lineHeight: 1.6 }}>
+      <pre className="text-sm font-sans whitespace-pre-wrap leading-relaxed" style={{ lineHeight: 1.6, color: 'var(--text-body)' }}>
         {formatText()}
       </pre>
     </div>

@@ -10,11 +10,11 @@ interface ValidationSectionProps {
 const StatusIcon: React.FC<{ status: ValidationCheck['status'] }> = ({ status }) => {
   switch (status) {
     case 'PASS':
-      return <Check className="w-4 h-4 text-[#4CAF50]" />;
+      return <Check className="w-4 h-4" style={{ color: 'var(--success)' }} />;
     case 'FAIL':
-      return <X className="w-4 h-4 text-[#F44336]" />;
+      return <X className="w-4 h-4" style={{ color: 'var(--error)' }} />;
     case 'FLAG':
-      return <AlertTriangle className="w-4 h-4 text-[#FFC107]" />;
+      return <AlertTriangle className="w-4 h-4" style={{ color: 'var(--warning)' }} />;
     default:
       return null;
   }
@@ -22,13 +22,13 @@ const StatusIcon: React.FC<{ status: ValidationCheck['status'] }> = ({ status })
 
 const StatusBadge: React.FC<{ status: ValidationCheck['status'] }> = ({ status }) => {
   const colors = {
-    PASS: 'text-[#4CAF50]',
-    FAIL: 'text-[#F44336]',
-    FLAG: 'text-[#FFC107]',
+    PASS: 'var(--success)',
+    FAIL: 'var(--error)',
+    FLAG: 'var(--warning)',
   };
 
   return (
-    <span className={`text-xs font-semibold ${colors[status]}`}>
+    <span className="text-xs font-semibold" style={{ color: colors[status] }}>
       {status}
     </span>
   );
@@ -37,21 +37,21 @@ const StatusBadge: React.FC<{ status: ValidationCheck['status'] }> = ({ status }
 export const ValidationSection: React.FC<ValidationSectionProps> = ({ title, checks }) => {
   return (
     <div className="space-y-3">
-      <h4 className="text-xs font-semibold text-[#888888] uppercase tracking-wider">{title}</h4>
+      <h4 className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{title}</h4>
       <div className="space-y-2">
         {checks.map((check, index) => (
           <div
             key={index}
             className="flex items-center justify-between py-2"
-            style={{ borderBottom: index < checks.length - 1 ? '1px solid #2A2A2A' : 'none' }}
+            style={{ borderBottom: index < checks.length - 1 ? '1px solid var(--border-default)' : 'none' }}
           >
             <div className="flex items-center gap-3">
               <StatusIcon status={check.status} />
-              <span className="text-sm text-[#CCCCCC]">{check.name}</span>
+              <span className="text-sm" style={{ color: 'var(--text-body)' }}>{check.name}</span>
             </div>
             <div className="flex items-center gap-3">
               {check.details && (
-                <span className="text-xs text-[#888888]">{check.details}</span>
+                <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{check.details}</span>
               )}
               <StatusBadge status={check.status} />
             </div>

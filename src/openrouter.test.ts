@@ -8,6 +8,11 @@ test("requestDecision parses structured analysis payloads", async () => {
   process.env.OPENROUTER_API_KEY = "test-key";
   process.env.OPENROUTER_MODEL = "test-model";
   process.env.MONGODB_URI = "mongodb://localhost:27017/test";
+  process.env.MYSQL_HOST = "localhost";
+  process.env.MYSQL_PORT = "3306";
+  process.env.MYSQL_USER = "root";
+  process.env.MYSQL_PASS = "pw";
+  process.env.MYSQL_DB = "GoodFirms";
 
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async () =>
@@ -32,7 +37,7 @@ test("requestDecision parses structured analysis payloads", async () => {
               {
                 type: "output_text",
                 text: JSON.stringify({
-                  overall_decision: "safe",
+                  overall_decision: "APPROVED",
                   can_enhance: true,
                   confidence: 0.86,
                   risk_flags: [],
@@ -84,7 +89,7 @@ test("requestDecision parses structured analysis payloads", async () => {
       "run-123",
     );
 
-    assert.equal(result.decision.overallDecision, "safe");
+    assert.equal(result.decision.overallDecision, "APPROVED");
     assert.equal(result.decision.canEnhance, true);
     assert.equal(result.decision.checks.specificity.status, "pass");
     assert.equal(result.meta.responseId, "resp_123");

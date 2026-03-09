@@ -21,15 +21,15 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
         onClick={onToggle}
         className="w-full flex items-center justify-between py-0 hover:opacity-80 transition-opacity"
       >
-        <h3 className="text-sm font-semibold text-white">{title}</h3>
+        <h3 className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{title}</h3>
         <div 
-          className="w-7 h-7 flex items-center justify-center bg-[#1E1E1E]"
-          style={{ border: '2px solid #888888' }}
+          className="w-7 h-7 flex items-center justify-center"
+          style={{ backgroundColor: 'var(--bg-card)', border: '2px solid var(--text-muted)' }}
         >
           {isOpen ? (
-            <ChevronDown className="w-4 h-4 text-[#CCCCCC]" />
+            <ChevronDown className="w-4 h-4" style={{ color: 'var(--text-body)' }} />
           ) : (
-            <ChevronRight className="w-4 h-4 text-[#CCCCCC]" />
+            <ChevronRight className="w-4 h-4" style={{ color: 'var(--text-body)' }} />
           )}
         </div>
       </button>
@@ -38,8 +38,8 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
       {isOpen && (
         <div className="mt-3">
           <div 
-            className="w-full bg-[#1E1E1E] p-4"
-            style={{ border: '1px solid #2A2A2A' }}
+            className="w-full p-4"
+            style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-default)' }}
           >
             {children}
           </div>

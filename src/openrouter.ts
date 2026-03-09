@@ -11,7 +11,7 @@ export const DECISION_SCHEMA = {
     properties: {
       overall_decision: {
         type: "string",
-        enum: ["safe", "borderline", "high_risk", "reject"],
+        enum: ["PENDING", "PROCESSING", "APPROVED", "PUBLISHED", "REJECTED", "FLAGGED"],
       },
       can_enhance: {
         type: "boolean",
@@ -229,10 +229,12 @@ export function parseDecisionPayload(payload: unknown): AgentDecision {
   const checks = typedPayload.checks;
 
   if (
-    decision !== "safe" &&
-    decision !== "borderline" &&
-    decision !== "high_risk" &&
-    decision !== "reject"
+    decision !== "PENDING" &&
+    decision !== "PROCESSING" &&
+    decision !== "APPROVED" &&
+    decision !== "PUBLISHED" &&
+    decision !== "REJECTED" &&
+    decision !== "FLAGGED"
   ) {
     throw new Error(`Unexpected decision: ${String(decision)}`);
   }

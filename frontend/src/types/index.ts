@@ -11,8 +11,10 @@ export interface InternalMetadata {
   updatedAt: string;
 }
 
-export interface Software {
-  softwareId: string;
+export type ReviewType = 'SOFTWARE' | 'SERVICE';
+
+export interface ReviewSubject {
+  subjectId: string;
   name: string;
   slug: string;
   categories: string[];
@@ -105,12 +107,18 @@ export interface DerivedSignals {
   riskHints: string[];
 }
 
+export type StatusType =
+  | 'PENDING'
+  | 'PROCESSING'
+  | 'APPROVED'
+  | 'PUBLISHED'
+  | 'REJECTED'
+  | 'FLAGGED';
+
 export interface GroundTruth {
+  agentStatus: StatusType;
   statusLabel: string;
   rejectionReason: string | null;
-  isPending: boolean;
-  isPublished: boolean;
-  isRejected: boolean;
 }
 
 export interface Provenance {
@@ -138,8 +146,9 @@ export interface ReviewRecord {
 }
 
 export interface ReviewData {
+  reviewType: ReviewType;
   internalMetadata: InternalMetadata;
-  software: Software;
+  subject: ReviewSubject;
   usage: Usage;
   review: Review;
   reviewer: Reviewer;
@@ -154,14 +163,11 @@ export interface DailyRun {
   id: string;
   date: string;
   totalReviews: number;
-  newCount: number;
   eligibleCount: number;
   approvedCount: number;
   rejectedCount: number;
   reviews: ReviewData[];
 }
-
-export type StatusType = 'APPROVED' | 'REJECTED' | 'NOT_ELIGIBLE' | 'PENDING';
 
 export interface ValidationCheck {
   name: string;
