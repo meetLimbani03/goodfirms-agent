@@ -527,60 +527,76 @@ export const getStatusColor = (status: StatusType): string => {
   }
 };
 
-export const getValidationChecks = (review: ReviewData): ValidationCheck[] => [
-  {
-    name: 'Email Verification',
-    status: review.accountContext.account.emailVerifiedAt ? 'PASS' : 'FAIL',
-    details: review.accountContext.account.emailVerifiedAt || 'Not verified',
-  },
-  {
-    name: 'Account Match',
-    status: review.derivedSignals.reviewEmailMatchesAccountEmail ? 'PASS' : 'FLAG',
-    details: review.derivedSignals.reviewEmailMatchesAccountEmail
-      ? 'Email matches account'
-      : 'Email mismatch',
-  },
-  {
-    name: 'Name Match',
-    status: review.derivedSignals.reviewNameMatchesAccountName ? 'PASS' : 'FLAG',
-    details: review.derivedSignals.reviewNameMatchesAccountName
-      ? 'Name matches account'
-      : 'Name mismatch',
-  },
-  {
-    name: 'Vendor Conflict',
-    status: review.derivedSignals.vendorConflictHints.length === 0 ? 'PASS' : 'FAIL',
-    details:
-      review.derivedSignals.vendorConflictHints.length === 0
-        ? 'No conflicts detected'
-        : review.derivedSignals.vendorConflictHints.join(', '),
-  },
-  {
-    name: 'Trust Signals',
-    status: review.derivedSignals.trustSignals.length > 0 ? 'PASS' : 'FLAG',
-    details: review.derivedSignals.trustSignals.join(', ') || 'No trust signals',
-  },
-];
+export const getValidationChecks = (review: ReviewData): ValidationCheck[] =>
+  review.agentRun
+    ? review.agentRun.checklistResults.map((check) => ({
+        name: check.name,
+        status:
+          check.status === 'pass' ? 'PASS' : check.status === 'fail' ? 'FAIL' : 'FLAG',
+        details: check.reason,
+      }))
+    : [
+        {
+          name: 'Email Verification',
+          status: review.accountContext.account.emailVerifiedAt ? 'PASS' : 'FAIL',
+          details: review.accountContext.account.emailVerifiedAt || 'Not verified',
+        },
+        {
+          name: 'Account Match',
+          status: review.derivedSignals.reviewEmailMatchesAccountEmail ? 'PASS' : 'FLAG',
+          details: review.derivedSignals.reviewEmailMatchesAccountEmail
+            ? 'Email matches account'
+            : 'Email mismatch',
+        },
+        {
+          name: 'Name Match',
+          status: review.derivedSignals.reviewNameMatchesAccountName ? 'PASS' : 'FLAG',
+          details: review.derivedSignals.reviewNameMatchesAccountName
+            ? 'Name matches account'
+            : 'Name mismatch',
+        },
+        {
+          name: 'Vendor Conflict',
+          status: review.derivedSignals.vendorConflictHints.length === 0 ? 'PASS' : 'FAIL',
+          details:
+            review.derivedSignals.vendorConflictHints.length === 0
+              ? 'No conflicts detected'
+              : review.derivedSignals.vendorConflictHints.join(', '),
+        },
+        {
+          name: 'Trust Signals',
+          status: review.derivedSignals.trustSignals.length > 0 ? 'PASS' : 'FLAG',
+          details: review.derivedSignals.trustSignals.join(', ') || 'No trust signals',
+        },
+      ];
 
-export const getPrechecks = (review: ReviewData): ValidationCheck[] => [
-  {
-    name: 'Content Length',
-    status: review.review.summary.length > 50 ? 'PASS' : 'FLAG',
-    details: `${review.review.summary.length} characters`,
-  },
-  {
-    name: 'Has Strengths',
-    status: review.review.strength.length > 20 ? 'PASS' : 'FLAG',
-    details: `${review.review.strength.substring(0, 50)}...`,
-  },
-  {
-    name: 'Has Weaknesses',
-    status: review.review.weakness.length > 20 ? 'PASS' : 'FLAG',
-    details: `${review.review.weakness.substring(0, 50)}...`,
-  },
-  {
-    name: 'Valid Ratings',
-    status: review.review.ratings.overall > 0 ? 'PASS' : 'FAIL',
-    details: `Overall: ${review.review.ratings.overall}/5`,
-  },
-];
+export const getPrechecks = (review: ReviewData): ValidationCheck[] =>
+  review.agentRun && review.agentRun.prechecks.length > 0
+    ? review.agentRun.prechecks.map((check) => ({
+        name: check.name,
+        status:
+          check.status === 'pass' ? 'PASS' : check.status === 'fail' ? 'FAIL' : 'FLAG',
+        details: check.reason,
+      }))
+    : [
+        {
+          name: 'Content Length',
+          status: review.review.summary.length > 50 ? 'PASS' : 'FLAG',
+          details: `${review.review.summary.length} characters`,
+        },
+        {
+          name: 'Has Strengths',
+          status: review.review.strength.length > 20 ? 'PASS' : 'FLAG',
+          details: `${review.review.strength.substring(0, 50)}...`,
+        },
+        {
+          name: 'Has Weaknesses',
+          status: review.review.weakness.length > 20 ? 'PASS' : 'FLAG',
+          details: `${review.review.weakness.substring(0, 50)}...`,
+        },
+        {
+          name: 'Valid Ratings',
+          status: review.review.ratings.overall > 0 ? 'PASS' : 'FAIL',
+          details: `Overall: ${review.review.ratings.overall}/5`,
+        },
+      ];

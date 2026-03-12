@@ -30,7 +30,7 @@
               "stroke": {
                 "align": "inside",
                 "thickness": 1,
-                "fill": "#E0E0E0"
+                "fill": "#2A2A2A"
               },
               "layout": "vertical",
               "children": [
@@ -58,24 +58,33 @@
                       "fontStyle": "italic"
                     },
                     {
-                      "type": "icon_font",
-                      "id": "SdFnB",
-                      "name": "Collapse Button",
-                      "width": 20,
+                      "type": "frame",
+                      "id": "864Tp",
+                      "name": "sidebarIcons",
+                      "width": 48,
                       "height": 20,
-                      "iconFontName": "panel-left-close",
-                      "iconFontFamily": "lucide",
-                      "fill": "#888888"
-                    },
-                    {
-                      "type": "icon_font",
-                      "id": "3YJaJ",
-                      "name": "Theme Toggle",
-                      "width": 20,
-                      "height": 20,
-                      "iconFontName": "sun",
-                      "iconFontFamily": "lucide",
-                      "fill": "#FFFFFF"
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "vADp0",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "settings",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "mojmw",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "panel-left-close",
+                          "iconFontFamily": "lucide",
+                          "fill": "#888888"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -91,15 +100,246 @@
                   "padding": 16,
                   "children": [
                     {
+                      "type": "frame",
+                      "id": "iLBKE",
+                      "name": "Tab Navigation",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "QJBcI",
+                          "name": "SOFTWARE Tab",
+                          "width": "fill_container",
+                          "fill": "#F3EBDD",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#F3EBDD"
+                          },
+                          "padding": [
+                            10,
+                            12
+                          ],
+                          "justifyContent": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "KSXbE",
+                              "fill": "#111111",
+                              "content": "SOFTWARE",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "600",
+                              "letterSpacing": 2.4
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "s9qQS",
+                          "name": "SERVICE Tab",
+                          "width": "fill_container",
+                          "fill": "#1A1A1A",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#2A2A2A"
+                          },
+                          "padding": [
+                            10,
+                            12
+                          ],
+                          "justifyContent": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "T2haP",
+                              "fill": "#8F8A80",
+                              "content": "SERVICE",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "600",
+                              "letterSpacing": 2.4
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2yAsz",
+                      "name": "Manual Trigger",
+                      "width": "fill_container",
+                      "fill": "#1E1E1E",
+                      "cornerRadius": 6,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#2A2A2A"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kH09F",
+                          "name": "manualTitle",
+                          "fill": "#666666",
+                          "content": "MANUAL TRIGGER",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "tVQ1Z",
+                          "name": "manualDesc",
+                          "fill": "#888888",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Run the software review agent on a specific review ID. Enable test mode to evaluate an already approved or rejected review.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FCtJM",
+                          "name": "reviewIdLabel",
+                          "fill": "#666666",
+                          "content": "REVIEW ID",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "letterSpacing": 2.16
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LEPwa",
+                          "name": "Review ID Input",
+                          "width": "fill_container",
+                          "fill": "#1A1A1A",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#2A2A2A"
+                          },
+                          "padding": [
+                            8,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "5fswh",
+                              "fill": "#FFFFFF",
+                              "content": "69b08d4b687a0ea12930bdea3",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WAiRO",
+                          "name": "Test Mode Row",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "01w7s",
+                              "width": 16,
+                              "height": 16,
+                              "fill": "#1A1A1A",
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#2A2A2A"
+                              }
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "QWtUb",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "test-tube-2",
+                              "iconFontFamily": "lucide",
+                              "fill": "#888888"
+                            },
+                            {
+                              "type": "text",
+                              "id": "QLwUE",
+                              "fill": "#CCCCCC",
+                              "content": "Test mode",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "bY4mm",
+                          "name": "testModeDesc",
+                          "fill": "#888888",
+                          "content": "Allows runs on reviews that are already approved or rejected.",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xUXq2",
+                          "name": "Run Review Button",
+                          "width": "fill_container",
+                          "fill": "#BCA88A",
+                          "gap": 8,
+                          "padding": [
+                            8,
+                            16
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "Favyl",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "play",
+                              "iconFontFamily": "lucide",
+                              "fill": "#111111"
+                            },
+                            {
+                              "type": "text",
+                              "id": "z7mmy",
+                              "fill": "#111111",
+                              "content": "Run Review",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
                       "id": "7A2KG",
                       "name": "Runs Header",
                       "fill": "#666666",
-                      "content": "Daily Runs",
+                      "content": "SOFTWARE RUNS",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "600",
-                      "letterSpacing": 1
+                      "letterSpacing": 2.4
                     },
                     {
                       "type": "frame",
@@ -129,7 +369,7 @@
                               "id": "TyPuc",
                               "name": "Run Date",
                               "fill": "#FFFFFF",
-                              "content": "Mar 09, 2026",
+                              "content": "Mar 8, 2026",
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "600"
@@ -155,35 +395,6 @@
                           "children": [
                             {
                               "type": "frame",
-                              "id": "vwRE8",
-                              "name": "Stat New",
-                              "layout": "vertical",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "G68eE",
-                                  "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "8",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "OP4o3",
-                                  "name": "Stat Label",
-                                  "fill": "#666666",
-                                  "content": "New",
-                                  "fontFamily": "Inter",
-                                  "fontSize": 11,
-                                  "fontWeight": "normal"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
                               "id": "P4aXs",
                               "name": "Stat Eligible",
                               "layout": "vertical",
@@ -192,18 +403,17 @@
                                   "type": "text",
                                   "id": "JdZ9W",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "6",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fill": "#CCCCCC",
+                                  "content": "8",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "8z5J6",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Eligible",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -221,18 +431,17 @@
                                   "type": "text",
                                   "id": "8w2mj",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "4",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fill": "#4CAF50",
+                                  "content": "2",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "Y5PcM",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Approved",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -250,18 +459,17 @@
                                   "type": "text",
                                   "id": "j2jM7",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "2",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fill": "#F44336",
+                                  "content": "1",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "v9SMN",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Rejected",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -291,7 +499,7 @@
                               "id": "7J284",
                               "name": "Review Item - Approved",
                               "width": "fill_container",
-                              "fill": "#2A2A2A",
+                              "fill": "#1E1E1E",
                               "padding": 12,
                               "justifyContent": "space_between",
                               "alignItems": "center",
@@ -318,10 +526,20 @@
                                       "id": "unnet",
                                       "name": "Review Meta",
                                       "fill": "#888888",
-                                      "content": "D5 Render • Cinno",
+                                      "content": "D5 Render + Cinno",
                                       "fontFamily": "Inter",
                                       "fontSize": 11,
                                       "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "QF9ck",
+                                      "fill": "#BCA88A",
+                                      "content": "SOFTWARE",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 1.8
                                     }
                                   ]
                                 },
@@ -329,7 +547,7 @@
                                   "type": "frame",
                                   "id": "Vcu9Q",
                                   "name": "Approved Badge",
-                                  "fill": "#4CAF50",
+                                  "fill": "#3D8B40",
                                   "padding": [
                                     4,
                                     10
@@ -340,7 +558,7 @@
                                       "id": "iCfdZ",
                                       "name": "Badge Text",
                                       "fill": "#FFFFFF",
-                                      "content": "APPROVED",
+                                      "content": "PUBLISHED",
                                       "fontFamily": "Inter",
                                       "fontSize": 10,
                                       "fontWeight": "600"
@@ -381,10 +599,20 @@
                                       "id": "Rqhik",
                                       "name": "Review Meta",
                                       "fill": "#888888",
-                                      "content": "SalesCaptain • Alaric M.",
+                                      "content": "SalesCaptain + Alaric M.",
                                       "fontFamily": "Inter",
                                       "fontSize": 11,
                                       "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "klhvc",
+                                      "fill": "#BCA88A",
+                                      "content": "SOFTWARE",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 1.8
                                     }
                                   ]
                                 },
@@ -392,12 +620,7 @@
                                   "type": "frame",
                                   "id": "vBb4R",
                                   "name": "Rejected Badge",
-                                  "fill": "#1E1E1E",
-                                  "stroke": {
-                                    "align": "inside",
-                                    "thickness": 1,
-                                    "fill": "#F44336"
-                                  },
+                                  "fill": "#F44336",
                                   "padding": [
                                     4,
                                     10
@@ -407,7 +630,7 @@
                                       "type": "text",
                                       "id": "S2ssE",
                                       "name": "Badge Text",
-                                      "fill": "#F44336",
+                                      "fill": "#FFFFFF",
                                       "content": "REJECTED",
                                       "fontFamily": "Inter",
                                       "fontSize": 10,
@@ -438,7 +661,7 @@
                                       "type": "text",
                                       "id": "MB7hK",
                                       "name": "Review Title",
-                                      "fill": "#888888",
+                                      "fill": "#FFFFFF",
                                       "content": "Great Productivity Tool",
                                       "fontFamily": "Inter",
                                       "fontSize": 13,
@@ -448,11 +671,21 @@
                                       "type": "text",
                                       "id": "jwej2",
                                       "name": "Review Meta",
-                                      "fill": "#666666",
-                                      "content": "Notion • Sarah K.",
+                                      "fill": "#888888",
+                                      "content": "Notion + Sarah K.",
                                       "fontFamily": "Inter",
                                       "fontSize": 11,
                                       "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "N2p86",
+                                      "fill": "#BCA88A",
+                                      "content": "SOFTWARE",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 1.8
                                     }
                                   ]
                                 },
@@ -460,7 +693,12 @@
                                   "type": "frame",
                                   "id": "pdimh",
                                   "name": "Not Eligible Badge",
-                                  "fill": "#333333",
+                                  "fill": "#1A1A1A",
+                                  "stroke": {
+                                    "align": "inside",
+                                    "thickness": 1,
+                                    "fill": "#2A2A2A"
+                                  },
                                   "padding": [
                                     4,
                                     10
@@ -471,7 +709,77 @@
                                       "id": "pf7HV",
                                       "name": "Badge Text",
                                       "fill": "#888888",
-                                      "content": "NOT ELIGIBLE",
+                                      "content": "PENDING",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "WEhzK",
+                              "name": "Review Item - Processing",
+                              "width": "fill_container",
+                              "fill": "#1E1E1E",
+                              "padding": 12,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "rJJ6y",
+                                  "name": "review4Left",
+                                  "layout": "vertical",
+                                  "gap": 6,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "ABpsV",
+                                      "fill": "#FFFFFF",
+                                      "content": "Easy to work with",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 13,
+                                      "fontWeight": "500"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "l4vTN",
+                                      "fill": "#888888",
+                                      "content": "Notion + Jared Mills",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "PifUx",
+                                      "fill": "#BCA88A",
+                                      "content": "SOFTWARE",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 1.8
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "WXMf8",
+                                  "name": "review4Badge",
+                                  "fill": "#2A3A4A",
+                                  "padding": [
+                                    4,
+                                    10
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "sZWJH",
+                                      "fill": "#8FB3E8",
+                                      "content": "PROCESSING",
                                       "fontFamily": "Inter",
                                       "fontSize": 10,
                                       "fontWeight": "600"
@@ -512,7 +820,7 @@
                               "id": "WBSZd",
                               "name": "Run Date",
                               "fill": "#FFFFFF",
-                              "content": "Mar 08, 2026",
+                              "content": "Mar 7, 2026",
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "600"
@@ -538,35 +846,6 @@
                           "children": [
                             {
                               "type": "frame",
-                              "id": "XKykj",
-                              "name": "Stat New",
-                              "layout": "vertical",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "4NypJ",
-                                  "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "31",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "V7JhM",
-                                  "name": "Stat Label",
-                                  "fill": "#666666",
-                                  "content": "New",
-                                  "fontFamily": "Inter",
-                                  "fontSize": 11,
-                                  "fontWeight": "normal"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
                               "id": "SO0oO",
                               "name": "Stat Eligible",
                               "layout": "vertical",
@@ -575,18 +854,17 @@
                                   "type": "text",
                                   "id": "YISuX",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#CCCCCC",
                                   "content": "25",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "ZWpr6",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Eligible",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -604,18 +882,17 @@
                                   "type": "text",
                                   "id": "DMPdH",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#4CAF50",
                                   "content": "20",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "QY5S9",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Approved",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -633,18 +910,17 @@
                                   "type": "text",
                                   "id": "HKrs7",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#F44336",
                                   "content": "5",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "CdPAN",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Rejected",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -684,7 +960,7 @@
                               "id": "X2zzS",
                               "name": "Run Date",
                               "fill": "#FFFFFF",
-                              "content": "Mar 07, 2026",
+                              "content": "Mar 6, 2026",
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "600"
@@ -710,35 +986,6 @@
                           "children": [
                             {
                               "type": "frame",
-                              "id": "aELJS",
-                              "name": "Stat New",
-                              "layout": "vertical",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "DT2ZP",
-                                  "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "19",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "wkQis",
-                                  "name": "Stat Label",
-                                  "fill": "#666666",
-                                  "content": "New",
-                                  "fontFamily": "Inter",
-                                  "fontSize": 11,
-                                  "fontWeight": "normal"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
                               "id": "FMuKH",
                               "name": "Stat Eligible",
                               "layout": "vertical",
@@ -747,18 +994,17 @@
                                   "type": "text",
                                   "id": "68HQf",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#CCCCCC",
                                   "content": "15",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "j9gmh",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Eligible",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -776,18 +1022,17 @@
                                   "type": "text",
                                   "id": "0BBxs",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#4CAF50",
                                   "content": "10",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "cGw2d",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Approved",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -805,18 +1050,17 @@
                                   "type": "text",
                                   "id": "mpKJI",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#F44336",
                                   "content": "5",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "KuCmP",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Rejected",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -856,7 +1100,7 @@
                               "id": "rgH7e",
                               "name": "Run Date",
                               "fill": "#FFFFFF",
-                              "content": "Mar 06, 2026",
+                              "content": "Mar 5, 2026",
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "600"
@@ -882,35 +1126,6 @@
                           "children": [
                             {
                               "type": "frame",
-                              "id": "UKSkL",
-                              "name": "Stat New",
-                              "layout": "vertical",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "rRYNk",
-                                  "name": "Stat Value",
-                                  "fill": "#FFFFFF",
-                                  "content": "28",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "D5QW5",
-                                  "name": "Stat Label",
-                                  "fill": "#666666",
-                                  "content": "New",
-                                  "fontFamily": "Inter",
-                                  "fontSize": 11,
-                                  "fontWeight": "normal"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
                               "id": "jjijf",
                               "name": "Stat Eligible",
                               "layout": "vertical",
@@ -919,18 +1134,17 @@
                                   "type": "text",
                                   "id": "HC9OU",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#CCCCCC",
                                   "content": "22",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "hJnUq",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Eligible",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -948,18 +1162,17 @@
                                   "type": "text",
                                   "id": "PQqP8",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#4CAF50",
                                   "content": "18",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "ffz6f",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Approved",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -977,18 +1190,17 @@
                                   "type": "text",
                                   "id": "dCckS",
                                   "name": "Stat Value",
-                                  "fill": "#FFFFFF",
+                                  "fill": "#F44336",
                                   "content": "4",
-                                  "fontFamily": "Playfair Display",
-                                  "fontSize": 24,
-                                  "fontWeight": "normal",
-                                  "fontStyle": "italic"
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
                                 },
                                 {
                                   "type": "text",
                                   "id": "UD8wI",
                                   "name": "Stat Label",
-                                  "fill": "#666666",
+                                  "fill": "#888888",
                                   "content": "Rejected",
                                   "fontFamily": "Inter",
                                   "fontSize": 11,
@@ -1040,6 +1252,7 @@
                       "content": "Run Details",
                       "fontFamily": "Playfair Display",
                       "fontSize": 28,
+                      "fontWeight": "normal",
                       "fontStyle": "italic"
                     },
                     {
@@ -1094,14 +1307,50 @@
                               "fontStyle": "italic"
                             },
                             {
-                              "type": "text",
-                              "id": "6QB0C",
-                              "name": "Detail Subtitle",
-                              "fill": "#888888",
-                              "content": "D5 Render • 697ef9846787f99046066d12",
-                              "fontFamily": "Inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal"
+                              "type": "frame",
+                              "id": "Vik8r",
+                              "name": "Subtitle Row",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "j9fYj",
+                                  "name": "subtitleText",
+                                  "fill": "#888888",
+                                  "content": "D5 Render • 697ef9846787f99046066d12",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 14,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "p3Uf9",
+                                  "name": "Type Badge",
+                                  "fill": "#1E1E1E",
+                                  "stroke": {
+                                    "align": "inside",
+                                    "thickness": 1,
+                                    "fill": "#2A2A2A"
+                                  },
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "dijZK",
+                                      "fill": "#BCA88A",
+                                      "content": "SOFTWARE",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 1.8
+                                    }
+                                  ]
+                                }
+                              ]
                             }
                           ]
                         },
@@ -1137,7 +1386,7 @@
                                   "id": "tvlPJ",
                                   "name": "Publish Text",
                                   "fill": "#FFFFFF",
-                                  "content": "Publish Review",
+                                  "content": "Published",
                                   "fontFamily": "Inter",
                                   "fontSize": 13,
                                   "fontWeight": "600"
@@ -1224,98 +1473,98 @@
                               "width": "fill_container",
                               "height": "fill_container",
                               "layout": "vertical",
-                              "gap": 12,
+                              "gap": 16,
                               "children": [
                                 {
                                   "type": "frame",
-                                  "id": "6HSS6",
-                                  "name": "Meta Row 1",
+                                  "id": "GN7cW",
+                                  "name": "Grid Row 1",
                                   "width": "fill_container",
-                                  "gap": 24,
+                                  "gap": 16,
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "lgGnQ",
-                                      "name": "Meta Item",
+                                      "id": "HHX6y",
+                                      "name": "item1",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "jDLbU",
-                                          "name": "Label",
+                                          "id": "kFceo",
                                           "fill": "#888888",
-                                          "content": "Projection",
+                                          "content": "CREATED AT",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "Dqzbh",
-                                          "name": "Value",
-                                          "fill": "#FFFFFF",
-                                          "content": "audit",
+                                          "id": "GAXMs",
+                                          "fill": "#CCCCCC",
+                                          "content": "Feb 1, 2026, 12:50 PM GMT+5:30",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
                                     },
                                     {
                                       "type": "frame",
-                                      "id": "wEm6j",
-                                      "name": "Meta Item",
+                                      "id": "ahXYy",
+                                      "name": "item2",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "FDuZV",
-                                          "name": "Label",
+                                          "id": "Updz6",
                                           "fill": "#888888",
-                                          "content": "Status",
+                                          "content": "UPDATED AT",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "XSi5b",
-                                          "name": "Value",
-                                          "fill": "#4CAF50",
-                                          "content": "Published",
+                                          "id": "kffzt",
+                                          "fill": "#CCCCCC",
+                                          "content": "Feb 2, 2026, 3:21 PM GMT+5:30",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
                                     },
                                     {
                                       "type": "frame",
-                                      "id": "36FdU",
-                                      "name": "Meta Item",
+                                      "id": "OrrBx",
+                                      "name": "item3",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "VsDUT",
-                                          "name": "Label",
+                                          "id": "OJlFw",
                                           "fill": "#888888",
-                                          "content": "Step",
+                                          "content": "REJECT REASON",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "zFjs1",
-                                          "name": "Value",
-                                          "fill": "#FFFFFF",
-                                          "content": "2",
+                                          "id": "cTfo1",
+                                          "fill": "#CCCCCC",
+                                          "content": "None",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
@@ -1323,74 +1572,95 @@
                                   ]
                                 },
                                 {
-                                  "type": "rectangle",
-                                  "id": "CxAHQ",
-                                  "name": "Divider",
-                                  "fill": "#2A2A2A",
-                                  "width": "fill_container",
-                                  "height": 1
-                                },
-                                {
                                   "type": "frame",
-                                  "id": "B6bwK",
-                                  "name": "Meta Row 2",
+                                  "id": "1WP7C",
+                                  "name": "Grid Row 2",
                                   "width": "fill_container",
-                                  "gap": 24,
+                                  "gap": 16,
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "uTnD6",
-                                      "name": "Meta Item",
+                                      "id": "ysmaM",
+                                      "name": "item4",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "h7Vd1",
-                                          "name": "Label",
+                                          "id": "SrjJl",
                                           "fill": "#888888",
-                                          "content": "Created",
+                                          "content": "REQUEST TOKEN",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "qak7o",
-                                          "name": "Value",
+                                          "id": "G13sj",
                                           "fill": "#CCCCCC",
-                                          "content": "Feb 01, 2026 at 07:00",
+                                          "content": "None",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
                                     },
                                     {
                                       "type": "frame",
-                                      "id": "csbkY",
-                                      "name": "Meta Item",
+                                      "id": "cI44O",
+                                      "name": "item5",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "mKoMV",
-                                          "name": "Label",
+                                          "id": "YTMKh",
                                           "fill": "#888888",
-                                          "content": "Updated",
+                                          "content": "UPDATED",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "jNnTe",
-                                          "name": "Value",
+                                          "id": "PAJ0r",
                                           "fill": "#CCCCCC",
                                           "content": "Feb 02, 2026 at 09:51",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "Ik1uU",
+                                      "name": "item6",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 4,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "6nGpT",
+                                          "fill": "#888888",
+                                          "content": "RUN MODE",
+                                          "fontFamily": "Inter",
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "JMI9e",
+                                          "fill": "#CCCCCC",
+                                          "content": "None",
+                                          "fontFamily": "Inter",
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
@@ -1398,74 +1668,95 @@
                                   ]
                                 },
                                 {
-                                  "type": "rectangle",
-                                  "id": "HGnzD",
-                                  "name": "Divider",
-                                  "fill": "#2A2A2A",
-                                  "width": "fill_container",
-                                  "height": 1
-                                },
-                                {
                                   "type": "frame",
-                                  "id": "QIK9g",
-                                  "name": "Meta Row 3",
+                                  "id": "rgjvM",
+                                  "name": "Grid Row 3",
                                   "width": "fill_container",
-                                  "gap": 24,
+                                  "gap": 16,
                                   "children": [
                                     {
                                       "type": "frame",
-                                      "id": "lLz6s",
-                                      "name": "Meta Item",
+                                      "id": "wlQOE",
+                                      "name": "item7",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "eHWZv",
-                                          "name": "Label",
+                                          "id": "H8AP2",
                                           "fill": "#888888",
-                                          "content": "Rejection Reason",
+                                          "content": "REJECTION REASON",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "dbbGz",
-                                          "name": "Value",
-                                          "fill": "#888888",
+                                          "id": "x0sJo",
+                                          "fill": "#CCCCCC",
                                           "content": "none",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
                                     },
                                     {
                                       "type": "frame",
-                                      "id": "e1HvQ",
-                                      "name": "Meta Item",
+                                      "id": "5ueU7",
+                                      "name": "item8",
+                                      "width": "fill_container",
                                       "layout": "vertical",
                                       "gap": 4,
                                       "children": [
                                         {
                                           "type": "text",
-                                          "id": "9VGjK",
-                                          "name": "Label",
+                                          "id": "Iw6Ew",
                                           "fill": "#888888",
-                                          "content": "Request Token",
+                                          "content": "AGENT MODEL",
                                           "fontFamily": "Inter",
-                                          "fontSize": 11,
-                                          "fontWeight": "500"
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
                                         },
                                         {
                                           "type": "text",
-                                          "id": "7uIXw",
-                                          "name": "Value",
-                                          "fill": "#888888",
-                                          "content": "none",
+                                          "id": "zNwlh",
+                                          "fill": "#CCCCCC",
+                                          "content": "None",
                                           "fontFamily": "Inter",
-                                          "fontSize": 13,
+                                          "fontSize": 14,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "SQaTB",
+                                      "name": "item9",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 4,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "XM8uX",
+                                          "name": "emptyLabel",
+                                          "fill": "#888888",
+                                          "fontFamily": "Inter",
+                                          "fontSize": 12,
+                                          "fontWeight": "600",
+                                          "letterSpacing": 1.8
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "yEOIB",
+                                          "name": "emptyValue",
+                                          "fill": "#CCCCCC",
+                                          "fontFamily": "Inter",
+                                          "fontSize": 14,
                                           "fontWeight": "normal"
                                         }
                                       ]
@@ -1638,7 +1929,8 @@
                               "fill": "#CCCCCC",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "NAME: Cinno\nEMAIL: markedreamer@gmail.com\nDOMAIN: gmail.com\nCOMPANY: (not provided)\nPOSITION: (not provided)\nLOCATION: (not provided)\n\nACCOUNT DETAILS:\nUser ID: 435883\nAccount Type: Google Login\nEmail Verified: Yes\nTotal Reviews: 1\nAccount Created: Feb 01, 2026",
+                              "content": "NAME: Cinno\nEMAIL: markedreamer@gmail.com\nCOMPANY: (not provided)\nPOSITION: (not provided)\nLOCATION: (not provided)\n\nACCOUNT DETAILS:\nUser ID: 435883\nAccount Found: Yes\nAccount Type: Google Login\nEmail Verified: Yes\nTotal Reviews: 1\nAccount Created: Feb 1, 2026\n\nSIGNALS:\nEmail Match: Yes\nName Match: Yes\nCompany Match: Unknown\nTrust Signals: user_email_verified_at_present\nRisk Hints: review missing LinkedIn/profile link, review missing company website, review missing company name",
+                              "lineHeight": 1.6,
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "normal"
@@ -2249,9 +2541,9 @@
                               "fill": "#888888",
                               "content": "GROUND TRUTH",
                               "fontFamily": "Inter",
-                              "fontSize": 10,
+                              "fontSize": 12,
                               "fontWeight": "600",
-                              "letterSpacing": 1
+                              "letterSpacing": 1.8
                             },
                             {
                               "type": "frame",
@@ -2325,9 +2617,9 @@
                               "fill": "#888888",
                               "content": "PROVENANCE",
                               "fontFamily": "Inter",
-                              "fontSize": 10,
+                              "fontSize": 12,
                               "fontWeight": "600",
-                              "letterSpacing": 1
+                              "letterSpacing": 1.8
                             },
                             {
                               "type": "frame",
@@ -2395,6 +2687,32 @@
                               "fontFamily": "Inter",
                               "fontSize": 14,
                               "fontWeight": "600"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "1wEiw",
+                              "name": "toggleBtn",
+                              "width": 28,
+                              "height": 28,
+                              "fill": "#1E1E1E",
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 2,
+                                "fill": "#888888"
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "BJ482",
+                                  "width": 16,
+                                  "height": 16,
+                                  "iconFontName": "chevron-down",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "#888888"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -2403,14 +2721,19 @@
                           "id": "auJQR",
                           "name": "Content Box",
                           "width": "fill_container",
-                          "fill": "#000000",
-                          "padding": 20,
+                          "fill": "#1E1E1E",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#2A2A2A"
+                          },
+                          "padding": 16,
                           "children": [
                             {
                               "type": "text",
                               "id": "1CYvZ",
                               "name": "Response Text",
-                              "fill": "#E0E0E0",
+                              "fill": "#CCCCCC",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "Thank you for your detailed feedback on D5 Render, Cinno! We're thrilled to hear that our real-time rendering capabilities and cinematic quality have transformed your workflow and help you create impressive client presentations. Your feedback about stability with heavy scenes is valuable - we're continuously working on performance improvements. We appreciate you taking the time to share your experience!",

@@ -3,8 +3,9 @@ import { ReviewData } from '../types';
 import { DetailHeader } from './DetailHeader';
 import { CollapsibleSection } from './CollapsibleSection';
 import { ExtraContextSection } from './ExtraContextSection';
-import { ReviewContextSection } from './ReviewContextSection';
-import { UserContextSection } from './UserContextSection';
+import { AgentPromptSection } from './AgentPromptSection';
+import { AgentContextSection } from './AgentContextSection';
+import { AgentToolCallsSection } from './AgentToolCallsSection';
 import { ValidationSection } from './ValidationSection';
 import { AgentResponseSection } from './AgentResponseSection';
 import { getPrechecks, getValidationChecks } from '../data/mockData';
@@ -12,14 +13,16 @@ import { AlertCircle } from 'lucide-react';
 
 interface MainContentProps {
   review: ReviewData | null;
+  onOpenFeedback: () => void;
 }
 
-export const MainContent: React.FC<MainContentProps> = ({ review }) => {
+export const MainContent: React.FC<MainContentProps> = ({ review, onOpenFeedback }) => {
   const [openSections, setOpenSections] = useState<string[]>([
     'extra-context',
-    'review-context',
-    'user-context',
+    'agent-context',
     'validation',
+    'agent-response',
+    'agent-tool-calls',
   ]);
 
   const toggleSection = (section: string) => {
@@ -57,6 +60,7 @@ export const MainContent: React.FC<MainContentProps> = ({ review }) => {
             review={review}
             onRerun={() => console.log('Rerun:', review.internalMetadata.reviewId)}
             onPublish={() => console.log('Publish:', review.internalMetadata.reviewId)}
+            onOpenFeedback={onOpenFeedback}
           />
 
           {/* 2. Extra Context */}
@@ -68,25 +72,43 @@ export const MainContent: React.FC<MainContentProps> = ({ review }) => {
             <ExtraContextSection review={review} />
           </CollapsibleSection>
 
-          {/* 3. Review Context */}
+          {/* 3. Agent Response */}
           <CollapsibleSection
-            title="Review Context"
-            isOpen={openSections.includes('review-context')}
-            onToggle={() => toggleSection('review-context')}
+            title="Agent's Response"
+            isOpen={openSections.includes('agent-response')}
+            onToggle={() => toggleSection('agent-response')}
           >
-            <ReviewContextSection review={review} />
+            <AgentResponseSection review={review} />
           </CollapsibleSection>
 
-          {/* 4. User Context */}
+          {/* 4. Agent Tool Calls */}
           <CollapsibleSection
-            title="User Context"
-            isOpen={openSections.includes('user-context')}
-            onToggle={() => toggleSection('user-context')}
+            title="Agent Tool Calls"
+            isOpen={openSections.includes('agent-tool-calls')}
+            onToggle={() => toggleSection('agent-tool-calls')}
           >
-            <UserContextSection review={review} />
+            <AgentToolCallsSection review={review} />
           </CollapsibleSection>
 
-          {/* 5. Validation & Analysis Checks */}
+          {/* 5. Agent Prompt */}
+          <CollapsibleSection
+            title="Agent Prompt"
+            isOpen={openSections.includes('agent-prompt')}
+            onToggle={() => toggleSection('agent-prompt')}
+          >
+            <AgentPromptSection review={review} />
+          </CollapsibleSection>
+
+          {/* 6. Agent Context */}
+          <CollapsibleSection
+            title="Agent Context"
+            isOpen={openSections.includes('agent-context')}
+            onToggle={() => toggleSection('agent-context')}
+          >
+            <AgentContextSection review={review} />
+          </CollapsibleSection>
+
+          {/* 7. Validation & Analysis Checks */}
           <CollapsibleSection
             title="Validation & Analysis Checks"
             isOpen={openSections.includes('validation')}
@@ -102,14 +124,6 @@ export const MainContent: React.FC<MainContentProps> = ({ review }) => {
             </div>
           </CollapsibleSection>
 
-          {/* 6. Agent Response */}
-          <CollapsibleSection
-            title="Agent's Response"
-            isOpen={openSections.includes('agent-response')}
-            onToggle={() => toggleSection('agent-response')}
-          >
-            <AgentResponseSection review={review} />
-          </CollapsibleSection>
         </div>
       </div>
     </div>

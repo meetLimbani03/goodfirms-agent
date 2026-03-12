@@ -35,7 +35,10 @@ export const DailyRunCard: React.FC<DailyRunCardProps> = ({
     >
       {/* Card Header */}
       <button
-        onClick={onToggle}
+        onClick={() => {
+          onSelect();
+          onToggle();
+        }}
         className="w-full flex items-center justify-between p-4 transition-colors"
         style={{ backgroundColor: 'transparent' }}
       >
@@ -76,9 +79,11 @@ export const DailyRunCard: React.FC<DailyRunCardProps> = ({
         <div className="px-2 pb-2 pt-2 space-y-2" style={{ backgroundColor: 'var(--bg-subtle)' }}>
           {reviews.map((review) => (
             <ReviewItem
-              key={review.internalMetadata.reviewId}
+              key={review.internalMetadata.runId ?? review.internalMetadata.reviewId}
               review={review}
-              isSelected={selectedReviewId === review.internalMetadata.reviewId}
+              isSelected={
+                selectedReviewId === (review.internalMetadata.runId ?? review.internalMetadata.reviewId)
+              }
               onClick={() => onReviewSelect(review)}
             />
           ))}

@@ -1,0 +1,337 @@
+# GoodFirms gold adjudication dataset
+# This file is the manually verified source of truth for agent evaluation.
+# Historical platform status is recorded for context only and must not be treated as gold truth.
+
+[dataset]
+name = "goodfirms_gold_review_dataset"
+version = "0.1.0"
+status = "draft"
+owner = "goodfirms-agent"
+batch_size = 10
+created_at = "2026-03-11"
+updated_at = "2026-03-11"
+
+[guidelines]
+purpose = "Manually adjudicated evaluation dataset for review-decision and review-rewrite testing."
+adjudication_rule = "Gold labels must reflect the best current human judgment, not the historical GoodFirms moderation outcome."
+verification_process = "Each record is prepared in batches of 10, then manually reviewed and corrected before being considered verified."
+
+[label_definitions]
+approve = "Review should be accepted."
+reject = "Review should be rejected."
+manual_review = "Review is too ambiguous for direct approval or rejection and should be flagged for human review."
+
+[reject_reason_definitions]
+unable_to_verify_reviewer = "Unable to verify the reviewer"
+only_clients_allowed = "Reviews are accepted only from clients of the company"
+former_employees_not_allowed = "Reviews are not accepted from former employees"
+already_published_before = "Review has already been published before"
+other = "Another validated reject reason outside the current standard enum"
+
+[verification_status_definitions]
+pending = "Prepared but not yet manually checked"
+verified = "Manually checked and confirmed"
+corrected = "Prepared label was changed during manual review and is now confirmed"
+disputed = "Needs another pass because the case is still unclear"
+
+[case_definitions]
+user_with_previously_approved_review = "Reviewer has at least one previously approved review before the current review."
+user_with_previously_rejected_review = "Reviewer has at least one previously rejected review before the current review."
+first_time_reviewer = "Reviewer has no earlier reviews before the current review."
+account_not_found = "No matching GoodFirms user account was found for the review user id or reviewer identity."
+identity_match = "Review-submitted identity aligns with the fetched account/profile identity."
+identity_mismatch = "Review-submitted identity conflicts with the fetched account/profile identity."
+generic_email_domain = "Reviewer email uses a generic domain such as gmail.com or yahoo.com."
+linkedin_present = "A profile link is present in review data or account enrichment."
+company_website_present = "A company website is present in review data or account enrichment."
+self_promotional_tone = "Review text appears promotional, vendor-like, or marketing-heavy."
+templated_or_repetitive_text = "Review text appears reused, generic, or too similar to other reviews."
+duplicate_risk = "There is evidence or suspicion that the review duplicates earlier submitted content."
+borderline_manual_review = "Case is borderline and requires manual adjudication rather than clear approval or rejection."
+strong_trust_signal = "Case contains unusually strong positive trust signals such as is_goodfirms_registered or consistent verified history."
+
+# One batch groups 10 reviews prepared together for manual verification.
+[[batches]]
+batch_id = "batch-001"
+status = "prepared"
+prepared_by = "codex"
+prepared_at = "2026-03-11"
+notes = "Candidate gold batch prepared from pre-2026-02-17 02:26:06 UTC Mongo/MySQL records with mixed software/service coverage and targeted external corroboration."
+
+# Each review entry belongs to one batch.
+# Keep reasoning concise but explicit.
+#
+# Fields:
+# - review_type: "software" or "service"
+# - historical_status: original platform state such as Pending, Approved, Published, Rejected
+# - case_tags: one or more values from [case_definitions]
+# - gold_label: approve | reject | manual_review
+# - gold_reject_reason: use one of the standard reject reasons above, or omit if not rejecting
+# - gold_risk_flags: compact machine-readable flags explaining the case
+# - evidence_used: what was actually checked to reach the decision
+# - decision_summary: short text explaining the final conclusion and basis
+# - verification_status: pending | verified | corrected | disputed
+#
+# Example entry:
+#
+# [[reviews]]
+# batch_id = "batch-001"
+# review_type = "software"
+# review_id = "69676145bb73ee8562046452"
+# historical_status = "Approved"
+# case_tags = ["user_with_previously_approved_review", "generic_email_domain", "linkedin_present"]
+# gold_label = "approve"
+# gold_reject_reason = ""
+# gold_risk_flags = ["generic_email_domain"]
+# evidence_used = ["review_text", "db_profile", "reviewer_history", "linkedin"]
+# final_decision = "verified_pass"
+# decision_summary = "Approve. Reviewer identity is sufficiently credible and the review is internally consistent."
+# reasoning_markdown = """
+# Approve.
+# The review is specific, coherent, and aligned with the ratings.
+# Reviewer history and external signals do not show a concerning pattern.
+# """
+# verification_status = "pending"
+# reviewed_by = ""
+# reviewed_at = ""
+# notes = ""
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "software"
+review_id = "69849efa3dc36dbedb04c1a2"
+historical_status = "Rejected"
+case_tags = ["first_time_reviewer", "identity_match", "company_website_present"]
+gold_label = "approve"
+gold_reject_reason = ""
+gold_risk_flags = ["historical_reject_disagreement", "linkedin_missing"]
+evidence_used = ["mongo_review", "mysql_user", "reviewer_history", "company_website"]
+final_decision = "verified_with_minor_fixes"
+decision_summary = "Approve. Review content is specific and reviewer identity aligns cleanly with the MySQL account and website evidence despite the historical rejection."
+reasoning_markdown = """
+Approve.
+The review text is coherent, product-specific, and not obviously templated or promotional.
+The submitted identity matches the MySQL user record on name, email, company, and role.
+The reviewer appears first-time before this record, so there is no bad prior pattern to explain the historical rejection.
+External website evidence supports the business identity, but the lack of LinkedIn keeps this as a cautious pass rather than a perfect-confidence case.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "Good disagreement case: historical rejection but current evidence looks sufficient for approval."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "software"
+review_id = "698c8f21160b944bf4003392"
+historical_status = "Pending"
+case_tags = ["first_time_reviewer", "identity_match", "company_website_present"]
+gold_label = "approve"
+gold_reject_reason = ""
+gold_risk_flags = ["linkedin_missing"]
+evidence_used = ["mongo_review", "mysql_user", "reviewer_history", "company_website"]
+final_decision = "verified_pass"
+decision_summary = "Approve. The review is internally consistent and the reviewer identity matches the account and company website."
+reasoning_markdown = """
+Approve.
+The narrative, strengths, weakness, and ratings are aligned and reasonably specific to the product use case.
+The submitted reviewer data matches the MySQL account across name, email, company, and position.
+This is a first-time reviewer before the cutoff, so there is no prior rejection pattern.
+The only notable gap is a missing LinkedIn/profile link, which is not enough by itself to block approval here.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = ""
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "software"
+review_id = "698de58d47bfd77f8a0e50a3"
+historical_status = "Pending"
+case_tags = ["first_time_reviewer", "generic_email_domain", "templated_or_repetitive_text", "duplicate_risk", "borderline_manual_review"]
+gold_label = "manual_review"
+gold_reject_reason = ""
+gold_risk_flags = ["strength_equals_weakness", "low_distinctiveness", "generic_email_domain"]
+evidence_used = ["mongo_review", "mysql_user", "reviewer_history"]
+final_decision = "needs_manual_review"
+decision_summary = "Manual review. The identity is plausible, but the review quality is weak because strength and weakness are identical and the content looks low-effort."
+reasoning_markdown = """
+Manual review.
+The submitted identity resolves to a real MySQL account and does not show an obvious mismatch.
+However, the strongest risk signal is content quality: the strength and weakness fields are exactly the same, which is a common low-effort or templated pattern.
+Because the rest of the record is readable rather than obvious spam, this looks borderline rather than a deterministic reject.
+Human verification should decide whether this is just careless completion or an authenticity problem.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "Useful borderline case for manual-review routing."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "software"
+review_id = "6991bbd34c95fd8cf90e9803"
+historical_status = "Pending"
+case_tags = ["first_time_reviewer", "generic_email_domain", "self_promotional_tone", "templated_or_repetitive_text"]
+gold_label = "reject"
+gold_reject_reason = "other"
+gold_risk_flags = ["vendor_self_review_risk", "marketing_copy_tone", "generic_email_domain"]
+evidence_used = ["mongo_review", "mysql_user", "reviewer_history"]
+final_decision = "reject_recommended"
+decision_summary = "Reject. The review reads like promotional copy for the product itself rather than an independent client review."
+reasoning_markdown = """
+Reject.
+The title and body market the product in a vendor-like voice, including feature-list copy and exaggerated praise.
+The reviewer account name and company align with the product branding rather than an independently identifiable client organization.
+There is no balancing detail, no external reviewer signal, and no prior credible review history before this record.
+This is best treated as a self-promotional authenticity failure rather than a normal client review.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "Reject reason uses `other` because the current standard enum does not have an explicit self-review bucket."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "software"
+review_id = "696f417357806bbe0c0c6673"
+historical_status = "Rejected"
+case_tags = ["self_promotional_tone", "templated_or_repetitive_text", "duplicate_risk", "company_website_present"]
+gold_label = "reject"
+gold_reject_reason = "unable_to_verify_reviewer"
+gold_risk_flags = ["spam_contact_info", "promotional_cta", "related_draft_exists"]
+evidence_used = ["mongo_review", "mysql_user", "reviewer_history", "historical_status"]
+final_decision = "reject_recommended"
+decision_summary = "Reject. This is overt spam/self-promotion with contact details and sales copy, and the historical rejection is well supported."
+reasoning_markdown = """
+Reject.
+The review is clearly promotional rather than experiential: it contains direct sales language, contact channels, and repetitive marketing claims.
+The same reviewer also has a near-simultaneous related record, which raises duplicate/submission-abuse risk.
+The MySQL account fields are themselves suspicious and aligned to the promotional site rather than to a believable client identity.
+This is a strong reject case and a good negative-control example for the batch.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = ""
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "service"
+review_id = "84547"
+historical_status = "Pending"
+case_tags = ["user_with_previously_approved_review", "identity_match", "linkedin_present", "company_website_present", "strong_trust_signal"]
+gold_label = "approve"
+gold_reject_reason = ""
+gold_risk_flags = ["generic_email_domain"]
+evidence_used = ["mysql_review", "mysql_user", "reviewer_history", "linkedin", "company_website", "external_web_check"]
+final_decision = "verified_pass"
+decision_summary = "Approve. Identity is consistent across review, account, prior published history, LinkedIn, company website, and external corroboration."
+reasoning_markdown = """
+Approve.
+This reviewer has a previously published service review with the same identity, website, and LinkedIn profile, which is a strong trust signal.
+The current review identity matches the MySQL user record on name, email, company, role, website, and profile link.
+External corroboration supports the SingleStone identity and role, reducing concern from the generic Gmail address.
+The content itself is specific and plausible, so this is a strong approval candidate.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "External corroboration used: SingleStone site/search results supporting Elizabeth Sheehan and SingleStone."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "service"
+review_id = "84546"
+historical_status = "Pending"
+case_tags = ["user_with_previously_rejected_review", "identity_mismatch", "generic_email_domain", "linkedin_present", "company_website_present", "borderline_manual_review"]
+gold_label = "manual_review"
+gold_reject_reason = ""
+gold_risk_flags = ["linkedin_name_mismatch", "company_spelling_mismatch", "previous_rejection_history"]
+evidence_used = ["mysql_review", "mysql_user", "reviewer_history", "linkedin", "company_website"]
+final_decision = "needs_manual_review"
+decision_summary = "Manual review. The account is real, but the LinkedIn/profile identity conflicts with the submitted name and the reviewer already has a similar rejected case."
+reasoning_markdown = """
+Manual review.
+This is not a clean approval because the submitted/account name is Keith Niehaus while the stored LinkedIn URL points to Samuel Lazarus.
+The company fields also wobble between `Rokoto` and the website host `rokoko.com`, which could be a typo or a deeper identity problem.
+The same reviewer already has an earlier rejected review with the same conflicting identity pattern.
+There is enough real-looking structure here to avoid a direct reject, but it should not pass without human verification.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "Good manual-review case for identity-conflict handling."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "service"
+review_id = "84550"
+historical_status = "Pending"
+case_tags = ["first_time_reviewer", "generic_email_domain", "self_promotional_tone", "templated_or_repetitive_text", "borderline_manual_review"]
+gold_label = "reject"
+gold_reject_reason = "other"
+gold_risk_flags = ["vendor_voice", "content_subject_mismatch", "generic_email_domain"]
+evidence_used = ["mysql_review", "mysql_user", "reviewer_history"]
+final_decision = "reject_recommended"
+decision_summary = "Reject. The text reads like vendor/store marketing copy and does not cleanly describe a client project with the reviewed company."
+reasoning_markdown = """
+Reject.
+The review content is internally mismatched: the reviewed company is a hosting provider, but the text and strength/weakness sections are written in a first-person seller voice about an online store.
+That pattern looks like self-promotional copy rather than a client experience report.
+The reviewer is first-time before the cutoff and offers no strong external trust signal to offset the content problem.
+This should be rejected as an authenticity failure, even though a human could still glance at it during verification.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "Reject reason uses `other` because this looks like authenticity/promotional misuse rather than a clean enum fit."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "service"
+review_id = "84499"
+historical_status = "Rejected"
+case_tags = ["first_time_reviewer", "generic_email_domain", "identity_match", "company_website_present"]
+gold_label = "approve"
+gold_reject_reason = ""
+gold_risk_flags = ["historical_reject_disagreement", "linkedin_missing", "generic_email_domain"]
+evidence_used = ["mysql_review", "mysql_user", "reviewer_history", "company_website", "external_web_check"]
+final_decision = "verified_with_minor_fixes"
+decision_summary = "Approve. The reviewer identity is consistent and the clinic website externally corroborates the email/domain relationship despite the historical rejection."
+reasoning_markdown = """
+Approve.
+The reviewer is first-time before this record, and the submitted identity matches the MySQL account on name, email, company, and role.
+The generic Gmail address is a risk factor, but the clinic website publicly uses the same email and names Dr. Ravi Kumar Konagala, which materially improves confidence.
+The review itself is specific to SEO work for the dental clinic and does not read like obvious spam.
+This is a good disagreement case where the historical rejection looks too strict based on the available evidence.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = "External corroboration used: ravisdentalcare.com contact/about pages with matching email/name context."
+
+[[reviews]]
+batch_id = "batch-001"
+review_type = "service"
+review_id = "84384"
+historical_status = "Rejected"
+case_tags = ["first_time_reviewer", "identity_mismatch", "company_website_present"]
+gold_label = "reject"
+gold_reject_reason = "former_employees_not_allowed"
+gold_risk_flags = ["vendor_domain_email", "claimed_client_identity_missing", "historical_reject_agrees"]
+evidence_used = ["mysql_review", "mysql_user", "reviewer_history", "historical_status"]
+final_decision = "reject_recommended"
+decision_summary = "Reject. The reviewer email is on the vendor domain and the record lacks credible client-side identity fields, which supports the former-employee/self-review rejection."
+reasoning_markdown = """
+Reject.
+The strongest evidence here is identity conflict: the reviewer email uses the reviewed vendor's domain (`kaopiz.net`) rather than a client company domain.
+At the same time, the review omits meaningful client-company identity details that could rebut the employee/self-review concern.
+The historical rejection reason of `former employees not allowed` is consistent with the observable record.
+This is a defensible reject and useful coverage for employee/vendor-conflict handling.
+"""
+verification_status = "pending"
+reviewed_by = ""
+reviewed_at = ""
+notes = ""

@@ -1,13 +1,17 @@
 import React from 'react';
-import { DailyRun, ReviewData, ReviewType } from '../types';
+import { DailyRun, ReviewData, ReviewType, ServiceAgentApiResponse, SoftwareAgentApiResponse } from '../types';
 import { DailyRunCard } from './DailyRunCard';
 import { Moon, Sun, PanelLeftClose } from 'lucide-react';
 import { getReviewTypeLabel } from '../data/mockData';
+import { ManualReviewTrigger } from './ManualReviewTrigger';
+import { runServiceAgent } from '../lib/serviceAgent';
+import { runSoftwareAgent } from '../lib/softwareAgent';
 
 interface SidebarProps {
   theme: 'dark' | 'light';
   reviewType: ReviewType;
   dailyRuns: DailyRun[];
+  width: number;
   selectedRunId: string | null;
   selectedReviewId: string | null;
   expandedRunIds: string[];
@@ -15,6 +19,8 @@ interface SidebarProps {
   onRunToggle: (runId: string) => void;
   onRunSelect: (runId: string) => void;
   onReviewSelect: (review: ReviewData) => void;
+  onManualSoftwareSuccess: (response: SoftwareAgentApiResponse, testMode: boolean) => void;
+  onManualServiceSuccess: (response: ServiceAgentApiResponse, testMode: boolean) => void;
   isCollapsed: boolean;
   onToggleCollapse: () => void;
   onToggleTheme: () => void;
@@ -24,6 +30,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   theme,
   reviewType,
   dailyRuns,
+  width,
   selectedRunId,
   selectedReviewId,
   expandedRunIds,
@@ -31,6 +38,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onRunToggle,
   onRunSelect,
   onReviewSelect,
+  onManualSoftwareSuccess,
+  onManualServiceSuccess,
   isCollapsed,
   onToggleCollapse,
   onToggleTheme,
@@ -61,8 +70,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <div
-      className="w-80 border-r flex flex-col"
-      style={{ backgroundColor: 'var(--bg-sidebar)', borderColor: 'var(--border-strong)' }}
+      className="border-r flex flex-col"
+      style={{ backgroundColor: 'var(--bg-sidebar)', borderColor: 'var(--border-strong)', width }}
     >
       {/* Header with Logo and Collapse */}
       <div className="flex items-center justify-between px-6 py-5">
@@ -111,6 +120,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
             );
           })}
         </div>
+        {reviewType === 'SOFTWARE' ? (
+          <ManualReviewTrigger
+            reviewType="SOFTWARE"
+            onSuccess={onManualSoftwareSuccess}
+            runReviewAgent={runSoftwareAgent}
+          />
+        ) : (
+          <ManualReviewTrigger
+            reviewType="SERVICE"
+            onSuccess={onManualServiceSuccess}
+            runReviewAgent={runServiceAgent}
+          />
+        )}
         <h2
           className="text-xs font-semibold uppercase tracking-wider mb-3 px-2"
           style={{ color: 'var(--text-subtle)' }}

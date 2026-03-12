@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from pymongo import MongoClient
+from pymongo.database import Database
 from pymongo.errors import PyMongoError
-from pymongo.server_api import ServerApi
 
 from app.core.config import Settings
 from app.core.logging import logger
@@ -17,12 +17,12 @@ class MongoManager:
     def client(self) -> MongoClient:
         if self._client is None:
             logger.info("Creating MongoDB client")
-            self._client = MongoClient(
-                self._settings.mongodb_uri,
-                server_api=ServerApi("1"),
-            )
+            self._client = MongoClient(self._settings.mongodb_uri)
 
         return self._client
+
+    def database(self, name: str) -> Database:
+        return self.client[name]
 
     def ping(self) -> bool:
         logger.info("Attempting MongoDB ping")

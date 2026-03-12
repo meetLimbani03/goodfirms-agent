@@ -111,3 +111,29 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
   color: var(--text-primary);
 }
+
+.sidebar-resize-handle {
+  width: 8px;
+  cursor: col-resize;
+  position: relative;
+  background: transparent;
+  transition: background-color 160ms ease;
+}
+
+.sidebar-resize-handle::after {
+  content: '';
+  position: absolute;
+  inset: 0 2px;
+  background: var(--border-default);
+  opacity: 0.55;
+  transition: opacity 160ms ease, background-color 160ms ease;
+}
+
+.sidebar-resize-handle:hover {
+  background: color-mix(in srgb, var(--accent-muted) 10%, transparent);
+}
+
+.sidebar-resize-handle:hover::after {
+  background: var(--accent-muted);
+  opacity: 0.9;
+}

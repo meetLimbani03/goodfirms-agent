@@ -9,12 +9,38 @@
 ## Eligibility Gate (for automation)
 A software review is eligible for agent processing when all are true:
 - `is_active == 0` (pending/unpublish state)
+- `submitted_by == 1` (current use-case scope: normal reviewer/user flow only)
 - `step >= 2`
 - step-2 review content is present (see required fields below)
 
 Recommended hard-fail checks:
+- reject if `submitted_by != 1`
 - reject if `step < 2`
 - reject if any required step-2 field is empty/zero
+
+## `submitted_by` Rule (Current Use Case)
+
+For the current backend workflow, process only software reviews where:
+
+- `submitted_by == 1`
+
+Reason:
+
+- this is the dominant current reviewer/user submission path
+- it follows the normal multi-step review form behavior
+- `submitted_by = 3` appears to be an admin-entered or admin-assisted path that bypasses the normal user UI and does not consistently store `step`
+- `submitted_by = 2` appears legacy/special-case and is not present in the last-year live slice we checked
+
+Working interpretation:
+
+- `submitted_by = 1` -> likely normal reviewer/user flow
+- `submitted_by = 3` -> likely admin-entered or admin-assisted flow that bypasses the normal multi-step UI
+- `submitted_by = 2` -> likely an older or special source; current live data is too weak to define confidently
+
+Important:
+
+- the mapping above is an inference from live data patterns, not a confirmed product-code enum contract
+- use the processing rule (`submitted_by == 1`) operationally for now, but keep the value itself as internal provenance metadata
 
 ## Locked Status Predicate (match backend)
 Use this exact interpretation for software records:

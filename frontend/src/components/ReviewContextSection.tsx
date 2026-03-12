@@ -9,6 +9,7 @@ interface ReviewContextSectionProps {
 export const ReviewContextSection: React.FC<ReviewContextSectionProps> = ({ review }) => {
   const { subject, usage, review: reviewContent } = review;
   const typeLabel = getReviewTypeLabel(review.reviewType).toUpperCase();
+  const postingPreference = review.reviewer.postingPreferenceLabel || '(not provided)';
 
   const formatText = () => {
     return `${typeLabel}:
@@ -44,7 +45,7 @@ RATINGS:
 • Overall: ${reviewContent.ratings.overall}/5
 
 POSTING PREFERENCE:
-Display both my name and the company's name with the review`;
+${postingPreference}`;
   };
 
   return (
