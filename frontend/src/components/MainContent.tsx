@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReviewData } from '../types';
+import { IdentityVerificationResult, ReviewData } from '../types';
 import { DetailHeader } from './DetailHeader';
 import { CollapsibleSection } from './CollapsibleSection';
 import { ExtraContextSection } from './ExtraContextSection';
@@ -14,9 +14,22 @@ import { AlertCircle } from 'lucide-react';
 interface MainContentProps {
   review: ReviewData | null;
   onOpenFeedback: () => void;
+  verificationResults: Partial<Record<'hunter' | 'contactout' | 'apollo', IdentityVerificationResult>>;
+  verificationErrorMessage: string | null;
+  isVerificationRunning: boolean;
+  verificationProviderPending: 'hunter' | 'contactout' | 'apollo' | null;
+  onRunIdentityVerification: (provider: 'hunter' | 'contactout' | 'apollo') => Promise<void>;
 }
 
-export const MainContent: React.FC<MainContentProps> = ({ review, onOpenFeedback }) => {
+export const MainContent: React.FC<MainContentProps> = ({
+  review,
+  onOpenFeedback,
+  verificationResults,
+  verificationErrorMessage,
+  isVerificationRunning,
+  verificationProviderPending,
+  onRunIdentityVerification,
+}) => {
   const [openSections, setOpenSections] = useState<string[]>([
     'extra-context',
     'agent-context',
@@ -61,6 +74,11 @@ export const MainContent: React.FC<MainContentProps> = ({ review, onOpenFeedback
             onRerun={() => console.log('Rerun:', review.internalMetadata.reviewId)}
             onPublish={() => console.log('Publish:', review.internalMetadata.reviewId)}
             onOpenFeedback={onOpenFeedback}
+            verificationResults={verificationResults}
+            verificationErrorMessage={verificationErrorMessage}
+            isVerificationRunning={isVerificationRunning}
+            verificationProviderPending={verificationProviderPending}
+            onRunIdentityVerification={onRunIdentityVerification}
           />
 
           {/* 2. Extra Context */}

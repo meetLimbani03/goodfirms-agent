@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 from urllib.parse import urlparse
 
+from app.core.logging import logger
 from app.db.repositories.software_reviews import SoftwareReviewRepository
 from app.db.repositories.users import UserRepository
 from app.db.repositories.service_reviews import ServiceReviewRepository
@@ -49,15 +50,28 @@ class SoftwareReviewContextBuilder:
         self._service_reviews = service_review_repository
 
     def build(self, review_id: str, test_mode: bool = False) -> SoftwareAgentContext:
+        logger.info(
+            "software_context_build_started review_id={review_id} test_mode={test_mode}",
+            review_id=review_id,
+            test_mode=test_mode,
+        )
         review = self._reviews.get_review_by_id(review_id)
         if not review:
+            logger.warning("software_context_review_not_found review_id={review_id}", review_id=review_id)
             raise LookupError(f"Software review not found: {review_id}")
 
         self._validate_review(review, test_mode=test_mode)
+        logger.info("software_context_review_validated review_id={review_id}", review_id=review_id)
 
         user_id = self._parse_int(review.get("user_id"))
         submitted_by = self._parse_int(review.get("submitted_by"))
         user = self._users.get_user_by_id(user_id) if user_id is not None else None
+        logger.info(
+            "software_context_user_lookup_completed review_id={review_id} user_id={user_id} account_found={account_found}",
+            review_id=review_id,
+            user_id=user_id,
+            account_found=user is not None,
+        )
         reviewer_history = ReviewerHistoryLookupService(self._reviews, self._service_reviews)
         review_stats = (
             reviewer_history.get_review_stats(user_id, review_id)
@@ -67,6 +81,13 @@ class SoftwareReviewContextBuilder:
                 previously_approved_reviews=0,
                 previously_rejected_reviews=0,
             )
+        )
+        logger.info(
+            "software_context_history_loaded review_id={review_id} previous_reviews={previous_reviews} approved={approved} rejected={rejected}",
+            review_id=review_id,
+            previous_reviews=review_stats.previous_reviews,
+            approved=review_stats.previously_approved_reviews,
+            rejected=review_stats.previously_rejected_reviews,
         )
 
         features = review.get("features")
@@ -83,7 +104,8 @@ class SoftwareReviewContextBuilder:
             review_stats=review_stats,
         )
         usage = self._build_usage_context(review, software_name_map)
-        signals = self._build_signals(review, user, reviewer)
+        login_method = self._infer_login_method(user)
+        signals = self._build_signals(review, user, reviewer, login_method=login_method)
         prechecks = self._build_prechecks(
             review,
             reviewer=reviewer,
@@ -125,6 +147,12 @@ class SoftwareReviewContextBuilder:
             "created_at": self._iso_from_unix(review.get("created")),
             "updated_at": self._iso_from_unix(review.get("updated")),
         }
+
+        logger.info(
+            "software_context_build_completed review_id={review_id} risk_flags={risk_flags}",
+            review_id=review_id,
+            risk_flags=",".join(payload["signals"]["risk_flags"]) or "none",
+        )
 
         return SoftwareAgentContext(
             prompt_markdown=self._prompt_markdown(),
@@ -227,6 +255,8 @@ class SoftwareReviewContextBuilder:
         review: dict[str, Any],
         user: dict[str, Any] | None,
         reviewer: dict[str, Any],
+        *,
+        login_method: str,
     ) -> dict[str, Any]:
         review_submitted = reviewer["review_submitted"]
         profile_fetched = reviewer["profile_fetched"]
@@ -259,17 +289,6 @@ class SoftwareReviewContextBuilder:
                 trust_flags.append(flag_name)
             elif matches is False:
                 risk_flags.append(flag_name.replace("matches", "mismatch"))
-
-        login_method = "unknown"
-        if user:
-            has_google = bool(self._text(user.get("google_id")))
-            has_social = bool(self._text(user.get("social_id")))
-            if has_google:
-                login_method = "google"
-            elif has_social:
-                login_method = "linkedin"
-            elif self._text(user.get("email")):
-                login_method = "email_legacy"
 
         return {
             "account_found": user is not None,
@@ -641,6 +660,84 @@ You are reviewing a client review submitted for a software product on the GoodFi
         if value is None:
             return "not available"
         return "yes" if value else "no"
+
+    def _infer_login_method(self, user: dict[str, Any] | None) -> str:
+        if not user:
+            return "unknown"
+        has_google = bool(self._text(user.get("google_id")))
+        has_social = bool(self._text(user.get("social_id")))
+        if has_google:
+            return "google"
+        if has_social:
+            return "linkedin"
+        if self._text(user.get("email")):
+            return "email_legacy"
+        return "unknown"
+
+    def _run_hunter_precheck(self, *, reviewer: dict[str, Any], login_method: str) -> HunterIdentityResult:
+        resolved = reviewer["resolved"]
+        if login_method != "google":
+            return HunterIdentityResult(
+                lookup_ran=False,
+                status="skipped_non_google_signup",
+                reason="Hunter corroboration is only run for Google-signup reviewers in the current workflow",
+            )
+
+        return self._hunter_identity.lookup(
+            full_name=resolved.get("name", ""),
+            signup_email=resolved.get("email", ""),
+            linkedin_url=resolved.get("profile_link", ""),
+            company_name=resolved.get("company_name", ""),
+            company_website=resolved.get("company_website", ""),
+        )
+
+    def _hunter_precheck_status(self, result: HunterIdentityResult) -> str:
+        if result.status == "email_match":
+            return "pass"
+        if result.status == "email_mismatch":
+            return "fail"
+        return "warning"
+
+    def _hunter_precheck_reason(self, result: HunterIdentityResult) -> str:
+        parts = [self._hunter_status_summary(result)]
+        if result.candidate_email:
+            parts.append(f"candidate_email={result.candidate_email}")
+        if result.candidate_domain:
+            parts.append(f"candidate_domain={result.candidate_domain}")
+        if result.verification_status:
+            parts.append(f"verification={result.verification_status}")
+        if result.score is not None:
+            parts.append(f"score={result.score}")
+        if result.claimed_company_domain_matches is True:
+            parts.append("company_domain_match=yes")
+        elif result.claimed_company_domain_matches is False:
+            parts.append("company_domain_match=no")
+        return "; ".join(parts)
+
+    def _hunter_status_summary(self, result: HunterIdentityResult) -> str:
+        if result.status == "email_match":
+            return result.reason or "Hunter found a corroborating email that matches the GoodFirms signup email"
+        if result.status == "email_mismatch":
+            return result.reason or "Hunter found a candidate email that does not match the GoodFirms signup email"
+        if result.status == "no_email_found":
+            return result.reason or "Hunter did not find a corroborating email for this identity"
+        if result.status == "skipped_non_google_signup":
+            return result.reason or "Hunter corroboration was skipped because the reviewer did not sign up with Google"
+        if result.status == "not_enough_inputs":
+            return result.reason or "Hunter corroboration could not run because the required identity inputs were missing"
+        if result.status in {
+            "lookup_unauthorized",
+            "lookup_rate_limited",
+            "lookup_restricted_profile",
+            "lookup_provider_error",
+            "lookup_error",
+            "invalid_lookup_input",
+        }:
+            return (
+                f"{result.reason or result.status}. "
+                "Treat this as an external lookup limitation, not as direct evidence against the reviewer."
+            )
+        return result.reason or result.status
 
     def _narrative_sections_look_duplicate(self, left: str, right: str) -> bool:
         left_normalized = self._normalize_free_text(left)

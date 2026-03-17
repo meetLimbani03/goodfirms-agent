@@ -22,12 +22,17 @@ from app.schemas.software_review_agent import (
     AgentRunFeedbackUpdateRequest,
     AgentRunMetadata,
     AgentToolTrace,
+    IdentityVerificationInput,
+    IdentityVerificationResult,
     OpenRouterUsageCall,
     OpenRouterUsageSummary,
     SoftwareReviewAgentOutput,
     SoftwareReviewAgentResponse,
 )
+from app.services.apollo_identity import ApolloIdentityService
+from app.services.contactout_identity import ContactOutIdentityService
 from app.services.public_web_search import PublicWebSearchService
+from app.services.hunter_identity import HunterIdentityService
 from app.services.reviewer_history import ReviewerHistoryLookupService
 from app.services.service_review_agent import ServiceReviewAgentService
 from app.services.service_review_context import ServiceReviewContextBuilder
@@ -121,6 +126,11 @@ def run_software_review_agent(
         description="When true, bypass the pending-status gate so approved/rejected reviews can be run for evaluation.",
     ),
 ) -> SoftwareReviewAgentResponse:
+    logger.info(
+        "software_review_api_started review_id={review_id} test_mode={test_mode}",
+        review_id=review_id,
+        test_mode=test,
+    )
     mongo_manager: MongoManager = request.app.state.mongo
     mysql_manager: MySQLManager = request.app.state.mysql
     postgres_manager: PostgresManager = request.app.state.postgres
@@ -129,7 +139,11 @@ def run_software_review_agent(
     review_repository = SoftwareReviewRepository(mongo_manager)
     service_review_repository = ServiceReviewRepository(mysql_manager)
     user_repository = UserRepository(mysql_manager)
-    context_builder = SoftwareReviewContextBuilder(review_repository, user_repository, service_review_repository)
+    context_builder = SoftwareReviewContextBuilder(
+        review_repository,
+        user_repository,
+        service_review_repository,
+    )
     reviewer_history_service = ReviewerHistoryLookupService(review_repository, service_review_repository)
     public_web_search_service = PublicWebSearchService(settings.serpapi)
     agent_service = SoftwareReviewAgentService(settings, reviewer_history_service, public_web_search_service)
@@ -144,18 +158,56 @@ def run_software_review_agent(
                 trigger_source="manual_api",
             )
             persisted_run_id = str(run.id)
+            logger.info(
+                "software_review_run_persisted_started review_id={review_id} run_id={run_id}",
+                review_id=review_id,
+                run_id=persisted_run_id,
+            )
 
     try:
+        logger.info(
+            "software_review_context_build_started review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
         context = context_builder.build(review_id, test_mode=test)
+        logger.info(
+            "software_review_context_build_completed review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
     except LookupError as exc:
+        logger.warning(
+            "software_review_context_build_failed_not_found review_id={review_id} run_id={run_id} error={error}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+            error=str(exc),
+        )
         _mark_agent_run_failed(request, persisted_run_id, error_stage="context_build", error_message=str(exc))
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except ValueError as exc:
+        logger.warning(
+            "software_review_context_build_failed_validation review_id={review_id} run_id={run_id} error={error}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+            error=str(exc),
+        )
         _mark_agent_run_failed(request, persisted_run_id, error_stage="context_build", error_message=str(exc))
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
     try:
+        logger.info(
+            "software_review_agent_execution_started review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
         agent_run_result = agent_service.run(context)
+        logger.info(
+            "software_review_agent_execution_completed review_id={review_id} run_id={run_id} final_decision={final_decision}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+            final_decision=agent_run_result.output.final_decision,
+        )
     except Exception as exc:  # pragma: no cover - network/model failures
         _mark_agent_run_failed(request, persisted_run_id, error_stage="agent_call", error_message=str(exc))
         logger.exception("Software review agent call failed for review_id={review_id}", review_id=review_id)
@@ -165,6 +217,11 @@ def run_software_review_agent(
     completed_run = None
     if persisted_run_id is not None:
         with postgres_manager.session() as session:
+            logger.info(
+                "software_review_run_persist_completed_started review_id={review_id} run_id={run_id}",
+                review_id=review_id,
+                run_id=persisted_run_id,
+            )
             completed_run = AgentRunRepository(session).mark_completed(
                 persisted_run_id,
                 model=settings.openrouter.model,
@@ -180,10 +237,25 @@ def run_software_review_agent(
                 llm_usage_calls=[call.model_dump() for call in agent_run_result.llm_usage_calls],
                 output_payload=output.model_dump(exclude_none=True),
             )
+            logger.info(
+                "software_review_run_persist_completed review_id={review_id} run_id={run_id}",
+                review_id=review_id,
+                run_id=persisted_run_id,
+            )
 
     if completed_run is not None:
+        logger.info(
+            "software_review_api_returning_persisted_response review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
         return _agent_run_response_from_record(completed_run)
 
+    logger.info(
+        "software_review_api_returning_inline_response review_id={review_id} run_id={run_id}",
+        review_id=review_id,
+        run_id=persisted_run_id,
+    )
     return SoftwareReviewAgentResponse(
         run_id=persisted_run_id,
         review_id=review_id,
@@ -219,6 +291,11 @@ def run_service_review_agent(
         description="When true, bypass the pending-status gate so published/rejected reviews can be run for evaluation.",
     ),
 ) -> SoftwareReviewAgentResponse:
+    logger.info(
+        "service_review_api_started review_id={review_id} test_mode={test_mode}",
+        review_id=review_id,
+        test_mode=test,
+    )
     mongo_manager: MongoManager = request.app.state.mongo
     mysql_manager: MySQLManager = request.app.state.mysql
     postgres_manager: PostgresManager = request.app.state.postgres
@@ -227,7 +304,11 @@ def run_service_review_agent(
     software_review_repository = SoftwareReviewRepository(mongo_manager)
     review_repository = ServiceReviewRepository(mysql_manager)
     user_repository = UserRepository(mysql_manager)
-    context_builder = ServiceReviewContextBuilder(review_repository, user_repository, software_review_repository)
+    context_builder = ServiceReviewContextBuilder(
+        review_repository,
+        user_repository,
+        software_review_repository,
+    )
     reviewer_history_service = ReviewerHistoryLookupService(software_review_repository, review_repository)
     public_web_search_service = PublicWebSearchService(settings.serpapi)
     agent_service = ServiceReviewAgentService(settings, reviewer_history_service, public_web_search_service)
@@ -242,18 +323,56 @@ def run_service_review_agent(
                 trigger_source="manual_api",
             )
             persisted_run_id = str(run.id)
+            logger.info(
+                "service_review_run_persisted_started review_id={review_id} run_id={run_id}",
+                review_id=review_id,
+                run_id=persisted_run_id,
+            )
 
     try:
+        logger.info(
+            "service_review_context_build_started review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
         context = context_builder.build(review_id, test_mode=test)
+        logger.info(
+            "service_review_context_build_completed review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
     except LookupError as exc:
+        logger.warning(
+            "service_review_context_build_failed_not_found review_id={review_id} run_id={run_id} error={error}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+            error=str(exc),
+        )
         _mark_agent_run_failed(request, persisted_run_id, error_stage="context_build", error_message=str(exc))
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except ValueError as exc:
+        logger.warning(
+            "service_review_context_build_failed_validation review_id={review_id} run_id={run_id} error={error}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+            error=str(exc),
+        )
         _mark_agent_run_failed(request, persisted_run_id, error_stage="context_build", error_message=str(exc))
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
     try:
+        logger.info(
+            "service_review_agent_execution_started review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
         agent_run_result = agent_service.run(context)
+        logger.info(
+            "service_review_agent_execution_completed review_id={review_id} run_id={run_id} final_decision={final_decision}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+            final_decision=agent_run_result.output.final_decision,
+        )
     except Exception as exc:  # pragma: no cover - network/model failures
         _mark_agent_run_failed(request, persisted_run_id, error_stage="agent_call", error_message=str(exc))
         logger.exception("Service review agent call failed for review_id={review_id}", review_id=review_id)
@@ -263,6 +382,11 @@ def run_service_review_agent(
     completed_run = None
     if persisted_run_id is not None:
         with postgres_manager.session() as session:
+            logger.info(
+                "service_review_run_persist_completed_started review_id={review_id} run_id={run_id}",
+                review_id=review_id,
+                run_id=persisted_run_id,
+            )
             completed_run = AgentRunRepository(session).mark_completed(
                 persisted_run_id,
                 model=settings.openrouter.model,
@@ -278,10 +402,25 @@ def run_service_review_agent(
                 llm_usage_calls=[call.model_dump() for call in agent_run_result.llm_usage_calls],
                 output_payload=output.model_dump(exclude_none=True),
             )
+            logger.info(
+                "service_review_run_persist_completed review_id={review_id} run_id={run_id}",
+                review_id=review_id,
+                run_id=persisted_run_id,
+            )
 
     if completed_run is not None:
+        logger.info(
+            "service_review_api_returning_persisted_response review_id={review_id} run_id={run_id}",
+            review_id=review_id,
+            run_id=persisted_run_id,
+        )
         return _agent_run_response_from_record(completed_run)
 
+    logger.info(
+        "service_review_api_returning_inline_response review_id={review_id} run_id={run_id}",
+        review_id=review_id,
+        run_id=persisted_run_id,
+    )
     return SoftwareReviewAgentResponse(
         run_id=persisted_run_id,
         review_id=review_id,
@@ -301,6 +440,92 @@ def run_service_review_agent(
         llm_usage_calls=agent_run_result.llm_usage_calls,
         review_feedback=None,
         output=output,
+    )
+
+
+@app.post(
+    "/api/software-reviews/{review_id}/identity-verifications/hunter",
+    response_model=IdentityVerificationResult,
+)
+def verify_software_review_identity_with_hunter(
+    review_id: str,
+    request: Request,
+) -> IdentityVerificationResult:
+    return _run_identity_verification(request=request, review_type="software", review_id=review_id, provider="hunter")
+
+
+@app.post(
+    "/api/software-reviews/{review_id}/identity-verifications/contactout",
+    response_model=IdentityVerificationResult,
+)
+def verify_software_review_identity_with_contactout(
+    review_id: str,
+    request: Request,
+) -> IdentityVerificationResult:
+    return _run_identity_verification(
+        request=request,
+        review_type="software",
+        review_id=review_id,
+        provider="contactout",
+    )
+
+
+@app.post(
+    "/api/software-reviews/{review_id}/identity-verifications/apollo",
+    response_model=IdentityVerificationResult,
+)
+def verify_software_review_identity_with_apollo(
+    review_id: str,
+    request: Request,
+) -> IdentityVerificationResult:
+    return _run_identity_verification(
+        request=request,
+        review_type="software",
+        review_id=review_id,
+        provider="apollo",
+    )
+
+
+@app.post(
+    "/api/service-reviews/{review_id}/identity-verifications/hunter",
+    response_model=IdentityVerificationResult,
+)
+def verify_service_review_identity_with_hunter(
+    review_id: str,
+    request: Request,
+) -> IdentityVerificationResult:
+    return _run_identity_verification(request=request, review_type="service", review_id=review_id, provider="hunter")
+
+
+@app.post(
+    "/api/service-reviews/{review_id}/identity-verifications/contactout",
+    response_model=IdentityVerificationResult,
+)
+def verify_service_review_identity_with_contactout(
+    review_id: str,
+    request: Request,
+) -> IdentityVerificationResult:
+    return _run_identity_verification(
+        request=request,
+        review_type="service",
+        review_id=review_id,
+        provider="contactout",
+    )
+
+
+@app.post(
+    "/api/service-reviews/{review_id}/identity-verifications/apollo",
+    response_model=IdentityVerificationResult,
+)
+def verify_service_review_identity_with_apollo(
+    review_id: str,
+    request: Request,
+) -> IdentityVerificationResult:
+    return _run_identity_verification(
+        request=request,
+        review_type="service",
+        review_id=review_id,
+        provider="apollo",
     )
 
 
@@ -357,6 +582,229 @@ def submit_agent_run_feedback(
             raise HTTPException(status_code=404, detail="Agent run not found")
         updated_run = repository.update_feedback(run_id, feedback=feedback_request.feedback.strip())
         return _agent_run_response_from_record(updated_run)
+
+
+def _run_identity_verification(
+    *,
+    request: Request,
+    review_type: str,
+    review_id: str,
+    provider: str,
+) -> IdentityVerificationResult:
+    logger.info(
+        "identity_verification_started review_type={review_type} review_id={review_id} provider={provider}",
+        review_type=review_type,
+        review_id=review_id,
+        provider=provider,
+    )
+    mysql_manager: MySQLManager = request.app.state.mysql
+    mongo_manager: MongoManager = request.app.state.mongo
+
+    user_repository = UserRepository(mysql_manager)
+    verification_input = _build_identity_verification_input(
+        review_type=review_type,
+        review_id=review_id,
+        review_repository=SoftwareReviewRepository(mongo_manager),
+        service_review_repository=ServiceReviewRepository(mysql_manager),
+        user_repository=user_repository,
+    )
+
+    if verification_input.login_method != "google":
+        summary = "External identity verification is only enabled for Google sign-up reviewers in the current workflow."
+        logger.info(
+            "identity_verification_skipped_non_google review_type={review_type} review_id={review_id} provider={provider} login_method={login_method}",
+            review_type=review_type,
+            review_id=review_id,
+            provider=provider,
+            login_method=verification_input.login_method or "unknown",
+        )
+        return IdentityVerificationResult(
+            provider=provider,  # type: ignore[arg-type]
+            review_type=review_type,  # type: ignore[arg-type]
+            review_id=review_id,
+            status="skipped_non_google_signup",
+            summary=summary,
+            inputs=verification_input,
+            result={"reason": summary},
+        )
+
+    if provider == "hunter":
+        service = HunterIdentityService(get_settings().hunter)
+        result = service.lookup(
+            full_name=verification_input.name or "",
+            signup_email=verification_input.signup_email or "",
+            linkedin_url=verification_input.linkedin_url or "",
+            company_name=verification_input.company_name or "",
+            company_website=verification_input.company_website or "",
+        )
+        summary = _summarize_hunter_verification(result)
+        payload = {
+            "lookup_ran": result.lookup_ran,
+            "candidate_email": result.candidate_email,
+            "candidate_domain": result.candidate_domain,
+            "verification_status": result.verification_status,
+            "score": result.score,
+            "claimed_company_domain_matches": result.claimed_company_domain_matches,
+            "lookup_method": result.lookup_method,
+            "reason": result.reason,
+        }
+        status = result.status
+    elif provider == "contactout":
+        service = ContactOutIdentityService(get_settings().contactout)
+        result = service.lookup(
+            full_name=verification_input.name or "",
+            signup_email=verification_input.signup_email or "",
+            linkedin_url=verification_input.linkedin_url or "",
+            company_name=verification_input.company_name or "",
+            company_website=verification_input.company_website or "",
+        )
+        summary = _summarize_contactout_verification(result)
+        payload = {
+            "primary_email": result.primary_email,
+            "work_emails": result.work_emails or [],
+            "personal_emails": result.personal_emails or [],
+            "linkedin_url": result.linkedin_url,
+            "full_name": result.full_name,
+            "title": result.title,
+            "company": result.company,
+            "reason": result.reason,
+        }
+        status = result.status
+    else:
+        service = ApolloIdentityService(get_settings().apollo)
+        result = service.lookup(
+            full_name=verification_input.name or "",
+            signup_email=verification_input.signup_email or "",
+            linkedin_url=verification_input.linkedin_url or "",
+            company_name=verification_input.company_name or "",
+            company_website=verification_input.company_website or "",
+        )
+        summary = _summarize_apollo_verification(result)
+        payload = {
+            "primary_email": result.primary_email,
+            "work_email": result.work_email,
+            "personal_emails": result.personal_emails or [],
+            "linkedin_url": result.linkedin_url,
+            "full_name": result.full_name,
+            "title": result.title,
+            "company": result.company,
+            "reason": result.reason,
+        }
+        status = result.status
+
+    logger.info(
+        "identity_verification_completed review_type={review_type} review_id={review_id} provider={provider} status={status}",
+        review_type=review_type,
+        review_id=review_id,
+        provider=provider,
+        status=status,
+    )
+    return IdentityVerificationResult(
+        provider=provider,
+        review_type=review_type,
+        review_id=review_id,
+        status=status,
+        summary=summary,
+        inputs=verification_input,
+        result=payload,
+    )
+
+
+def _build_identity_verification_input(
+    *,
+    review_type: str,
+    review_id: str,
+    review_repository: SoftwareReviewRepository,
+    service_review_repository: ServiceReviewRepository,
+    user_repository: UserRepository,
+) -> IdentityVerificationInput:
+    if review_type == "software":
+        review = review_repository.get_review_by_id(review_id)
+        if not review:
+            raise HTTPException(status_code=404, detail="Software review not found")
+        user_id = _parse_int(review.get("user_id"))
+        user = user_repository.get_user_by_id(user_id) if user_id is not None else None
+        return IdentityVerificationInput(
+            name=_first_non_empty(review.get("client_name"), user.get("name") if user else None),
+            signup_email=_first_non_empty(review.get("client_email"), user.get("email") if user else None),
+            company_name=_first_non_empty(review.get("client_company_name"), user.get("company_name") if user else None),
+            linkedin_url=_first_non_empty(review.get("client_profile_link"), user.get("public_url") if user else None),
+            company_website=_first_non_empty(
+                review.get("client_company_website"),
+                user.get("company_website") if user else None,
+            ),
+            login_method=_infer_login_method(user),
+        )
+
+    review = service_review_repository.get_review_by_id(review_id)
+    if not review:
+        raise HTTPException(status_code=404, detail="Service review not found")
+    user_id = _parse_int(review.get("user_id"))
+    user = user_repository.get_user_by_id(user_id) if user_id is not None else None
+    return IdentityVerificationInput(
+        name=_first_non_empty(review.get("client_name"), user.get("name") if user else None),
+        signup_email=_first_non_empty(review.get("client_email"), user.get("email") if user else None),
+        company_name=_first_non_empty(review.get("client_company_name"), user.get("company_name") if user else None),
+        linkedin_url=_first_non_empty(review.get("client_profile_link"), user.get("public_url") if user else None),
+        company_website=_first_non_empty(
+            review.get("client_company_website"),
+            user.get("company_website") if user else None,
+        ),
+        login_method=_infer_login_method(user),
+    )
+
+
+def _summarize_hunter_verification(result) -> str:
+    if result.status == "email_match":
+        return "Hunter found a candidate email that matches the GoodFirms signup email."
+    if result.status == "email_mismatch":
+        return "Hunter found a candidate email that does not match the GoodFirms signup email. This is a major red flag."
+    if result.status == "no_email_found":
+        return result.reason or "Hunter did not find a corroborating email for this identity."
+    if result.status == "not_configured":
+        return "Hunter is not configured in the backend."
+    if result.status == "not_enough_inputs":
+        return result.reason or "Hunter could not run because the required identity inputs were missing."
+    return (
+        f"{result.reason or result.status}. "
+        "Treat this as an external verification limitation rather than direct evidence against the reviewer."
+    )
+
+
+def _summarize_contactout_verification(result) -> str:
+    if result.status == "email_match":
+        return "ContactOut returned work/personal email data that includes the GoodFirms signup email."
+    if result.status == "email_mismatch":
+        return "ContactOut returned work/personal email data, but none of those emails match the GoodFirms signup email. This is a major red flag."
+    if result.status == "sample_response_detected":
+        return result.reason or "ContactOut returned a sample/demo payload rather than real enrichment data."
+    if result.status == "no_email_found":
+        return result.reason or "ContactOut did not return a work or personal email for this profile."
+    if result.status == "not_configured":
+        return "ContactOut is not configured in the backend."
+    if result.status == "not_enough_inputs":
+        return result.reason or "ContactOut could not run because the required inputs were missing."
+    return (
+        f"{result.reason or result.status}. "
+        "Treat this as an external verification limitation rather than direct evidence against the reviewer."
+    )
+
+
+def _summarize_apollo_verification(result) -> str:
+    if result.status == "email_match":
+        return "Apollo returned a work/personal email set that includes the GoodFirms signup email."
+    if result.status == "email_mismatch":
+        return "Apollo returned work/personal email data, but none of those emails match the GoodFirms signup email. This is a major red flag."
+    if result.status == "no_email_found":
+        return result.reason or "Apollo did not return a work or personal email for this person."
+    if result.status == "not_configured":
+        return "Apollo is not configured in the backend."
+    if result.status == "not_enough_inputs":
+        return result.reason or "Apollo could not run because the required inputs were missing."
+    return (
+        f"{result.reason or result.status}. "
+        "Treat this as an external verification limitation rather than direct evidence against the reviewer."
+    )
 
 
 def _mark_agent_run_failed(
@@ -438,6 +886,36 @@ def _text(value: object) -> str:
     if value is None:
         return ""
     return " ".join(str(value).strip().split())
+
+
+def _first_non_empty(*values: object) -> str | None:
+    for value in values:
+        text = _text(value)
+        if text:
+            return text
+    return None
+
+
+def _parse_int(value: object) -> int | None:
+    text = _text(value)
+    if not text:
+        return None
+    try:
+        return int(float(text))
+    except ValueError:
+        return None
+
+
+def _infer_login_method(user: dict | None) -> str | None:
+    if not user:
+        return None
+    if _text(user.get("google_id")):
+        return "google"
+    if _text(user.get("social_id")):
+        return "linkedin"
+    if _text(user.get("email")):
+        return "email_legacy"
+    return None
 
 
 def _normalized_output_payload(run) -> dict[str, object]:

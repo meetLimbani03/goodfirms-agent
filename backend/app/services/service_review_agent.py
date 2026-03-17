@@ -7,6 +7,7 @@ from langchain_core.tools import StructuredTool
 from langchain_openai import ChatOpenAI
 
 from app.core.config import Settings
+from app.core.logging import logger
 from app.schemas.software_review_agent import (
     AgentToolTrace,
     OpenRouterUsageCall,
@@ -59,6 +60,11 @@ class ServiceReviewAgentService:
 
     def run(self, context: ServiceAgentContext) -> ServiceReviewAgentRunResult:
         current_review_id = str(context.metadata.get("review_id", "") or "").strip() or None
+        logger.info(
+            "service_agent_run_started review_id={review_id} model={model}",
+            review_id=current_review_id,
+            model=self._tool_enabled_model.model_name,
+        )
         reviewer_history_tool = StructuredTool.from_function(
             name="reviewer_review_history_lookup",
             description=(
@@ -98,7 +104,12 @@ class ServiceReviewAgentService:
         tool_traces: list[AgentToolTrace] = []
         llm_usage_calls: list[OpenRouterUsageCall] = []
 
-        for _ in range(5):
+        for turn_index in range(5):
+            logger.info(
+                "service_agent_tool_planning_turn_started review_id={review_id} turn={turn}",
+                review_id=current_review_id,
+                turn=turn_index + 1,
+            )
             ai_message = self._tool_enabled_model.bind_tools(tools).invoke(messages)
             llm_usage_calls.append(
                 build_usage_call(
@@ -108,6 +119,12 @@ class ServiceReviewAgentService:
                 )
             )
             messages.append(ai_message)
+            logger.info(
+                "service_agent_tool_planning_turn_completed review_id={review_id} turn={turn} tool_calls={tool_calls}",
+                review_id=current_review_id,
+                turn=turn_index + 1,
+                tool_calls=len(ai_message.tool_calls or []),
+            )
 
             if not ai_message.tool_calls:
                 break
@@ -119,7 +136,14 @@ class ServiceReviewAgentService:
             )
             tool_traces.extend(new_traces)
             messages.extend(tool_messages)
+            logger.info(
+                "service_agent_tool_execution_completed review_id={review_id} turn={turn} executed_tools={executed_tools}",
+                review_id=current_review_id,
+                turn=turn_index + 1,
+                executed_tools=",".join(trace.tool_name for trace in new_traces) or "none",
+            )
 
+        logger.info("service_agent_structured_output_started review_id={review_id}", review_id=current_review_id)
         structured_result = self._structured_model.invoke(messages)
         raw_message = structured_result["raw"]
         parsing_error = structured_result.get("parsing_error")
@@ -134,6 +158,13 @@ class ServiceReviewAgentService:
             )
         )
         output = structured_result["parsed"]
+        logger.info(
+            "service_agent_run_completed review_id={review_id} final_decision={final_decision} confidence={confidence} tool_trace_count={tool_trace_count}",
+            review_id=current_review_id,
+            final_decision=output.final_decision,
+            confidence=output.confidence,
+            tool_trace_count=len(tool_traces),
+        )
         return ServiceReviewAgentRunResult(
             output=output,
             tool_traces=tool_traces,

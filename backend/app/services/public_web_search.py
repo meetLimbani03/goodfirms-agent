@@ -9,6 +9,7 @@ from urllib.request import Request, urlopen
 from pydantic import BaseModel, Field
 
 from app.core.config import SerpApiSettings
+from app.core.logging import logger
 
 
 class PublicWebSearchToolInput(BaseModel):
@@ -96,7 +97,24 @@ class PublicWebSearchService:
         if as_sitesearch:
             params["as_sitesearch"] = self._normalize_sitesearch(as_sitesearch)
 
+        logger.info(
+            "public_web_search_started q={q} gl={gl} hl={hl} as_qdr={as_qdr} as_sitesearch={as_sitesearch} num={num} start={start} filter={filter}",
+            q=q,
+            gl=params.get("gl") or "not_set",
+            hl=params.get("hl") or "not_set",
+            as_qdr=params.get("as_qdr") or "not_set",
+            as_sitesearch=params.get("as_sitesearch") or "not_set",
+            num=params["num"],
+            start=params["start"],
+            filter=params["filter"],
+        )
         payload = self._perform_search(params)
+        organic_results = payload.get("organic_results") or []
+        logger.info(
+            "public_web_search_completed q={q} organic_result_count={organic_result_count}",
+            q=q,
+            organic_result_count=len(organic_results),
+        )
         return self._render_markdown(params, payload)
 
     def _perform_search(self, params: dict[str, Any]) -> dict[str, Any]:
@@ -105,11 +123,18 @@ class PublicWebSearchService:
             url,
             headers={"User-Agent": "goodfirms-backend/serpapi-public-web-search"},
         )
+        logger.info("public_web_search_request_sent url={url}", url=url)
         with urlopen(request, timeout=60) as response:
             body = response.read().decode("utf-8")
         payload = json.loads(body)
         if payload.get("error"):
+            logger.warning("public_web_search_provider_error error={error}", error=payload["error"])
             raise RuntimeError(f"SerpApi search failed: {payload['error']}")
+        organic_results = payload.get("organic_results") or []
+        logger.info(
+            "public_web_search_response_received organic_result_count={organic_result_count}",
+            organic_result_count=len(organic_results),
+        )
         return payload
 
     def _render_markdown(self, params: dict[str, Any], payload: dict[str, Any]) -> str:

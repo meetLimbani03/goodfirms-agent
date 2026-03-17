@@ -173,3 +173,22 @@ class SoftwareReviewAgentResponse(BaseModel):
     llm_usage_calls: list[OpenRouterUsageCall] = Field(default_factory=list)
     review_feedback: AgentRunFeedback | None = None
     output: SoftwareReviewAgentOutput
+
+
+class IdentityVerificationInput(BaseModel):
+    name: str | None = None
+    signup_email: str | None = None
+    company_name: str | None = None
+    linkedin_url: str | None = None
+    company_website: str | None = None
+    login_method: str | None = None
+
+
+class IdentityVerificationResult(BaseModel):
+    provider: Literal["hunter", "contactout", "apollo"]
+    review_type: Literal["software", "service"]
+    review_id: str
+    status: str
+    summary: str
+    inputs: IdentityVerificationInput
+    result: dict[str, Any] = Field(default_factory=dict)

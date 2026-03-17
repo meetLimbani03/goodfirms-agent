@@ -41,6 +41,25 @@ class SerpApiSettings:
 
 
 @dataclass(frozen=True)
+class HunterSettings:
+    api_key: str
+    base_url: str
+    max_duration: int | None
+
+
+@dataclass(frozen=True)
+class ContactOutSettings:
+    api_key: str
+    base_url: str
+
+
+@dataclass(frozen=True)
+class ApolloSettings:
+    api_key: str
+    base_url: str
+
+
+@dataclass(frozen=True)
 class Settings:
     app_env: str
     mongodb_uri: str
@@ -48,6 +67,9 @@ class Settings:
     postgres_dsn: str | None
     openrouter: OpenRouterSettings
     serpapi: SerpApiSettings | None
+    hunter: HunterSettings | None
+    contactout: ContactOutSettings | None
+    apollo: ApolloSettings | None
     log_level: str
     cors_allowed_origins: tuple[str, ...]
 
@@ -75,6 +97,9 @@ def get_settings() -> Settings:
         postgres_dsn=_resolve_postgres_dsn(),
         openrouter=_resolve_openrouter_settings(),
         serpapi=_resolve_serpapi_settings(),
+        hunter=_resolve_hunter_settings(),
+        contactout=_resolve_contactout_settings(),
+        apollo=_resolve_apollo_settings(),
         log_level=log_level,
         cors_allowed_origins=_resolve_cors_allowed_origins(),
     )
@@ -248,6 +273,44 @@ def _resolve_serpapi_settings() -> SerpApiSettings | None:
     return SerpApiSettings(
         api_key=api_key,
         base_url=_read_optional_env("SERP_API_BASE_URL") or "https://serpapi.com/search.json",
+    )
+
+
+def _resolve_hunter_settings() -> HunterSettings | None:
+    api_key = _read_optional_env("HUNTER_API_KEY") or _read_optional_env("HUNTER_API")
+    if not api_key:
+        return None
+
+    max_duration_text = _read_optional_env("HUNTER_MAX_DURATION")
+    max_duration = int(max_duration_text) if max_duration_text else None
+    return HunterSettings(
+        api_key=api_key,
+        base_url=_read_optional_env("HUNTER_API_BASE_URL") or "https://api.hunter.io/v2/email-finder",
+        max_duration=max_duration,
+    )
+
+
+def _resolve_contactout_settings() -> ContactOutSettings | None:
+    api_key = _read_optional_env("CONTACTOUT_API_KEY")
+    if not api_key:
+        return None
+
+    return ContactOutSettings(
+        api_key=api_key,
+        base_url=_read_optional_env("CONTACTOUT_API_BASE_URL")
+        or "https://api.contactout.com/v1/linkedin/enrich",
+    )
+
+
+def _resolve_apollo_settings() -> ApolloSettings | None:
+    api_key = _read_optional_env("APOLLO_API_KEY")
+    if not api_key:
+        return None
+
+    return ApolloSettings(
+        api_key=api_key,
+        base_url=_read_optional_env("APOLLO_API_BASE_URL")
+        or "https://api.apollo.io/api/v1/people/match",
     )
 
 

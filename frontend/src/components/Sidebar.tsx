@@ -77,7 +77,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <div className="flex items-center justify-between px-6 py-5">
         <h1
           className="text-xl font-bold italic"
-          style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}
+          style={{ fontFamily: 'Source Serif 4, serif', color: 'var(--text-primary)' }}
         >
           GoodFirms Agent
         </h1>

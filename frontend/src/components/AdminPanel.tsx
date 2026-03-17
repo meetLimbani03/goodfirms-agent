@@ -3,9 +3,17 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Sidebar } from './Sidebar';
 import { MainContent } from './MainContent';
 import { RunFeedbackDrawer } from './RunFeedbackDrawer';
-import { AgentRunListItem, ReviewData, ReviewType, ServiceAgentApiResponse, SoftwareAgentApiResponse } from '../types';
+import {
+  AgentRunListItem,
+  IdentityVerificationResult,
+  ReviewData,
+  ReviewType,
+  ServiceAgentApiResponse,
+  SoftwareAgentApiResponse,
+} from '../types';
 import { mapServiceAgentResponseToReview } from '../lib/serviceAgent';
 import { mapSoftwareAgentResponseToReview } from '../lib/softwareAgent';
+import { runIdentityVerification } from '../lib/reviewVerification';
 import {
   agentRunListItemFromApiResponse,
   fetchAgentRunDetail,
@@ -38,6 +46,10 @@ export const AdminPanel: React.FC = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [feedbackDrawerOpen, setFeedbackDrawerOpen] = useState(false);
   const [feedbackErrorMessage, setFeedbackErrorMessage] = useState<string | null>(null);
+  const [verificationResults, setVerificationResults] = useState<
+    Partial<Record<'hunter' | 'contactout' | 'apollo', IdentityVerificationResult>>
+  >({});
+  const [verificationErrorMessage, setVerificationErrorMessage] = useState<string | null>(null);
   const [sidebarWidth, setSidebarWidth] = useState<number>(() => {
     if (typeof window === 'undefined') {
       return SIDEBAR_DEFAULT_WIDTH;
@@ -59,6 +71,8 @@ export const AdminPanel: React.FC = () => {
   useEffect(() => {
     setFeedbackDrawerOpen(false);
     setFeedbackErrorMessage(null);
+    setVerificationResults({});
+    setVerificationErrorMessage(null);
   }, [selectedReviewKey, selectedReviewType]);
 
   const softwareHistoryQuery = useQuery({
@@ -106,6 +120,27 @@ export const AdminPanel: React.FC = () => {
     },
     onError: (error) => {
       setFeedbackErrorMessage(error instanceof Error ? error.message : 'Failed to save feedback');
+    },
+  });
+  const identityVerificationMutation = useMutation({
+    mutationFn: ({
+      reviewType,
+      reviewId,
+      provider,
+    }: {
+      reviewType: ReviewType;
+      reviewId: string;
+      provider: 'hunter' | 'contactout' | 'apollo';
+    }) => runIdentityVerification({ reviewType, reviewId, provider }),
+    onSuccess: (result) => {
+      setVerificationResults((current) => ({
+        ...current,
+        [result.provider]: result,
+      }));
+      setVerificationErrorMessage(null);
+    },
+    onError: (error) => {
+      setVerificationErrorMessage(error instanceof Error ? error.message : 'Verification failed');
     },
   });
 
@@ -275,6 +310,17 @@ export const AdminPanel: React.FC = () => {
     });
   };
 
+  const handleIdentityVerification = async (provider: 'hunter' | 'contactout' | 'apollo') => {
+    if (!currentReview) {
+      return;
+    }
+    await identityVerificationMutation.mutateAsync({
+      reviewType: currentReview.reviewType,
+      reviewId: currentReview.internalMetadata.reviewId,
+      provider,
+    });
+  };
+
   return (
     <div className="flex h-screen" style={{ backgroundColor: 'var(--bg-main)', color: 'var(--text-body)' }}>
       <Sidebar
@@ -304,7 +350,15 @@ export const AdminPanel: React.FC = () => {
           className="sidebar-resize-handle"
         />
       ) : null}
-      <MainContent review={currentReview || null} onOpenFeedback={handleOpenFeedback} />
+      <MainContent
+        review={currentReview || null}
+        onOpenFeedback={handleOpenFeedback}
+        verificationResults={verificationResults}
+        verificationErrorMessage={verificationErrorMessage}
+        isVerificationRunning={identityVerificationMutation.isPending}
+        verificationProviderPending={identityVerificationMutation.variables?.provider ?? null}
+        onRunIdentityVerification={handleIdentityVerification}
+      />
       <RunFeedbackDrawer
         review={currentReview || null}
         isOpen={feedbackDrawerOpen}

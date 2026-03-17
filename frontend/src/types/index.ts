@@ -248,6 +248,25 @@ export interface SoftwareManualRunDetails {
   feedbackUpdatedAt?: string | null;
 }
 
+export interface IdentityVerificationInput {
+  name?: string | null;
+  signup_email?: string | null;
+  company_name?: string | null;
+  linkedin_url?: string | null;
+  company_website?: string | null;
+  login_method?: string | null;
+}
+
+export interface IdentityVerificationResult {
+  provider: 'hunter' | 'contactout' | 'apollo';
+  review_type: 'software' | 'service';
+  review_id: string;
+  status: string;
+  summary: string;
+  inputs: IdentityVerificationInput;
+  result: Record<string, string | number | boolean | null>;
+}
+
 export interface AgentRunMetadata {
   status: string;
   trigger_source: string;

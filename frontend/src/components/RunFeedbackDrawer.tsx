@@ -91,7 +91,7 @@ export const RunFeedbackDrawer: React.FC<RunFeedbackDrawerProps> = ({
             </p>
             <h2
               className="mt-2 text-3xl italic"
-              style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}
+              style={{ fontFamily: 'Source Serif 4, serif', color: 'var(--text-primary)' }}
             >
               Improve This Run
             </h2>
